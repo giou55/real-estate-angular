@@ -1,0 +1,30 @@
+.flex-container {
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.topnav {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 85%;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.topnav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.topnav a.active {
+  background-color: #ea723d;
+}
+
+.topnav a:hover {
+  background-color: #ea723d;
+}
