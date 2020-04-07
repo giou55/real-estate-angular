@@ -1,17 +1,24 @@
 .flex-container {
-  padding-top: 2rem;
+  padding-top: 1.8rem;
+  padding-bottom: 1rem;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
+  background-image: linear-gradient(to bottom, rgba(30, 30, 30, 1), rgba(30, 30, 30, 0));
 }
 
 .topnav {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  width: 85%;
+  align-items: center;
+  width: 90%;
   overflow: hidden;
   background-color: transparent;
+}
+
+.topnav img {
+  padding: 0 6rem 0 0;
 }
 
 .topnav a {
@@ -27,4 +34,24 @@
 
 .topnav a:hover {
   background-color: #ea723d;
+}
+
+.topnav span {
+  color: #fff;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+span .user {
+  font-size: 2rem;
+}
+
+.topnav .submit {
+  background-color: #1ea69a;
+  font-weight: bold;
+}
+
+.topnav .submit:hover {
+  background-color: #0f887e;
+  font-weight: bold;
 }
