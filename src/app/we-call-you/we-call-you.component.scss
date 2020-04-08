@@ -7,7 +7,6 @@
 }
 
 .main {
-  color: #666;
   background-color: #fff;
   padding: 2rem;
   width: 30%;
@@ -42,6 +41,23 @@
   border-left: 12px solid #ea723d;
   left: 100%;
   top: 0;
+}
+
+p {
+  color: #666;
+}
+
+::placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #666;
+}
+
+::-ms-input-placeholder {
+  color: #666;
 }
 
 input[type=text],
