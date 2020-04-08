@@ -1,3 +1,5 @@
+@import "../../../src/styles.scss";
+
 .flex-container {
   padding-top: 1.8rem;
   padding-bottom: 1rem;
@@ -29,11 +31,11 @@
 }
 
 .topnav a.active {
-  background-color: #ea723d;
+  background-color: $orangeBtn;
 }
 
 .topnav a:hover {
-  background-color: #ea723d;
+  background-color: $orangeBtn;
 }
 
 .topnav span {
@@ -47,11 +49,10 @@ span .user {
 }
 
 .topnav .submit {
-  background-color: #1ea69a;
+  background-color: $greenBtn;
   font-weight: bold;
 }
 
 .topnav .submit:hover {
-  background-color: #0f887e;
-  font-weight: bold;
+  background-color: $greenBtnHover;
 }
