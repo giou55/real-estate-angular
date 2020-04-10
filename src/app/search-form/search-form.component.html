@@ -7,12 +7,15 @@
 
         <div style="display:inline-block; width:20%;">
           <p>Location</p>
-          <select id="location" name="location">
-            <option value="volvo">Any</option>
-            <option value="greece">Greece</option>
-            <option value="france">France</option>
-            <option value="spain">Spain</option>
-          </select>
+          <div class="select-wrapper">
+            <span><i class="fas fa-sort-down"></i></span>
+            <select name="location">
+              <option value="volvo" selected="selected">Any</option>
+              <option value="greece">Greece</option>
+              <option value="france">France</option>
+              <option value="spain">Spain</option>
+            </select>
+          </div>
         </div>
 
         <div style="display:inline-block; width:20%;">
@@ -51,7 +54,7 @@
 
       </div>
 
-      <div style="width:100%;">
+      <div style="width:100%; margin-top: 4px;">
 
         <div style="display:inline-block; width:14%;">
           <p>Location</p>

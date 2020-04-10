@@ -5,6 +5,7 @@
   flex-wrap: nowrap;
   justify-content: center;
   position: relative;
+  background-color: $lightGreyBackground;
 }
 
 .main {
@@ -15,6 +16,18 @@
   background-color: #fff;
   width: 80%;
   padding: 20px;
+  line-height: 1px;
+  border: 1px solid $darkerGreyBorder;
+}
+
+p {
+  color: #000;
+  font-size: 0.9rem;
+}
+
+select,
+input {
+  padding: 6px;
 }
 
 input[type=submit] {
@@ -30,4 +43,32 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: $greenBtnHover;
+}
+
+.select-wrapper select {
+  /* Hide default arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* Cosmetics for the select box */
+  width: 100%;
+  padding: 6px;
+  color: #333;
+  background-color: #fff;
+  border-left: 1px solid $darkerGreyBorder;
+  outline: none;
+}
+
+.select-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.select-wrapper span {
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: red;
+  padding: 6px;
 }

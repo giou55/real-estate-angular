@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { WeCallYouComponent } from './we-call-you/we-call-you.component';
 import { SearchFormComponent } from './search-form/search-form.component';
+import { RecentPropsComponent } from './recent-props/recent-props.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopbarComponent,
     WeCallYouComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    RecentPropsComponent
   ],
   imports: [
     BrowserModule,
