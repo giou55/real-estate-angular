@@ -1,72 +1,21 @@
 <div class="flex-container">
   <div class="main">
 
-    <form style="width:100%;" action="">
+    <form action="">
 
-      <div style="width:100%;">
+      <div class="form_first_row">
 
-        <div style="display:inline-block; width:20%;">
+        <div class="select-wrapper">
           <p>Location</p>
-          <div class="select-wrapper">
-            <span><i class="fas fa-sort-down"></i></span>
-            <select name="location">
-              <option value="volvo" selected="selected">Any</option>
-              <option value="greece">Greece</option>
-              <option value="france">France</option>
-              <option value="spain">Spain</option>
-            </select>
-          </div>
-        </div>
-
-        <div style="display:inline-block; width:20%;">
-          <p>Property Status</p>
-          <select id="location" name="location">
-            <option value="any">Any</option>
-            <option value="sale">For Sale</option>
-            <option value="rent">For Rent</option>
-          </select>
-        </div>
-
-        <div style="display:inline-block; width:20%;">
-          <p>Property Type</p>
-          <select id="location" name="location">
-            <option value="any">Any</option>
-            <option value="office">Office</option>
-            <option value="shop">Shop</option>
-            <option value="appartment">Appartment</option>
-          </select>
-        </div>
-
-        <div style="display:inline-block; width:20%;">
-          <p>Agent</p>
-          <select id="location" name="location">
-            <option value="volvo">Any</option>
-            <option value="saab">John Doe</option>
-            <option value="fiat">Julia Smith</option>
-            <option value="audi">Ken Brown</option>
-          </select>
-        </div>
-
-        <div style="display:inline-block; width:20%;">
-          <p>Keyword</p>
-          <input type="text" id="keyword" name="keyword">
-        </div>
-
-      </div>
-
-      <div style="width:100%; margin-top: 4px;">
-
-        <div style="display:inline-block; width:14%;">
-          <p>Location</p>
-          <select id="location" name="location">
-            <option value="volvo">Any</option>
+          <select name="location">
+            <option value="volvo" selected="selected">Any</option>
             <option value="greece">Greece</option>
             <option value="france">France</option>
             <option value="spain">Spain</option>
           </select>
         </div>
 
-        <div style="display:inline-block; width:14%;">
+        <div class="select-wrapper">
           <p>Property Status</p>
           <select id="location" name="location">
             <option value="any">Any</option>
@@ -75,7 +24,7 @@
           </select>
         </div>
 
-        <div style="display:inline-block; width:14%;">
+        <div class="select-wrapper">
           <p>Property Type</p>
           <select id="location" name="location">
             <option value="any">Any</option>
@@ -85,7 +34,7 @@
           </select>
         </div>
 
-        <div style="display:inline-block; width:14%;">
+        <div class="select-wrapper">
           <p>Agent</p>
           <select id="location" name="location">
             <option value="volvo">Any</option>
@@ -95,22 +44,75 @@
           </select>
         </div>
 
-        <div style="display:inline-block; width:14%;">
-          <p>Agent</p>
-          <select id="location" name="location">
-            <option value="volvo">Any</option>
-            <option value="saab">John Doe</option>
-            <option value="fiat">Julia Smith</option>
-            <option value="audi">Ken Brown</option>
-          </select>
-        </div>
-
-        <div style="display:inline-block; width:14%;">
+        <div class="select-wrapper">
           <p>Keyword</p>
           <input type="text" id="keyword" name="keyword">
         </div>
 
-        <div style="display:inline-block; width:14%; text-align: right;">
+      </div>
+
+      <div class="form_second_row">
+
+        <div class="select-wrapper">
+          <p>Min Beds</p>
+          <select id="location" name="bed">
+            <option value="any">Any</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <p>Min Baths</p>
+          <select id="location" name="bath">
+            <option value="any">Any</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <p>Min Garages</p>
+          <select id="location" name="garage">
+            <<option value="any">Any</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <p>Min Price</p>
+          <select name="min_price">
+            <option value="volvo">Any</option>
+            <option value="audi">10000</option>
+            <option value="audi">50000</option>
+            <option value="audi">100000</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <p>Max Price</p>
+          <select name="max_price">
+            <option value="volvo">Any</option>
+            <option value="audi">50000</option>
+            <option value="audi">100000</option>
+            <option value="audi">200000</option>
+            <option value="audi">300000</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <p>Property ID</p>
+          <input type="text" name="property_ID">
+        </div>
+
+        <div class="select-wrapper">
           <input type="submit" value="Search">
         </div>
 

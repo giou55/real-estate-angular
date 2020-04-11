@@ -4,7 +4,6 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  position: relative;
   background-color: $lightGreyBackground;
 }
 
@@ -20,18 +19,45 @@
   border: 1px solid $darkerGreyBorder;
 }
 
+form {
+  width: 100%;
+}
+
+.form_first_row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.form_second_row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 6px;
+}
+
 p {
   color: #000;
   font-size: 0.9rem;
 }
 
+.form_first_row .select-wrapper {
+  width: 20%;
+}
+
+.form_second_row .select-wrapper {
+  width: 12%;
+}
+
 select,
 input {
   padding: 6px;
+  width: 90%;
 }
 
 input[type=submit] {
-  width: 60%;
   background-color: $greenBtn;
   color: white;
   padding: 8px 15px;
@@ -43,32 +69,4 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: $greenBtnHover;
-}
-
-.select-wrapper select {
-  /* Hide default arrow */
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  /* Cosmetics for the select box */
-  width: 100%;
-  padding: 6px;
-  color: #333;
-  background-color: #fff;
-  border-left: 1px solid $darkerGreyBorder;
-  outline: none;
-}
-
-.select-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-
-.select-wrapper span {
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  top: 0;
-  color: red;
-  padding: 6px;
 }
