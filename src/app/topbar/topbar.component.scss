@@ -1,37 +1,46 @@
 @import "../../../src/styles.scss";
 
-.flex-container {
-  padding-top: 1.8rem;
-  padding-bottom: 1rem;
+.flex-container,
+.main,
+.navbar,
+.user-buttons {
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
+  background-color: transparent;
+}
+
+.flex-container {
+  padding: 8px;
   justify-content: center;
   background-image: linear-gradient(to bottom, rgba(30, 30, 30, 1), rgba(30, 30, 30, 0));
 }
 
-.topnav {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  overflow: hidden;
-  background-color: transparent;
+.main {
+  width: 85%;
+  justify-content: space-evenly;
 }
 
-.topnav img {
-  padding: 0 6rem 0 0;
+.main>div {
+  flex-grow: 1;
+}
+
+.navbar {
+  justify-content: center;
+}
+
+.logo img {
   width: 140px;
 }
 
-.topnav a {
+.navbar a {
   text-decoration: none;
   color: #fff;
   font-size: 1rem;
-  padding: 1rem;
+  padding: $padding;
 }
 
-.topnav a.active {
+.navbar a.active {
   background-color: $orangeBtn;
 }
 
@@ -44,7 +53,7 @@
   border: none;
   outline: none;
   color: white;
-  padding: 1rem;
+  padding: $padding;
   background-color: transparent;
   margin: 0;
 }
@@ -53,7 +62,7 @@
   font-size: 0.7rem;
 }
 
-.topnav a:hover,
+.navbar a:hover,
 .dropdown:hover {
   background-color: $orangeBtn;
 }
@@ -61,7 +70,7 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  padding: 0.8rem 0;
+  padding: $padding 0;
   background-color: #f9f9f9;
   min-width: 160px;
   border-top: 2px solid $orangeBtn;
@@ -71,7 +80,7 @@
 
 .dropdown-content a {
   color: #666;
-  padding: 0.6rem 1.6rem;
+  padding: 8px 28px;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -85,21 +94,36 @@
   display: block;
 }
 
-.topnav span {
-  color: #fff;
-  font-size: 1rem;
-  padding: 1rem;
+.user-buttons {
+  justify-content: center;
 }
 
-span .user {
+.user-buttons>div {
+  padding: $padding;
+  color: #fff;
+}
+
+.tel {
+  font-size: 1rem;
+}
+
+.tel .fas {
+  font-size: 1.2rem;
+}
+
+.user {
   font-size: 2rem;
 }
 
-.topnav .submit {
+.submit a {
   background-color: $greenBtn;
   font-weight: bold;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: $padding;
 }
 
-.topnav .submit:hover {
+.submit a:hover {
   background-color: $greenBtnHover;
 }
