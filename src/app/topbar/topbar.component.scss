@@ -18,25 +18,31 @@
 
 .main {
   width: 85%;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .main>div {
-  flex-grow: 1;
+  flex: 1 1 auto;
 }
 
-.navbar {
-  justify-content: center;
+.logo {
+  justify-content: flex-start;
 }
 
 .logo img {
   width: 140px;
 }
 
+.navbar {
+  overflow: hidden;
+  justify-content: center;
+}
+
 .navbar a {
   text-decoration: none;
   color: #fff;
   font-size: 1rem;
+  font-weight: 400;
   padding: $padding;
 }
 
@@ -48,8 +54,9 @@
   overflow: hidden;
 }
 
-.dropbtn {
+.dropdown .dropbtn {
   font-size: 1rem;
+  font-weight: 400;
   border: none;
   outline: none;
   color: white;
@@ -95,7 +102,7 @@
 }
 
 .user-buttons {
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .user-buttons>div {
@@ -105,6 +112,7 @@
 
 .tel {
   font-size: 1rem;
+  font-weight: 500;
 }
 
 .tel .fas {
@@ -126,4 +134,10 @@
 
 .submit a:hover {
   background-color: $greenBtnHover;
+}
+
+@media screen and (max-width: 1200px) {
+  .main {
+    width: 95%;
+  }
 }
