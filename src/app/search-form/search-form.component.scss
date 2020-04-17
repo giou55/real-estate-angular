@@ -9,7 +9,7 @@
 
 .main {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   color: #666;
   background-color: #fff;
@@ -23,19 +23,28 @@ form {
   width: 100%;
 }
 
-.form_first_row {
+.form-container-row1 {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.form_second_row {
-  display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: 6px;
+}
+
+.form-container-row1>div {
+  flex: 1 0 18%;
+  margin-right: 2%;
+}
+
+.form-container-row2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.form-container-row2>div {
+  flex: 1 0 10%;
+  margin-right: 2%;
 }
 
 p {
@@ -43,18 +52,14 @@ p {
   font-size: 0.9rem;
 }
 
-.form_first_row .select-wrapper {
-  width: 20%;
+select {
+  padding: 6px;
+  width: 100%;
 }
 
-.form_second_row .select-wrapper {
-  width: 12%;
-}
-
-select,
 input {
   padding: 6px;
-  width: 90%;
+  width: 100%;
 }
 
 input[type=submit] {
