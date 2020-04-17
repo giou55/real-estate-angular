@@ -3,9 +3,9 @@
 
     <form action="">
 
-      <div class="form-container-row1">
+      <div class="form-container">
 
-        <div class="select-wrapper">
+        <div class="option-wrapper large">
           <p>Location</p>
           <select name="location">
             <option value="volvo" selected="selected">Any</option>
@@ -15,7 +15,7 @@
           </select>
         </div>
 
-        <div class="select-wrapper">
+        <div class="option-wrapper large">
           <p>Property Status</p>
           <select id="status" name="status">
             <option value="any">Any</option>
@@ -24,7 +24,7 @@
           </select>
         </div>
 
-        <div class="select-wrapper">
+        <div class="option-wrapper large">
           <p>Property Type</p>
           <select id="type" name="type">
             <option value="any">Any</option>
@@ -34,7 +34,7 @@
           </select>
         </div>
 
-        <div class="select-wrapper">
+        <div class="option-wrapper large">
           <p>Agent</p>
           <select id="agent" name="agent">
             <option value="volvo">Any</option>
@@ -44,16 +44,12 @@
           </select>
         </div>
 
-        <div class="select-wrapper">
+        <div class="option-wrapper large">
           <p>Keyword</p>
           <input type="text" id="keyword" name="keyword">
         </div>
 
-      </div>
-
-      <div class="form-container-row2">
-
-        <div class="select-wrapper">
+        <div class="option-wrapper small">
           <p>Min Beds</p>
           <select id="location" name="bed">
             <option value="any">Any</option>
@@ -64,7 +60,7 @@
           </select>
         </div>
 
-        <div class="select-wrapper">
+        <div class="option-wrapper small">
           <p>Min Baths</p>
           <select id="location" name="bath">
             <option value="any">Any</option>
@@ -75,7 +71,7 @@
           </select>
         </div>
 
-        <div class="select-wrapper">
+        <div class="option-wrapper small">
           <p>Min Garages</p>
           <select id="location" name="garage">
             <<option value="any">Any</option>
@@ -86,7 +82,7 @@
           </select>
         </div>
 
-        <div class="select-wrapper">
+        <div class="option-wrapper small">
           <p>Min Price</p>
           <select name="min_price">
             <option value="volvo">Any</option>
@@ -96,7 +92,7 @@
           </select>
         </div>
 
-        <div class="select-wrapper">
+        <div class="option-wrapper small">
           <p>Max Price</p>
           <select name="max_price">
             <option value="volvo">Any</option>
@@ -107,16 +103,25 @@
           </select>
         </div>
 
-        <div class="select-wrapper">
+        <div class="option-wrapper small">
           <p>Property ID</p>
           <input type="text" name="property_ID">
         </div>
 
-        <div class="select-wrapper">
+        <div class="option-wrapper small">
           <input type="submit" value="Search">
         </div>
 
       </div>
+
+      <button class="accordion" (click)="toggleAccordian($event)">Section 1</button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.</p>
+      </div>
+
 
     </form>
 
