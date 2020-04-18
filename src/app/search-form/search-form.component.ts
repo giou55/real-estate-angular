@@ -11,10 +11,12 @@ export class SearchFormComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  toggleAccordian(event) {
-    var element = event.target;
-    element.classList.toggle("active");
-    var panel = element.nextElementSibling;
+  toggleAccordian() {
+    var i = document.getElementById("fa-symbol");
+    // var panel = element.nextElementSibling;
+    i.classList.toggle("fa-minus-square-o");
+    i.classList.toggle("fa-plus-square-o");
+    var panel = document.getElementById("panel");
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
     } else {

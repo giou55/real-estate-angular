@@ -11,7 +11,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: #666;
+  color: #333;
   background-color: #fff;
   width: 80%;
   padding: 20px;
@@ -23,19 +23,21 @@ form {
   width: 100%;
 }
 
-.form-container {
+.main-form-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
 }
 
-.form-container>div.large {
+.main-form-container>div.large {
   width: 18%;
+  margin-bottom: 10px;
 }
 
-.form-container>div.small {
+.main-form-container>div.small {
   width: 12%;
+  margin-bottom: 10px;
 }
 
 p {
@@ -43,61 +45,77 @@ p {
   font-size: 0.9rem;
 }
 
-select {
+.main-form-container select {
   padding: 6px;
   width: 100%;
 }
 
-input {
+.main-form-container input {
   padding: 6px;
   width: 90%;
 }
 
-input[type=submit] {
+.main-form-container input[type=submit] {
   background-color: $greenBtn;
   color: white;
-  padding: 8px 15px;
+  padding: 8px 18px;
   border: none;
   border-radius: 4px;
   font-size: 0.9rem;
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+.main-form-container input[type=submit]:hover {
   background-color: $greenBtnHover;
 }
 
 
+.extra-form-container {
+  margin-top: 10px;
+}
+
 .accordion {
-  color: #444;
+  color: #000;
   cursor: pointer;
   border: none;
   text-align: left;
   outline: none;
   display: inline-block;
-  font-size: 15px;
+  font-size: 0.9rem;
   transition: 0.4s;
+  margin-top: 0;
+  margin-bottom: 4px;
 }
 
 .accordion:hover {
-  color: red;
+  color: $greenBtnHover;
 }
 
-.accordion:after {
-  content: '\002B';
-  color: #777;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
-
-.active:after {
-  content: "\2212";
+.accordion span {
+  margin-left: 10px;
 }
 
 .panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  font-size: 0.9rem;
   background-color: white;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+}
+
+.panel>div {
+  margin-right: 30px;
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.extra-form-container input {
+  margin-left: 0;
+  margin-right: 8px;
 }
