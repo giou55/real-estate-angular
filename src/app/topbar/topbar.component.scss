@@ -123,6 +123,10 @@
   font-size: 2rem;
 }
 
+.user i:hover {
+  cursor: pointer;
+}
+
 .submit a {
   background-color: $greenBtn;
   font-weight: bold;
