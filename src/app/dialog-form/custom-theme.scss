@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+
+@mixin dialog-form-theme($theme) {
+  // Extract the palettes you need from the theme definition.
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+
+  button {
+    background-color: mat-color($primary, A500);
+  }
+
+  button:hover {
+    background-color: mat-color($primary, A800);
+  }
+}

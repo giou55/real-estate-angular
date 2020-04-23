@@ -11,7 +11,7 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$real-estate-website-primary: mat-palette($mat-indigo);
+$real-estate-website-primary: mat-palette($mat-teal);
 $real-estate-website-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -24,6 +24,7 @@ $real-estate-website-theme: mat-light-theme($real-estate-website-primary, $real-
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($real-estate-website-theme);
+
 
 $orangeBtn: #ea723d;
 $greenBtn: #1ea69a;

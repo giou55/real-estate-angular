@@ -1,25 +1,3 @@
-@import '~@angular/material/theming';
-
-@mixin candy-carousel-theme($theme) {
-  // Extract the palettes you need from the theme definition.
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-
-
-  button {
-    background-color: mat-color($accent, A500);
-  }
-
-  button:hover {
-    background-color: mat-color($accent, A800);
-  }
-}
-
-
-.cdk-overlay-dark-backdrop {
-  background: rgba(0, 0, 0, 0.8);
-}
-
 form {
   padding-top: 15px;
 }
