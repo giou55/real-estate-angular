@@ -13,7 +13,7 @@ export class TopbarComponent {
   constructor(public dialog: MatDialog) { }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogFormComponent, { width: '400px', height: '300px' });
+    const dialogRef = this.dialog.open(DialogFormComponent, { width: '500px', height: '450px' });
   }
 
 }

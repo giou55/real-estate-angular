@@ -1,3 +1,48 @@
+@import '~@angular/material/theming';
+
+@mixin candy-carousel-theme($theme) {
+  // Extract the palettes you need from the theme definition.
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+
+  button {
+    background-color: mat-color($accent, A500);
+  }
+
+  button:hover {
+    background-color: mat-color($accent, A800);
+  }
+}
+
+
 .cdk-overlay-dark-backdrop {
   background: rgba(0, 0, 0, 0.8);
+}
+
+form {
+  padding-top: 15px;
+}
+
+input[type=text],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  resize: vertical;
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  color: white;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
 }

@@ -55,7 +55,7 @@ p {
   width: 90%;
 }
 
-.main-form-container input[type=submit] {
+button {
   background-color: $greenBtn;
   color: white;
   padding: 8px 18px;
@@ -65,7 +65,7 @@ p {
   cursor: pointer;
 }
 
-.main-form-container input[type=submit]:hover {
+button:hover {
   background-color: $greenBtnHover;
 }
 
