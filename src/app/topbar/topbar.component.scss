@@ -127,17 +127,12 @@
   cursor: pointer;
 }
 
-.submit a {
-  background-color: $greenBtn;
+.submit button {
   font-weight: 500;
   color: #fff;
   font-size: 1rem;
-  text-decoration: none;
-  padding: $padding;
-}
-
-.submit a:hover {
-  background-color: $greenBtnHover;
+  padding: 6px 12px;
+  border-radius: 0;
 }
 
 @media screen and (max-width: 1200px) {

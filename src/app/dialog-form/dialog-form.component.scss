@@ -1,5 +1,13 @@
+.container {
+  position: relative;
+}
+
 form {
   padding-top: 15px;
+}
+
+form label {
+  font-weight: bold;
 }
 
 input[type=text],
@@ -16,11 +24,17 @@ textarea {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-button {
-  color: white;
-  padding: 8px 18px;
-  border: none;
-  border-radius: 4px;
-  font-size: 0.9rem;
+.dialog-close {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 9;
+  font-size: 18px;
+  color: #1a1a1a;
   cursor: pointer;
+}
+
+.fa-times:before {
+  content: "\f00d";
 }

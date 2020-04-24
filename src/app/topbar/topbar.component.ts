@@ -13,7 +13,13 @@ export class TopbarComponent {
   constructor(public dialog: MatDialog) { }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogFormComponent, { width: '500px', height: '450px' });
+    const dialogRef = this.dialog.open(DialogFormComponent, {
+      width: '400px',
+      height: '450px',
+      hasBackdrop: true,
+      panelClass: 'custom-modalbox',
+      backdropClass: 'backdropBackground'
+    });
   }
 
 }
