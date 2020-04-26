@@ -1,5 +1,6 @@
-export class House {
+export class Property {
       constructor(
+            public propID: string,
             public title: string,
             public description: string,
             public location: string,

@@ -1,7 +1,19 @@
 <div class="flex-container">
   <div class="main">
+
     <p class="p1">Recent</p>
     <h1>Properties</h1>
     <p class="p2">Check out some of our latest properties.</p>
+
+    <div class="props-container">
+      <div style="width: 30%;" *ngFor="let props of recentProperties">
+        <img src="{{ props.imagePath}}" alt="">
+        {{ props.title }}<br>
+        {{ props.description }}<br>
+        {{ props.location }}<br>
+        {{ props.price }}
+      </div>
+    </div>
+
   </div>
 </div>
