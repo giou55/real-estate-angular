@@ -17,7 +17,7 @@ export class RecentPropertiesService {
                   2,
                   ["2 Stories", "Electric Range"],
                   "assets/images/recent_props/house1.jpg",
-                  250.000
+                  850000
             ),
             new Property(
                   "FY2730",
@@ -31,7 +31,7 @@ export class RecentPropertiesService {
                   2,
                   ["2 Stories", "Electric Range"],
                   "assets/images/recent_props/house2.jpg",
-                  370.000
+                  370000
             ),
             new Property(
                   "HR4892",
@@ -45,7 +45,7 @@ export class RecentPropertiesService {
                   2,
                   ["2 Stories", "Electric Range"],
                   "assets/images/recent_props/house3.jpg",
-                  550.000
+                  550000
             ),
             new Property(
                   "DW2268",
@@ -59,7 +59,7 @@ export class RecentPropertiesService {
                   2,
                   ["2 Stories", "Electric Range"],
                   "assets/images/recent_props/house4.jpg",
-                  290.000
+                  290000
             ),
             new Property(
                   "DW2268",
@@ -73,7 +73,7 @@ export class RecentPropertiesService {
                   2,
                   ["2 Stories", "Electric Range"],
                   "assets/images/recent_props/house5.jpg",
-                  290.000
+                  450000
             ),
             new Property(
                   "DW2268",
@@ -87,7 +87,7 @@ export class RecentPropertiesService {
                   2,
                   ["2 Stories", "Electric Range"],
                   "assets/images/recent_props/house6.jpg",
-                  290.000
+                  700000
             )
       ];
 
