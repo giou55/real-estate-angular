@@ -1,18 +1,59 @@
-<div class="flex-container">
-  <div class="main">
+<div class="container">
 
-    <p class="p1">Recent</p>
+  <div class="header">
+    <p class="p1 themePrimaryColor">Recent</p>
     <h1>Properties</h1>
     <p class="p2">Check out some of our latest properties.</p>
+  </div>
 
-    <div class="props-container">
-      <div style="width: 30%;" *ngFor="let props of recentProperties">
-        <img src="{{ props.imagePath}}" alt="">
-        <h1>{{ props.title }}</h1>
-        <p>{{ props.description }}</p>
-        <h2>{{ props.price | currency:'EUR':'symbol':'1.0-0' }}</h2>
+  <div class="props-container">
+    <div class="prop" *ngFor="let prop of recentProperties">
+      <div class="img-container">
+        <img src="{{ prop.imagePath}}" alt="">
+        <div class="img-overlay">
+          <div class="text-overlay">View Property</div>
+        </div>
+        <div class="addTo">
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-exchange-alt"></i>
+        </div>
+      </div>
+
+      <div class="prop-text">
+        <h1>{{ prop.title }}</h1>
+        <p>{{ prop.description }}</p>
+
+        <div class="prop-features">
+          <div class="beds">
+            <p>Bedrooms</p>
+            <div class="icon-with-number">
+              <i class="fas fa-bed"></i>
+              {{ prop.beds }}
+            </div>
+          </div>
+          <div class="bath">
+            <p>Bathrooms</p>
+            <div class="icon-with-number">
+              <i class="fas fa-shower"></i>
+              {{ prop.baths }}
+            </div>
+          </div>
+          <div class="area">
+            <p>Area</p>
+            <div class="icon-with-number">
+              <i class="fas fa-vector-square"></i>
+              {{ prop.area_size }}
+            </div>
+          </div>
+        </div>
+
+        <div class="prop-price">
+          <span>{{ prop.sale_or_rent }}</span>
+          <h2 class="themePrimaryColor">{{ prop.price | currency:'EUR':'symbol':'1.0-0' }}</h2>
+        </div>
+
       </div>
     </div>
-
   </div>
+
 </div>

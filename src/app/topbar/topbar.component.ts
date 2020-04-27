@@ -17,7 +17,6 @@ export class TopbarComponent {
       width: '400px',
       height: '450px',
       hasBackdrop: true,
-      panelClass: 'custom-modalbox',
       backdropClass: 'backdropBackground'
     });
   }

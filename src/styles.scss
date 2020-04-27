@@ -25,6 +25,8 @@ $real-estate-website-theme: mat-light-theme($real-estate-website-primary, $real-
 // that you are using.
 @include angular-material-theme($real-estate-website-theme);
 
+$primary: map-get($real-estate-website-theme, primary);
+
 
 $orangeBtn: #ea723d;
 $greenBtn: #1ea69a;
@@ -38,6 +40,10 @@ $padding: 14px;
 
 .backdropBackground {
   background-color: rgba($color: #000000, $alpha: .7)
+}
+
+.themePrimaryColor {
+  color: mat-color($primary);
 }
 
 

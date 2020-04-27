@@ -1,32 +1,138 @@
 @import "../../../src/styles.scss";
 
-.flex-container {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  background-color: #f5f5f5;
+.container {
+  background-color: $lightGreyBackground;
 }
 
-.main {
-  background-color: #f5f5f5;
+.header {
+  background-color: $lightGreyBackground;
   text-align: center;
   padding: 20px;
 }
 
-.p1 {
-  color: $greenBtn;
-  font-weight: bold;
+.header h1 {
+  font-size: 2.2rem;
 }
 
-.p2 {
+.header .p1 {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.header .p2 {
   color: #666;
 }
 
 .props-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-img {
+.prop {
+  width: 30%;
+  background-color: #fff;
+  border: 1px solid $darkerGreyBorder;
+  margin-bottom: 35px;
+}
+
+.img-container {
+  position: relative;
+}
+
+.img-container img {
+  height: 260px;
+  max-width: 100%;
+}
+
+.img-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+  background-color: rgb(10, 252, 240);
+  opacity: 0.7;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+}
+
+.img-container:hover .img-overlay {
   width: 100%;
+  left: 0;
+}
+
+.text-overlay {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.addTo {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.addTo i {
+  margin-right: 10px;
+  font-size: 23px;
+  color: #fff;
+}
+
+.addTo .fa-heart:hover {
+  color: #f00;
+}
+
+.addTo .fa-exchange-alt:hover {
+  color: orange;
+}
+
+.prop-text {
+  padding: 10px 20px;
+}
+
+.prop-features {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.prop-features div {
+  color: #333;
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-right: 18px;
+}
+
+.prop-features i {
+  color: #aaa;
+  font-size: 1.4rem;
+  margin-right: 6px;
+}
+
+.icon-with-number {
+  display: flex;
+  align-items: center;
+}
+
+.prop-price {
+  margin-top: 18px;
+  line-height: 12px;
+}
+
+.prop-price span {
+  color: #333;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.prop-price h2 {
+  font-size: 1.4rem;
 }

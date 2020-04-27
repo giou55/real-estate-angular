@@ -4,6 +4,7 @@ export class Property {
             public title: string,
             public description: string,
             public location: string,
+            public sale_or_rent: string,
             public area_size: number,
             public year_built: number,
             public beds: number,
