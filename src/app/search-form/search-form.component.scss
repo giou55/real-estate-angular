@@ -32,12 +32,12 @@ form {
 
 .main-form-container>div.large {
   width: 18%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .main-form-container>div.small {
   width: 12%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 p {
@@ -60,10 +60,6 @@ button {
   font-size: 0.9rem;
 }
 
-.extra-form-container {
-  margin-top: 10px;
-}
-
 .accordion {
   color: #000;
   cursor: pointer;
@@ -78,7 +74,7 @@ button {
 }
 
 .accordion:hover {
-  color: $greenBtnHover;
+  color: $greenDarker;
 }
 
 .accordion span {

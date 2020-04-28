@@ -49,7 +49,9 @@
 
         <div class="prop-price">
           <span>{{ prop.sale_or_rent }}</span>
-          <h2 class="themePrimaryColor">{{ prop.price | currency:'EUR':'symbol':'1.0-0' }}</h2>
+          <h2 class="themePrimaryColor">{{ prop.price | currency:'EUR':'symbol':'1.0-0' }}
+            <span *ngIf="prop.sale_or_rent == 'For Rent'">Monthly</span>
+          </h2>
         </div>
 
       </div>

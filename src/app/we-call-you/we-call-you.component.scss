@@ -24,7 +24,7 @@
 }
 
 .phone-icon {
-  background-color: $orangeBtn;
+  background-color: $orange;
   color: #fff;
   position: absolute;
   top: 20px;
@@ -40,7 +40,7 @@
   position: absolute;
   border-top: 23px solid transparent;
   border-bottom: 23px solid transparent;
-  border-left: 14px solid #ea723d;
+  border-left: 14px solid $orange;
   left: 100%;
   top: 0;
 }

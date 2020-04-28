@@ -10,7 +10,7 @@ export class RecentPropertiesService {
                   "Villa on Hollywood Boulevard",
                   "The very best waterfront location in Harbor Islands complete with private dock…",
                   "Rome",
-                  "For Sale",
+                  "For Rent",
                   160,
                   2003,
                   3,
@@ -18,7 +18,7 @@ export class RecentPropertiesService {
                   2,
                   ["2 Stories", "Electric Range"],
                   "assets/images/recent_props/house1.jpg",
-                  850000
+                  3200
             ),
             new Property(
                   "FY2730",
