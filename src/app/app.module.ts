@@ -13,6 +13,8 @@ import { WeCallYouComponent } from './we-call-you/we-call-you.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { RecentPropsComponent } from './recent-props/recent-props.component';
 import { DialogFormComponent } from './dialog-form/dialog-form.component';
+import { PropertyComponent } from './property/property.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { DialogFormComponent } from './dialog-form/dialog-form.component';
     WeCallYouComponent,
     SearchFormComponent,
     RecentPropsComponent,
-    DialogFormComponent
+    DialogFormComponent,
+    PropertyComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

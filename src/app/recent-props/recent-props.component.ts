@@ -13,8 +13,6 @@ export class RecentPropsComponent implements OnInit {
 
   recentProperties: Property[] = [];
 
-  forRent = "For Rent";
-
   constructor(private recentPropertiesService: RecentPropertiesService) { }
 
   ngOnInit(): void {

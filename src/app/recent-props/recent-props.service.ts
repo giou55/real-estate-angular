@@ -100,4 +100,22 @@ export class RecentPropertiesService {
       getProperties(): Property[] {
             return this.recentProps;
       }
+
+      getProperty(id: String): Property {
+            return {
+                  propID: "DA2541",
+                  title: "Villa in Rome",
+                  description: "fgrtgrthgtrh omoimol m om jmm oklm lkm",
+                  location: "gtrhtyfhnfghngtyj",
+                  sale_or_rent: "For Sale",
+                  area_size: 240,
+                  year_built: 2012,
+                  beds: 3,
+                  baths: 3,
+                  garages: 2,
+                  features: ["2 Stories", "Electric Range"],
+                  imagePath: "assets/images/recent_props/house6.jpg",
+                  price: 250000
+            };
+      }
 }
