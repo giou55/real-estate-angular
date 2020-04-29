@@ -11,6 +11,7 @@ export class Property {
             public baths: number,
             public garages: number,
             public features: string[],
-            public imagePath: string,
+            public imageSm_Path: string,
+            public imageLg_Path: string,
             public price: number) { }
 }

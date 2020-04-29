@@ -9,7 +9,7 @@
   <div class="props-container">
     <div class="prop" *ngFor="let prop of recentProperties">
       <div class="img-container">
-        <img src="{{ prop.imagePath}}" alt="">
+        <img src="{{ prop.imageSm_Path }}" alt="">
         <div class="img-overlay">
           <div class="text-overlay" routerLink="property/{{ prop.propID }}">View Property</div>
         </div>

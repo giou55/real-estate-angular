@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { Property } from "../models/property.model";
-import { Observable, from } from "rxjs";
 
 @Injectable()
 export class RecentPropertiesService {
@@ -17,7 +16,8 @@ export class RecentPropertiesService {
                   2,
                   2,
                   ["2 Stories", "Electric Range"],
-                  "assets/images/recent_props/house1.jpg",
+                  "assets/images/recent-props-small/house1.jpg",
+                  "assets/images/recent-props-large/house1.jpg",
                   3200
             ),
             new Property(
@@ -32,7 +32,8 @@ export class RecentPropertiesService {
                   2,
                   2,
                   ["2 Stories", "Electric Range"],
-                  "assets/images/recent_props/house2.jpg",
+                  "assets/images/recent-props-small/house11.jpg",
+                  "assets/images/recent-props-large/house11.jpg",
                   370000
             ),
             new Property(
@@ -47,7 +48,8 @@ export class RecentPropertiesService {
                   2,
                   2,
                   ["2 Stories", "Electric Range"],
-                  "assets/images/recent_props/house3.jpg",
+                  "assets/images/recent-props-small/house3.jpg",
+                  "assets/images/recent-props-large/house3.jpg",
                   550000
             ),
             new Property(
@@ -62,11 +64,12 @@ export class RecentPropertiesService {
                   2,
                   2,
                   ["2 Stories", "Electric Range"],
-                  "assets/images/recent_props/house4.jpg",
+                  "assets/images/recent-props-small/house10.jpg",
+                  "assets/images/recent-props-large/house10.jpg",
                   290000
             ),
             new Property(
-                  "DW2268",
+                  "DP4821",
                   "Villa on Hollywood Boulevard",
                   "The very best waterfront location in Harbor Islands complete with private dock…",
                   "Turin",
@@ -77,11 +80,12 @@ export class RecentPropertiesService {
                   2,
                   2,
                   ["2 Stories", "Electric Range"],
-                  "assets/images/recent_props/house5.jpg",
+                  "assets/images/recent-props-small/house12.jpg",
+                  "assets/images/recent-props-large/house12.jpg",
                   450000
             ),
             new Property(
-                  "DW2268",
+                  "LT5471",
                   "Villa on Hollywood Boulevard",
                   "The very best waterfront location in Harbor Islands complete with private dock…",
                   "Turin",
@@ -92,7 +96,8 @@ export class RecentPropertiesService {
                   2,
                   2,
                   ["2 Stories", "Electric Range"],
-                  "assets/images/recent_props/house6.jpg",
+                  "assets/images/recent-props-small/house6.jpg",
+                  "assets/images/recent-props-large/house6.jpg",
                   700000
             )
       ];
@@ -102,20 +107,6 @@ export class RecentPropertiesService {
       }
 
       getProperty(id: String): Property {
-            return {
-                  propID: "DA2541",
-                  title: "Villa in Rome",
-                  description: "fgrtgrthgtrh omoimol m om jmm oklm lkm",
-                  location: "gtrhtyfhnfghngtyj",
-                  sale_or_rent: "For Sale",
-                  area_size: 240,
-                  year_built: 2012,
-                  beds: 3,
-                  baths: 3,
-                  garages: 2,
-                  features: ["2 Stories", "Electric Range"],
-                  imagePath: "assets/images/recent_props/house6.jpg",
-                  price: 250000
-            };
+            return this.recentProps.find(p => p.propID == id);
       }
 }

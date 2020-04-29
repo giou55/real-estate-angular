@@ -1,4 +1,53 @@
 <div id="section1">
   <app-topbar></app-topbar>
 </div>
-{{property.title}}
+
+
+<div class="header-container">
+  <div class="header">
+    <div>
+      <h1>{{property.title}}</h1>
+      <p>{{property.location}}</p>
+    </div>
+
+    <div class="price">
+      <span>{{ property.sale_or_rent }}</span>
+      <h2 class="themePrimaryColor">{{ property.price | currency:'EUR':'symbol':'1.0-0' }}
+        <span *ngIf="property.sale_or_rent == 'For Rent'">Monthly</span>
+      </h2>
+    </div>
+  </div>
+</div>
+
+
+<div class="image-container">
+  <img src="{{ property.imageLg_Path }}" alt="">
+</div>
+
+
+<div class="main-container">
+  <div class="main">
+    <div class="left-column">
+      <div>
+        <p>Property ID: <span class="themePrimaryColor">{{property.propID}}</span></p>
+        <h2>Description</h2>
+        <p>Enchanting three bedroom, three bath home with spacious one bedroom, one bath cabana, in-laws quarters.
+          Charming living area features fireplace and fabulous art deco details. Formal dining room. Remodelled kitchen
+          with granite countertops, white cabinetry and stainless appliances. Lovely master bedroom has updated bath,
+          beautiful view of the pool. Guest bedrooms have walk-in, cedar closets. Delightful backyard; majestic oaks
+          surround the free form pool and expansive patio, wet bar and grill.
+        </p>
+      </div>
+    </div>
+    <div class="right-column">
+      <div>
+        <p>Enchanting three bedroom, three bath home with spacious one bedroom, one bath cabana, in-laws quarters.
+          Charming living area features fireplace and fabulous art deco details. Formal dining room. Remodelled kitchen
+          with granite countertops, white cabinetry and stainless appliances. Lovely master bedroom has updated bath,
+          beautiful view of the pool. Guest bedrooms have walk-in, cedar closets. Delightful backyard; majestic oaks
+          surround the free form pool and expansive patio, wet bar and grill.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
