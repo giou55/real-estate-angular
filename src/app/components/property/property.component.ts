@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Property } from "../models/property.model";
+import { Property } from "../../models/property.model";
 import { RecentPropertiesService } from '../recent-props/recent-props.service';
 
 @Component({

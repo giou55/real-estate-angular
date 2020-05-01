@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Property } from "../models/property.model";
+import { Property } from "../../models/property.model";
 
 @Injectable()
 export class RecentPropertiesService {
