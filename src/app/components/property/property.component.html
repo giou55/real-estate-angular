@@ -27,10 +27,73 @@
 
 <div class="main-container">
   <div class="main">
+
     <div class="left-column">
       <div>
-        <p>Property ID: <span class="themePrimaryColor">{{property.propID}}</span></p>
+        <h3>Property ID: <span class="themePrimaryColor">{{property.propID}}</span></h3>
+
+        <div class="prop-features">
+          <div>
+            <p>Bedrooms</p>
+            <div class="icon-with-number">
+              <i class="fas fa-bed"></i>
+              {{ property.beds }}
+            </div>
+          </div>
+          <div>
+            <p>Bathrooms</p>
+            <div class="icon-with-number">
+              <i class="fas fa-shower"></i>
+              {{ property.baths }}
+            </div>
+          </div>
+          <div>
+            <p>Garage</p>
+            <div class="icon-with-number">
+              <i class="fas fa-warehouse"></i>
+              {{ property.garages }}
+            </div>
+          </div>
+          <div>
+            <p>Area</p>
+            <div class="icon-with-number">
+              <i class="fas fa-vector-square"></i>
+              {{ property.area_size }}
+            </div>
+          </div>
+          <div>
+            <p>Year Built</p>
+            <div class="icon-with-number">
+              <i class="far fa-calendar-alt"></i>
+              {{ property.year_built }}
+            </div>
+          </div>
+        </div>
+
         <h2>Description</h2>
+        <p>Enchanting three bedroom, three bath home with spacious one bedroom, one bath cabana, in-laws quarters.
+          Charming living area features fireplace and fabulous art deco details. Formal dining room. Remodelled kitchen
+          with granite countertops, white cabinetry and stainless appliances. Lovely master bedroom has updated bath,
+          beautiful view of the pool. Guest bedrooms have walk-in, cedar closets. Delightful backyard; majestic oaks
+          surround the free form pool and expansive patio, wet bar and grill.
+        </p>
+
+        <h2>Features</h2>
+        <p>Enchanting three bedroom, three bath home with spacious one bedroom, one bath cabana, in-laws quarters.
+          Charming living area features fireplace and fabulous art deco details. Formal dining room. Remodelled kitchen
+          with granite countertops, white cabinetry and stainless appliances. Lovely master bedroom has updated bath,
+          beautiful view of the pool. Guest bedrooms have walk-in, cedar closets. Delightful backyard; majestic oaks
+          surround the free form pool and expansive patio, wet bar and grill.
+        </p>
+
+        <h2>Property Video</h2>
+        <div style="margin-bottom: 14px;">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/PkjpPQxknPg" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+
+        <h2>Property on Map</h2>
         <p>Enchanting three bedroom, three bath home with spacious one bedroom, one bath cabana, in-laws quarters.
           Charming living area features fireplace and fabulous art deco details. Formal dining room. Remodelled kitchen
           with granite countertops, white cabinetry and stainless appliances. Lovely master bedroom has updated bath,
@@ -39,6 +102,7 @@
         </p>
       </div>
     </div>
+
     <div class="right-column">
       <div>
         <p>Enchanting three bedroom, three bath home with spacious one bedroom, one bath cabana, in-laws quarters.

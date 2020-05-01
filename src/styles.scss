@@ -46,6 +46,8 @@ $padding: 14px;
   color: mat-color($primary);
 }
 
+$themePrimaryColor:mat-color($primary);
+
 
 html,
 body {
@@ -53,4 +55,5 @@ body {
   padding: 0;
   font-family: 'Rubik', sans-serif;
   font-size: 17px;
+  background-color: $lightGreyBackground;
 }

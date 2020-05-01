@@ -25,7 +25,7 @@
 .header,
 .main {
   width: 85%;
-  margin-top: 30px;
+  margin-top: 60px;
   justify-content: space-between;
 }
 
@@ -41,6 +41,7 @@
 .image-container img {
   width: 85%;
   margin: auto;
+  margin-top: 20px;
 }
 
 .left-column {
@@ -56,4 +57,56 @@
   padding: 30px;
   border: 1px solid $darkerGreyBorder;
   background-color: #fff;
+}
+
+.left-column h3 {
+  font-size: 0.9rem;
+  font-weight: normal;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed $darkerGreyBorder;
+}
+
+.left-column h2 {
+  font-size: 1rem;
+  color: $themePrimaryColor;
+}
+
+.prop-features {
+  display: flex;
+  justify-content: flex-start;
+  margin: 30px 0;
+}
+
+.prop-features div {
+  color: #333;
+  font-weight: normal;
+  font-size: 0.8rem;
+  margin-right: 18px;
+}
+
+.prop-features i {
+  color: $themePrimaryColor;
+  font-size: 1.4rem;
+  margin-right: 6px;
+}
+
+.icon-with-number {
+  display: flex;
+  align-items: center;
+}
+
+.prop-price {
+  margin-top: 18px;
+  line-height: 12px;
+}
+
+.prop-price>span {
+  color: #333;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.prop-price h2 {
+  font-size: 1.4rem;
+  margin-top: 4px;
 }
