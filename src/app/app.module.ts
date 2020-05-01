@@ -15,6 +15,8 @@ import { RecentPropsComponent } from './components/recent-props/recent-props.com
 import { DialogFormComponent } from './components/dialog-form/dialog-form.component';
 import { PropertyComponent } from './components/property/property.component';
 import { HomeComponent } from './components/home/home.component';
+import { SubmitComponent } from './components/submit/submit.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { HomeComponent } from './components/home/home.component';
     RecentPropsComponent,
     DialogFormComponent,
     PropertyComponent,
-    HomeComponent
+    HomeComponent,
+    SubmitComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
