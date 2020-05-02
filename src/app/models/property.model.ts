@@ -13,5 +13,7 @@ export class Property {
             public features: string[],
             public imageSm_Path: string,
             public imageLg_Path: string,
+            public lat: number,
+            public lng: number,
             public price: number) { }
 }

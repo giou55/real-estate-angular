@@ -92,15 +92,13 @@
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
-
         <h2>Property on Map</h2>
-        <p>Enchanting three bedroom, three bath home with spacious one bedroom, one bath cabana, in-laws quarters.
-          Charming living area features fireplace and fabulous art deco details. Formal dining room. Remodelled kitchen
-          with granite countertops, white cabinetry and stainless appliances. Lovely master bedroom has updated bath,
-          beautiful view of the pool. Guest bedrooms have walk-in, cedar closets. Delightful backyard; majestic oaks
-          surround the free form pool and expansive patio, wet bar and grill.
-        </p>
+        <agm-map [latitude]=property.lat [longitude]=property.lng [scrollwheel]=false [fullscreenControl]=true
+          [mapTypeControl]=true [zoom]="14">
+          <agm-marker [latitude]=property.lat [longitude]=property.lng></agm-marker>
+        </agm-map>
       </div>
+
     </div>
 
     <div class="right-column">
