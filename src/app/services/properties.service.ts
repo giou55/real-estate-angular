@@ -1,15 +1,16 @@
 import { Injectable } from "@angular/core";
-import { Property } from "../../models/property.model";
+import { Property } from "../models/property.model";
 
 @Injectable()
-export class FeaturedPropertiesService {
-      private featuredProps: Property[] = [
+export class PropertiesService {
+      private properties: Property[] = [
             new Property(
                   "DA2541",
                   "Villa on Hollywood Boulevard",
                   "The very best waterfront location in Harbor Islands complete with private dock…",
                   "Rome",
                   "For Rent",
+                  false,
                   160,
                   2003,
                   3,
@@ -27,6 +28,7 @@ export class FeaturedPropertiesService {
                   "Enchanting three bedroom, three bath home with spacious one bedroom, one bath…",
                   "Milan",
                   "For Sale",
+                  true,
                   210,
                   2012,
                   3,
@@ -44,6 +46,7 @@ export class FeaturedPropertiesService {
                   "The very best waterfront location in Harbor Islands complete with private dock…",
                   "Naples",
                   "For Sale",
+                  true,
                   180,
                   2009,
                   3,
@@ -61,6 +64,7 @@ export class FeaturedPropertiesService {
                   "The very best waterfront location in Harbor Islands complete with private dock…",
                   "Turin",
                   "For Sale",
+                  false,
                   240,
                   2001,
                   3,
@@ -78,6 +82,7 @@ export class FeaturedPropertiesService {
                   "The very best waterfront location in Harbor Islands complete with private dock…",
                   "Turin",
                   "For Sale",
+                  false,
                   240,
                   2001,
                   3,
@@ -95,6 +100,7 @@ export class FeaturedPropertiesService {
                   "The very best waterfront location in Harbor Islands complete with private dock…",
                   "Turin",
                   "For Sale",
+                  true,
                   240,
                   2001,
                   3,
@@ -109,10 +115,13 @@ export class FeaturedPropertiesService {
       ];
 
       getProperties(): Property[] {
-            return this.featuredProps;
+            return this.properties;
       }
 
       getProperty(id: String): Property {
-            return this.featuredProps.find(p => p.propID == id);
+            return this.properties.find(p => p.propID == id);
+      }
+      getFeaturedProperties(): Property[] {
+            return this.properties.filter(p => p.featured == true);
       }
 }

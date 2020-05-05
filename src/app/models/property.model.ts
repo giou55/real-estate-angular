@@ -5,6 +5,7 @@ export class Property {
             public description: string,
             public location: string,
             public sale_or_rent: string,
+            public featured: boolean,
             public area_size: number,
             public year_built: number,
             public beds: number,

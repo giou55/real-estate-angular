@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Property } from "../../models/property.model";
-import { FeaturedPropertiesService } from './featured-props.service';
+import { PropertiesService } from '../../services/properties.service';
 
 @Component({
   selector: 'app-featured-props',
   templateUrl: './featured-props.component.html',
   styleUrls: ['./featured-props.component.scss'],
-  providers: [FeaturedPropertiesService]
+  providers: [PropertiesService]
 })
 export class FeaturedPropsComponent implements OnInit {
 
   featuredProperties: Property[] = [];
 
-  constructor(private featuredPropertiesService: FeaturedPropertiesService) { }
+  constructor(private propertiesService: PropertiesService) { }
 
   ngOnInit(): void {
-    this.featuredProperties = this.featuredPropertiesService.getProperties();
+    this.featuredProperties = this.propertiesService.getFeaturedProperties();
   }
 
 }
