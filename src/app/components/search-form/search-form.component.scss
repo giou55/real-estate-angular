@@ -57,9 +57,13 @@ p {
   width: 90%;
 }
 
-button {
+.main-form-container button {
   color: white;
   font-size: 0.9rem;
+}
+
+.main-form-container button:hover {
+  background-color: $greenDarker;
 }
 
 .accordion {

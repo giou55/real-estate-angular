@@ -1,0 +1,61 @@
+<div class="container">
+
+  <div class="header">
+    <p class="p1 themePrimaryColor">Check out</p>
+    <h1>Featured Properties</h1>
+    <p class="p2">View list of our short listed properties</p>
+  </div>
+
+  <div class="props-container">
+    <div class="prop" *ngFor="let prop of featuredProperties">
+      <div class="img-container">
+        <img src="{{ prop.imageSm_Path }}" alt="">
+        <div class="img-overlay">
+          <div class="text-overlay" routerLink="property/{{ prop.propID }}">View Property</div>
+        </div>
+        <div class="addTo">
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-exchange-alt"></i>
+        </div>
+      </div>
+
+      <div class="prop-text">
+        <h1>{{ prop.title }}</h1>
+        <p>{{ prop.description }}</p>
+
+        <div class="prop-features">
+          <div>
+            <p>Bedrooms</p>
+            <div class="icon-with-number">
+              <i class="fas fa-bed"></i>
+              {{ prop.beds }}
+            </div>
+          </div>
+          <div>
+            <p>Bathrooms</p>
+            <div class="icon-with-number">
+              <i class="fas fa-shower"></i>
+              {{ prop.baths }}
+            </div>
+          </div>
+          <div>
+            <p>Area</p>
+            <div class="icon-with-number">
+              <i class="fas fa-vector-square"></i>
+              {{ prop.area_size }}
+            </div>
+          </div>
+        </div>
+
+        <div class="prop-price">
+          <span>{{ prop.sale_or_rent }}</span>
+          <h2 class="themePrimaryColor">{{ prop.price | currency:'EUR':'symbol':'1.0-0' }}
+            <span *ngIf="prop.sale_or_rent == 'For Rent'">Monthly</span>
+          </h2>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

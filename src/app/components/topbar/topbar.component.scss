@@ -137,8 +137,12 @@
   font-weight: 500;
   color: #fff;
   font-size: 0.9rem;
-  padding: 6px 12px;
+  padding: 5px 16px;
   border-radius: 0;
+}
+
+.submit button:hover {
+  background-color: $greenDarker;
 }
 
 @media screen and (max-width: 1200px) {

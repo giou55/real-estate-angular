@@ -18,6 +18,7 @@ import { PropertyComponent } from './components/property/property.component';
 import { HomeComponent } from './components/home/home.component';
 import { SubmitComponent } from './components/submit/submit.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FeaturedPropsComponent } from './components/featured-props/featured-props.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FooterComponent } from './components/footer/footer.component';
     PropertyComponent,
     HomeComponent,
     SubmitComponent,
-    FooterComponent
+    FooterComponent,
+    FeaturedPropsComponent
   ],
   imports: [
     BrowserModule,
