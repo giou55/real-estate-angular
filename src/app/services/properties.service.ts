@@ -17,8 +17,8 @@ export class PropertiesService {
                   2,
                   2,
                   ["2 Stories", "Electric Range"],
-                  "assets/images/recent-props-small/house1.jpg",
-                  "assets/images/recent-props-large/house1.jpg",
+                  "assets/images/properties-small/house1.jpg",
+                  "assets/images/properties-large/house1.jpg",
                   41.9904847, 12.6352517,
                   3200
             ),
@@ -35,8 +35,8 @@ export class PropertiesService {
                   2,
                   2,
                   ["2 Stories", "Electric Range"],
-                  "assets/images/recent-props-small/house11.jpg",
-                  "assets/images/recent-props-large/house11.jpg",
+                  "assets/images/properties-small/house11.jpg",
+                  "assets/images/properties-large/house11.jpg",
                   45.3684792, 9.143157,
                   370000
             ),
@@ -53,8 +53,8 @@ export class PropertiesService {
                   2,
                   2,
                   ["2 Stories", "Electric Range"],
-                  "assets/images/recent-props-small/house3.jpg",
-                  "assets/images/recent-props-large/house3.jpg",
+                  "assets/images/properties-small/house3.jpg",
+                  "assets/images/properties-large/house3.jpg",
                   40.8607401, 14.2129469,
                   550000
             ),
@@ -71,8 +71,8 @@ export class PropertiesService {
                   2,
                   2,
                   ["2 Stories", "Electric Range"],
-                  "assets/images/recent-props-small/house10.jpg",
-                  "assets/images/recent-props-large/house10.jpg",
+                  "assets/images/properties-small/house10.jpg",
+                  "assets/images/properties-large/house10.jpg",
                   40.8501274, 14.2823844,
                   290000
             ),
@@ -89,8 +89,8 @@ export class PropertiesService {
                   2,
                   2,
                   ["2 Stories", "Electric Range"],
-                  "assets/images/recent-props-small/house12.jpg",
-                  "assets/images/recent-props-large/house12.jpg",
+                  "assets/images/properties-small/house12.jpg",
+                  "assets/images/properties-large/house12.jpg",
                   40.8501274, 14.2823844,
                   450000
             ),
@@ -107,8 +107,8 @@ export class PropertiesService {
                   2,
                   2,
                   ["2 Stories", "Electric Range"],
-                  "assets/images/recent-props-small/house6.jpg",
-                  "assets/images/recent-props-large/house6.jpg",
+                  "assets/images/properties-small/house6.jpg",
+                  "assets/images/properties-large/house6.jpg",
                   40.8501274, 14.2823844,
                   700000
             )
