@@ -9,9 +9,14 @@
   background-repeat: no-repeat;
 }
 
-.diagonal {
+.diagonal-1 {
   width: 100%;
   height: 140px;
-  margin-top: 20px;
   background: linear-gradient(to top left, #fff calc(50% - 1px), #fff, $lightGreyBackground calc(50% + 1px))
+}
+
+.diagonal-2 {
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(to bottom right, #fff calc(50% - 1px), #fff, $lightGreyBackground calc(50% + 1px))
 }

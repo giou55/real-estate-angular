@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Property } from "../../models/property.model";
-import { PropertiesService } from '../../services/properties.service';
+import { Agent } from "../../models/agent.model";
+import { AgentsService } from '../../services/agents.service';
 
 @Component({
   selector: 'app-agents',
   templateUrl: './agents.component.html',
   styleUrls: ['./agents.component.scss'],
-  providers: [PropertiesService]
+  providers: [AgentsService]
 })
 export class AgentsComponent implements OnInit {
 
-  featuredProperties: Property[] = [];
+  agents: Agent[] = [];
 
-  constructor(private propertiesService: PropertiesService) { }
+  constructor(private agentsService: AgentsService) { }
 
   ngOnInit(): void {
-    this.featuredProperties = this.propertiesService.getFeaturedProperties();
+    this.agents = this.agentsService.getAgents();
   }
 
 }
