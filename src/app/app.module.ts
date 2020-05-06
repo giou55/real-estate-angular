@@ -19,6 +19,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SubmitComponent } from './components/submit/submit.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FeaturedPropsComponent } from './components/featured-props/featured-props.component';
+import { AgentsComponent } from './components/agents/agents.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FeaturedPropsComponent } from './components/featured-props/featured-pro
     HomeComponent,
     SubmitComponent,
     FooterComponent,
-    FeaturedPropsComponent
+    FeaturedPropsComponent,
+    AgentsComponent
   ],
   imports: [
     BrowserModule,
