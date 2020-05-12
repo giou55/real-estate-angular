@@ -4,26 +4,28 @@
     <p>To help you choose your property</p>
 
     <div class="container">
-      <form>
+      <form #f="ngForm">
 
-        <input type="text" id="fname" name="firstname" placeholder="Your Name">
+        <input type="text" id="name" class="form-control" name="firstname" placeholder="Your Name" ngModel required>
 
-        <input type="text" id="lname" name="lastname" placeholder="Your Number">
+        <input type="text" id="number" name="number" placeholder="Your Number" ngModel required>
 
-        <input type="text" id="lname" name="lastname" placeholder="Your Email">
+        <input type="text" id="email" name="email" placeholder="Your Email" ngModel required email>
 
-        <textarea id="subject" name="subject" placeholder="Tell us about desired property"
+        <textarea id="subject" name="subject" placeholder="Tell us about desired property" ngModel required
           style="height:100px"></textarea>
 
         <p style="font-size: 0.9rem; font-weight: bold; color: #333; margin-top: 0; margin-bottom: 0;">GDPR Agreement *
         </p>
 
         <p style="font-size: 0.9rem; margin-top: 0.4rem;">
-          <input type="checkbox"> I consent to having this website store my submitted information so they can respond to
+          <input type="checkbox" name="gdpr" ngModel required> I consent to having this website store my submitted
+          information so
+          they can respond to
           my inquiry.
         </p>
 
-        <button mat-flat-button color="primary">Submit</button>
+        <button mat-flat-button color="primary" [disabled]="!f.valid">Submit</button>
 
       </form>
     </div>
