@@ -28,7 +28,7 @@ export class PropertiesService {
                   "Enchanting three bedroom, three bath home with spacious one bedroom, one bath…",
                   "Milan",
                   "For Sale",
-                  true,
+                  false,
                   210,
                   2012,
                   3,

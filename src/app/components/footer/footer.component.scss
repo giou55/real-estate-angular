@@ -48,7 +48,7 @@
   align-items: center;
 }
 
-.center p {
+.center div {
   width: 33%;
   color: #fff;
   font-weight: 400;
@@ -56,4 +56,29 @@
 
 .bottom p {
   color: #aaa;
+}
+
+input {
+  display: block;
+  width: 90%;
+  font-size: 0.9rem;
+  padding: 14px;
+  border: none;
+  border-radius: 0;
+}
+
+button {
+  font-weight: 500;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 14px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 0;
+  background-color: $orange;
+  transition: .3s ease;
+}
+
+button:hover {
+  background-color: rgba(234, 114, 61, 0.7);
 }
