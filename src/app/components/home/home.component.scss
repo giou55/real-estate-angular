@@ -17,7 +17,12 @@ $myWidth: 680px;
   background: linear-gradient(to top left, #fff calc(50% - 1px), #fff, $lightGreyBackground calc(50% + 1px));
 }
 
-.section5 {
+#section4 {
+  background-color: #fff;
+  padding-bottom: 40px;
+}
+
+#section5 {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -30,17 +35,17 @@ $myWidth: 680px;
   background-image: url(../../../assets/images/homepage-bg2.jpg);
 }
 
-.section5 p {
+#section5 p {
   color: #fff;
   font-size: 1rem;
 }
 
-.section5 h1 {
+#section5 h1 {
   color: #fff;
   font-size: 2.2rem;
 }
 
-.section5 button {
+#section5 button {
   margin: 10px;
   font-weight: 500;
   color: #fff;
@@ -52,15 +57,15 @@ $myWidth: 680px;
   transition: .3s ease;
 }
 
-.section5 button:hover {
+#section5 button:hover {
   background-color: rgba(234, 114, 61, 0.7);
 }
 
-.section5 button.browseBtn {
+#section5 button.browseBtn {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.section5 button.browseBtn:hover {
+#section5 button.browseBtn:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
