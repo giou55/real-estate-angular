@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { Property } from "../../models/property.model";
 import { PropertiesService } from '../../services/properties.service';
 
 declare const showSlides: any;
+declare const currentSlide: any;
+declare const plusSlides: any;
 
 @Component({
   selector: 'app-featured-props',
@@ -11,7 +13,7 @@ declare const showSlides: any;
   styleUrls: ['./featured-props.component.scss'],
   providers: [PropertiesService]
 })
-export class FeaturedPropsComponent implements OnInit {
+export class FeaturedPropsComponent implements OnInit, AfterViewInit {
 
   featuredProperties: Property[] = [];
 
@@ -19,8 +21,14 @@ export class FeaturedPropsComponent implements OnInit {
 
   ngOnInit(): void {
     this.featuredProperties = this.propertiesService.getFeaturedProperties();
+  }
+
+  ngAfterViewInit(): void {
     showSlides(1);
   }
+
+  currentSlide = currentSlide;
+  plusSlides = plusSlides;
 
 }
 
