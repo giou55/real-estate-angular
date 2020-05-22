@@ -1,18 +1,9 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
-// Plus imports for other components in your app.
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
 @include mat-core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
 $real-estate-website-primary: mat-palette($mat-teal);
-$real-estate-website-accent: mat-palette($mat-pink, A200, A100, A400);
+$real-estate-website-accent: mat-palette($mat-deep-orange, 700);
 
 // The warn palette is optional (defaults to red).
 $real-estate-website-warn: mat-palette($mat-red);
@@ -20,15 +11,26 @@ $real-estate-website-warn: mat-palette($mat-red);
 // Create the theme object (a Sass map containing all of the palettes).
 $real-estate-website-theme: mat-light-theme($real-estate-website-primary, $real-estate-website-accent, $real-estate-website-warn);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
 @include angular-material-theme($real-estate-website-theme);
 
 $primary: map-get($real-estate-website-theme, primary);
+$accent: map-get($real-estate-website-theme, accent);
+
+.themePrimaryColor {
+  color: mat-color($primary);
+}
+
+$themePrimaryColor:mat-color($primary);
+
+.themeAccentColor {
+  color: mat-color($accent);
+}
+
+$themeAccentColor:mat-color($accent);
 
 
-$orange: #ea723d;
+$orange: #e46630;
+$orangeDarker: #c54d19;
 $green: #1ea69a;
 $greenDarker:#028a7c;
 
@@ -37,16 +39,9 @@ $darkerGreyBorder: #e3e3e3;
 
 $padding: 14px;
 
-
 .backdropBackground {
   background-color: rgba($color: #000000, $alpha: .7)
 }
-
-.themePrimaryColor {
-  color: mat-color($primary);
-}
-
-$themePrimaryColor:mat-color($primary);
 
 
 html,
@@ -56,4 +51,15 @@ body {
   font-family: 'Rubik', sans-serif;
   font-size: 17px;
   background-color: $lightGreyBackground;
+}
+
+button {
+  outline: none;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  padding: 5px 16px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: .4s ease;
 }

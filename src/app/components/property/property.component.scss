@@ -36,6 +36,7 @@
 
 .price h2 {
   font-size: 1.4rem;
+  color: $green;
 }
 
 .image-container img {
@@ -66,9 +67,13 @@
   border-bottom: 1px dashed $darkerGreyBorder;
 }
 
+.left-column h3 span {
+  color: $green;
+}
+
 .left-column h2 {
   font-size: 1rem;
-  color: $themePrimaryColor;
+  color: $green;
 }
 
 .prop-features {
@@ -85,7 +90,7 @@
 }
 
 .prop-features i {
-  color: $themePrimaryColor;
+  color: $green;
   font-size: 1.4rem;
   margin-right: 6px;
 }

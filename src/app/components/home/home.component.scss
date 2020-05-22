@@ -46,19 +46,15 @@ $myWidth: 680px;
 }
 
 #section5 button {
-  margin: 10px;
+  margin: 20px 8px;
   font-weight: 500;
-  color: #fff;
   font-size: 0.9rem;
   padding: 14px;
-  border: none;
-  border-radius: 0;
-  background-color: $orange;
-  transition: .3s ease;
+  background-color: $green;
 }
 
 #section5 button:hover {
-  background-color: rgba(234, 114, 61, 0.7);
+  background-color: $greenDarker;
 }
 
 #section5 button.browseBtn {

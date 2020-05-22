@@ -1,3 +1,5 @@
+@import "../../../../src/styles.scss";
+
 .container {
   position: relative;
 }
@@ -18,7 +20,8 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  margin-top: 6px;
   resize: vertical;
   font-size: 0.9rem;
   font-family: Arial, Helvetica, sans-serif;
@@ -37,4 +40,14 @@ textarea {
 
 .fa-times:before {
   content: "\f00d";
+}
+
+button {
+  background-color: $green;
+  padding: 10px 24px;
+  margin-top: 6px;
+}
+
+button:hover {
+  background-color: $greenDarker;
 }

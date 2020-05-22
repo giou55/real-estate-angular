@@ -15,7 +15,7 @@ export class TopbarComponent {
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogFormComponent, {
       width: '400px',
-      height: '450px',
+      height: '480px',
       hasBackdrop: true,
       backdropClass: 'backdropBackground'
     });

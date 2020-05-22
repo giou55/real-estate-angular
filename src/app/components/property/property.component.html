@@ -12,7 +12,7 @@
 
     <div class="price">
       <span>{{ property.sale_or_rent }}</span>
-      <h2 class="themePrimaryColor">{{ property.price | currency:'EUR':'symbol':'1.0-0' }}
+      <h2>{{ property.price | currency:'EUR':'symbol':'1.0-0' }}
         <span *ngIf="property.sale_or_rent == 'For Rent'">Monthly</span>
       </h2>
     </div>
@@ -30,7 +30,7 @@
 
     <div class="left-column">
       <div>
-        <h3>Property ID: <span class="themePrimaryColor">{{property.propID}}</span></h3>
+        <h3>Property ID: <span>{{property.propID}}</span></h3>
 
         <div class="prop-features">
           <div>

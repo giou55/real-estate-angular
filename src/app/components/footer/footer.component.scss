@@ -69,16 +69,12 @@ input {
 
 button {
   font-weight: 500;
-  color: #fff;
   font-size: 0.9rem;
   padding: 14px;
   margin-top: 20px;
-  border: none;
-  border-radius: 0;
   background-color: $orange;
-  transition: .3s ease;
 }
 
 button:hover {
-  background-color: rgba(234, 114, 61, 0.7);
+  background-color: $orangeDarker;
 }
