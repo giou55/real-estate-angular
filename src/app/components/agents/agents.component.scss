@@ -17,6 +17,7 @@
 .header .p1 {
   font-weight: 500;
   font-size: 1rem;
+  color: $green;
 }
 
 .header .p2 {
@@ -43,6 +44,10 @@
 .agent {
   position: relative;
   top: -35px;
+}
+
+.agent .mobile {
+  color: $green;
 }
 
 img {

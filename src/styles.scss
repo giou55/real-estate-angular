@@ -5,28 +5,13 @@
 $real-estate-website-primary: mat-palette($mat-teal);
 $real-estate-website-accent: mat-palette($mat-deep-orange, 700);
 
-// The warn palette is optional (defaults to red).
-$real-estate-website-warn: mat-palette($mat-red);
-
 // Create the theme object (a Sass map containing all of the palettes).
-$real-estate-website-theme: mat-light-theme($real-estate-website-primary, $real-estate-website-accent, $real-estate-website-warn);
+$real-estate-website-theme: mat-light-theme($real-estate-website-primary, $real-estate-website-accent);
 
 @include angular-material-theme($real-estate-website-theme);
 
 $primary: map-get($real-estate-website-theme, primary);
 $accent: map-get($real-estate-website-theme, accent);
-
-.themePrimaryColor {
-  color: mat-color($primary);
-}
-
-$themePrimaryColor:mat-color($primary);
-
-.themeAccentColor {
-  color: mat-color($accent);
-}
-
-$themeAccentColor:mat-color($accent);
 
 
 $orange: #e46630;

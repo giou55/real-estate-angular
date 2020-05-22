@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+
+declare const createCustomSelect: any;
 
 @Component({
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
   styleUrls: ['./search-form.component.scss']
 })
-export class SearchFormComponent implements OnInit {
+export class SearchFormComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
   ngOnInit(): void { }
+
+  ngAfterViewInit(): void {
+    createCustomSelect();
+  }
 
   toggleAccordian() {
     var i = document.getElementById("fa-symbol");
