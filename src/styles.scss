@@ -38,6 +38,14 @@ body {
   background-color: $lightGreyBackground;
 }
 
+:focus {
+  outline: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 button {
   outline: none;
   border: none;

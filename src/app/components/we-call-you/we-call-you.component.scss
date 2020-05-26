@@ -1,9 +1,5 @@
 @import "../../../../src/styles.scss";
 
-:focus {
-  outline: none;
-}
-
 textarea.ng-invalid.ng-touched,
 input.ng-invalid.ng-touched {
   border: 1px solid red;

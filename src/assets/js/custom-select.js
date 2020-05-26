@@ -16,6 +16,9 @@ function createCustomSelect() {
       /*for each option in the original select element,
       create a new DIV that will act as an option item:*/
       c = document.createElement("DIV");
+      if (j == 1) {
+        c.setAttribute("class", "same-as-selected");
+      }
       c.innerHTML = selElmnt.options[j].innerHTML;
       c.addEventListener("click", function (e) {
         /*when an item is clicked, update the original select box,
@@ -47,12 +50,12 @@ function createCustomSelect() {
       closeAllSelect(this);
       this.nextSibling.classList.toggle("select-hide");
       this.classList.toggle("select-arrow-active");
+      // this.parentNode.parentNode.getElementsByTagName("P")[0].classList.toggle("active");
     });
   }
 
   function closeAllSelect(elmnt) {
-    /*a function that will close all select boxes in the document,
-    except the current select box:*/
+    /*a function that will close all select boxes, except the current select box:*/
     var x, y, i, arrNo = [];
     x = document.getElementsByClassName("select-items");
     y = document.getElementsByClassName("select-selected");
@@ -69,6 +72,7 @@ function createCustomSelect() {
       }
     }
   }
+
   /*if the user clicks anywhere outside the select box,
   then close all select boxes:*/
   document.addEventListener("click", closeAllSelect);
