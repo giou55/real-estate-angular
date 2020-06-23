@@ -2,8 +2,8 @@
 
 .flex-container,
 .main,
-.navbar,
-.user-buttons {
+.logo,
+.navbar {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -29,6 +29,7 @@
 }
 
 .logo img {
+  margin: 4px 0;
   width: 260px;
 }
 

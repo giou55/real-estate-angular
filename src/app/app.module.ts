@@ -22,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FeaturedPropsComponent } from './components/featured-props/featured-props.component';
 import { AgentsComponent } from './components/agents/agents.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SearchFormNewComponent } from './components/search-form-new/search-form-new.component';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
         FooterComponent,
         FeaturedPropsComponent,
         AgentsComponent,
-        NavbarComponent
+        NavbarComponent,
+        SearchFormNewComponent
     ],
     imports: [
         BrowserModule,

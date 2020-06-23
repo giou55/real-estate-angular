@@ -2,7 +2,6 @@
 
 .flex-container,
 .main,
-.navbar,
 .user-buttons {
   display: flex;
   flex-wrap: nowrap;
@@ -17,18 +16,28 @@
 
 .main {
   width: 100%;
-  justify-content: space-between;
-}
-
-.main>div {
-  flex: 1 1 auto;
-}
-
-.user-buttons {
   justify-content: flex-end;
 }
 
+.main>div {
+  flex: 0 1 auto;
+}
+
+.diagonal {
+  width: 20px;
+  height: 46px;
+  background: linear-gradient(to top left, #fd7955 calc(50% - 1px), #fd7955, #044849 calc(50% + 1px));
+}
+
+.user-buttons {
+  height: 46px;
+  padding-right: 15px;
+  justify-content: flex-end;
+  background-color: #fd7955;
+}
+
 .user-buttons>div {
+  margin-right: 10px;
   padding: 5px;
   color: #fff;
 }
@@ -55,16 +64,23 @@
   cursor: pointer;
 }
 
-.submit button {
-  background-color: $green;
+.submit a {
+  text-decoration: none;
+  color: #fff;
   font-weight: 500;
   font-size: 0.9rem;
-  padding: $padding;
 }
 
-.submit button:hover {
-  background-color: $greenDarker;
-}
+// .submit button {
+//   background-color: $green;
+//   font-weight: 500;
+//   font-size: 0.9rem;
+//   padding: $padding;
+// }
+
+// .submit button:hover {
+//   background-color: $greenDarker;
+// }
 
 @media screen and (max-width: 1200px) {
   .main {

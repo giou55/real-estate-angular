@@ -1,0 +1,130 @@
+<div class="form-container">
+  <div class="main">
+
+    <form>
+
+      <div class="main-form-container">
+
+        <div class="option-wrapper large">
+          <p>Location</p>
+          <div class="custom-select">
+            <select name="location">
+              <option value="any" selected="selected">Any</option>
+              <option value="any">Any</option>
+              <option value="greece">Greece</option>
+              <option value="france">France</option>
+              <option value="spain">Spain</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="option-wrapper large">
+          <p>Property Status</p>
+          <div class="custom-select">
+            <select name="status">
+              <option value="any" selected="selected">Any</option>
+              <option value="any">Any</option>
+              <option value="sale">For Sale</option>
+              <option value="rent">For Rent</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="option-wrapper large">
+          <p>Property Type</p>
+          <div class="custom-select">
+            <select name="type">
+              <option value="any" selected="selected">Any</option>
+              <option value="any">Any</option>
+              <option value="office">Office</option>
+              <option value="shop">Shop</option>
+              <option value="appartment">Appartment</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="option-wrapper small">
+          <button>Search</button>
+        </div>
+
+      </div>
+
+      <div class="extra-form-container">
+
+        <p class="accordion" (click)="toggleAccordian()">
+          <i id="fa-symbol" class="fa fa-plus-square-o"></i>
+          <span>Looking for certain features</span>
+        </p>
+
+        <div id="panel" class="panel">
+
+          <div class="option-wrapper large">
+            <p>Agent</p>
+            <div class="custom-select">
+              <select name="agent">
+                <option value="any" selected="selected">Any</option>
+                <option value="volvo">Any</option>
+                <option value="saab">John Doe</option>
+                <option value="fiat">Julia Smith</option>
+                <option value="audi">Ken Brown</option>
+              </select>
+            </div>
+          </div>
+
+
+          <div>
+            <input type="checkbox" id="central-heating" name="central-heating" value="central-heating">
+            <label for="central-heating "> Central Heating</label>
+          </div>
+          <div>
+            <input type="checkbox" id="fire-place" name="fire-place" value="fire-place">
+            <label for="fire-place1"> Fire Place</label>
+          </div>
+          <div>
+            <input type="checkbox" id="fire-alarm" name="fire-alarm" value="fire-alarm">
+            <label for="fire-alarm"> Fire Alarm</label>
+          </div>
+          <div>
+            <input type="checkbox" id="electric-range" name="electric-range" value="electric-range">
+            <label for="electric-range"> Electric Range</label>
+          </div>
+          <div>
+            <input type="checkbox" id="home-theater" name="home-theater" value="home-theater">
+            <label for="home-theater"> Home Theater</label>
+          </div>
+          <div>
+            <input type="checkbox" id="laundry-room" name="laundry-room" value="laundry-room">
+            <label for="laundry-room"> Laundry Room</label>
+          </div>
+          <div>
+            <input type="checkbox" id="swimming-pool" name="swimming-pool" value="swimming-pool">
+            <label for="swimming-pool"> Swimming Pool</label>
+          </div>
+          <div>
+            <input type="checkbox" id="lawn" name="lawn" value="lawn">
+            <label for="lawn"> Lawn</label>
+          </div>
+          <div>
+            <input type="checkbox" id="dual-sinks" name="dual-sinks" value="dual-sinks">
+            <label for="dual-sinks"> Dual Sinks</label>
+          </div>
+          <div>
+            <input type="checkbox" id="wifi" name="wifi" value="wifi">
+            <label for="wifi"> WIfi</label>
+          </div>
+          <div>
+            <input type="checkbox" id="2-stories" name="2-stories" value="2-stories">
+            <label for="2-stories"> 2 Stories</label>
+          </div>
+          <div>
+            <input type="checkbox" id="26-ceilings" name="26-ceilings" value="26-ceilings">
+            <label for="26-ceilings"> 26' Ceilings</label>
+          </div>
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+</div>
