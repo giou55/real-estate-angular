@@ -21,36 +21,38 @@ import { SubmitComponent } from './components/submit/submit.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FeaturedPropsComponent } from './components/featured-props/featured-props.component';
 import { AgentsComponent } from './components/agents/agents.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TopbarComponent,
-    WeCallYouComponent,
-    SearchFormComponent,
-    RecentPropsComponent,
-    DialogFormComponent,
-    PropertyComponent,
-    HomeComponent,
-    SubmitComponent,
-    FooterComponent,
-    FeaturedPropsComponent,
-    AgentsComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatDialogModule,
-    MatTabsModule,
-    MatButtonModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDVSnm1iQ3D-FF6_0yNxqyMRA63XVmBckM',
-      language: 'en'
-    }),
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        TopbarComponent,
+        WeCallYouComponent,
+        SearchFormComponent,
+        RecentPropsComponent,
+        DialogFormComponent,
+        PropertyComponent,
+        HomeComponent,
+        SubmitComponent,
+        FooterComponent,
+        FeaturedPropsComponent,
+        AgentsComponent,
+        NavbarComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatDialogModule,
+        MatTabsModule,
+        MatButtonModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyDVSnm1iQ3D-FF6_0yNxqyMRA63XVmBckM',
+            language: 'en'
+        }),
+        FormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
