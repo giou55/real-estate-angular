@@ -23,6 +23,7 @@ export class SearchFormNewComponent implements OnInit, AfterViewInit {
         i.classList.toggle("fa-minus-square-o");
         i.classList.toggle("fa-plus-square-o");
         var panel = document.getElementById("panel");
+        panel.classList.toggle("o-visible");
         if (panel.style.maxHeight) {
             panel.style.maxHeight = null;
         } else {
