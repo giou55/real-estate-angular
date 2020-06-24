@@ -5,7 +5,7 @@
 
       <div class="main-filters">
 
-        <div class="option-wrapper large">
+        <div class="option-wrapper small">
           <p>Location</p>
           <div class="custom-select">
             <select name="location">
@@ -18,7 +18,7 @@
           </div>
         </div>
 
-        <div class="option-wrapper large">
+        <div class="option-wrapper small">
           <p>Property Status</p>
           <div class="custom-select">
             <select name="status">
@@ -30,7 +30,62 @@
           </div>
         </div>
 
-        <div class="option-wrapper large">
+        <div class="option-wrapper small">
+          <p>Min Price</p>
+          <div class="custom-select">
+            <select name="min_price">
+              <option value="any" selected="selected">Any</option>
+              <option value="volvo">Any</option>
+              <option value="audi">10000</option>
+              <option value="audi">50000</option>
+              <option value="audi">100000</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="option-wrapper small">
+          <p>Max Price</p>
+          <div class="custom-select">
+            <select name="max_price">
+              <option value="any" selected="selected">Any</option>
+              <option value="volvo">Any</option>
+              <option value="audi">50000</option>
+              <option value="audi">100000</option>
+              <option value="audi">200000</option>
+              <option value="audi">300000</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="option-wrapper small">
+          <p>Min Beds</p>
+          <div class="custom-select">
+            <select name="bed">
+              <option value="any" selected="selected">Any</option>
+              <option value="any">Any</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="option-wrapper small">
+          <p>Min Baths</p>
+          <div class="custom-select">
+            <select name="bath">
+              <option value="any" selected="selected">Any</option>
+              <option value="any">Any</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- <div class="option-wrapper large">
           <p>Property Type</p>
           <div class="custom-select">
             <select name="type">
@@ -41,9 +96,9 @@
               <option value="appartment">Appartment</option>
             </select>
           </div>
-        </div>
+        </div> -->
 
-        <div style="align-self: flex-end" class="option-wrapper large">
+        <div style="align-self: flex-end" class="option-wrapper small">
           <button>Search</button>
         </div>
 
@@ -73,7 +128,7 @@
               </div>
             </div>
 
-            <div class="option-wrapper small">
+            <!-- <div class="option-wrapper small">
               <p>Min Beds</p>
               <div class="custom-select">
                 <select name="bed">
@@ -99,7 +154,7 @@
                   <option value="4">4</option>
                 </select>
               </div>
-            </div>
+            </div> -->
 
             <div class="option-wrapper small">
               <p>Min Garages</p>
@@ -115,7 +170,7 @@
               </div>
             </div>
 
-            <div class="option-wrapper small">
+            <!-- <div class="option-wrapper small">
               <p>Min Price</p>
               <div class="custom-select">
                 <select name="min_price">
@@ -140,7 +195,7 @@
                   <option value="audi">300000</option>
                 </select>
               </div>
-            </div>
+            </div> -->
 
             <div class="option-wrapper small propertyid">
               <p>Property ID</p>
@@ -152,6 +207,91 @@
           <div class="extra-filters-checkbox">
 
             <div class="ckeckbox-wrapper">
+              <label class="container">Central Heating
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <div class="ckeckbox-wrapper">
+              <label class="container">Fire Place
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <div class="ckeckbox-wrapper">
+              <label class="container">Fire Alarm
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <div class="ckeckbox-wrapper">
+              <label class="container">Electric Range
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <div class="ckeckbox-wrapper">
+              <label class="container">Home Theater
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <div class="ckeckbox-wrapper">
+              <label class="container">Laundry Room
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <div class="ckeckbox-wrapper">
+              <label class="container">Swimming Pool
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <div class="ckeckbox-wrapper">
+              <label class="container">Lawn
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <div class="ckeckbox-wrapper">
+              <label class="container">Dual Sinks
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <div class="ckeckbox-wrapper">
+              <label class="container">WIfi
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <div class="ckeckbox-wrapper">
+              <label class="container">2 Stories
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <div class="ckeckbox-wrapper">
+              <label class="container">26' Ceilings
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+
+            <!-- <div class="ckeckbox-wrapper">
               <input type="checkbox" id="central-heating" name="central-heating" value="central-heating">
               <label for="central-heating "> Central Heating</label>
             </div>
@@ -209,7 +349,7 @@
             <div class="ckeckbox-wrapper">
               <input type="checkbox" id="26-ceilings" name="26-ceilings" value="26-ceilings">
               <label for="26-ceilings"> 26' Ceilings</label>
-            </div>
+            </div> -->
 
           </div>
 
