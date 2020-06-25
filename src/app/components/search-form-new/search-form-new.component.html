@@ -36,9 +36,13 @@
             <select name="min_price">
               <option value="any" selected="selected">Any</option>
               <option value="volvo">Any</option>
+              <option value="audi">500</option>
+              <option value="audi">1000</option>
+              <option value="audi">5000</option>
               <option value="audi">10000</option>
               <option value="audi">50000</option>
               <option value="audi">100000</option>
+              <option value="audi">500000</option>
             </select>
           </div>
         </div>
@@ -49,10 +53,15 @@
             <select name="max_price">
               <option value="any" selected="selected">Any</option>
               <option value="volvo">Any</option>
+              <option value="audi">1000</option>
+              <option value="audi">5000</option>
+              <option value="audi">10000</option>
               <option value="audi">50000</option>
               <option value="audi">100000</option>
               <option value="audi">200000</option>
               <option value="audi">300000</option>
+              <option value="audi">500000</option>
+              <option value="audi">1000000</option>
             </select>
           </div>
         </div>
@@ -107,7 +116,8 @@
       <div class="extra-filters">
 
         <p class="accordion" (click)="toggleAccordian()">
-          <i id="fa-symbol" class="fa fa-plus-square-o"></i>
+          <!-- <i id="fa-symbol" class="fa fa-plus-square-o"></i> -->
+          <i id="fa-symbol" class="fa fa-plus"></i>
           <span>More Filters</span>
         </p>
 

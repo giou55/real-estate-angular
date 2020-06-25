@@ -28,7 +28,8 @@
 }
 
 .property-container {
-  width: 65%;
+  width: 70%;
+  border: 1px solid $darkerGreyBorder;
 }
 
 .header,
@@ -54,36 +55,36 @@
   margin-top: 20px;
 }
 
-.left-column {
-  width: 69%;
-}
+// .left-column {
+//   width: 69%;
+// }
 
-.right-column {
-  width: 29%;
-}
+// .right-column {
+//   width: 29%;
+// }
 
-.left-column>div,
-.right-column>div {
-  padding: 30px;
-  border: 1px solid $darkerGreyBorder;
-  background-color: #fff;
-}
+// .left-column>div,
+// .right-column>div {
+//   padding: 30px;
+//   border: 1px solid $darkerGreyBorder;
+//   background-color: #fff;
+// }
 
-.left-column h3 {
-  font-size: 0.9rem;
-  font-weight: normal;
-  padding-bottom: 20px;
-  border-bottom: 1px dashed $darkerGreyBorder;
-}
+// .left-column h3 {
+//   font-size: 0.9rem;
+//   font-weight: normal;
+//   padding-bottom: 20px;
+//   border-bottom: 1px dashed $darkerGreyBorder;
+// }
 
-.left-column h3 span {
-  color: $green;
-}
+// .left-column h3 span {
+//   color: $green;
+// }
 
-.left-column h2 {
-  font-size: 1rem;
-  color: $green;
-}
+// .left-column h2 {
+//   font-size: 1rem;
+//   color: $green;
+// }
 
 .prop-features {
   display: flex;
@@ -133,6 +134,7 @@ agm-map {
 .tour-this-home {
   padding: 20px;
   width: 22%;
-  margin-left: 30px;
+  margin-left: 3%;
   background-color: #fff;
+  border: 1px solid $darkerGreyBorder;
 }

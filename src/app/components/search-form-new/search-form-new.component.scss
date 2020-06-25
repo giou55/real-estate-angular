@@ -82,7 +82,10 @@ p {
 }
 
 .accordion {
-  color: #333;
+  //color: #333;
+  background-color: #6b6b6b;
+  color: #fff;
+  padding: 6px;
   cursor: pointer;
   border: none;
   text-align: left;
@@ -95,7 +98,7 @@ p {
 }
 
 .accordion:hover {
-  color: $greenDarker;
+  background-color: #555;
 }
 
 .accordion span {
@@ -124,7 +127,7 @@ p {
 
 .ckeckbox-wrapper {
   margin-right: 30px;
-  margin-top: 30px;
+  margin-top: 32px;
   align-items: center;
   justify-content: flex-start;
 }
@@ -141,6 +144,8 @@ p {
   color: #333;
   margin-left: 0;
   margin-right: 8px;
+  border: 1px solid #999;
+  padding: 7px;
 }
 
 .o-visible {
@@ -182,14 +187,14 @@ p {
   left: -10px;
   height: 16px;
   width: 16px;
-  border: 1px solid #777;
-  border-radius: 3px;
+  border: 1px solid #999;
+  border-radius: 2px;
   background-color: #fff;
 }
 
-/* When the checkbox is checked, add a blue background */
+/* When the checkbox is checked, add a background color */
 .container input:checked~.checkmark {
-  background-color: #1ea69a;
+  background-color: #555;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -210,7 +215,7 @@ p {
   top: 1px;
   width: 4px;
   height: 8px;
-  border: solid white;
+  border: solid #fff;
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
