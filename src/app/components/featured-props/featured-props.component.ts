@@ -8,27 +8,27 @@ declare const currentSlide: any;
 declare const plusSlides: any;
 
 @Component({
-  selector: 'app-featured-props',
-  templateUrl: './featured-props.component.html',
-  styleUrls: ['./featured-props.component.scss'],
-  providers: [PropertiesService]
+        selector: 'app-featured-props',
+        templateUrl: './featured-props.component.html',
+        styleUrls: ['./featured-props.component.scss'],
+        providers: [PropertiesService]
 })
 export class FeaturedPropsComponent implements OnInit, AfterViewInit {
 
-  featuredProperties: Property[] = [];
+        featuredProperties: Property[] = [];
 
-  constructor(private propertiesService: PropertiesService) { }
+        constructor(private propertiesService: PropertiesService) { }
 
-  ngOnInit(): void {
-    this.featuredProperties = this.propertiesService.getFeaturedProperties();
-  }
+        ngOnInit(): void {
+                this.featuredProperties = this.propertiesService.getFeaturedProperties();
+        }
 
-  ngAfterViewInit(): void {
-    showSlides(1);
-  }
+        ngAfterViewInit(): void {
+                showSlides(1);
+        }
 
-  currentSlide = currentSlide;
-  plusSlides = plusSlides;
+        currentSlide = currentSlide;
+        plusSlides = plusSlides;
 
 }
 

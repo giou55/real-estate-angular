@@ -1,0 +1,6 @@
+<ul *ngIf="loadedProperties.length > 0">
+  <li *ngFor="let property of loadedProperties">
+    {{ property.title }}<br> {{ property.price }}
+  </li>
+
+</ul>

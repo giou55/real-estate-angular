@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -23,38 +24,41 @@ import { FeaturedPropsComponent } from './components/featured-props/featured-pro
 import { AgentsComponent } from './components/agents/agents.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchFormNewComponent } from './components/search-form-new/search-form-new.component';
+import { TestComponent } from './components/test/test.component';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        TopbarComponent,
-        WeCallYouComponent,
-        SearchFormComponent,
-        RecentPropsComponent,
-        DialogFormComponent,
-        PropertyComponent,
-        HomeComponent,
-        SubmitComponent,
-        FooterComponent,
-        FeaturedPropsComponent,
-        AgentsComponent,
-        NavbarComponent,
-        SearchFormNewComponent
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatDialogModule,
-        MatTabsModule,
-        MatButtonModule,
-        AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyDVSnm1iQ3D-FF6_0yNxqyMRA63XVmBckM',
-            language: 'en'
-        }),
-        FormsModule
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+        declarations: [
+                AppComponent,
+                TopbarComponent,
+                WeCallYouComponent,
+                SearchFormComponent,
+                RecentPropsComponent,
+                DialogFormComponent,
+                PropertyComponent,
+                HomeComponent,
+                SubmitComponent,
+                FooterComponent,
+                FeaturedPropsComponent,
+                AgentsComponent,
+                NavbarComponent,
+                SearchFormNewComponent,
+                TestComponent
+        ],
+        imports: [
+                BrowserModule,
+                AppRoutingModule,
+                BrowserAnimationsModule,
+                MatDialogModule,
+                MatTabsModule,
+                MatButtonModule,
+                AgmCoreModule.forRoot({
+                        apiKey: 'AIzaSyDVSnm1iQ3D-FF6_0yNxqyMRA63XVmBckM',
+                        language: 'en'
+                }),
+                FormsModule,
+                HttpClientModule
+        ],
+        providers: [],
+        bootstrap: [AppComponent]
 })
 export class AppModule { }
