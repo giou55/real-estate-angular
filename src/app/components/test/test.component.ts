@@ -13,13 +13,12 @@ export class TestComponent implements OnInit {
         constructor(private http: HttpClient) { }
 
         error = null;
-        loadedProperties: Test[];
+        recentProperties: Test[] = [];
 
         ngOnInit(): void {
                 this.http.get<Test[]>('http://localhost:1337/properties').subscribe(
                         properties => {
-                                this.loadedProperties = properties;
-                                console.log(this.loadedProperties);
+                                this.recentProperties = properties;
                         });
         }
 

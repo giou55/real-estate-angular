@@ -14,9 +14,7 @@
         </div>
 
         <div class="price">
-          <span>{{ property.sale_or_rent }}</span>
-          <h2>{{ property.price | currency:'EUR':'symbol':'1.0-0' }}
-            <span *ngIf="property.sale_or_rent == 'For Rent'">Monthly</span>
+          <h2>{{ property.priceSale | currency:'EUR':'symbol':'1.0-0' }}
           </h2>
         </div>
       </div>
