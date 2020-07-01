@@ -25,6 +25,7 @@ import { AgentsComponent } from './components/agents/agents.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchFormNewComponent } from './components/search-form-new/search-form-new.component';
 import { TestComponent } from './components/test/test.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 @NgModule({
         declarations: [
@@ -42,7 +43,8 @@ import { TestComponent } from './components/test/test.component';
                 AgentsComponent,
                 NavbarComponent,
                 SearchFormNewComponent,
-                TestComponent
+                TestComponent,
+                SearchResultsComponent
         ],
         imports: [
                 BrowserModule,
