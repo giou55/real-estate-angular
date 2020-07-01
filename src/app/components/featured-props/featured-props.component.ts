@@ -1,34 +1,60 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { Property } from "../../models/property.model";
-import { PropertiesService } from '../../services/properties.service';
+import { HttpClient } from '@angular/common/http';
 
-declare const showSlides: any;
-declare const currentSlide: any;
-declare const plusSlides: any;
+import { Test } from "../../models/test.model";
 
 @Component({
         selector: 'app-featured-props',
         templateUrl: './featured-props.component.html',
         styleUrls: ['./featured-props.component.scss'],
-        providers: [PropertiesService]
+        providers: []
 })
-export class FeaturedPropsComponent implements OnInit, AfterViewInit {
 
-        featuredProperties: Property[] = [];
+export class FeaturedPropsComponent implements OnInit {
 
-        constructor(private propertiesService: PropertiesService) { }
+        constructor(private http: HttpClient) { }
+
+        slideIndex = 1;
+        slides;
+        dots;
+        error = null;
+        featuredProperties: Test[] = [];
+
+        plusSlides(n) {
+                this.showSlides(this.slideIndex += n);
+        }
+
+        currentSlide(n) {
+                this.showSlides(this.slideIndex = n);
+        }
+
+        showSlides(n) {
+                var i;
+                this.slides = document.getElementsByClassName("mySlides");
+                this.dots = document.getElementsByClassName("dot");
+                if (n > this.slides.length) {
+                        this.slideIndex = 1;
+                }
+                if (n < 1) {
+                        this.slideIndex = this.slides.length;
+                }
+                for (i = 0; i < this.slides.length; i++) {
+                        this.slides[i].style.display = "none";
+                }
+                for (i = 0; i < this.dots.length; i++) {
+                        this.dots[i].style.backgroundColor = '#bbb';
+                }
+                this.slides[this.slideIndex - 1].style.display = "block";
+                this.dots[this.slideIndex - 1].style.backgroundColor = '#fd7955';
+        }
 
         ngOnInit(): void {
-                this.featuredProperties = this.propertiesService.getFeaturedProperties();
+                this.http.get<Test[]>('http://localhost:1337/properties?featured=true').subscribe(
+                        properties => {
+                                this.featuredProperties = properties;
+                        });
         }
-
-        ngAfterViewInit(): void {
-                showSlides(1);
-        }
-
-        currentSlide = currentSlide;
-        plusSlides = plusSlides;
 
 }
 

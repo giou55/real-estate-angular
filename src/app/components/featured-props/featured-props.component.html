@@ -8,16 +8,18 @@
 
   <div class="slideshow-container">
     <div class="mySlides fade" style="text-align: center;" *ngFor="let prop of featuredProperties">
-      <img src="{{ prop.imageSm_Path }}" alt="" style="width:70%">
-      <h1>{{ prop.title }}</h1>
-      <p>{{ prop.description }}</p>
+      <div routerLink="/properties/{{ prop.id }}">
+        <img src="{{ prop.imageSm_Path }}" alt="" style="width:70%">
+        <h1>{{ prop.title }}</h1>
+        <p>{{ prop.description }}</p>
+      </div>
     </div>
 
     <a class="prev" (click)="plusSlides(-1)">❮</a>
     <a class="next" (click)="plusSlides(1)">❯</a>
   </div>
 
-  <div style="text-align:center">
+  <div style="text-align:center" class="dots-container">
     <span *ngFor="let prop of featuredProperties; index as i;" class=" dot" (click)="currentSlide(i+1)"></span>
   </div>
 
