@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Test } from "../../models/test.model";
+import { Property } from "../../models/property.model";
 
 @Component({
         selector: 'app-test',
@@ -13,10 +13,10 @@ export class TestComponent implements OnInit {
         constructor(private http: HttpClient) { }
 
         error = null;
-        recentProperties: Test[] = [];
+        recentProperties: Property[] = [];
 
         ngOnInit(): void {
-                this.http.get<Test[]>('http://localhost:1337/properties').subscribe(
+                this.http.get<Property[]>('http://localhost:1337/properties').subscribe(
                         properties => {
                                 this.recentProperties = properties;
                         });

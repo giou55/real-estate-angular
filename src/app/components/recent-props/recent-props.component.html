@@ -11,7 +11,7 @@
       <div class="img-container">
         <img src="{{ prop.imageSm_Path }}" alt="">
         <div class="img-overlay">
-          <div class="text-overlay" routerLink="property/{{ prop.id }}">View Property</div>
+          <div class="text-overlay" routerLink="/properties/{{ prop.id }}">View Property</div>
         </div>
         <div class="addTo">
           <i class="fas fa-heart"></i>
@@ -42,16 +42,14 @@
             <p>Area</p>
             <div class="icon-with-number">
               <i class="fas fa-vector-square"></i>
-              {{ prop.area_size }}
+              {{ prop.area }}
             </div>
           </div>
         </div>
 
         <div class="prop-price">
-          <span>{{ prop.sale_or_rent }}</span>
-          <h2>{{ prop.price | currency:'EUR':'symbol':'1.0-0' }}
-            <span *ngIf="prop.sale_or_rent == 'For Rent'">Monthly</span>
-          </h2>
+          <h2><span>For Sale: </span>{{ prop.priceSale | currency:'EUR':'symbol':'1.0-0' }}</h2>
+          <span>{{ prop.priceRent | currency:'EUR':'symbol':'1.0-0' }}/Monthly</span>
         </div>
 
       </div>

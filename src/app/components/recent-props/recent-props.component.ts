@@ -1,22 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { Property } from "../../models/property.model";
-import { PropertiesService } from '../../services/properties.service';
 
 @Component({
-  selector: 'app-recent-props',
-  templateUrl: './recent-props.component.html',
-  styleUrls: ['./recent-props.component.scss'],
-  providers: [PropertiesService]
+        selector: 'app-recent-props',
+        templateUrl: './recent-props.component.html',
+        styleUrls: ['./recent-props.component.scss']
 })
 export class RecentPropsComponent implements OnInit {
 
-  recentProperties: Property[] = [];
+        constructor(private http: HttpClient) { }
 
-  constructor(private propertiesService: PropertiesService) { }
+        error = null;
+        recentProperties: Property[] = [];
 
-  ngOnInit(): void {
-    this.recentProperties = this.propertiesService.getProperties();
-  }
+        ngOnInit(): void {
+                this.http.get<Property[]>('http://localhost:1337/properties').subscribe(
+                        properties => {
+                                this.recentProperties = properties;
+                        });
+        }
 
 }

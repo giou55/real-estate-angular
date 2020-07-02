@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Test } from "../../models/test.model";
+import { Test } from "../../models/property.model";
 
 @Component({
         selector: 'app-search-results',

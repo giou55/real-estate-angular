@@ -1,12 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-// import { Property } from "../../models/property.model";
-// import { PropertiesService } from '../../services/properties.service';
-
 import { HttpClient } from '@angular/common/http';
 
-import { Test } from "../../models/test.model";
+import { Property } from "../../models/property.model";
 
 @Component({
         selector: 'app-property',
@@ -16,7 +13,7 @@ import { Test } from "../../models/test.model";
 })
 export class PropertyComponent implements OnInit {
 
-        property: Test;
+        property: Property;
         id: String;
 
         constructor(
@@ -25,7 +22,7 @@ export class PropertyComponent implements OnInit {
 
         ngOnInit(): void {
                 this.id = this.route.snapshot.params['id'];
-                this.http.get<Test>('http://localhost:1337/properties/' + this.id).subscribe(
+                this.http.get<Property>('http://localhost:1337/properties/' + this.id).subscribe(
                         property => {
                                 this.property = property;
                         });
