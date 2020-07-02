@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
-import { Test } from "../../models/property.model";
+import { Property } from "../../models/property.model";
 
 @Component({
         selector: 'app-search-results',
@@ -10,15 +11,18 @@ import { Test } from "../../models/property.model";
 })
 export class SearchResultsComponent implements OnInit {
 
-        constructor(private http: HttpClient) { }
+        constructor(private route: ActivatedRoute,
+                private http: HttpClient) { }
 
         error = null;
-        results: Test[] = [];
+        results: Property = null;
+        id: String;
 
         ngOnInit(): void {
-                this.http.get<Test[]>('http://localhost:1337/properties?location=Rome').subscribe(
-                        properties => {
-                                this.results = properties;
+                this.id = this.route.snapshot.params['id'];
+                this.http.get<Property>('http://localhost:1337/properties/' + this.id).subscribe(
+                        results => {
+                                this.results = results;
                         });
         }
 

@@ -13,7 +13,7 @@ const routes: Routes = [
         { path: 'properties/:id', component: PropertyComponent },
         { path: 'submit', component: SubmitComponent },
         { path: 'test', component: TestComponent },
-        { path: 'results', component: SearchResultsComponent }
+        { path: 'searchResults/:id', component: SearchResultsComponent }
 ];
 
 @NgModule({

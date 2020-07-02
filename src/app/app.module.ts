@@ -23,7 +23,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FeaturedPropsComponent } from './components/featured-props/featured-props.component';
 import { AgentsComponent } from './components/agents/agents.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { SearchFormNewComponent } from './components/search-form-new/search-form-new.component';
 import { TestComponent } from './components/test/test.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 
@@ -42,7 +41,6 @@ import { SearchResultsComponent } from './components/search-results/search-resul
                 FeaturedPropsComponent,
                 AgentsComponent,
                 NavbarComponent,
-                SearchFormNewComponent,
                 TestComponent,
                 SearchResultsComponent
         ],

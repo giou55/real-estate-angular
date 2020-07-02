@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
-import { Test } from "../../models/property.model";
+import { Property } from "../../models/property.model";
 
 @Component({
         selector: 'app-featured-props',
@@ -19,7 +19,7 @@ export class FeaturedPropsComponent implements OnInit {
         slides;
         dots;
         error = null;
-        featuredProperties: Test[] = [];
+        featuredProperties: Property[] = [];
 
         plusSlides(n) {
                 this.showSlides(this.slideIndex += n);
@@ -50,7 +50,7 @@ export class FeaturedPropsComponent implements OnInit {
         }
 
         ngOnInit(): void {
-                this.http.get<Test[]>('http://localhost:1337/properties?featured=true').subscribe(
+                this.http.get<Property[]>('http://localhost:1337/properties?featured=true').subscribe(
                         properties => {
                                 this.featuredProperties = properties;
                         });

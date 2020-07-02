@@ -1,16 +1,24 @@
 @import "../../../../src/styles.scss";
 @import "../../../assets/css/custom-select.scss";
 
-.form-container {
+.form-container,
+.main,
+.main-filters,
+.panel,
+.extra-filters-select,
+.extra-filters-checkbox,
+.ckeckbox-wrapper {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.form-container {
   flex-wrap: nowrap;
   justify-content: center;
   background-color: $lightGreyBackground;
 }
 
 .main {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   color: #333;
   background-color: #fff;
@@ -24,21 +32,23 @@ form {
   width: 100%;
 }
 
-.main-form-container {
-  display: flex;
-  flex-wrap: wrap;
+.main-filters,
+.extra-filters-select {
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
+  flex: 1 1 auto;
 }
 
-.main-form-container>div.large {
-  width: 18%;
+div.large {
   margin-bottom: 20px;
+  margin-right: 25px;
+  flex: 1 0 auto;
 }
 
-.main-form-container>div.small {
-  width: 12%;
-  margin-bottom: 20px;
+div.small {
+  margin-right: 25px;
+  margin-top: 15px;
+  flex: 1 0 auto;
 }
 
 p {
@@ -46,30 +56,37 @@ p {
   font-size: 0.9rem;
 }
 
-.main-form-container select {
+.main-filters select {
   color: #333;
   padding: 6px;
   width: 100%;
 }
 
-.main-form-container input {
+.main-filters input {
   color: #333;
   padding: 6px;
-  width: 90%;
+  width: 100%;
 }
 
-.main-form-container button {
+.main-filters button {
   padding: 10px 16px;
   background-color: $green;
   font-size: 0.9rem;
 }
 
-.main-form-container button:hover {
+.main-filters button:hover {
   background-color: $greenDarker;
 }
 
+.extra-filters {
+  margin-top: 16px;
+}
+
 .accordion {
-  color: #333;
+  //color: #333;
+  background-color: #6b6b6b;
+  color: #fff;
+  padding: 6px;
   cursor: pointer;
   border: none;
   text-align: left;
@@ -82,16 +99,24 @@ p {
 }
 
 .accordion:hover {
-  color: $greenDarker;
+  background-color: #555;
 }
 
 .accordion span {
   margin-left: 10px;
 }
 
+.location input {
+  padding: 6px;
+  margin-right: 0;
+}
+
+.propertyid input {
+  padding: 6px;
+  margin-right: 0;
+}
+
 .panel {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: baseline;
   font-size: 0.9rem;
@@ -105,16 +130,99 @@ p {
   color: #333;
 }
 
-.panel>div {
+.ckeckbox-wrapper {
   margin-right: 30px;
-  margin-top: 14px;
-  display: flex;
+  margin-top: 32px;
   align-items: center;
   justify-content: flex-start;
 }
 
-.extra-form-container input {
+.extra-filters-select {
+  justify-content: flex-start;
+}
+
+.extra-filters-select>div {
+  margin-right: 30px;
+}
+
+.extra-filters input {
   color: #333;
   margin-left: 0;
   margin-right: 8px;
+  border: 1px solid #999;
+  padding: 7px;
+}
+
+.o-visible {
+  overflow: visible;
+}
+
+
+/* STYLES FOR CHECKBOXES */
+.checkboxes {
+  display: flex;
+}
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 13px;
+  margin-left: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: -8px;
+  left: -10px;
+  height: 16px;
+  width: 16px;
+  border: 1px solid #999;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+/* When the checkbox is checked, add a background color */
+.container input:checked~.checkmark {
+  background-color: #555;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked~.checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
