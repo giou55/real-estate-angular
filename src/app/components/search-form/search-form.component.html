@@ -7,7 +7,8 @@
 
         <div class="option-wrapper small location">
           <p>Location</p>
-          <input type="text" name="location" size="20" maxlength="16" value="Search for City, Region, Country...">
+          <input ngModel type="text" name="location" size="20" maxlength="16"
+            placeholder="Search for City, Region, Country...">
         </div>
 
         <div class="option-wrapper small">
@@ -15,14 +16,15 @@
           <div class="custom-select">
             <select name="min_price">
               <option value="any" selected="selected">Any</option>
-              <option value="volvo">Any</option>
-              <option value="audi">500</option>
-              <option value="audi">1000</option>
-              <option value="audi">5000</option>
-              <option value="audi">10000</option>
-              <option value="audi">50000</option>
-              <option value="audi">100000</option>
-              <option value="audi">500000</option>
+              <option value="any">Any</option>
+              <option value="100000">100000</option>
+              <option value="200000">200000</option>
+              <option value="300000">300000</option>
+              <option value="500000">500000</option>
+              <option value="700000">700000</option>
+              <option value="1000000">1000000</option>
+              <option value="1200000">1200000</option>
+              <option value="1500000">1500000</option>
             </select>
           </div>
         </div>
@@ -32,16 +34,15 @@
           <div class="custom-select">
             <select name="max_price">
               <option value="any" selected="selected">Any</option>
-              <option value="volvo">Any</option>
-              <option value="audi">1000</option>
-              <option value="audi">5000</option>
-              <option value="audi">10000</option>
-              <option value="audi">50000</option>
-              <option value="audi">100000</option>
-              <option value="audi">200000</option>
-              <option value="audi">300000</option>
-              <option value="audi">500000</option>
-              <option value="audi">1000000</option>
+              <option value="any">Any</option>
+              <option value="100000">100000</option>
+              <option value="200000">200000</option>
+              <option value="300000">300000</option>
+              <option value="500000">500000</option>
+              <option value="700000">700000</option>
+              <option value="1000000">1000000</option>
+              <option value="1200000">1200000</option>
+              <option value="1500000">1500000</option>
             </select>
           </div>
         </div>
@@ -49,7 +50,7 @@
         <div class="option-wrapper small">
           <p>Min Beds</p>
           <div class="custom-select">
-            <select name="bed">
+            <select name="beds">
               <option value="any" selected="selected">Any</option>
               <option value="any">Any</option>
               <option value="1">1</option>
@@ -63,7 +64,7 @@
         <div class="option-wrapper small">
           <p>Min Baths</p>
           <div class="custom-select">
-            <select name="bath">
+            <select name="baths">
               <option value="any" selected="selected">Any</option>
               <option value="any">Any</option>
               <option value="1">1</option>
@@ -96,13 +97,14 @@
             <div class="option-wrapper small">
               <p>Min Area (sq ft)</p>
               <div class="custom-select">
-                <select name="min_price">
+                <select ngForm name="min_area">
                   <option value="any" selected="selected">Any</option>
-                  <option value="volvo">Any</option>
-                  <option value="audi">250</option>
-                  <option value="audi">500</option>
-                  <option value="audi">750</option>
-                  <option value="audi">1000</option>
+                  <option value="any">Any</option>
+                  <option value="150">150</option>
+                  <option value="250">250</option>
+                  <option value="400">400</option>
+                  <option value="500">500</option>
+                  <option value="600">600</option>
                 </select>
               </div>
             </div>
@@ -110,13 +112,14 @@
             <div class="option-wrapper small">
               <p>Max Area (sq ft)</p>
               <div class="custom-select">
-                <select name="max_price">
+                <select name="max_area">
                   <option value="any" selected="selected">Any</option>
-                  <option value="volvo">Any</option>
-                  <option value="audi">250</option>
-                  <option value="audi">500</option>
-                  <option value="audi">750</option>
-                  <option value="audi">1000</option>
+                  <option value="any">Any</option>
+                  <option value="150">150</option>
+                  <option value="250">250</option>
+                  <option value="400">400</option>
+                  <option value="500">500</option>
+                  <option value="600">600</option>
                 </select>
               </div>
             </div>
@@ -124,16 +127,16 @@
             <div class="option-wrapper small">
               <p>Min Year Built</p>
               <div class="custom-select">
-                <select name="min_price">
+                <select name="min_year">
                   <option value="any" selected="selected">Any</option>
-                  <option value="volvo">Any</option>
-                  <option value="audi">1900</option>
-                  <option value="audi">1920</option>
-                  <option value="audi">1940</option>
-                  <option value="audi">1960</option>
-                  <option value="audi">1980</option>
-                  <option value="audi">1990</option>
-                  <option value="audi">2000</option>
+                  <option value="any">Any</option>
+                  <option value="1900">1900</option>
+                  <option value="1920">1920</option>
+                  <option value="1940">1940</option>
+                  <option value="1960">1960</option>
+                  <option value="1980">1980</option>
+                  <option value="1990">1990</option>
+                  <option value="2000">2000</option>
                 </select>
               </div>
             </div>
@@ -141,23 +144,23 @@
             <div class="option-wrapper small">
               <p>Max Year Built</p>
               <div class="custom-select">
-                <select name="max_price">
+                <select name="max_year">
                   <option value="any" selected="selected">Any</option>
-                  <option value="volvo">Any</option>
-                  <option value="audi">1900</option>
-                  <option value="audi">1920</option>
-                  <option value="audi">1940</option>
-                  <option value="audi">1960</option>
-                  <option value="audi">1980</option>
-                  <option value="audi">1990</option>
-                  <option value="audi">2000</option>
+                  <option value="any">Any</option>
+                  <option value="1900">1900</option>
+                  <option value="1920">1920</option>
+                  <option value="1940">1940</option>
+                  <option value="1960">1960</option>
+                  <option value="1980">1980</option>
+                  <option value="1990">1990</option>
+                  <option value="2000">2000</option>
                 </select>
               </div>
             </div>
 
             <div class="option-wrapper small propertyid">
               <p>Property ID</p>
-              <input type="text" name="property_ID" size="16" maxlength="14">
+              <input type="text" name="property_id" size="16" maxlength="14">
             </div>
 
           </div>
@@ -166,112 +169,52 @@
 
             <div class="ckeckbox-wrapper">
               <label class="container">Central Heating
-                <input type="checkbox">
+                <input ngModel type="checkbox" name="heating" value="false">
                 <span class="checkmark"></span>
               </label>
             </div>
 
             <div class="ckeckbox-wrapper">
               <label class="container">Central Cooling
-                <input type="checkbox">
+                <input type="checkbox" name="cooling" value="false">
                 <span class="checkmark"></span>
               </label>
             </div>
 
             <div class="ckeckbox-wrapper">
               <label class="container">Fire Place
-                <input type="checkbox">
+                <input type="checkbox" name="fireplace" value="false">
                 <span class="checkmark"></span>
               </label>
             </div>
 
             <div class="ckeckbox-wrapper">
               <label class="container">RV/Boat Parking
-                <input type="checkbox">
+                <input type="checkbox" name="rv_boat" value="false">
                 <span class="checkmark"></span>
               </label>
             </div>
 
             <div class="ckeckbox-wrapper">
               <label class="container">2 Stories
-                <input type="checkbox">
+                <input type="checkbox" name="two_stories" value="false">
                 <span class="checkmark"></span>
               </label>
             </div>
 
             <div class="ckeckbox-wrapper">
               <label class="container">Deck/Patio
-                <input type="checkbox">
+                <input type="checkbox" name="deck_patio" value="false">
                 <span class="checkmark"></span>
               </label>
             </div>
 
             <div class="ckeckbox-wrapper">
               <label class="container">Swimming Pool
-                <input type="checkbox">
+                <input type="checkbox" name="swimming_pool" value="false">
                 <span class="checkmark"></span>
               </label>
             </div>
-
-            <!-- <div class="ckeckbox-wrapper">
-              <input type="checkbox" id="central-heating" name="central-heating" value="central-heating">
-              <label for="central-heating "> Central Heating</label>
-            </div>
-
-            <div class="ckeckbox-wrapper">
-              <input type="checkbox" id="fire-place" name="fire-place" value="fire-place">
-              <label for="fire-place1"> Fire Place</label>
-            </div>
-
-            <div class="ckeckbox-wrapper">
-              <input type="checkbox" id="fire-alarm" name="fire-alarm" value="fire-alarm">
-              <label for="fire-alarm"> Fire Alarm</label>
-            </div>
-
-            <div class="ckeckbox-wrapper">
-              <input type="checkbox" id="electric-range" name="electric-range" value="electric-range">
-              <label for="electric-range"> Electric Range</label>
-            </div>
-
-            <div class="ckeckbox-wrapper">
-              <input type="checkbox" id="home-theater" name="home-theater" value="home-theater">
-              <label for="home-theater"> Home Theater</label>
-            </div>
-
-            <div class="ckeckbox-wrapper">
-              <input type="checkbox" id="laundry-room" name="laundry-room" value="laundry-room">
-              <label for="laundry-room"> Laundry Room</label>
-            </div>
-
-            <div class="ckeckbox-wrapper">
-              <input type="checkbox" id="swimming-pool" name="swimming-pool" value="swimming-pool">
-              <label for="swimming-pool"> Swimming Pool</label>
-            </div>
-
-            <div class="ckeckbox-wrapper">
-              <input type="checkbox" id="lawn" name="lawn" value="lawn">
-              <label for="lawn"> Lawn</label>
-            </div>
-
-            <div class="ckeckbox-wrapper">
-              <input type="checkbox" id="dual-sinks" name="dual-sinks" value="dual-sinks">
-              <label for="dual-sinks"> Dual Sinks</label>
-            </div>
-
-            <div class="ckeckbox-wrapper">
-              <input type="checkbox" id="wifi" name="wifi" value="wifi">
-              <label for="wifi"> WIfi</label>
-            </div>
-
-            <div class="ckeckbox-wrapper">
-              <input type="checkbox" id="2-stories" name="2-stories" value="2-stories">
-              <label for="2-stories"> 2 Stories</label>
-            </div>
-
-            <div class="ckeckbox-wrapper">
-              <input type="checkbox" id="26-ceilings" name="26-ceilings" value="26-ceilings">
-              <label for="26-ceilings"> 26' Ceilings</label>
-            </div> -->
 
           </div>
 
