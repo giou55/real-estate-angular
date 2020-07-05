@@ -46,7 +46,7 @@ export class SearchFormComponent implements OnInit, AfterViewInit {
 
         onSubmit(form: NgForm) {
                 console.log(form);
-                this.router.navigate(['searchResults/2']);
+                //this.router.navigate(['searchResults/2']);
         }
 
 }
