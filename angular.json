@@ -30,8 +30,7 @@
             "styles": [
               "src/styles.scss",
               "src/assets/css/slideshow.scss",
-              "src/assets/css/custom-select.scss",
-              "src/assets/css/real-estate-theme.scss"
+              "src/assets/css/custom-select.scss"
             ],
             "scripts": [
               "src/assets/js/slideshow.js",

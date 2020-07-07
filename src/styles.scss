@@ -4,9 +4,12 @@
 
 $real-estate-website-primary: mat-palette($mat-teal);
 $real-estate-website-accent: mat-palette($mat-deep-orange, 700);
+$real-estate-website-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$real-estate-website-theme: mat-light-theme($real-estate-website-primary, $real-estate-website-accent);
+$real-estate-website-theme: mat-light-theme($real-estate-website-primary,
+  $real-estate-website-accent,
+  $real-estate-website-warn);
 
 @include angular-material-theme($real-estate-website-theme);
 
@@ -56,4 +59,8 @@ button {
   font-weight: 500;
   font-size: 0.9rem;
   transition: .2s ease;
+}
+
+.mat-typography h3 {
+  margin: 0;
 }

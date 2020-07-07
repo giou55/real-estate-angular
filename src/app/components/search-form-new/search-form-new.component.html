@@ -1,0 +1,87 @@
+<div class="container">
+
+  <div class="fields-container">
+
+    <div class="field">
+      <mat-form-field class="location" appearance="outline">
+        <mat-label>Location</mat-label>
+        <input matInput [formControl]="locationFormControl" placeholder="Search for city, region, country..."
+          [(value)]="selectedLocation">
+        <mat-error *ngIf="locationFormControl.hasError('required')">
+          Location is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="field">
+      <mat-form-field class="price" appearance="outline">
+        <mat-label>Min Price</mat-label>
+        <mat-select [(value)]="selectedMinPrice">
+          <mat-option [value]="option.value" *ngFor="let option of prices">{{ option.viewValue }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="field">
+      <mat-form-field class="price" appearance="outline">
+        <mat-label>Max Price</mat-label>
+        <mat-select [(value)]="selectedMaxPrice">
+          <mat-option [value]="option.value" *ngFor="let option of prices">{{ option.viewValue }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="field">
+      <mat-form-field appearance="outline">
+        <mat-label>Min Beds</mat-label>
+        <mat-select [(value)]="selectedBeds">
+          <mat-option [value]="option.value" *ngFor="let option of beds">{{ option.viewValue }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="field">
+      <mat-form-field appearance="outline">
+        <mat-label>Min Baths</mat-label>
+        <mat-select [(value)]="selectedBaths">
+          <mat-option [value]="option.value" *ngFor="let option of baths">{{ option.viewValue }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="field">
+      <button mat-flat-button color="primary">Search</button>
+    </div>
+
+  </div>
+
+  <div class="fields-container">
+
+    <div class="field">
+      <mat-checkbox class="">Swimming Pool</mat-checkbox>
+    </div>
+
+    <div class="field">
+      <mat-checkbox class="">Central Heating</mat-checkbox>
+    </div>
+
+    <div class="field">
+      <mat-checkbox class="">Central Cooling</mat-checkbox>
+    </div>
+
+    <div class="field">
+      <mat-checkbox class="">2 Stories</mat-checkbox>
+    </div>
+
+    <div class="field">
+      <mat-checkbox class="">Fireplace</mat-checkbox>
+    </div>
+
+    <div class="field">
+      <mat-checkbox class="">Deck/Patio</mat-checkbox>
+    </div>
+
+  </div>
+
+
+</div>

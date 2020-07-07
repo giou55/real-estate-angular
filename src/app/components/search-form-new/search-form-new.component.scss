@@ -1,0 +1,42 @@
+@import "../../../../src/styles.scss";
+
+.container {
+  width: 80%;
+  margin: auto;
+  background-color: #fff;
+  border: 1px solid $darkerGreyBorder;
+  padding: 20px;
+}
+
+.fields-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.field {
+  margin-right: 25px;
+}
+
+mat-label {
+  font-size: 22px;
+  font-weight: 400;
+  color: #333;
+}
+
+mat-form-field {
+  width: 100px;
+}
+
+mat-form-field.location {
+  width: 180px;
+}
+
+mat-form-field.price {
+  width: 120px;
+}
+
+.mat-typography h3 {
+  margin: 0;
+}
