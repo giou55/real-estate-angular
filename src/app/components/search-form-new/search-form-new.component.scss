@@ -1,13 +1,19 @@
 @import "../../../../src/styles.scss";
 
 .container {
-  width: 80%;
+  width: 100%;
+}
+
+.form-container {
+  width: 75%;
   margin: auto;
   background-color: #fff;
   border: 1px solid $darkerGreyBorder;
   padding: 20px;
 }
 
+.main-filters,
+.panel,
 .fields-container {
   display: flex;
   justify-content: space-between;
@@ -15,12 +21,49 @@
   flex-wrap: wrap;
 }
 
+.accordion {
+  background-color: #6b6b6b;
+  color: #fff;
+  padding: 6px;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  outline: none;
+  display: inline-block;
+  font-size: 0.9rem;
+  transition: 0.4s;
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.accordion:hover {
+  background-color: #555;
+}
+
+.accordion span {
+  margin-left: 10px;
+}
+
+.panel {
+  justify-content: flex-start;
+  align-items: baseline;
+  font-size: 0.9rem;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.panel label {
+  color: #333;
+}
+
 .field {
   margin-right: 25px;
 }
 
 mat-label {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   color: #333;
 }
@@ -30,7 +73,7 @@ mat-form-field {
 }
 
 mat-form-field.location {
-  width: 180px;
+  width: 230px;
 }
 
 mat-form-field.price {
@@ -39,4 +82,15 @@ mat-form-field.price {
 
 .mat-typography h3 {
   margin: 0;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+  transform: translateY(-1.59375em) scale(0.85);
+  width: 133.3333333333%;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  /* padding: 1em 0 1em 0; */
+  padding: 0.5em 0 0.8em 0;
 }

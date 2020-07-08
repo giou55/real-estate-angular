@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 interface Value {
   value: string;
@@ -9,7 +9,8 @@ interface Value {
 @Component({
   selector: 'app-search-form-new',
   templateUrl: './search-form-new.component.html',
-  styleUrls: ['./search-form-new.component.scss']
+  styleUrls: ['./search-form-new.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SearchFormNewComponent {
   prices: Value[] = [
@@ -39,10 +40,29 @@ export class SearchFormNewComponent {
   selectedMaxPrice = this.prices[0].value;
   selectedBeds = this.beds[0].value;
   selectedBaths = this.baths[0].value;
-  selectedLocation = "aaaa";
+  selectedLocation = " ";
 
-  locationFormControl = new FormControl('', [
-    Validators.required
-  ]);
+  toggleAccordian() {
+    var x = document.querySelector("p.accordion > span");
+    if (x.innerHTML === "More Filters") {
+      x.innerHTML = "Less Filters";
+    } else {
+      x.innerHTML = "More Filters";
+    }
+
+    var i = document.getElementById("fa-symbol");
+    // i.classList.toggle("fa-minus-square-o");
+    // i.classList.toggle("fa-plus-square-o");
+    i.classList.toggle("fa-minus");
+    i.classList.toggle("fa-plus");
+
+    var panel = document.getElementById("panel");
+    panel.classList.toggle("o-visible");
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  }
 
 }

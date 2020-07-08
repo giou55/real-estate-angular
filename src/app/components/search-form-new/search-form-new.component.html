@@ -1,21 +1,180 @@
 <div class="container">
 
+  <div class="form-container">
+
+    <form>
+
+      <div class="main-filters">
+
+        <div class="fields-container">
+
+          <div class="field">
+            <h3>Location</h3>
+            <mat-form-field class="location" appearance="outline">
+              <input matInput placeholder="Search for City, Region, Country...">
+            </mat-form-field>
+          </div>
+
+          <div class="field">
+            <h3>Min Price</h3>
+            <mat-form-field class="price" appearance="outline">
+              <mat-select [(value)]="selectedMinPrice">
+                <mat-option [value]="option.value" *ngFor="let option of prices">{{ option.viewValue }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="field">
+            <h3>Max Price</h3>
+            <mat-form-field class="price" appearance="outline">
+              <mat-select [(value)]="selectedMaxPrice">
+                <mat-option [value]="option.value" *ngFor="let option of prices">{{ option.viewValue }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="field">
+            <h3>Min Beds</h3>
+            <mat-form-field appearance="outline">
+              <mat-select [(value)]="selectedBeds">
+                <mat-option [value]="option.value" *ngFor="let option of beds">{{ option.viewValue }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="field">
+            <h3>Min Baths</h3>
+            <mat-form-field appearance="outline">
+              <mat-select [(value)]="selectedBaths">
+                <mat-option [value]="option.value" *ngFor="let option of baths">{{ option.viewValue }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="field">
+            <button mat-flat-button color="primary">Search</button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="extra-filters">
+
+        <p class="accordion" (click)="toggleAccordian()">
+          <!-- <i id="fa-symbol" class="fa fa-plus-square-o"></i> -->
+          <i id="fa-symbol" class="fa fa-plus"></i>
+          <span>More Filters</span>
+        </p>
+
+        <div id="panel" class="panel">
+
+          <div class="fields-container">
+            <div class="field">
+              <h3>Min Area (sq ft)</h3>
+              <mat-form-field class="price" appearance="outline">
+                <mat-select [(value)]="selectedMinPrice">
+                  <mat-option [value]="option.value" *ngFor="let option of prices">{{ option.viewValue }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="field">
+              <h3>Max Area (sq ft)</h3>
+              <mat-form-field class="price" appearance="outline">
+                <mat-select [(value)]="selectedMaxPrice">
+                  <mat-option [value]="option.value" *ngFor="let option of prices">{{ option.viewValue }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="field">
+              <h3>Min Year Built</h3>
+              <mat-form-field class="price" appearance="outline">
+                <mat-select [(value)]="selectedMinPrice">
+                  <mat-option [value]="option.value" *ngFor="let option of prices">{{ option.viewValue }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="field">
+              <h3>Max Year Built</h3>
+              <mat-form-field class="price" appearance="outline">
+                <mat-select [(value)]="selectedMaxPrice">
+                  <mat-option [value]="option.value" *ngFor="let option of prices">{{ option.viewValue }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="field">
+              <h3>Property ID</h3>
+              <mat-form-field class="location" appearance="outline">
+                <input matInput>
+              </mat-form-field>
+            </div>
+
+          </div>
+
+          <div class="fields-container">
+
+            <div class="field">
+              <mat-checkbox class="">Central Heating</mat-checkbox>
+            </div>
+
+            <div class="field">
+              <mat-checkbox class="">Central Cooling</mat-checkbox>
+            </div>
+
+            <div class="field">
+              <mat-checkbox class="">RV/Boat Parking</mat-checkbox>
+            </div>
+
+            <div class="field">
+              <mat-checkbox class="">2 Stories</mat-checkbox>
+            </div>
+
+            <div class="field">
+              <mat-checkbox class="">Deck/Patio</mat-checkbox>
+            </div>
+
+            <div class="field">
+              <mat-checkbox class="">Fireplace</mat-checkbox>
+            </div>
+
+            <div class="field">
+              <mat-checkbox class="">Swimming Pool</mat-checkbox>
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- 
+
+<div class="container">
+
   <div class="fields-container">
 
     <div class="field">
+      <h3>Location</h3>
       <mat-form-field class="location" appearance="outline">
-        <mat-label>Location</mat-label>
-        <input matInput [formControl]="locationFormControl" placeholder="Search for city, region, country..."
-          [(value)]="selectedLocation">
-        <mat-error *ngIf="locationFormControl.hasError('required')">
-          Location is <strong>required</strong>
-        </mat-error>
+        <input matInput placeholder="Search for City, Region, Country...">
       </mat-form-field>
     </div>
 
     <div class="field">
+      <h3>Min Price</h3>
       <mat-form-field class="price" appearance="outline">
-        <mat-label>Min Price</mat-label>
         <mat-select [(value)]="selectedMinPrice">
           <mat-option [value]="option.value" *ngFor="let option of prices">{{ option.viewValue }}</mat-option>
         </mat-select>
@@ -23,8 +182,8 @@
     </div>
 
     <div class="field">
+      <h3>Max Price</h3>
       <mat-form-field class="price" appearance="outline">
-        <mat-label>Max Price</mat-label>
         <mat-select [(value)]="selectedMaxPrice">
           <mat-option [value]="option.value" *ngFor="let option of prices">{{ option.viewValue }}</mat-option>
         </mat-select>
@@ -32,8 +191,8 @@
     </div>
 
     <div class="field">
+      <h3>Min Beds</h3>
       <mat-form-field appearance="outline">
-        <mat-label>Min Beds</mat-label>
         <mat-select [(value)]="selectedBeds">
           <mat-option [value]="option.value" *ngFor="let option of beds">{{ option.viewValue }}</mat-option>
         </mat-select>
@@ -41,8 +200,8 @@
     </div>
 
     <div class="field">
+      <h3>Min Baths</h3>
       <mat-form-field appearance="outline">
-        <mat-label>Min Baths</mat-label>
         <mat-select [(value)]="selectedBaths">
           <mat-option [value]="option.value" *ngFor="let option of baths">{{ option.viewValue }}</mat-option>
         </mat-select>
@@ -84,4 +243,4 @@
   </div>
 
 
-</div>
+</div> -->

@@ -3,7 +3,7 @@
 @include mat-core();
 
 $real-estate-website-primary: mat-palette($mat-teal);
-$real-estate-website-accent: mat-palette($mat-deep-orange, 700);
+$real-estate-website-accent: mat-palette($mat-orange, 700);
 $real-estate-website-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
