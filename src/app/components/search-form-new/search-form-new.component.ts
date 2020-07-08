@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 interface Value {
   value: string;
@@ -35,12 +35,32 @@ export class SearchFormNewComponent {
     { value: '3', viewValue: '3' },
     { value: '4', viewValue: '4' }
   ];
+  area: Value[] = [
+    { value: 'any', viewValue: 'Any' },
+    { value: '150', viewValue: '150' },
+    { value: '250', viewValue: '250' },
+    { value: '350', viewValue: '350' },
+    { value: '450', viewValue: '450' }
+  ];
+  year: Value[] = [
+    { value: 'any', viewValue: 'Any' },
+    { value: '1900', viewValue: '1900' },
+    { value: '1920', viewValue: '1920' },
+    { value: '1940', viewValue: '1940' },
+    { value: '1960', viewValue: '1960' },
+    { value: '1980', viewValue: '1980' },
+    { value: '2000', viewValue: '2000' }
+  ];
 
   selectedMinPrice = this.prices[0].value;
   selectedMaxPrice = this.prices[0].value;
   selectedBeds = this.beds[0].value;
   selectedBaths = this.baths[0].value;
   selectedLocation = " ";
+  selectedMinArea = this.area[0].value;
+  selectedMaxArea = this.area[0].value;
+  selectedMinYear = this.year[0].value;
+  selectedMaxYear = this.year[0].value;
 
   toggleAccordian() {
     var x = document.querySelector("p.accordion > span");
@@ -63,6 +83,10 @@ export class SearchFormNewComponent {
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
+  }
+
+  onSubmit(form: NgForm) {
+    console.log(form);
   }
 
 }
