@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 interface Value {
   value: string;
@@ -13,6 +15,8 @@ interface Value {
   encapsulation: ViewEncapsulation.None
 })
 export class SearchFormNewComponent {
+  constructor(private router: Router, private route: ActivatedRoute) { }
+
   prices: Value[] = [
     { value: 'any', viewValue: 'Any' },
     { value: '10000', viewValue: '10000' },
@@ -86,7 +90,15 @@ export class SearchFormNewComponent {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    console.log(form.value.location);
+    this.router.navigate(['searchResults'],
+      {
+        queryParams: {
+          location_contains: form.value.location,
+          beds_gte: '1',
+          baths_gte: '1'
+        }
+      });
   }
 
 }

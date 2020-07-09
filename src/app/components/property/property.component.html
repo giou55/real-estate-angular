@@ -1,10 +1,12 @@
 <div style="height: 1px; background-color: #777;"></div>
 
-<app-search-form></app-search-form>
+<div class="form-component-container">
+  <app-search-form-new></app-search-form-new>
+</div>
 
 <div class="container">
 
-  <div class="property-container">
+  <div class="property-container" *ngIf="property">
 
     <div class="header-container">
       <div class="header">

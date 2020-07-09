@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 import { Property } from "../../models/property.model";
 
@@ -15,12 +15,25 @@ export class SearchResultsComponent implements OnInit {
                 private http: HttpClient) { }
 
         error = null;
-        results: Property = null;
+        results: Property[] = [];
         id: String;
+        obj = {};
 
         ngOnInit(): void {
-                this.id = this.route.snapshot.params['id'];
-                this.http.get<Property>('http://localhost:1337/properties/' + this.id).subscribe(
+
+                //this.obj = this.route.snapshot.queryParams;
+
+                this.obj = this.route.snapshot.params;
+
+                var str = "";
+                for (var key in this.obj) {
+                        if (str != "") {
+                                str += "&";
+                        }
+                        str += key + "=" + encodeURIComponent(this.obj[key]);
+                }
+
+                this.http.get<Property[]>('http://localhost:1337/properties?' + str).subscribe(
                         results => {
                                 this.results = results;
                         });

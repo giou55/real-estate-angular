@@ -9,6 +9,13 @@
   margin-top: 40px;
 }
 
+.form-component-container {
+  margin: auto;
+  background-color: #fff;
+  border-bottom: 1px solid $darkerGreyBorder;
+  padding: 20px 10%;
+}
+
 .property-container,
 .header-container,
 .image-container,
@@ -54,37 +61,6 @@
   margin: auto;
   margin-top: 20px;
 }
-
-// .left-column {
-//   width: 69%;
-// }
-
-// .right-column {
-//   width: 29%;
-// }
-
-// .left-column>div,
-// .right-column>div {
-//   padding: 30px;
-//   border: 1px solid $darkerGreyBorder;
-//   background-color: #fff;
-// }
-
-// .left-column h3 {
-//   font-size: 0.9rem;
-//   font-weight: normal;
-//   padding-bottom: 20px;
-//   border-bottom: 1px dashed $darkerGreyBorder;
-// }
-
-// .left-column h3 span {
-//   color: $green;
-// }
-
-// .left-column h2 {
-//   font-size: 1rem;
-//   color: $green;
-// }
 
 .prop-features {
   display: flex;

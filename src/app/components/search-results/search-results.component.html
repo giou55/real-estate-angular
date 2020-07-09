@@ -1,4 +1,8 @@
-<app-search-form></app-search-form>
+<div style="height: 1px; background-color: #777;"></div>
+
+<div class="form-component-container">
+  <app-search-form-new></app-search-form-new>
+</div>
 
 <div class="container" *ngIf="!results">
   <div class="header">
@@ -6,62 +10,9 @@
   </div>
 </div>
 
-
 <div class="container" *ngIf="results">
-  <h1>{{results.title}}</h1>
-
-  <!-- <div class="header">
-
-    <div class="props-container">
-      <div class="prop" *ngFor="let prop of results">
-        <div class="img-container">
-          <img src="{{ prop.imageSm_Path }}" alt="">
-          <div class="img-overlay">
-            <div class="text-overlay" routerLink="/properties/{{ prop.id }}">View Property</div>
-          </div>
-          <div class="addTo">
-            <i class="fas fa-heart"></i>
-            <i class="fas fa-exchange-alt"></i>
-          </div>
-        </div>
-
-        <div class="prop-text">
-          <h1>{{ prop.title }}</h1>
-          <p>{{ prop.description }}</p>
-
-          <div class="prop-features">
-            <div>
-              <p>Bedrooms</p>
-              <div class="icon-with-number">
-                <i class="fas fa-bed"></i>
-                {{ prop.beds }}
-              </div>
-            </div>
-            <div>
-              <p>Bathrooms</p>
-              <div class="icon-with-number">
-                <i class="fas fa-shower"></i>
-                {{ prop.baths }}
-              </div>
-            </div>
-            <div>
-              <p>Area</p>
-              <div class="icon-with-number">
-                <i class="fas fa-vector-square"></i>
-                {{ prop.area_size }}
-              </div>
-            </div>
-          </div>
-
-          <div class="prop-price">
-            <h2><span>For Sale: </span>{{ prop.priceSale | currency:'EUR':'symbol':'1.0-0' }}</h2>
-            <span>{{ prop.priceRent | currency:'EUR':'symbol':'1.0-0' }}/Monthly</span>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-  </div> -->
-
+  <div *ngFor="let prop of results">
+    <h2>{{ prop.title }}</h2>
+    <img src="{{ prop.imageSm_Path }}" alt="">
+  </div>
 </div>
