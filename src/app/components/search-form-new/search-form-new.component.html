@@ -7,7 +7,7 @@
       <div class="fields-container">
 
         <div class="field">
-          <h3>Location</h3>
+          <h3 class="location-header">Location <span *ngIf="emptyField">* this field is required</span></h3>
           <mat-form-field class="location" appearance="outline">
             <input ngModel name="location" matInput placeholder="Search for City, Region, Country...">
           </mat-form-field>
@@ -16,7 +16,7 @@
         <div class="field">
           <h3>Min Price</h3>
           <mat-form-field class="price" appearance="outline">
-            <mat-select ngModel name="min_price" [(value)]="selectedMinPrice">
+            <mat-select [ngModel]="selectedMinPrice" name="min_price">
               <mat-option [value]="option.value" *ngFor="let option of prices">{{ option.viewValue }}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -25,7 +25,7 @@
         <div class="field">
           <h3>Max Price</h3>
           <mat-form-field class="price" appearance="outline">
-            <mat-select ngModel name="max_price" [(value)]="selectedMaxPrice">
+            <mat-select [ngModel]="selectedMaxPrice" name="max_price">
               <mat-option [value]="option.value" *ngFor="let option of prices">{{ option.viewValue }}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -34,7 +34,7 @@
         <div class="field">
           <h3>Min Beds</h3>
           <mat-form-field appearance="outline">
-            <mat-select ngModel name="min_beds" [(value)]="selectedBeds">
+            <mat-select [ngModel]="selectedBeds" name="min_beds">
               <mat-option [value]="option.value" *ngFor="let option of beds">{{ option.viewValue }}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -43,7 +43,7 @@
         <div class="field">
           <h3>Min Baths</h3>
           <mat-form-field appearance="outline">
-            <mat-select ngModel name="min_baths" [(value)]="selectedBaths">
+            <mat-select [ngModel]="selectedBaths" name="min_baths">
               <mat-option [value]="option.value" *ngFor="let option of baths">{{ option.viewValue }}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -72,7 +72,7 @@
           <div class="field">
             <h3>Min Area (sq ft)</h3>
             <mat-form-field class="price" appearance="outline">
-              <mat-select ngModel name="min_area" [(value)]="selectedMinArea">
+              <mat-select [ngModel]="selectedMinArea" name="min_area">
                 <mat-option [value]="option.value" *ngFor="let option of area">{{ option.viewValue }}</mat-option>
               </mat-select>
             </mat-form-field>
@@ -81,7 +81,7 @@
           <div class="field">
             <h3>Max Area (sq ft)</h3>
             <mat-form-field class="price" appearance="outline">
-              <mat-select ngModel name="max_area" [(value)]="selectedMaxArea">
+              <mat-select [ngModel]="selectedMaxArea" name="max_area">
                 <mat-option [value]="option.value" *ngFor="let option of area">{{ option.viewValue }}</mat-option>
               </mat-select>
             </mat-form-field>
@@ -90,7 +90,7 @@
           <div class="field">
             <h3>Min Year Built</h3>
             <mat-form-field class="price" appearance="outline">
-              <mat-select ngModel name="min_year" [(value)]="selectedMinYear">
+              <mat-select [ngModel]="selectedMinYear" name="min_year">
                 <mat-option [value]="option.value" *ngFor="let option of year">{{ option.viewValue }}</mat-option>
               </mat-select>
             </mat-form-field>
@@ -99,7 +99,7 @@
           <div class="field">
             <h3>Max Year Built</h3>
             <mat-form-field class="price" appearance="outline">
-              <mat-select ngModel name="max_year" [(value)]="selectedMaxYear">
+              <mat-select [ngModel]="selectedMaxYear" name="max_year">
                 <mat-option [value]="option.value" *ngFor="let option of year">{{ option.viewValue }}</mat-option>
               </mat-select>
             </mat-form-field>

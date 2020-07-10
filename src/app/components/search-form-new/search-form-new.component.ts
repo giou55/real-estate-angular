@@ -1,7 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface Value {
   value: string;
@@ -56,15 +55,16 @@ export class SearchFormNewComponent {
     { value: '2000', viewValue: '2000' }
   ];
 
+  selectedLocation = " ";
   selectedMinPrice = this.prices[0].value;
   selectedMaxPrice = this.prices[0].value;
   selectedBeds = this.beds[0].value;
   selectedBaths = this.baths[0].value;
-  selectedLocation = " ";
   selectedMinArea = this.area[0].value;
   selectedMaxArea = this.area[0].value;
   selectedMinYear = this.year[0].value;
   selectedMaxYear = this.year[0].value;
+  emptyField = false;
 
   toggleAccordian() {
     var x = document.querySelector("p.accordion > span");
@@ -90,15 +90,18 @@ export class SearchFormNewComponent {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value.location);
-    this.router.navigate(['searchResults'],
-      {
-        queryParams: {
-          location_contains: form.value.location,
-          beds_gte: '1',
-          baths_gte: '1'
-        }
-      });
+    if (form.value.location == "") {
+      this.emptyField = true;
+      return;
+    }
+    if (form.value.location != "") {
+      this.emptyField = false;
+      this.router.navigate(['searchResults'],
+        {
+          queryParams: {
+            location_contains: form.value.location
+          }
+        });
+    }
   }
-
 }

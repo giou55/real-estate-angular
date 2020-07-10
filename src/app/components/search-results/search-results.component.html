@@ -4,7 +4,7 @@
   <app-search-form-new></app-search-form-new>
 </div>
 
-<div class="container" *ngIf="!results">
+<div class="container" *ngIf="!results && results.length < 1">
   <div class="header">
     <h2>No Properties found!</h2>
   </div>
@@ -13,6 +13,7 @@
 <div class="container" *ngIf="results">
   <div *ngFor="let prop of results">
     <h2>{{ prop.title }}</h2>
-    <img src="{{ prop.imageSm_Path }}" alt="">
+    <p>({{ prop.location}})</p><br>
+    <p>{{ prop.description }}</p><br>
   </div>
 </div>
