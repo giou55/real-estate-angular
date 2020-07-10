@@ -96,6 +96,10 @@ export class SearchFormNewComponent {
     }
     if (form.value.location != "") {
       this.emptyField = false;
+      console.log(form);
+      // for (let x in form.value) {
+      //   console.log(x + "=" + form.value[x] + "<br>");
+      // }
       this.router.navigate(['searchResults'],
         {
           queryParams: {
