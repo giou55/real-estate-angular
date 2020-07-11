@@ -11,8 +11,10 @@ import { Property } from "../../models/property.model";
 })
 export class SearchResultsComponent implements OnInit {
 
-        constructor(private route: ActivatedRoute,
-                private http: HttpClient) { }
+        constructor(
+                private route: ActivatedRoute,
+                private http: HttpClient
+        ) { }
 
         results: Property[] = [];
         id: String;
@@ -20,41 +22,33 @@ export class SearchResultsComponent implements OnInit {
 
         ngOnInit(): void {
 
-                this.obj = this.route.snapshot.queryParams;
+                console.log(this.route.snapshot.queryParams.location_contains);
 
-                var str = "";
-                for (var key in this.obj) {
-                        if (str != "") {
-                                str += "&";
-                        }
-                        str += key + "=" + encodeURIComponent(this.obj[key]);
+                if (this.route.snapshot.queryParams.location_contains == '') {
+                        this.results = [];
                 }
 
-                this.http.get<Property[]>('http://localhost:1337/properties?' + str).subscribe(
-                        results => {
-                                this.results = results;
+                this.route.queryParams.subscribe(
+                        (params: Params) => {
+                                console.log(params);
+                                this.obj = params;
+
+                                var str = "";
+                                for (var key in this.obj) {
+                                        if (str != "") {
+                                                str += "&";
+                                        }
+                                        str += key + "=" + encodeURIComponent(this.obj[key]);
+                                }
+
+                                this.http.get<Property[]>('http://localhost:1337/properties?' + str).subscribe(
+                                        results => {
+                                                console.log(results);
+                                                this.results = results;
+                                        }
+                                );
                         }
-                );
-
-                // this.route.params.subscribe(
-                //         (params: Params) => {
-                //                 this.obj = this.route.snapshot.queryParams;
-
-                //                 var str = "";
-                //                 for (var key in this.obj) {
-                //                         if (str != "") {
-                //                                 str += "&";
-                //                         }
-                //                         str += key + "=" + encodeURIComponent(this.obj[key]);
-                //                 }
-
-                //                 this.http.get<Property[]>('http://localhost:1337/properties?' + str).subscribe(
-                //                         results => {
-                //                                 this.results = results;
-                //                         }
-                //                 );
-                //         }
-                // )
+                )
         }
 
 }
