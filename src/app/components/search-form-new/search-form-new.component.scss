@@ -2,13 +2,14 @@
 
 .form-container {
   margin: auto;
+  padding-top: 12px;
 }
 
 .main-filters,
 .panel,
 .fields-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   flex-grow: 1;
@@ -18,11 +19,15 @@
   color: red;
 }
 
+.mat-typography p {
+  margin: 0;
+  margin-left: 12px;
+}
+
 .accordion {
   background-color: #6b6b6b;
   color: #fff;
   padding: 8px;
-  margin-right: 25px;
   cursor: pointer;
   border: none;
   text-align: left;
@@ -39,6 +44,8 @@
 
 .accordion span {
   margin-left: 10px;
+  display: inline-block;
+  width: 85px;
 }
 
 .fa-plus,
@@ -62,9 +69,14 @@
 }
 
 .field {
-  margin-right: 15px;
+  margin-left: 12px;
+  margin-top: 0;
   font-size: 14px;
   color: #555;
+}
+
+#checkboxes .field {
+  margin-bottom: 10px;
 }
 
 mat-form-field {
@@ -81,14 +93,6 @@ mat-form-field.price {
 
 mat-form-field.prop_id {
   width: 180px;
-}
-
-.mat-typography h3 {
-  margin: 0;
-}
-
-.mat-typography p {
-  margin: 0;
 }
 
 .mat-form-field-appearance-outline .mat-form-field-infix {
