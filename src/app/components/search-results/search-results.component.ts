@@ -23,8 +23,6 @@ export class SearchResultsComponent implements OnInit {
 
       ngOnInit(): void {
 
-            console.log(this.route.snapshot.queryParams.location_contains);
-
             if (this.route.snapshot.queryParams.location_contains == '') {
                   this.results = [];
             } else {
@@ -33,8 +31,8 @@ export class SearchResultsComponent implements OnInit {
 
             this.route.queryParams.subscribe(
                   (params: Params) => {
-                        console.log(params);
                         this.obj = params;
+                        console.log(params);
 
                         var str = "";
                         for (var key in this.obj) {
@@ -44,10 +42,11 @@ export class SearchResultsComponent implements OnInit {
                               str += key + "=" + encodeURIComponent(this.obj[key]);
                         }
 
+                        console.log(str);
+
                         this.http.get<Property[]>('http://localhost:1337/properties?' + str).subscribe(
                               results => {
                                     this.currentLocation = this.route.snapshot.queryParams.location_contains;
-                                    console.log(results);
                                     this.results = results;
                               }
                         );
