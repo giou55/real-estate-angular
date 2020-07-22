@@ -17,36 +17,21 @@ export class SearchResultsComponent implements OnInit {
       ) { }
 
       results: Property[] = [];
-      id: String;
-      obj = {};
-      currentLocation: String;
 
       ngOnInit(): void {
 
-            if (this.route.snapshot.queryParams.location_contains == '') {
-                  this.results = [];
-            } else {
-                  this.currentLocation = this.route.snapshot.queryParams.location_contains;
-            }
-
             this.route.queryParams.subscribe(
                   (params: Params) => {
-                        this.obj = params;
-                        console.log(params);
-
                         var str = "";
-                        for (var key in this.obj) {
+                        for (var key in params) {
                               if (str != "") {
                                     str += "&";
                               }
-                              str += key + "=" + encodeURIComponent(this.obj[key]);
+                              str += key + "=" + encodeURIComponent(params[key]);
                         }
-
-                        console.log(str);
 
                         this.http.get<Property[]>('http://localhost:1337/properties?' + str).subscribe(
                               results => {
-                                    this.currentLocation = this.route.snapshot.queryParams.location_contains;
                                     this.results = results;
                               }
                         );

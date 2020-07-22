@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Input } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -14,7 +14,11 @@ interface Value {
       encapsulation: ViewEncapsulation.None
 })
 export class SearchFormNewComponent {
-      constructor(private router: Router, private route: ActivatedRoute) { }
+
+      constructor(
+            private router: Router,
+            private route: ActivatedRoute,
+      ) { }
 
       prices: Value[] = [
             { value: 0, viewValue: 'Any' },
@@ -56,8 +60,6 @@ export class SearchFormNewComponent {
             { value: 1980, viewValue: '1980' },
             { value: 2000, viewValue: '2000' }
       ];
-
-      @Input() location: string;
 
       selectedLocation = "";
       selectedMinPrice = this.prices[0].value;
@@ -131,15 +133,27 @@ export class SearchFormNewComponent {
             }
             if (form.value.location != "") {
                   this.emptyLocationField = false;
-                  console.log(form);
-                  // for (let x in form.value) {
-                  //   console.log(x + "=" + form.value[x] + "<br>");
-                  // }
                   this.paramsToSend = this.createQueryParams(form.value);
                   this.router.navigate(['searchResults'],
                         {
                               queryParams: this.paramsToSend
                         });
             }
+      }
+
+      ngOnInit(): void {
+            this.route.queryParams.subscribe(params => {
+                  let location_value = (params['location_contains'] === '') ? '' : params['location_contains'];
+                  //let min_price_value = (params['priceSale_gte'] === 'undefined') ? 0 : params['priceSale_gte'];
+                  //let max_price_value = (typeof params['priceSale_lte'] === 'undefined') ? 0 : params['priceSale_lte'];
+                  let beds_value = (params['beds_gte'] === 'undefined') ? 0 : params['beds_gte'];
+                  let baths_value = (params['baths_gte'] === 'undefined') ? 0 : params['baths_gte'];
+
+                  this.selectedLocation = location_value;
+                  //this.selectedMinPrice = this.prices[min_price_value].value;
+                  //this.selectedMaxPrice = this.prices[max_price_value].value;
+                  this.selectedBeds = this.beds[beds_value].value;
+                  this.selectedBaths = this.baths[baths_value].value;
+            });
       }
 }
