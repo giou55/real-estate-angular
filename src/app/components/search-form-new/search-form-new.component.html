@@ -118,11 +118,11 @@
         <div class="fields-container" id="checkboxes">
 
           <div class="field">
-            <mat-checkbox ngModel name="heating" class="">Central Heating</mat-checkbox>
+            <mat-checkbox [ngModel]="selectedHeating" name="heating" class="">Central Heating</mat-checkbox>
           </div>
 
           <div class="field">
-            <mat-checkbox ngModel name="cooling" class="">Central Cooling</mat-checkbox>
+            <mat-checkbox [ngModel]="selectedCooling" name="cooling" class="">Central Cooling</mat-checkbox>
           </div>
 
           <div class="field">

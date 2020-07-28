@@ -19,7 +19,6 @@ export class SearchResultsComponent implements OnInit {
       results: Property[] = [];
 
       ngOnInit(): void {
-
             this.route.queryParams.subscribe(
                   (params: Params) => {
                         var str = "";

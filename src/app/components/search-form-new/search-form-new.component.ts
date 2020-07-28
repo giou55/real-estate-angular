@@ -1,11 +1,8 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-interface Value {
-      value: number;
-      viewValue: string;
-}
+import { SearchFormService } from '../../services/searchForm.service';
 
 @Component({
       selector: 'app-search-form-new',
@@ -13,67 +10,58 @@ interface Value {
       styleUrls: ['./search-form-new.component.scss'],
       encapsulation: ViewEncapsulation.None
 })
-export class SearchFormNewComponent {
-
-      constructor(
-            private router: Router,
-            private route: ActivatedRoute,
-      ) { }
-
-      prices: Value[] = [
-            { value: 0, viewValue: 'Any' },
-            { value: 100000, viewValue: '100000' },
-            { value: 200000, viewValue: '200000' },
-            { value: 400000, viewValue: '400000' },
-            { value: 600000, viewValue: '600000' },
-            { value: 800000, viewValue: '800000' },
-            { value: 1000000, viewValue: '1000000' },
-            { value: 1500000, viewValue: '1500000' }
-      ];
-      beds: Value[] = [
-            { value: 0, viewValue: 'Any' },
-            { value: 1, viewValue: '1' },
-            { value: 2, viewValue: '2' },
-            { value: 3, viewValue: '3' },
-            { value: 4, viewValue: '4' }
-      ];
-      baths: Value[] = [
-            { value: 0, viewValue: 'Any' },
-            { value: 1, viewValue: '1' },
-            { value: 2, viewValue: '2' },
-            { value: 3, viewValue: '3' },
-            { value: 4, viewValue: '4' }
-      ];
-      area: Value[] = [
-            { value: 0, viewValue: 'Any' },
-            { value: 150, viewValue: '150' },
-            { value: 250, viewValue: '250' },
-            { value: 350, viewValue: '350' },
-            { value: 450, viewValue: '450' }
-      ];
-      year: Value[] = [
-            { value: 0, viewValue: 'Any' },
-            { value: 1900, viewValue: '1900' },
-            { value: 1920, viewValue: '1920' },
-            { value: 1940, viewValue: '1940' },
-            { value: 1960, viewValue: '1960' },
-            { value: 1980, viewValue: '1980' },
-            { value: 2000, viewValue: '2000' }
-      ];
-
-      selectedLocation = "";
-      selectedMinPrice = this.prices[0].value;
-      selectedMaxPrice = this.prices[0].value;
-      selectedBeds = this.beds[0].value;
-      selectedBaths = this.baths[0].value;
-      selectedMinArea = this.area[0].value;
-      selectedMaxArea = this.area[0].value;
-      selectedMinYear = this.year[0].value;
-      selectedMaxYear = this.year[0].value;
+export class SearchFormNewComponent implements OnInit {
+      selectedLocation;
+      selectedMinPrice;
+      selectedMaxPrice;
+      selectedBeds;
+      selectedBaths;
+      selectedMinArea;
+      selectedMaxArea;
+      selectedMinYear;
+      selectedMaxYear;
+      selectedCooling;
+      selectedHeating;
 
       emptyLocationField = false;
       valuesFromFields = {};
       paramsToSend = {};
+
+      prices;
+      beds;
+      baths;
+      area;
+      year;
+
+      constructor(
+            private searchFormService: SearchFormService,
+            private router: Router,
+            private route: ActivatedRoute,
+      ) { }
+
+      ngOnInit(): void {
+            this.selectedLocation = this.searchFormService.location;
+            this.prices = this.searchFormService.prices;
+            this.beds = this.searchFormService.beds;
+            this.baths = this.searchFormService.baths;
+            this.area = this.searchFormService.area;
+            this.year = this.searchFormService.year;
+
+            this.selectedMinPrice = this.searchFormService.selectedMinPrice;
+            this.selectedMaxPrice = this.searchFormService.selectedMaxPrice;
+            this.selectedBeds = this.searchFormService.selectedBeds;
+            this.selectedBaths = this.searchFormService.selectedBaths;
+            this.selectedMinArea = this.searchFormService.selectedMinArea;
+            this.selectedMaxArea = this.searchFormService.selectedMaxArea;
+            this.selectedMinYear = this.searchFormService.selectedMinYear;
+            this.selectedMaxYear = this.searchFormService.selectedMaxYear;
+            this.selectedCooling = this.searchFormService.cooling;
+            this.selectedHeating = this.searchFormService.heating;
+
+            this.emptyLocationField = false;
+            this.valuesFromFields = {};
+            this.paramsToSend = {};
+      }
 
       toggleAccordian() {
             var x = document.querySelector("p.accordion > span");
@@ -133,27 +121,12 @@ export class SearchFormNewComponent {
             }
             if (form.value.location != "") {
                   this.emptyLocationField = false;
+                  this.searchFormService.saveFormData(form.value);
                   this.paramsToSend = this.createQueryParams(form.value);
                   this.router.navigate(['searchResults'],
                         {
                               queryParams: this.paramsToSend
                         });
             }
-      }
-
-      ngOnInit(): void {
-            this.route.queryParams.subscribe(params => {
-                  let location_value = (params['location_contains'] === '') ? '' : params['location_contains'];
-                  //let min_price_value = (params['priceSale_gte'] === 'undefined') ? 0 : params['priceSale_gte'];
-                  //let max_price_value = (typeof params['priceSale_lte'] === 'undefined') ? 0 : params['priceSale_lte'];
-                  let beds_value = (params['beds_gte'] === 'undefined') ? 0 : params['beds_gte'];
-                  let baths_value = (params['baths_gte'] === 'undefined') ? 0 : params['baths_gte'];
-
-                  this.selectedLocation = location_value;
-                  //this.selectedMinPrice = this.prices[min_price_value].value;
-                  //this.selectedMaxPrice = this.prices[max_price_value].value;
-                  this.selectedBeds = this.beds[beds_value].value;
-                  this.selectedBaths = this.baths[baths_value].value;
-            });
       }
 }
