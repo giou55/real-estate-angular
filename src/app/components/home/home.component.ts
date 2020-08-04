@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SearchFormService } from '../../services/searchForm.service';
+
 @Component({
       selector: 'app-home',
       templateUrl: './home.component.html',
@@ -7,11 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-      initialLocation: String;
-
-      constructor() { }
+      constructor(private searchFormService: SearchFormService) { }
 
       ngOnInit(): void {
-            this.initialLocation = "";
+            this.searchFormService.formInit();
       }
 }

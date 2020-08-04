@@ -70,10 +70,6 @@ export class SearchFormNewComponent implements OnInit {
 
             this.valuesFromFields = {};
             this.paramsToSend = {};
-
-            if (this.router.url === '/') {
-                  this.searchFormService.formInit();
-            }
       }
 
       toggleAccordian() {
