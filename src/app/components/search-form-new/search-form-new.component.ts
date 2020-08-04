@@ -11,27 +11,32 @@ import { SearchFormService } from '../../services/searchForm.service';
       encapsulation: ViewEncapsulation.None
 })
 export class SearchFormNewComponent implements OnInit {
-      selectedLocation;
-      selectedMinPrice;
-      selectedMaxPrice;
-      selectedBeds;
-      selectedBaths;
-      selectedMinArea;
-      selectedMaxArea;
-      selectedMinYear;
-      selectedMaxYear;
-      selectedCooling;
-      selectedHeating;
+      priceValues: any;
+      bedsValues: any;
+      bathsValues: any;
+      areaValues: any;
+      yearValues: any;
 
-      emptyLocationField = false;
+      location: string;
+      propertyID: string;
+      minPrice: number;
+      maxPrice: number;
+      minBeds: number;
+      minBaths: number;
+      minArea: number;
+      maxArea: number;
+      minYear: number;
+      maxYear: number;
+      heating: boolean;
+      cooling: boolean;
+      rv_boat: boolean;
+      two_stories: boolean;
+      deck_ratio: boolean;
+      fireplace: boolean;
+      swimming_pool: boolean;
+
       valuesFromFields = {};
       paramsToSend = {};
-
-      prices;
-      beds;
-      baths;
-      area;
-      year;
 
       constructor(
             private searchFormService: SearchFormService,
@@ -40,27 +45,35 @@ export class SearchFormNewComponent implements OnInit {
       ) { }
 
       ngOnInit(): void {
-            this.selectedLocation = this.searchFormService.location;
-            this.prices = this.searchFormService.prices;
-            this.beds = this.searchFormService.beds;
-            this.baths = this.searchFormService.baths;
-            this.area = this.searchFormService.area;
-            this.year = this.searchFormService.year;
+            this.location = this.searchFormService.location;
+            this.priceValues = this.searchFormService.prices;
+            this.bedsValues = this.searchFormService.beds;
+            this.bathsValues = this.searchFormService.baths;
+            this.areaValues = this.searchFormService.area;
+            this.yearValues = this.searchFormService.year;
+            this.propertyID = this.searchFormService.propertyID;
+            this.minPrice = this.searchFormService.minPrice;
+            this.maxPrice = this.searchFormService.maxPrice;
+            this.minBeds = this.searchFormService.minBeds;
+            this.minBaths = this.searchFormService.minBaths;
+            this.minArea = this.searchFormService.minArea;
+            this.maxArea = this.searchFormService.maxArea;
+            this.minYear = this.searchFormService.minYear;
+            this.maxYear = this.searchFormService.maxYear;
+            this.heating = this.searchFormService.heating;
+            this.cooling = this.searchFormService.cooling;
+            this.rv_boat = this.searchFormService.rv_boat;
+            this.two_stories = this.searchFormService.two_stories;
+            this.deck_ratio = this.searchFormService.deck_ratio;
+            this.fireplace = this.searchFormService.fireplace;
+            this.swimming_pool = this.searchFormService.swimming_pool;
 
-            this.selectedMinPrice = this.searchFormService.selectedMinPrice;
-            this.selectedMaxPrice = this.searchFormService.selectedMaxPrice;
-            this.selectedBeds = this.searchFormService.selectedBeds;
-            this.selectedBaths = this.searchFormService.selectedBaths;
-            this.selectedMinArea = this.searchFormService.selectedMinArea;
-            this.selectedMaxArea = this.searchFormService.selectedMaxArea;
-            this.selectedMinYear = this.searchFormService.selectedMinYear;
-            this.selectedMaxYear = this.searchFormService.selectedMaxYear;
-            this.selectedCooling = this.searchFormService.cooling;
-            this.selectedHeating = this.searchFormService.heating;
-
-            this.emptyLocationField = false;
             this.valuesFromFields = {};
             this.paramsToSend = {};
+
+            if (this.router.url === '/') {
+                  this.searchFormService.formInit();
+            }
       }
 
       toggleAccordian() {
@@ -115,18 +128,11 @@ export class SearchFormNewComponent implements OnInit {
       }
 
       onSubmit(form: NgForm) {
-            if (form.value.location == "") {
-                  this.emptyLocationField = true;
-                  return;
-            }
-            if (form.value.location != "") {
-                  this.emptyLocationField = false;
-                  this.searchFormService.saveFormData(form.value);
-                  this.paramsToSend = this.createQueryParams(form.value);
-                  this.router.navigate(['searchResults'],
-                        {
-                              queryParams: this.paramsToSend
-                        });
-            }
+            this.searchFormService.saveFormData(form.value);
+            this.paramsToSend = this.createQueryParams(form.value);
+            this.router.navigate(['searchResults'],
+                  {
+                        queryParams: this.paramsToSend
+                  });
       }
 }

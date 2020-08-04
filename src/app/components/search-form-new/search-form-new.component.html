@@ -7,18 +7,17 @@
       <div class="fields-container">
 
         <div class="field">
-          <h3 class="location-header"> Location <span *ngIf="emptyLocationField">* this field is required</span></h3>
+          <h3 class="location-header">Location</h3>
           <mat-form-field class="location" appearance="outline">
-            <input [ngModel]="selectedLocation" name="location" matInput
-              placeholder="Search for City, Region, Country...">
+            <input [ngModel]="location" name="location" matInput placeholder="Search for City, Region, Country...">
           </mat-form-field>
         </div>
 
         <div class="field">
           <h3>Min Price</h3>
           <mat-form-field class="price" appearance="outline">
-            <mat-select [ngModel]="selectedMinPrice" name="min_price">
-              <mat-option [value]="option.value" *ngFor="let option of prices">{{ option.viewValue }}</mat-option>
+            <mat-select [ngModel]="minPrice" name="min_price">
+              <mat-option [value]="option.value" *ngFor="let option of priceValues">{{ option.viewValue }}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -26,8 +25,8 @@
         <div class="field">
           <h3>Max Price</h3>
           <mat-form-field class="price" appearance="outline">
-            <mat-select [ngModel]="selectedMaxPrice" name="max_price">
-              <mat-option [value]="option.value" *ngFor="let option of prices">{{ option.viewValue }}</mat-option>
+            <mat-select [ngModel]="maxPrice" name="max_price">
+              <mat-option [value]="option.value" *ngFor="let option of priceValues">{{ option.viewValue }}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -35,8 +34,8 @@
         <div class="field">
           <h3>Min Beds</h3>
           <mat-form-field appearance="outline">
-            <mat-select [ngModel]="selectedBeds" name="min_beds">
-              <mat-option [value]="option.value" *ngFor="let option of beds">{{ option.viewValue }}</mat-option>
+            <mat-select [ngModel]="minBeds" name="min_beds">
+              <mat-option [value]="option.value" *ngFor="let option of bedsValues">{{ option.viewValue }}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -44,8 +43,8 @@
         <div class="field">
           <h3>Min Baths</h3>
           <mat-form-field appearance="outline">
-            <mat-select [ngModel]="selectedBaths" name="min_baths">
-              <mat-option [value]="option.value" *ngFor="let option of baths">{{ option.viewValue }}</mat-option>
+            <mat-select [ngModel]="minBaths" name="min_baths">
+              <mat-option [value]="option.value" *ngFor="let option of bathsValues">{{ option.viewValue }}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -73,8 +72,8 @@
           <div class="field">
             <h3>Min Area (sq ft)</h3>
             <mat-form-field class="price" appearance="outline">
-              <mat-select [ngModel]="selectedMinArea" name="min_area">
-                <mat-option [value]="option.value" *ngFor="let option of area">{{ option.viewValue }}</mat-option>
+              <mat-select [ngModel]="minArea" name="min_area">
+                <mat-option [value]="option.value" *ngFor="let option of areaValues">{{ option.viewValue }}</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
@@ -82,8 +81,8 @@
           <div class="field">
             <h3>Max Area (sq ft)</h3>
             <mat-form-field class="price" appearance="outline">
-              <mat-select [ngModel]="selectedMaxArea" name="max_area">
-                <mat-option [value]="option.value" *ngFor="let option of area">{{ option.viewValue }}</mat-option>
+              <mat-select [ngModel]="maxArea" name="max_area">
+                <mat-option [value]="option.value" *ngFor="let option of areaValues">{{ option.viewValue }}</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
@@ -91,8 +90,8 @@
           <div class="field">
             <h3>Min Year Built</h3>
             <mat-form-field class="price" appearance="outline">
-              <mat-select [ngModel]="selectedMinYear" name="min_year">
-                <mat-option [value]="option.value" *ngFor="let option of year">{{ option.viewValue }}</mat-option>
+              <mat-select [ngModel]="minYear" name="min_year">
+                <mat-option [value]="option.value" *ngFor="let option of yearValues">{{ option.viewValue }}</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
@@ -100,8 +99,8 @@
           <div class="field">
             <h3>Max Year Built</h3>
             <mat-form-field class="price" appearance="outline">
-              <mat-select [ngModel]="selectedMaxYear" name="max_year">
-                <mat-option [value]="option.value" *ngFor="let option of year">{{ option.viewValue }}</mat-option>
+              <mat-select [ngModel]="maxYear" name="max_year">
+                <mat-option [value]="option.value" *ngFor="let option of yearValues">{{ option.viewValue }}</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
@@ -109,7 +108,7 @@
           <div class="field">
             <h3>Property ID</h3>
             <mat-form-field class="prop_id" appearance="outline">
-              <input matInput ngModel name="property_id">
+              <input [ngModel]="propertyID" name="property_id" matInput>
             </mat-form-field>
           </div>
 
@@ -118,31 +117,31 @@
         <div class="fields-container" id="checkboxes">
 
           <div class="field">
-            <mat-checkbox [ngModel]="selectedHeating" name="heating" class="">Central Heating</mat-checkbox>
+            <mat-checkbox [ngModel]="heating" name="heating" class="">Central Heating</mat-checkbox>
           </div>
 
           <div class="field">
-            <mat-checkbox [ngModel]="selectedCooling" name="cooling" class="">Central Cooling</mat-checkbox>
+            <mat-checkbox [ngModel]="cooling" name="cooling" class="">Central Cooling</mat-checkbox>
           </div>
 
           <div class="field">
-            <mat-checkbox ngModel name="rv_boat" class="">RV/Boat Parking</mat-checkbox>
+            <mat-checkbox [ngModel]="rv_boat" name="rv_boat" class="">RV/Boat Parking</mat-checkbox>
           </div>
 
           <div class="field">
-            <mat-checkbox ngModel name="two_stories" class="">2 Stories</mat-checkbox>
+            <mat-checkbox [ngModel]="two_stories" name="two_stories" class="">2 Stories</mat-checkbox>
           </div>
 
           <div class="field">
-            <mat-checkbox ngModel name="deck_patio" class="">Deck/Patio</mat-checkbox>
+            <mat-checkbox [ngModel]="deck_ratio" name="deck_ratio" class="">Deck/Patio</mat-checkbox>
           </div>
 
           <div class="field">
-            <mat-checkbox ngModel name="fireplace" class="">Fireplace</mat-checkbox>
+            <mat-checkbox [ngModel]="fireplace" name="fireplace" class="">Fireplace</mat-checkbox>
           </div>
 
           <div class="field">
-            <mat-checkbox ngModel name="swimming_pool" class="">Swimming Pool</mat-checkbox>
+            <mat-checkbox [ngModel]="swimming_pool" name="swimming_pool" class="">Swimming Pool</mat-checkbox>
           </div>
 
         </div>

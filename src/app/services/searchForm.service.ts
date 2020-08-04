@@ -48,71 +48,62 @@ export class SearchFormService {
             { value: 2000, viewValue: '2000' }
       ];
 
-      location = "";
-      selectedMinPrice = this.prices[0].value;
-      selectedMaxPrice = this.prices[0].value;
-      selectedBeds = this.beds[0].value;
-      selectedBaths = this.baths[0].value;
-      selectedMinArea = this.area[0].value;
-      selectedMaxArea = this.area[0].value;
-      selectedMinYear = this.year[0].value;
-      selectedMaxYear = this.year[0].value;
-      heating = false;
-      cooling = false;
+      location: string;
+      minPrice: number;
+      maxPrice: number;
+      minBeds: number;
+      minBaths: number;
+      minArea: number;
+      maxArea: number;
+      minYear: number;
+      maxYear: number;
+      propertyID: string;
+      heating: boolean;
+      cooling: boolean;
+      rv_boat: boolean;
+      two_stories: boolean;
+      deck_ratio: boolean;
+      fireplace: boolean;
+      swimming_pool: boolean;
 
-      formData: {
-            location_contains: string
-            // priceSale_gte: number,
-            // priceSale_lte: number,
-            // beds_gte: number,
-            // baths_gte: number,
-            // area_gte: number,
-            // area_lte: number,
-            // year_built_gte: number,
-            // year_built_lte: number,
-            // propID: string,
-            // central_heating: boolean,
-            // central_cooling: boolean,
-            // rv_boat_parking: boolean,
-            // two_stories: boolean,
-            // deck_patio: boolean,
-            // fireplace: boolean,
-            // swimming_pool: boolean
-      };
+      formInit() {
+            this.location = "";
+            this.minPrice = this.prices[0].value;
+            this.maxPrice = this.prices[0].value;
+            this.minBeds = this.beds[0].value;
+            this.minBaths = this.baths[0].value;
+            this.minArea = this.area[0].value;
+            this.maxArea = this.area[0].value;
+            this.minYear = this.year[0].value;
+            this.maxYear = this.year[0].value;
+            this.propertyID = "";
+            this.heating = false;
+            this.cooling = false;
+            this.rv_boat = false;
+            this.two_stories = false;
+            this.deck_ratio = false;
+            this.fireplace = false;
+            this.swimming_pool = false;
+      }
 
       saveFormData(values) {
             this.location = values.location;
-            this.selectedMinPrice = values.min_price;
-            this.selectedMaxPrice = values.max_price;
-            this.selectedBeds = values.min_beds;
-            this.selectedBaths = values.min_baths;
-            this.selectedMinArea = values.min_area;
-            this.selectedMaxArea = values.max_area;
-            this.selectedMinYear = values.min_year;
-            this.selectedMaxYear = values.max_year;
+            this.minPrice = values.min_price;
+            this.maxPrice = values.max_price;
+            this.minBeds = values.min_beds;
+            this.minBaths = values.min_baths;
+            this.minArea = values.min_area;
+            this.maxArea = values.max_area;
+            this.minYear = values.min_year;
+            this.maxYear = values.max_year;
+            this.propertyID = values.property_id;
             this.heating = values.heating;
             this.cooling = values.cooling;
-
-            // this.formData.priceSale_gte = newData.location.min_price;
-            // this.formData.priceSale_lte = newData.location;
-            // this.formData.beds_gte = newData.location;
-            // this.formData.baths_gte = newData.location;
-            // this.formData.area_gte = newData.location;
-            // this.formData.area_lte = newData.location;
-            // this.formData.year_built_gte = newData.location;
-            // this.formData.year_built_lte = newData.location;
-            // this.formData.propID = newData.location;
-            // this.formData.central_heating = newData.location;
-            // this.formData.central_cooling = newData.location;
-            // this.formData.rv_boat_parking = newData.location;
-            // this.formData.two_stories = newData.location;
-            // this.formData.deck_patio = newData.location;
-            // this.formData.fireplace = newData.location;
-            // this.formData.swimming_pool = newData.location;
-      }
-
-      getFormData() {
-            return this.formData;
+            this.rv_boat = values.rv_boat;
+            this.two_stories = values.two_stories;
+            this.deck_ratio = values.deck_ratio;
+            this.fireplace = values.fireplace;
+            this.swimming_pool = values.swimming_pool;
       }
 
 }
