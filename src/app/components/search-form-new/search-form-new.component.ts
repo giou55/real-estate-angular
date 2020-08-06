@@ -109,7 +109,7 @@ export class SearchFormNewComponent implements OnInit {
       }
 
       toggleAccordian() {
-            var x = document.querySelector("p.accordion > span");
+            var x = document.querySelector("div.accordion > span");
             if (x.innerHTML === "More Filters") {
                   x.innerHTML = "Less Filters";
             } else {

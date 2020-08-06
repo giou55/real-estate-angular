@@ -30,46 +30,48 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TestComponent } from './components/test/test.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { SearchFormNewComponent } from './components/search-form-new/search-form-new.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
-        declarations: [
-                AppComponent,
-                TopbarComponent,
-                WeCallYouComponent,
-                SearchFormComponent,
-                RecentPropsComponent,
-                DialogFormComponent,
-                PropertyComponent,
-                HomeComponent,
-                SubmitComponent,
-                FooterComponent,
-                FeaturedPropsComponent,
-                AgentsComponent,
-                NavbarComponent,
-                TestComponent,
-                SearchResultsComponent,
-                SearchFormNewComponent
-        ],
-        imports: [
-                BrowserModule,
-                AppRoutingModule,
-                BrowserAnimationsModule,
-                MatDialogModule,
-                MatTabsModule,
-                MatButtonModule,
-                MatSelectModule,
-                MatFormFieldModule,
-                MatInputModule,
-                MatCheckboxModule,
-                AgmCoreModule.forRoot({
-                        apiKey: 'AIzaSyDVSnm1iQ3D-FF6_0yNxqyMRA63XVmBckM',
-                        language: 'en'
-                }),
-                FormsModule,
-                ReactiveFormsModule,
-                HttpClientModule
-        ],
-        providers: [],
-        bootstrap: [AppComponent]
+      declarations: [
+            AppComponent,
+            TopbarComponent,
+            WeCallYouComponent,
+            SearchFormComponent,
+            RecentPropsComponent,
+            DialogFormComponent,
+            PropertyComponent,
+            HomeComponent,
+            SubmitComponent,
+            FooterComponent,
+            FeaturedPropsComponent,
+            AgentsComponent,
+            NavbarComponent,
+            TestComponent,
+            SearchResultsComponent,
+            SearchFormNewComponent,
+            SignupComponent
+      ],
+      imports: [
+            BrowserModule,
+            AppRoutingModule,
+            BrowserAnimationsModule,
+            MatDialogModule,
+            MatTabsModule,
+            MatButtonModule,
+            MatSelectModule,
+            MatFormFieldModule,
+            MatInputModule,
+            MatCheckboxModule,
+            AgmCoreModule.forRoot({
+                  apiKey: 'AIzaSyDVSnm1iQ3D-FF6_0yNxqyMRA63XVmBckM',
+                  language: 'en'
+            }),
+            FormsModule,
+            ReactiveFormsModule,
+            HttpClientModule
+      ],
+      providers: [],
+      bootstrap: [AppComponent]
 })
 export class AppModule { }

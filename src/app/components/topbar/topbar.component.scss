@@ -71,16 +71,48 @@
   font-size: 0.9rem;
 }
 
-// .submit button {
-//   background-color: $green;
-//   font-weight: 500;
-//   font-size: 0.9rem;
-//   padding: $padding;
-// }
+.dropdown {
+  overflow: hidden;
+  transition: .2s;
+}
 
-// .submit button:hover {
-//   background-color: $greenDarker;
-// }
+.dropdown button {
+  color: #fff;
+  transition: .2s;
+}
+
+.dropdown .dropbtn {
+  font-size: 0.9rem;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: $padding;
+  background-color: transparent;
+}
+
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  border-top: 3px solid #044849;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  transition: .2s ease;
+}
+
+.dropdown-content a {
+  font-size: 0.9rem;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 @media screen and (max-width: 1200px) {
   .main {

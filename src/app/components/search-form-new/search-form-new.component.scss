@@ -2,22 +2,17 @@
 
 .form-container {
   margin: auto;
-  padding-top: 12px;
+  padding: 15px;
 }
 
 .main-filters,
 .panel,
 .fields-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   flex-grow: 1;
-}
-
-.mat-typography p {
-  margin: 0;
-  margin-left: 12px;
 }
 
 .accordion {
@@ -65,14 +60,13 @@
 }
 
 .field {
-  margin-left: 12px;
   margin-top: 0;
   font-size: 14px;
   color: #555;
 }
 
-#checkboxes .field {
-  margin-bottom: 10px;
+.field h3 {
+  margin: 0;
 }
 
 mat-form-field {

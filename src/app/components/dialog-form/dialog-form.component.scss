@@ -45,9 +45,37 @@ textarea {
 button {
   background-color: $green;
   padding: 10px 24px;
-  margin-top: 6px;
+  margin-bottom: 14px;
 }
 
 button:hover {
   background-color: $greenDarker;
+}
+
+p span {
+  cursor: pointer;
+  font-size: 0.7rem;
+  color: black;
+}
+
+p span:hover {
+  text-decoration: underline;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
 }
