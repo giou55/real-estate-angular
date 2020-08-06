@@ -4,9 +4,10 @@
   <app-search-form-new></app-search-form-new>
 </div>
 
-<div class="container" *ngIf="results.length < 1">
+<div class="container">
   <div class="header">
-    <h2>No Properties found!</h2>
+    <h2 *ngIf="results.length < 1">No Properties Found</h2>
+    <h2 *ngIf="results.length > 1">{{ results.length }} Properties Found</h2>
   </div>
 </div>
 

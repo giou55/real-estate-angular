@@ -86,7 +86,7 @@ export class SearchFormService {
             this.swimming_pool = false;
       }
 
-      saveFormData(values) {
+      saveFormData(values: any) {
             this.location = values.location;
             this.minPrice = values.min_price;
             this.maxPrice = values.max_price;

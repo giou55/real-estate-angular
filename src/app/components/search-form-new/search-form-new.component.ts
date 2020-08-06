@@ -36,7 +36,7 @@ export class SearchFormNewComponent implements OnInit {
       swimming_pool: boolean;
 
       valuesFromFields = {};
-      paramsToSend = {};
+      queryParams = {};
 
       constructor(
             private searchFormService: SearchFormService,
@@ -45,31 +45,67 @@ export class SearchFormNewComponent implements OnInit {
       ) { }
 
       ngOnInit(): void {
-            this.location = this.searchFormService.location;
+
+            console.log(typeof (this.route.snapshot.queryParams['priceSale_gte']));
             this.priceValues = this.searchFormService.prices;
             this.bedsValues = this.searchFormService.beds;
             this.bathsValues = this.searchFormService.baths;
             this.areaValues = this.searchFormService.area;
             this.yearValues = this.searchFormService.year;
-            this.propertyID = this.searchFormService.propertyID;
-            this.minPrice = this.searchFormService.minPrice;
-            this.maxPrice = this.searchFormService.maxPrice;
-            this.minBeds = this.searchFormService.minBeds;
-            this.minBaths = this.searchFormService.minBaths;
-            this.minArea = this.searchFormService.minArea;
-            this.maxArea = this.searchFormService.maxArea;
-            this.minYear = this.searchFormService.minYear;
-            this.maxYear = this.searchFormService.maxYear;
-            this.heating = this.searchFormService.heating;
-            this.cooling = this.searchFormService.cooling;
-            this.rv_boat = this.searchFormService.rv_boat;
-            this.two_stories = this.searchFormService.two_stories;
-            this.deck_ratio = this.searchFormService.deck_ratio;
-            this.fireplace = this.searchFormService.fireplace;
-            this.swimming_pool = this.searchFormService.swimming_pool;
+            this.location = this.route.snapshot.queryParams['location_contains'] ?
+                  this.route.snapshot.queryParams['location_contains'] :
+                  this.searchFormService.location;
+            this.propertyID = this.route.snapshot.queryParams['propID'] ?
+                  this.route.snapshot.queryParams['propID'] :
+                  this.searchFormService.propertyID;
+            this.minPrice = this.route.snapshot.queryParams['priceSale_gte'] ?
+                  parseInt(this.route.snapshot.queryParams['priceSale_gte']) :
+                  this.searchFormService.minPrice;
+            this.maxPrice = this.route.snapshot.queryParams['priceSale_lte'] ?
+                  parseInt(this.route.snapshot.queryParams['priceSale_lte']) :
+                  this.searchFormService.maxPrice;
+            this.minBeds = this.route.snapshot.queryParams['beds_gte'] ?
+                  parseInt(this.route.snapshot.queryParams['beds_gte']) :
+                  this.searchFormService.minBeds;
+            this.minBaths = this.route.snapshot.queryParams['baths_gte'] ?
+                  parseInt(this.route.snapshot.queryParams['baths_gte']) :
+                  this.searchFormService.minBaths;
+            this.minArea = this.route.snapshot.queryParams['area_gte'] ?
+                  parseInt(this.route.snapshot.queryParams['area_lte']) :
+                  this.searchFormService.minArea;
+            this.maxArea = this.route.snapshot.queryParams['area_lte'] ?
+                  parseInt(this.route.snapshot.queryParams['area_lte']) :
+                  this.searchFormService.maxArea;
+            this.minYear = this.route.snapshot.queryParams['year_built_gte'] ?
+                  parseInt(this.route.snapshot.queryParams['year_built_lte']) :
+                  this.searchFormService.minYear;
+            this.maxYear = this.route.snapshot.queryParams['year_built_lte'] ?
+                  parseInt(this.route.snapshot.queryParams['year_built_lte']) :
+                  this.searchFormService.maxYear;
+            this.heating = this.route.snapshot.queryParams['central_heating'] ?
+                  this.route.snapshot.queryParams['central_heating'] :
+                  this.searchFormService.heating;
+            this.cooling = this.route.snapshot.queryParams['central_cooling'] ?
+                  this.route.snapshot.queryParams['central_cooling'] :
+                  this.searchFormService.cooling;
+            this.rv_boat = this.route.snapshot.queryParams['rv_boat_parking'] ?
+                  this.route.snapshot.queryParams['rv_boat_parking'] :
+                  this.searchFormService.rv_boat;
+            this.two_stories = this.route.snapshot.queryParams['two_stories'] ?
+                  this.route.snapshot.queryParams['two_stories'] :
+                  this.searchFormService.two_stories;
+            this.deck_ratio = this.route.snapshot.queryParams['deck_patio'] ?
+                  this.route.snapshot.queryParams['deck_patio'] :
+                  this.searchFormService.deck_ratio;
+            this.fireplace = this.route.snapshot.queryParams['fireplace'] ?
+                  this.route.snapshot.queryParams['fireplace'] :
+                  this.searchFormService.fireplace;
+            this.swimming_pool = this.route.snapshot.queryParams['swimming_pool'] ?
+                  this.route.snapshot.queryParams['swimming_pool'] :
+                  this.searchFormService.swimming_pool;
 
             this.valuesFromFields = {};
-            this.paramsToSend = {};
+            this.queryParams = {};
       }
 
       toggleAccordian() {
@@ -79,13 +115,9 @@ export class SearchFormNewComponent implements OnInit {
             } else {
                   x.innerHTML = "More Filters";
             }
-
             var i = document.getElementById("fa-symbol");
-            // i.classList.toggle("fa-minus-square-o");
-            // i.classList.toggle("fa-plus-square-o");
             i.classList.toggle("fa-minus");
             i.classList.toggle("fa-plus");
-
             var panel = document.getElementById("panel");
             panel.classList.toggle("o-visible");
             if (panel.style.maxHeight) {
@@ -95,7 +127,7 @@ export class SearchFormNewComponent implements OnInit {
             }
       }
 
-      createQueryParams(values) {
+      createQueryParams(values: any) {
             this.valuesFromFields = {
                   location_contains: values.location,
                   priceSale_gte: values.min_price,
@@ -124,11 +156,10 @@ export class SearchFormNewComponent implements OnInit {
       }
 
       onSubmit(form: NgForm) {
-            this.searchFormService.saveFormData(form.value);
-            this.paramsToSend = this.createQueryParams(form.value);
+            this.queryParams = this.createQueryParams(form.value);
             this.router.navigate(['searchResults'],
                   {
-                        queryParams: this.paramsToSend
+                        queryParams: this.queryParams
                   });
       }
 }
