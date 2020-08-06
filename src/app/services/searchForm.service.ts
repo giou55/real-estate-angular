@@ -85,25 +85,4 @@ export class SearchFormService {
             this.fireplace = false;
             this.swimming_pool = false;
       }
-
-      saveFormData(values: any) {
-            this.location = values.location;
-            this.minPrice = values.min_price;
-            this.maxPrice = values.max_price;
-            this.minBeds = values.min_beds;
-            this.minBaths = values.min_baths;
-            this.minArea = values.min_area;
-            this.maxArea = values.max_area;
-            this.minYear = values.min_year;
-            this.maxYear = values.max_year;
-            this.propertyID = values.property_id;
-            this.heating = values.heating;
-            this.cooling = values.cooling;
-            this.rv_boat = values.rv_boat;
-            this.two_stories = values.two_stories;
-            this.deck_ratio = values.deck_ratio;
-            this.fireplace = values.fireplace;
-            this.swimming_pool = values.swimming_pool;
-      }
-
 }
