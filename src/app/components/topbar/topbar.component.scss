@@ -114,6 +114,29 @@
   display: block;
 }
 
+.btn {
+  outline: none;
+  cursor: pointer;
+  border-radius: 14px;
+  padding: 5px 12px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: 0.2s ease;
+}
+
+.btnLogin {
+  background-color: #fff;
+  color: #044849;
+  border: 1px solid #fff;
+  margin-right: 8px;
+}
+
+.btnSignup {
+  background-color: #fd7955;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
 @media screen and (max-width: 1200px) {
   .main {
     width: 95%;
