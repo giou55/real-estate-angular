@@ -45,8 +45,6 @@ export class SearchFormNewComponent implements OnInit {
       ) { }
 
       ngOnInit(): void {
-
-            console.log(typeof (this.route.snapshot.queryParams['priceSale_gte']));
             this.priceValues = this.searchFormService.prices;
             this.bedsValues = this.searchFormService.beds;
             this.bathsValues = this.searchFormService.baths;

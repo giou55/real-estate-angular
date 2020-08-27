@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-      selector: 'app-signup',
-      templateUrl: './signup.component.html',
-      styleUrls: ['./signup.component.scss']
+      selector: 'app-login',
+      templateUrl: './login.component.html',
+      styleUrls: ['./login.component.scss']
 })
-export class SignupComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
       constructor(
             private authService: AuthService,
@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit {
       ngOnInit(): void {
       }
 
-      create(status: boolean): void {
+      login(status: boolean): void {
             this.authService.statusUpdated.emit(status);
             this.router.navigate(['/']);
       }
