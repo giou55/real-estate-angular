@@ -1,16 +1,26 @@
-<h2>Welcome in Real Homes</h2>
-<p>Login to save your favorite homes and searches!</p>
+<div *ngIf="isLoading" style="text-align: center; margin-top: 80px; font-size: 22px;">
+  Loading...
+</div>
 
-<form>
-  <div>
-    <label for="name">Username</label>
-    <input type="text" id="name" name="name" />
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" />
-  </div>
-  <div>
-    <button (click)="login(true)">Login</button>
-  </div>
-</form>
+<div class="container" *ngIf="!isLoading">
+  <h2>Welcome in Real Homes!</h2>
+
+  <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+    <div>
+      <label for="name">Username</label>
+      <input type="text" id="name" name="name" ngModel required autofocus />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" ngModel required />
+    </div>
+    <div>
+      <!-- <button (click)="login(true)"> -->
+      <button type="submit">Login</button>
+      New to Real Homes? <a routerLink="/signup">Create an account</a>
+    </div>
+  </form>
+
+</div>
+
+<app-footer></app-footer>

@@ -1,20 +1,30 @@
-<h2>Welcome in Real Homes</h2>
-<p>Create account to save your favorite homes and searches!</p>
+<div class="container" *ngIf="isLoading" style="text-align:center">
+  <app-loading-spinner></app-loading-spinner>
+</div>
 
-<form>
-  <div>
-    <label for="name">Username</label>
-    <input type="text" id="name" name="name" />
-  </div>
-  <div>
-    <label for="email">Email</label>
-    <input type="text" id="email" name="email" />
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" />
-  </div>
-  <div>
-    <button (click)="create(true)">Create Account</button>
-  </div>
-</form>
+<div class="container" *ngIf="!isLoading">
+  <h2>Welcome in Real Homes!</h2>
+  <p>Create account to save your favorite homes and searches!</p>
+
+  <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+    <div>
+      <label for="name">Username</label>
+      <input type="text" id="name" name="name" ngModel required autofocus />
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" ngModel required />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" ngModel required />
+    </div>
+    <div>
+      <button type="submit">Create an Account</button> Already have an account?
+      <a routerLink="/login">Login</a>
+    </div>
+  </form>
+
+</div>
+
+<app-footer></app-footer>

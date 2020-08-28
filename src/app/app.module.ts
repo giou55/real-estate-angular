@@ -32,6 +32,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { SearchFormNewComponent } from './components/search-form-new/search-form-new.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
       declarations: [
@@ -52,7 +53,8 @@ import { LoginComponent } from './components/login/login.component';
             SearchResultsComponent,
             SearchFormNewComponent,
             SignupComponent,
-            LoginComponent
+            LoginComponent,
+            LoadingSpinnerComponent
       ],
       imports: [
             BrowserModule,
