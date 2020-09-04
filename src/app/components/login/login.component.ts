@@ -12,6 +12,9 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+      isLoading = false;
+      error: string = null;
+
       constructor(
             private authService: AuthService,
             private router: Router
@@ -20,24 +23,26 @@ export class LoginComponent implements OnInit {
       ngOnInit(): void {
       }
 
-      isLoading = false;
-      //authObs: Observable<AuthResponseData>;
-
-      // login(status: boolean): void {
-      //       this.authService.statusUpdated.emit(status);
-      //       this.router.navigate(['/']);
-      // }
-
       onSubmit(form: NgForm) {
             if (!form.valid) {
                   return;
             }
             const name = form.value.name;
             const password = form.value.password;
-
             this.isLoading = true;
 
-            //this.authObs = this.authService.login(name, password);
+            this.authService.login(name, password).subscribe(
+                  resData => {
+                        console.log(resData);
+                        this.authService.statusUpdated.emit(true);
+                        this.router.navigate(['/']);
+                  },
+                  error => {
+                        console.log(error);
+                        this.error = "There was a problem logging in. Check your username and password or create an account.";
+                        this.isLoading = false;
+                  }
+            );
 
             form.reset();
       }

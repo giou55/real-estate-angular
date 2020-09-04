@@ -3,9 +3,6 @@ import { Router } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service';
 
-// import { MatDialog } from '@angular/material/dialog';
-// import { DialogFormComponent } from '../dialog-form/dialog-form.component';
-
 @Component({
       selector: 'app-topbar',
       templateUrl: './topbar.component.html',
@@ -14,7 +11,6 @@ import { AuthService } from '../../services/auth.service';
 export class TopbarComponent {
 
       constructor(
-            // public dialog: MatDialog,
             private authService: AuthService,
             private router: Router
       ) {
@@ -24,13 +20,6 @@ export class TopbarComponent {
       }
 
       isLoginMode = false;
-
-      // openDialog(): void {
-      //       const dialogRef = this.dialog.open(DialogFormComponent, {
-      //             hasBackdrop: true,
-      //             backdropClass: 'backdropBackground'
-      //       });
-      // }
 
       logout(): void {
             this.isLoginMode = false;

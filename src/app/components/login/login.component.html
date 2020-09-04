@@ -1,8 +1,9 @@
-<div *ngIf="isLoading" style="text-align: center; margin-top: 80px; font-size: 22px;">
-  Loading...
+<div class="container" *ngIf="isLoading" style="text-align:center">
+  <app-loading-spinner></app-loading-spinner>
 </div>
 
 <div class="container" *ngIf="!isLoading">
+  <div *ngIf="error" class="errorMessage">{{ error }}</div>
   <h2>Welcome in Real Homes!</h2>
 
   <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">

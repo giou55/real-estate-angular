@@ -3,6 +3,7 @@
 </div>
 
 <div class="container" *ngIf="!isLoading">
+  <div *ngIf="error" class="errorMessage">{{ error }}</div>
   <h2>Welcome in Real Homes!</h2>
   <p>Create account to save your favorite homes and searches!</p>
 

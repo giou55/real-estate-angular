@@ -5,7 +5,6 @@ import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
@@ -19,7 +18,6 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { WeCallYouComponent } from './components/we-call-you/we-call-you.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { RecentPropsComponent } from './components/recent-props/recent-props.component';
-import { DialogFormComponent } from './components/dialog-form/dialog-form.component';
 import { PropertyComponent } from './components/property/property.component';
 import { HomeComponent } from './components/home/home.component';
 import { SubmitComponent } from './components/submit/submit.component';
@@ -41,7 +39,6 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
             WeCallYouComponent,
             SearchFormComponent,
             RecentPropsComponent,
-            DialogFormComponent,
             PropertyComponent,
             HomeComponent,
             SubmitComponent,
@@ -60,7 +57,6 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
             BrowserModule,
             AppRoutingModule,
             BrowserAnimationsModule,
-            MatDialogModule,
             MatTabsModule,
             MatButtonModule,
             MatSelectModule,

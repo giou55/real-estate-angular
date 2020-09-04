@@ -12,6 +12,7 @@ import { AuthService } from '../../services/auth.service';
 export class SignupComponent implements OnInit {
 
       isLoading = false;
+      error: string = null;
 
       constructor(
             private authService: AuthService,
@@ -20,11 +21,6 @@ export class SignupComponent implements OnInit {
 
       ngOnInit(): void {
       }
-
-      // create(status: boolean): void {
-      //       this.authService.statusUpdated.emit(status);
-      //       this.router.navigate(['/']);
-      // }
 
       onSubmit(form: NgForm) {
             if (!form.valid) {
@@ -38,11 +34,12 @@ export class SignupComponent implements OnInit {
             this.authService.signup(name, password, email).subscribe(
                   resData => {
                         console.log(resData);
-                        this.isLoading = false;
+                        this.authService.statusUpdated.emit(true);
                         this.router.navigate(['/']);
                   },
                   error => {
                         console.log(error);
+                        this.error = "The user already exists or an unknown error occurred.";
                         this.isLoading = false;
                   }
             );

@@ -20,8 +20,6 @@ export class AuthService {
       statusUpdated = new EventEmitter<boolean>();
 
       login(username: string, password: string) {
-            // this.isLoginMode = true;
-            // console.log(this.isLoginMode);
             return this.http.post(
                   "http://localhost:1337/auth/local",
                   {
@@ -32,7 +30,6 @@ export class AuthService {
       }
 
       signup(username: string, password: string, email: string) {
-            //this.isLoginMode = true;
             return this.http.post(
                   "http://localhost:1337/auth/local/register",
                   {

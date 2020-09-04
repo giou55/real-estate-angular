@@ -60,3 +60,12 @@ button {
   font-size: 0.9rem;
   transition: .2s ease;
 }
+
+.errorMessage {
+  margin: 20px auto;
+  background-color: rgb(211, 250, 210);
+  border: 1px solid $green;
+  border-radius: 4px;
+  padding: 10px;
+  text-align: left;
+}
