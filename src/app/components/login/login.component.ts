@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
 
             this.authService.login(name, password).subscribe(
                   resData => {
-                        console.log(resData);
                         this.authService.statusUpdated.emit(true);
                         this.router.navigate(['/']);
                   },
