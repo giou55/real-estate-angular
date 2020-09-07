@@ -1,32 +1,23 @@
-import { Injectable, EventEmitter } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { throwError, BehaviorSubject } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+
 import { User } from '../models/user.model';
 
-// export interface AuthResponseData {
-//       kind: string;
-//       idToken: string;
-//       email: string;
-//       refreshToken: string;
-//       expiresIn: string;
-//       localId: string;
-//       registered?: boolean;
-// }
-
 @Injectable({ providedIn: 'root' })
+
 export class AuthService {
-      user = new Subject<User>();
+      user = new BehaviorSubject<User>(null);
 
-      constructor(private http: HttpClient) { }
+      constructor(private http: HttpClient, private router: Router) { }
 
-      isLoginMode = false;
-
-      statusUpdated = new EventEmitter<boolean>();
+      //statusUpdated = new EventEmitter<boolean>();
 
       login(username: string, password: string) {
             return this.http
-                  .post(
+                  .post<any>(
                         "http://localhost:1337/auth/local",
                         {
                               "identifier": username,
@@ -34,16 +25,21 @@ export class AuthService {
                         }
                   )
                   .pipe(
+                        catchError(this.handleError),
                         tap(resData => {
-                              console.log(resData);
-                              //this.authenticate(resData.email, resData.id, resData.jwt);
+                              this.handleAuthentication(
+                                    resData.user.username,
+                                    resData.user.email,
+                                    resData.user.id,
+                                    resData.jwt
+                              );
                         })
                   );
       }
 
       signup(username: string, password: string, email: string) {
             return this.http
-                  .post(
+                  .post<any>(
                         "http://localhost:1337/auth/local/register",
                         {
                               "username": username,
@@ -52,18 +48,53 @@ export class AuthService {
                         }
                   )
                   .pipe(
+                        catchError(this.handleError),
                         tap(resData => {
-                              //this.authenticate(resData.email, resData.id, resData.jwt);
+                              this.handleAuthentication(
+                                    resData.user.username,
+                                    resData.user.email,
+                                    resData.user.id,
+                                    resData.jwt
+                              );
                         })
                   );
       }
 
-      authenticate(email: string, id: number, token: string) {
-            const user = new User(email, id, token);
+      private handleAuthentication(
+            username: string,
+            email: string,
+            userId: number,
+            token: string
+      ) {
+            const user = new User(username, email, userId, token);
             this.user.next(user);
+            localStorage.setItem('userData', JSON.stringify(user));
       }
 
       logout() {
-            this.isLoginMode = false;
+            this.user.next(null);
+            this.router.navigate(['/']);
+            localStorage.removeItem('userData');
+      }
+
+      private handleError(errorRes: HttpErrorResponse) {
+            let errorMessage = 'An unknown error occurred!';
+            if (!errorRes.error || !errorRes.error.error) {
+                  return throwError(errorMessage);
+            }
+            switch (errorRes.error.error.message) {
+                  case 'EMAIL_EXISTS':
+                        errorMessage = 'This email exists already';
+                        break;
+                  case 'EMAIL_NOT_FOUND':
+                        errorMessage = 'This email does not exist.';
+                        break;
+                  case 'INVALID_PASSWORD':
+                        errorMessage = 'This password is not correct.';
+                        break;
+                  default:
+                        errorMessage = 'There was a problem logging in.Check your username and password or create an account';
+            }
+            return throwError(errorMessage);
       }
 }

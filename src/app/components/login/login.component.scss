@@ -35,6 +35,10 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  cursor: not-allowed;
+}
+
 button:hover {
   background-color: $greenDarker;
 }

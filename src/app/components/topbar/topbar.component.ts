@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service';
@@ -8,29 +9,34 @@ import { AuthService } from '../../services/auth.service';
       templateUrl: './topbar.component.html',
       styleUrls: ['./topbar.component.scss']
 })
-export class TopbarComponent {
+export class TopbarComponent implements OnInit, OnDestroy {
+      isAuthenticated = false;
+      private userSub: Subscription;
 
       constructor(
             private authService: AuthService,
             private router: Router
-      ) {
-            this.authService.statusUpdated.subscribe(
-                  (status: boolean) => this.isLoginMode = status
-            );
+      ) { }
+
+      ngOnInit() {
+            this.userSub = this.authService.user.subscribe(user => {
+                  this.isAuthenticated = !!user;
+            });
       }
 
-      isLoginMode = false;
-
-      logout(): void {
-            this.isLoginMode = false;
-            this.router.navigate(['/']);
+      onLogout() {
+            this.authService.logout();
       }
 
-      goToLoginPage(): void {
+      ngOnDestroy() {
+            this.userSub.unsubscribe();
+      }
+
+      goToLogin(): void {
             this.router.navigate(['login']);
       }
 
-      goToSignupPage(): void {
+      goToSignup(): void {
             this.router.navigate(['signup']);
       }
 

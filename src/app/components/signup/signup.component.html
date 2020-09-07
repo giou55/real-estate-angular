@@ -8,20 +8,20 @@
   <p>Create account to save your favorite homes and searches!</p>
 
   <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
-    <div>
-      <label for="name">Username</label>
-      <input type="text" id="name" name="name" ngModel required autofocus />
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" ngModel required autofocus />
     </div>
-    <div>
+    <div class="form-group">
       <label for="email">Email</label>
       <input type="text" id="email" name="email" ngModel required />
     </div>
-    <div>
+    <div class="form-group">
       <label for="password">Password</label>
       <input type="password" id="password" name="password" ngModel required />
     </div>
     <div>
-      <button type="submit">Create an Account</button> Already have an account?
+      <button type="submit" [disabled]="!authForm.valid">Create an Account</button> Already have an account?
       <a routerLink="/login">Login</a>
     </div>
   </form>
