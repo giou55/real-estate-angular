@@ -13,8 +13,6 @@ export class AuthService {
 
       constructor(private http: HttpClient, private router: Router) { }
 
-      //statusUpdated = new EventEmitter<boolean>();
-
       login(username: string, password: string) {
             return this.http
                   .post<any>(

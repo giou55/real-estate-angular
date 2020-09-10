@@ -10,6 +10,7 @@ import { Property } from "../../models/property.model";
       styleUrls: ['./search-results.component.scss']
 })
 export class SearchResultsComponent implements OnInit {
+      isLoading = false;
 
       constructor(
             private route: ActivatedRoute,
@@ -19,6 +20,7 @@ export class SearchResultsComponent implements OnInit {
       results: Property[] = [];
 
       ngOnInit(): void {
+            this.isLoading = true;
             this.route.queryParams.subscribe(
                   (params: Params) => {
                         var str = "";
@@ -31,6 +33,7 @@ export class SearchResultsComponent implements OnInit {
 
                         this.http.get<Property[]>('http://localhost:1337/properties?' + str).subscribe(
                               results => {
+                                    this.isLoading = false;
                                     this.results = results;
                               }
                         );
