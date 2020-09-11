@@ -1,3 +1,7 @@
+<div class="form-component-container">
+  <app-search-form-new></app-search-form-new>
+</div>
+
 <div class="container" *ngIf="isLoading" style="text-align:center">
   <app-loading-spinner></app-loading-spinner>
 </div>
@@ -5,6 +9,7 @@
 <div class="container" *ngIf="!isLoading">
   <div *ngIf="error" class="errorMessage">{{ error }}</div>
   <h2>Welcome in Real Homes!</h2>
+  <p>Sign in to save your favorite homes and searches!</p>
 
   <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
     <div class="form-group">

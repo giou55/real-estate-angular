@@ -31,6 +31,7 @@ import { SearchFormNewComponent } from './components/search-form-new/search-form
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { UserPageComponent } from './components/user-page/user-page.component';
 
 @NgModule({
       declarations: [
@@ -51,7 +52,8 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
             SearchFormNewComponent,
             SignupComponent,
             LoginComponent,
-            LoadingSpinnerComponent
+            LoadingSpinnerComponent,
+            UserPageComponent
       ],
       imports: [
             BrowserModule,

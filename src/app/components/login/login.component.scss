@@ -6,6 +6,13 @@
   margin: 50px auto;
 }
 
+.form-component-container {
+  width: 100%;
+  margin: auto;
+  background-color: #fff;
+  border: 1px solid $darkerGreyBorder;
+}
+
 form {
   text-align: left;
   background-color: #fff;
