@@ -58,6 +58,12 @@ export class AuthService {
                   );
       }
 
+      logout() {
+            this.user.next(null);
+            this.router.navigate(['/']);
+            localStorage.removeItem('userData');
+      }
+
       private handleAuthentication(
             username: string,
             email: string,
@@ -67,12 +73,6 @@ export class AuthService {
             const user = new User(username, email, userId, token);
             this.user.next(user);
             localStorage.setItem('userData', JSON.stringify(user));
-      }
-
-      logout() {
-            this.user.next(null);
-            this.router.navigate(['/']);
-            localStorage.removeItem('userData');
       }
 
       private handleError(errorRes: HttpErrorResponse) {

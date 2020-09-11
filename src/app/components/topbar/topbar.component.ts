@@ -12,6 +12,10 @@ import { AuthService } from '../../services/auth.service';
 export class TopbarComponent implements OnInit, OnDestroy {
       isAuthenticated = false;
       private userSub: Subscription;
+      user = {
+            username: "",
+            email: ""
+      };
 
       constructor(
             private authService: AuthService,
@@ -21,6 +25,10 @@ export class TopbarComponent implements OnInit, OnDestroy {
       ngOnInit() {
             this.userSub = this.authService.user.subscribe(user => {
                   this.isAuthenticated = !!user;
+                  if (user) {
+                        this.user.username = user.username;
+                        this.user.email = user.email;
+                  }
             });
       }
 

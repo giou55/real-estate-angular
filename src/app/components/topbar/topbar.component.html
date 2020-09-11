@@ -12,6 +12,9 @@
       <div *ngIf="isAuthenticated" class="dropdown user">
         <i class="fas fa-user-circle user"></i>
         <div class="dropdown-content">
+          <a style="font-weight: bold;" routerLink="/">{{ user.username }}</a>
+          <a style="font-size: 12px;" routerLink="/">{{ user.email }}</a>
+          <hr>
           <a routerLink="/">My favorite homes</a>
           <a routerLink="/">My searches</a>
           <a class="logout" (click)="onLogout()">Log out</a>
@@ -23,14 +26,14 @@
         <button class="btn btnSignup" (click)="goToSignup()">Sign up</button>
       </div>
 
-      <div class="dropdown">
+      <!-- <div class="dropdown">
         <button class="dropbtn">EN
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
           <a routerLink="/index-gr">GR</a>
         </div>
-      </div>
+      </div> -->
 
     </div>
 

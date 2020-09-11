@@ -37,7 +37,7 @@
 }
 
 .user-buttons>div {
-  margin-right: 10px;
+  margin-left: 20px;
   padding: 5px;
   color: #fff;
 }
@@ -89,6 +89,7 @@
 .dropdown .dropdown-content {
   display: none;
   position: absolute;
+  right: 10px;
   background-color: #f9f9f9;
   min-width: 160px;
   border-top: 3px solid #044849;
