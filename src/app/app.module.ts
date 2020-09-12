@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
@@ -32,6 +32,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 @NgModule({
       declarations: [
@@ -73,7 +74,7 @@ import { UserPageComponent } from './components/user-page/user-page.component';
             ReactiveFormsModule,
             HttpClientModule
       ],
-      providers: [],
+      providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }],
       bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,7 +4,15 @@
 
 <div class="container">
 
-  <h2>{{ user.username }}</h2>
+  <h2>{{ user.username }} - My Favorite Homes</h2>
+
+  <div class="" style="text-align: center;" *ngFor="let prop of properties">
+    <div routerLink="/properties/{{ prop.id }}">
+      <img src="{{ prop.imageSm_Path }}" alt="" style="width:70%">
+      <h1>{{ prop.title }}</h1>
+      <p>{{ prop.description }}</p>
+    </div>
+  </div>
 
 </div>
 

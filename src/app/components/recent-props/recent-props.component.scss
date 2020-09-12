@@ -99,16 +99,13 @@
 
 .addTo i {
   margin-right: 10px;
-  font-size: 23px;
+  font-size: 25px;
   color: #fff;
 }
 
 .addTo .fa-heart:hover {
   color: #f00;
-}
-
-.addTo .fa-exchange-alt:hover {
-  color: orange;
+  cursor: pointer;
 }
 
 .prop-text {

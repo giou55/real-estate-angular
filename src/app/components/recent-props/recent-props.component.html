@@ -14,8 +14,7 @@
           <div class="text-overlay" routerLink="/properties/{{ prop.id }}">View Property</div>
         </div>
         <div class="addTo">
-          <i class="fas fa-heart"></i>
-          <i class="fas fa-exchange-alt"></i>
+          <i (click)="addToFavorites(prop.id)" class="fas fa-heart"></i>
         </div>
       </div>
 
