@@ -25,8 +25,8 @@ export class LoginComponent {
             }
             const username = form.value.username;
             const password = form.value.password;
-            this.isLoading = true;
             let authObs: Observable<any>;
+            this.isLoading = true;
 
             authObs = this.authService.login(username, password);
 

@@ -9,6 +9,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
+import { RouteGuardService } from './services/routeGuard.service';
 
 
 const routes: Routes = [
@@ -19,7 +20,10 @@ const routes: Routes = [
       { path: 'searchResults', component: SearchResultsComponent },
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
-      { path: 'user', component: UserPageComponent }
+      {
+            path: 'user', component: UserPageComponent,
+            canActivate: [RouteGuardService]
+      }
 ];
 
 @NgModule({

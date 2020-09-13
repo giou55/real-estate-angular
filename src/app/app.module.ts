@@ -32,7 +32,6 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
-import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 @NgModule({
       declarations: [
@@ -74,7 +73,7 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
             ReactiveFormsModule,
             HttpClientModule
       ],
-      providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }],
+      providers: [],
       bootstrap: [AppComponent]
 })
 export class AppModule { }

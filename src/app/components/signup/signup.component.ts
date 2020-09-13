@@ -23,7 +23,7 @@ export class SignupComponent {
             if (!form.valid) {
                   return;
             }
-            const username = form.value.name;
+            const username = form.value.username;
             const email = form.value.email;
             const password = form.value.password;
             let authObs: Observable<any>;
@@ -33,12 +33,10 @@ export class SignupComponent {
 
             authObs.subscribe(
                   resData => {
-                        console.log(resData);
                         this.isLoading = false;
                         this.router.navigate(['/']);
                   },
                   errorMessage => {
-                        console.log(errorMessage);
                         this.error = errorMessage;
                         this.isLoading = false;
                   }

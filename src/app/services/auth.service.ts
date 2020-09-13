@@ -58,6 +58,29 @@ export class AuthService {
                   );
       }
 
+      autoLogin() {
+            const userData: {
+                  username: string,
+                  email: string;
+                  id: string;
+                  _token: string;
+            } = JSON.parse(localStorage.getItem('userData'));
+            if (!userData) {
+                  return;
+            }
+
+            const loadedUser = new User(
+                  userData.username,
+                  userData.email,
+                  userData.id,
+                  userData._token,
+            );
+
+            if (loadedUser.token) {
+                  this.user.next(loadedUser);
+            }
+      }
+
       logout() {
             this.user.next(null);
             this.router.navigate(['/']);
@@ -67,7 +90,7 @@ export class AuthService {
       private handleAuthentication(
             username: string,
             email: string,
-            userId: number,
+            userId: string,
             token: string
       ) {
             const user = new User(username, email, userId, token);
