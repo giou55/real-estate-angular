@@ -29,7 +29,7 @@ export class SignupComponent {
             let authObs: Observable<any>;
             this.isLoading = true;
 
-            authObs = this.authService.signup(username, password, email);
+            authObs = this.authService.signup(username, email, password);
 
             authObs.subscribe(
                   resData => {

@@ -42,11 +42,8 @@ export class RecentPropsComponent implements OnInit, OnDestroy {
       addToFavorites(propID) {
             if (this.isAuthenticated) {
                   console.log("property ID:" + propID);
-                  this.http.get<Property[]>('http://localhost:1337/properties').subscribe(
-                        properties => {
-                              this.recentProperties = properties;
-                        });
             } else {
+                  console.log("You are not authenticated");
                   this.router.navigate(['login']);
             }
       }

@@ -35,14 +35,14 @@ export class AuthService {
                   );
       }
 
-      signup(username: string, password: string, email: string) {
+      signup(username: string, email: string, password: string) {
             return this.http
                   .post<any>(
                         "http://localhost:1337/auth/local/register",
                         {
                               "username": username,
-                              "password": password,
-                              "email": email
+                              "email": email,
+                              "password": password
                         }
                   )
                   .pipe(
@@ -62,7 +62,7 @@ export class AuthService {
             const userData: {
                   username: string,
                   email: string;
-                  id: string;
+                  id: number;
                   _token: string;
             } = JSON.parse(localStorage.getItem('userData'));
             if (!userData) {
@@ -90,7 +90,7 @@ export class AuthService {
       private handleAuthentication(
             username: string,
             email: string,
-            userId: string,
+            userId: number,
             token: string
       ) {
             const user = new User(username, email, userId, token);
