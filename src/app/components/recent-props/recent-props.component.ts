@@ -45,19 +45,28 @@ export class RecentPropsComponent implements OnInit, OnDestroy {
             // .put<any>(
             //       'http://localhost:1337/properties/' + propID,
             //       {
-            //             "identifier": username,
-            //             "password": password
-            //       }
-            // )
-            // .subscribe(
-            //       properties => {
-            //             this.recentProperties = properties;
+            //             "favoriteBy": [
+            //                   {
+            //                         "id": this.user.id,
+            //                         "username": this.user.username,
+            //                         "email": this.user.email,
+            //                         "provider": "local",
+            //                         "confirmed": true,
+            //                         "blocked": false,
+            //                         "role": 1,
+            //                         "created_by": 1,
+            //                         "updated_by": 1,
+            //                         "created_at": "2020-09-16T11:18:28.000Z",
+            //                         "updated_at": "2020-09-18T11:17:21.000Z"
+            //                   }
+            //             ]
             //       }
             // );
 
             if (this.isAuthenticated) {
                   console.log("property ID:" + propID);
                   console.log("user ID:" + this.user.id);
+                  console.log("user ID:" + this.user.username);
                   console.log("user Email:" + this.user.email);
             } else {
                   console.log("You are not authenticated");
