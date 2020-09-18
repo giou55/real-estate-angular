@@ -13,8 +13,11 @@
         <div class="img-overlay">
           <div class="text-overlay" routerLink="/properties/{{ prop.id }}">View Property</div>
         </div>
-        <div class="addTo">
+        <div class="heart-icon white-heart">
           <i (click)="addToFavorites(prop.id)" class="fas fa-heart"></i>
+        </div>
+        <div class="message">
+          You have to be logged in
         </div>
       </div>
 

@@ -91,21 +91,35 @@
   cursor: pointer;
 }
 
-.addTo {
+.heart-icon {
   position: absolute;
   right: 15px;
   bottom: 15px;
+  font-size: 25px;
 }
 
-.addTo i {
-  margin-right: 10px;
-  font-size: 25px;
+.white-heart {
   color: #fff;
 }
 
-.addTo .fa-heart:hover {
+.red-heart {
+  color: #f00;
+}
+
+.heart-icon:hover {
   color: #f00;
   cursor: pointer;
+}
+
+.message {
+  position: absolute;
+  border: 1px solid #f00;
+  border-radius: 4px;
+  padding: 5px;
+  right: 15px;
+  bottom: -20px;
+  font-size: 15px;
+  background-color: rgb(253, 227, 227);
 }
 
 .prop-text {
