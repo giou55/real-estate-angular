@@ -14,10 +14,12 @@
           <div class="text-overlay" routerLink="/properties/{{ prop.id }}">View Property</div>
         </div>
         <div class="heart-icon white-heart">
-          <i (click)="addToFavorites(prop.id)" class="fas fa-heart"></i>
+          <i (click)="toggleFavorite(prop.id)" class="fas fa-heart"></i>
         </div>
         <div class="message">
-          Register to save this home
+          <p>Register to save this home</p>
+          <!-- <p *ngIf="prop.favoriteBy.some(el => el.id == user.id)"> I like this home!</p> -->
+          <!-- <p *ngIf="prop.some(el => el.favoriteBy.id == user.id)"> I like this home!</p> -->
         </div>
       </div>
 

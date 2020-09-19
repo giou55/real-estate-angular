@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { FavoriteHomeService } from '../../services/favoriteHome.service';
 
 import { Property } from "../../models/property.model";
 import { User } from '../../models/user.model';
@@ -22,7 +23,8 @@ export class RecentPropsComponent implements OnInit, OnDestroy {
       constructor(
             private http: HttpClient,
             private authService: AuthService,
-            private router: Router
+            private router: Router,
+            private favoriteHomeService: FavoriteHomeService
       ) { }
 
 
@@ -40,38 +42,14 @@ export class RecentPropsComponent implements OnInit, OnDestroy {
                   });
       }
 
-      addToFavorites(propID) {
-            // this.http
-            // .put<any>(
-            //       'http://localhost:1337/properties/' + propID,
-            //       {
-            //             "favoriteBy": [
-            //                   {
-            //                         "id": this.user.id,
-            //                         "username": this.user.username,
-            //                         "email": this.user.email,
-            //                         "provider": "local",
-            //                         "confirmed": true,
-            //                         "blocked": false,
-            //                         "role": 1,
-            //                         "created_by": 1,
-            //                         "updated_by": 1,
-            //                         "created_at": "2020-09-16T11:18:28.000Z",
-            //                         "updated_at": "2020-09-18T11:17:21.000Z"
-            //                   }
-            //             ]
-            //       }
-            // );
-
+      toggleFavorite(propID: number) {
             if (this.isAuthenticated) {
-                  console.log("property ID:" + propID);
-                  console.log("user ID:" + this.user.id);
-                  console.log("user ID:" + this.user.username);
-                  console.log("user Email:" + this.user.email);
+                  this.favoriteHomeService.addToFavorites(propID, this.user);
             } else {
                   console.log("You are not authenticated");
                   this.router.navigate(['login']);
             }
+
       }
 
       ngOnDestroy() {
