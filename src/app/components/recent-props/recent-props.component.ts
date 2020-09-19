@@ -39,6 +39,9 @@ export class RecentPropsComponent implements OnInit, OnDestroy {
             this.http.get<Property[]>('http://localhost:1337/properties').subscribe(
                   properties => {
                         this.recentProperties = properties;
+                        for (let p of this.recentProperties) {
+                              console.log(p.favoriteBy);
+                        }
                   });
       }
 

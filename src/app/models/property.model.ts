@@ -20,5 +20,6 @@ export interface Property {
       swimming_pool: boolean,
       rv_boat_parking: boolean,
       two_stories: boolean,
-      deck_patio: boolean
+      deck_patio: boolean,
+      favoriteBy: []
 }
