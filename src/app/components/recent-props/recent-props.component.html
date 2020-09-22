@@ -13,14 +13,20 @@
         <div class="img-overlay">
           <div class="text-overlay" routerLink="/properties/{{ prop.id }}">View Property</div>
         </div>
+
         <!-- <div class="heart-icon white-heart"> -->
-        <div [ngClass]="isFavorite(prop) ? 'heart-icon red-heart' : 'heart-icon white-heart'">
-          <i (click)="toggleFavorite(prop.id)" class="fas fa-heart"></i>
+        <div *ngIf="isAuthenticated"
+          [ngClass]="isFavorite(prop) ? 'heart heart-icon red-heart' : 'heart heart-icon white-heart'">
+          <i (click)="toggleFavorite(prop)" class="fas fa-heart"></i>
         </div>
-        <div class="message">
-          <p>Register to save this home</p>
-          <!-- <p *ngIf="isFavorite(prop)"> I like this home!</p> -->
+
+        <div *ngIf="!isAuthenticated">
+          <div class="heart-icon white-heart ">
+            <i class="fas fa-heart"></i>
+            <span class="text">Register to save this home</span>
+          </div>
         </div>
+
       </div>
 
       <div class="prop-text">

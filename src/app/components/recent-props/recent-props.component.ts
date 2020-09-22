@@ -42,14 +42,10 @@ export class RecentPropsComponent implements OnInit, OnDestroy {
                   });
       }
 
-      toggleFavorite(propID: number) {
-            if (this.isAuthenticated) {
-                  this.favoriteHomeService.addToFavorites(propID, this.user);
-            } else {
-                  console.log("You are not authenticated");
-                  this.router.navigate(['login']);
-            }
-
+      toggleFavorite(prop: any) {
+            this.favoriteHomeService.addToFavorites(prop.id, this.user);
+            //this.favoriteHomeService.removeFromFavorites(prop.id, this.user);
+            this.isFavorite(prop);
       }
 
       isFavorite(prop: any): boolean {
