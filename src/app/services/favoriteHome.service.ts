@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { concatMap, switchMap, map } from 'rxjs/operators';
+import { concatMap, switchMap, map, filter } from 'rxjs/operators';
 
 import { User } from '../models/user.model';
 
@@ -12,13 +12,11 @@ export class FavoriteHomeService {
             private http: HttpClient
       ) { }
 
-      newDataArray = null;
-
       addToFavorites(propID: number, user: User) {
             this.http
                   .get<any>('http://localhost:1337/properties/' + propID)
                   .pipe(
-                        concatMap(
+                        switchMap(
                               (resData =>
                                     this.http
                                           .put<any>('http://localhost:1337/properties/' + propID,
@@ -51,29 +49,25 @@ export class FavoriteHomeService {
             this.http
                   .get<any>('http://localhost:1337/properties/' + propID)
                   .pipe(
-                        concatMap(
-                              (resData =>
-                                    this.newDataArray = resData.favoriteBy.filter(obj => obj.id !== user.id)
-                              )
+                        // map(
+                        //       resData => resData.filter(favorite => favorite.id !== user.id)
+                        // ),
+                        map(
+                              data => data.favoriteBy
+                        ),
+                        filter(
+                              data => data.id !== user.id
+                        ),
+                        switchMap(
+                              newDataArray => this.http
+                                    .put<any>('http://localhost:1337/properties/' + propID,
+                                          {
+                                                "favoriteBy": newDataArray
+                                          }
+                                    )
                         )
-                        // .switchMap(
-                        //       (newDataArray) =>
-                        //             this.http
-                        //                   .put<any>('http://localhost:1337/properties/' + propID,
-                        //                         {
-                        //                               "favoriteBy": newDataArray
-                        //                         }
-                        //                   )
-                        // )
                   )
-                  .subscribe((newDataArray) =>
-                        this.http
-                              .put<any>('http://localhost:1337/properties/' + propID,
-                                    {
-                                          "favoriteBy": newDataArray
-                                    }
-                              )
-                  );
+                  .subscribe();
       }
 
 }

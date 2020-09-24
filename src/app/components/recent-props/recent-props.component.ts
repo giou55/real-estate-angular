@@ -45,7 +45,7 @@ export class RecentPropsComponent implements OnInit, OnDestroy {
       toggleFavorite(prop: any) {
             this.favoriteHomeService.addToFavorites(prop.id, this.user);
             //this.favoriteHomeService.removeFromFavorites(prop.id, this.user);
-            this.isFavorite(prop);
+            //this.isFavorite(prop);
       }
 
       isFavorite(prop: any): boolean {

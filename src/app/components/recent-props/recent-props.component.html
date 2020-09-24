@@ -14,7 +14,6 @@
           <div class="text-overlay" routerLink="/properties/{{ prop.id }}">View Property</div>
         </div>
 
-        <!-- <div class="heart-icon white-heart"> -->
         <div *ngIf="isAuthenticated"
           [ngClass]="isFavorite(prop) ? 'heart heart-icon red-heart' : 'heart heart-icon white-heart'">
           <i (click)="toggleFavorite(prop)" class="fas fa-heart"></i>
