@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { FavoriteHomeService } from '../../services/favoriteHome.service';
 
@@ -23,7 +22,6 @@ export class RecentPropsComponent implements OnInit, OnDestroy {
       constructor(
             private http: HttpClient,
             private authService: AuthService,
-            private router: Router,
             private favoriteHomeService: FavoriteHomeService
       ) { }
 
@@ -43,8 +41,8 @@ export class RecentPropsComponent implements OnInit, OnDestroy {
       }
 
       toggleFavorite(prop: any) {
-            this.favoriteHomeService.addToFavorites(prop.id, this.user);
-            //this.favoriteHomeService.removeFromFavorites(prop.id, this.user);
+            //this.favoriteHomeService.addToFavorites(prop.id, this.user);
+            this.favoriteHomeService.removeFromFavorites(prop.id, this.user);
             //this.isFavorite(prop);
       }
 
