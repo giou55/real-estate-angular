@@ -48,29 +48,18 @@ export class FavoriteHomeService {
             this.http
                   .get<any>('http://localhost:1337/properties/' + propID)
                   .pipe(
-                        // map(
-                        //       resData => resData.filter(favorite => favorite.id !== user.id)
-                        // ),
                         map(
-                              data => data.favoriteBy
+                              data => data.favoriteBy.filter(x => x.id !== user.id)
                         ),
-                        tap(
-                              x => console.log(x)
-                        ),
-                        filter(
-                              y => y.id != user.id
+                        switchMap(
+                              newDataArray => this.http
+                                    .put<any>('http://localhost:1337/properties/' + propID,
+                                          {
+                                                "favoriteBy": newDataArray
+                                          }
+                                    )
                         )
-                        // switchMap(
-                        //       newDataArray => this.http
-                        //             .put<any>('http://localhost:1337/properties/' + propID,
-                        //                   {
-                        //                         "favoriteBy": newDataArray
-                        //                   }
-                        //             )
-                        // )
                   )
-                  .subscribe(
-                        x => console.log(x)
-                  );
+                  .subscribe();
       }
 }
