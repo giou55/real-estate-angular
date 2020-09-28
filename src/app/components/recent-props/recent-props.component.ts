@@ -19,6 +19,7 @@ export class RecentPropsComponent implements OnInit, OnDestroy {
       private userSub: Subscription;
       private favSub: Subscription;
       user: User = null;
+      isProcessing: Boolean = false;
 
       constructor(
             private http: HttpClient,
@@ -42,12 +43,14 @@ export class RecentPropsComponent implements OnInit, OnDestroy {
       }
 
       toggleFavorite(prop: any, event: any) {
+            this.isProcessing = true;
             if (event.srcElement.parentElement.classList.contains("white-heart")) {
                   this.favSub = this.favoriteHomeService.addToFavorites(prop.id, this.user)
                         .subscribe(
                               () => {
                                     event.srcElement.parentElement.classList.remove("white-heart");
                                     event.srcElement.parentElement.classList.add("red-heart");
+                                    this.isProcessing = false;
                               }
                         );
             } else {
@@ -56,6 +59,7 @@ export class RecentPropsComponent implements OnInit, OnDestroy {
                               () => {
                                     event.srcElement.parentElement.classList.remove("red-heart");
                                     event.srcElement.parentElement.classList.add("white-heart");
+                                    this.isProcessing = false;
                               }
                         );
             }
