@@ -31,6 +31,7 @@ import { SearchFormNewComponent } from './components/search-form-new/search-form
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { SmallLoadingSpinnerComponent } from './shared/small-loading-spinner/small-loading-spinner.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
 
 @NgModule({
@@ -53,6 +54,7 @@ import { UserPageComponent } from './components/user-page/user-page.component';
             SignupComponent,
             LoginComponent,
             LoadingSpinnerComponent,
+            SmallLoadingSpinnerComponent,
             UserPageComponent
       ],
       imports: [

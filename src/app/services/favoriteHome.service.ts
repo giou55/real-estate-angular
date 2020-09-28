@@ -13,7 +13,7 @@ export class FavoriteHomeService {
       ) { }
 
       addToFavorites(propID: number, user: User) {
-            this.http
+            return this.http
                   .get<any>('http://localhost:1337/properties/' + propID)
                   .pipe(
                         switchMap(
@@ -40,12 +40,11 @@ export class FavoriteHomeService {
                                     )
                               )
                         )
-                  )
-                  .subscribe();
+                  );
       }
 
       removeFromFavorites(propID: number, user: User) {
-            this.http
+            return this.http
                   .get<any>('http://localhost:1337/properties/' + propID)
                   .pipe(
                         map(
@@ -59,7 +58,6 @@ export class FavoriteHomeService {
                                           }
                                     )
                         )
-                  )
-                  .subscribe();
+                  );
       }
 }

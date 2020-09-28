@@ -17,6 +17,7 @@ export class RecentPropsComponent implements OnInit, OnDestroy {
       recentProperties: Property[] = [];
       isAuthenticated = false;
       private userSub: Subscription;
+      private favSub: Subscription;
       user: User = null;
 
       constructor(
@@ -40,10 +41,24 @@ export class RecentPropsComponent implements OnInit, OnDestroy {
                   });
       }
 
-      toggleFavorite(prop: any) {
-            //this.favoriteHomeService.addToFavorites(prop.id, this.user);
-            this.favoriteHomeService.removeFromFavorites(prop.id, this.user);
-            //this.isFavorite(prop);
+      toggleFavorite(prop: any, event: any) {
+            if (event.srcElement.parentElement.classList.contains("white-heart")) {
+                  this.favSub = this.favoriteHomeService.addToFavorites(prop.id, this.user)
+                        .subscribe(
+                              () => {
+                                    event.srcElement.parentElement.classList.remove("white-heart");
+                                    event.srcElement.parentElement.classList.add("red-heart");
+                              }
+                        );
+            } else {
+                  this.favSub = this.favoriteHomeService.removeFromFavorites(prop.id, this.user)
+                        .subscribe(
+                              () => {
+                                    event.srcElement.parentElement.classList.remove("red-heart");
+                                    event.srcElement.parentElement.classList.add("white-heart");
+                              }
+                        );
+            }
       }
 
       isFavorite(prop: any): boolean {

@@ -1,68 +1,69 @@
 <div class="container">
 
-  <div class="header">
-    <p class="p1">Recent</p>
-    <h1>Properties</h1>
-    <p class="p2">Check out some of our latest properties.</p>
-  </div>
-
-  <div class="props-container">
-    <div class="prop" *ngFor="let prop of recentProperties">
-      <div class="img-container">
-        <img src="{{ prop.imageSm_Path }}" alt="">
-        <div class="img-overlay">
-          <div class="text-overlay" routerLink="/properties/{{ prop.id }}">View Property</div>
-        </div>
-
-        <div *ngIf="isAuthenticated"
-          [ngClass]="isFavorite(prop) ? 'heart heart-icon red-heart' : 'heart heart-icon white-heart'">
-          <i (click)="toggleFavorite(prop)" class="fas fa-heart"></i>
-        </div>
-
-        <div *ngIf="!isAuthenticated">
-          <div class="heart-icon white-heart ">
-            <i class="fas fa-heart"></i>
-            <span class="text">Register to save this home</span>
-          </div>
-        </div>
-
+      <div class="header">
+            <p class="p1">Recent</p>
+            <h1>Properties</h1>
+            <p class="p2">Check out some of our latest properties.</p>
       </div>
 
-      <div class="prop-text">
-        <h1>{{ prop.title }}</h1>
-        <p>{{ prop.description }}</p>
+      <div class="props-container">
+            <div class="prop" *ngFor="let prop of recentProperties">
+                  <div class="img-container">
+                        <img src="{{ prop.imageSm_Path }}" alt="">
+                        <div class="img-overlay">
+                              <div class="text-overlay" routerLink="/properties/{{ prop.id }}">View Property</div>
+                        </div>
 
-        <div class="prop-features">
-          <div>
-            <p>Bedrooms</p>
-            <div class="icon-with-number">
-              <i class="fas fa-bed"></i>
-              {{ prop.beds }}
-            </div>
-          </div>
-          <div>
-            <p>Bathrooms</p>
-            <div class="icon-with-number">
-              <i class="fas fa-shower"></i>
-              {{ prop.baths }}
-            </div>
-          </div>
-          <div>
-            <p>Area</p>
-            <div class="icon-with-number">
-              <i class="fas fa-vector-square"></i>
-              {{ prop.area }}
-            </div>
-          </div>
-        </div>
+                        <div *ngIf="isAuthenticated" (click)="toggleFavorite(prop, $event)"
+                              [ngClass]="isFavorite(prop) ? 'heart heart-icon red-heart' : 'heart heart-icon white-heart'">
+                              <app-small-loading-spinner></app-small-loading-spinner>
+                              <i class="fas fa-heart"></i>
+                        </div>
 
-        <div class="prop-price">
-          <h2><span>For Sale: </span>{{ prop.priceSale | currency:'EUR':'symbol':'1.0-0' }}</h2>
-          <span>{{ prop.priceRent | currency:'EUR':'symbol':'1.0-0' }}/Monthly</span>
-        </div>
+                        <div *ngIf="!isAuthenticated">
+                              <div class="heart-icon white-heart ">
+                                    <i class="fas fa-heart"></i>
+                                    <span class="text">Register to save this home</span>
+                              </div>
+                        </div>
 
+                  </div>
+
+                  <div class="prop-text">
+                        <h1>{{ prop.title }}</h1>
+                        <p>{{ prop.description }}</p>
+
+                        <div class="prop-features">
+                              <div>
+                                    <p>Bedrooms</p>
+                                    <div class="icon-with-number">
+                                          <i class="fas fa-bed"></i>
+                                          {{ prop.beds }}
+                                    </div>
+                              </div>
+                              <div>
+                                    <p>Bathrooms</p>
+                                    <div class="icon-with-number">
+                                          <i class="fas fa-shower"></i>
+                                          {{ prop.baths }}
+                                    </div>
+                              </div>
+                              <div>
+                                    <p>Area</p>
+                                    <div class="icon-with-number">
+                                          <i class="fas fa-vector-square"></i>
+                                          {{ prop.area }}
+                                    </div>
+                              </div>
+                        </div>
+
+                        <div class="prop-price">
+                              <h2><span>For Sale: </span>{{ prop.priceSale | currency:'EUR':'symbol':'1.0-0' }}</h2>
+                              <span>{{ prop.priceRent | currency:'EUR':'symbol':'1.0-0' }}/Monthly</span>
+                        </div>
+
+                  </div>
+            </div>
       </div>
-    </div>
-  </div>
 
 </div>
