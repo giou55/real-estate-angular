@@ -40,7 +40,7 @@ input.ng-invalid.ng-touched {
 }
 
 .phone-icon:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   border-top: 23px solid transparent;
@@ -67,7 +67,7 @@ p {
   color: #666;
 }
 
-input[type=text],
+input[type="text"],
 select,
 textarea {
   width: 100%;
@@ -81,12 +81,21 @@ textarea {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.gdpr-header {
+      font-size: 0.9rem; 
+      font-weight: bold; 
+      color: #333; 
+      margin-top: 0; 
+      margin-bottom: 8px;
+}
+
 button {
   width: 100%;
   padding: 10px 16px;
   color: white;
   font-size: 0.9rem;
   background-color: $green;
+  margin-top: 6px;
 }
 
 button:hover {

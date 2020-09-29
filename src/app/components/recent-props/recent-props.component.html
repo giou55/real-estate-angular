@@ -16,7 +16,7 @@
 
                         <div *ngIf="isAuthenticated" (click)="toggleFavorite(prop, $event)"
                               [ngClass]="isFavorite(prop) ? 'heart heart-icon red-heart' : 'heart heart-icon white-heart'">
-                              <app-small-loading-spinner *ngIf="isProcessing"></app-small-loading-spinner>
+                              <app-small-loading-spinner style="display: none;"></app-small-loading-spinner>
                               <i class="fas fa-heart"></i>
                         </div>
 

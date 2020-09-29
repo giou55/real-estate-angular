@@ -1,37 +1,41 @@
 <div class="flex-container">
-  <div class="main">
-    <p class="header">Let Us Call You!</p>
-    <p>To help you choose a home or sell your home</p>
+      <div class="main">
+            <p class="header">Let Us Call You!</p>
+            <p>To help you choose a home or sell your home</p>
 
-    <div class="container">
-      <form #f="ngForm">
+            <div class="container">
+                  <form #f="ngForm">
+                        <input type="text" id="name" class="form-control" name="firstname" placeholder="Your Name"
+                              ngModel required />
 
-        <input type="text" id="name" class="form-control" name="firstname" placeholder="Your Name" ngModel required>
+                        <input type="text" id="number" name="number" placeholder="Your Number" ngModel required />
 
-        <input type="text" id="number" name="number" placeholder="Your Number" ngModel required>
+                        <input type="text" id="email" name="email" placeholder="Your Email" ngModel required email />
 
-        <input type="text" id="email" name="email" placeholder="Your Email" ngModel required email>
+                        <textarea id="subject" name="subject" placeholder="Tell us about desired property" ngModel
+                              required style="height: 100px"></textarea>
 
-        <textarea id="subject" name="subject" placeholder="Tell us about desired property" ngModel required
-          style="height:100px"></textarea>
+                        <p class="gdpr-header">GDPR Agreement *</p>
 
-        <p style="font-size: 0.9rem; font-weight: bold; color: #333; margin-top: 0; margin-bottom: 0;">GDPR Agreement *
-        </p>
+                        <mat-checkbox class="gdpr-text" name="gdpr" required [(ngModel)]="checked"
+                              [(indeterminate)]="indeterminate" [labelPosition]="labelPosition" [disabled]="disabled">
+                              I consent to having this website store my
+                              submitted information so they can respond to my inquiry.
+                        </mat-checkbox>
 
-        <p style="font-size: 0.9rem; margin-top: 0.4rem;">
+                        <!-- <p style="font-size: 0.9rem; margin-top: 0.4rem;">
           <input type="checkbox" name="gdpr" ngModel required> I consent to having this website store my submitted
           information so
           they can respond to
           my inquiry.
-        </p>
+        </p> -->
 
-        <button [disabled]="!f.valid">Submit</button>
+                        <button [disabled]="!f.valid">Submit</button>
+                  </form>
+            </div>
 
-      </form>
-    </div>
-
-    <span class="phone-icon">
-      <i class="fas fa-phone-volume"></i>
-    </span>
-  </div>
+            <span class="phone-icon">
+                  <i class="fas fa-phone-volume"></i>
+            </span>
+      </div>
 </div>

@@ -1,32 +1,31 @@
 <div class="flex-container">
 
-  <div class="main">
+      <div class="main">
 
-    <div class="diagonal"></div>
+            <div class="diagonal"></div>
 
-    <div class="user-buttons">
-      <div class="tel">
-        <i class="fas fa-phone-alt"></i> <span>1-500-245-1548</span>
-      </div>
+            <div class="user-buttons">
+                  <div class="tel">
+                        <i class="fas fa-phone-alt"></i> <span>1-500-245-1548</span>
+                  </div>
 
-      <div *ngIf="isAuthenticated" class="dropdown user">
-        <i class="fas fa-user-circle user"></i>
-        <div class="dropdown-content">
-          <a style="font-weight: bold;" routerLink="/">{{ user.username }}</a>
-          <a style="font-size: 12px;" routerLink="/">{{ user.email }}</a>
-          <hr>
-          <a routerLink="/user">My favorite homes</a>
-          <a routerLink="/user">My searches</a>
-          <a class="logout" (click)="onLogout()">Log out</a>
-        </div>
-      </div>
+                  <div *ngIf="isAuthenticated" class="dropdown user">
+                        <i class="fas fa-user-circle user"></i>
+                        <div class="dropdown-content">
+                              <a style="font-weight: bold;" routerLink="/">{{ user.username }}</a>
+                              <a style="font-size: 12px;" routerLink="/">{{ user.email }}</a>
+                              <hr>
+                              <a routerLink="/user">My favorite homes</a>
+                              <a class="logout" (click)="onLogout()">Log out</a>
+                        </div>
+                  </div>
 
-      <div *ngIf="!isAuthenticated">
-        <button class="btn btnLogin" (click)="goToLogin()">Log in</button>
-        <button class="btn btnSignup" (click)="goToSignup()">Sign up</button>
-      </div>
+                  <div *ngIf="!isAuthenticated">
+                        <button class="btn btnLogin" (click)="goToLogin()">Log in</button>
+                        <button class="btn btnSignup" (click)="goToSignup()">Sign up</button>
+                  </div>
 
-      <!-- <div class="dropdown">
+                  <!-- <div class="dropdown">
         <button class="dropbtn">EN
           <i class="fa fa-caret-down"></i>
         </button>
@@ -35,8 +34,8 @@
         </div>
       </div> -->
 
-    </div>
+            </div>
 
-  </div>
+      </div>
 
 </div>
