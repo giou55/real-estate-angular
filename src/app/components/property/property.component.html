@@ -1,125 +1,146 @@
-<div style="height: 1px; background-color: #777;"></div>
+<div style="height: 1px; background-color: #777"></div>
 
 <div class="form-component-container">
-  <app-search-form-new></app-search-form-new>
+    <app-search-form-new></app-search-form-new>
 </div>
 
 <div class="container">
+    <div class="property-container" *ngIf="property">
+        <div class="header-container">
+            <div class="header">
+                <div>
+                    <h1>{{ property.title }}</h1>
+                    <p>{{ property.location }}</p>
+                </div>
 
-  <div class="property-container" *ngIf="property">
-
-    <div class="header-container">
-      <div class="header">
-        <div>
-          <h1>{{property.title}}</h1>
-          <p>{{property.location}}</p>
+                <div class="price">
+                    <h2>
+                        {{
+                            property.priceSale
+                                | currency: "EUR":"symbol":"1.0-0"
+                        }}
+                    </h2>
+                </div>
+            </div>
         </div>
 
-        <div class="price">
-          <h2>{{ property.priceSale | currency:'EUR':'symbol':'1.0-0' }}
-          </h2>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="image-container">
-      <img src="{{ property.imageLg_Path }}" alt="">
-    </div>
-
-
-    <div class="main-container">
-      <div class="main">
-
-        <div>
-          <h3>Property ID: <span>{{property.prop_id}}</span></h3>
-
-          <div class="prop-features">
-            <div>
-              <p>Bedrooms</p>
-              <div class="icon-with-number">
-                <i class="fas fa-bed"></i>
-                {{ property.beds }}
-              </div>
-            </div>
-            <div>
-              <p>Bathrooms</p>
-              <div class="icon-with-number">
-                <i class="fas fa-shower"></i>
-                {{ property.baths }}
-              </div>
-            </div>
-            <div>
-              <p>Area</p>
-              <div class="icon-with-number">
-                <i class="fas fa-vector-square"></i>
-                {{ property.area }}
-              </div>
-            </div>
-            <div>
-              <p>Year Built</p>
-              <div class="icon-with-number">
-                <i class="far fa-calendar-alt"></i>
-                {{ property.year_built }}
-              </div>
-            </div>
-          </div>
-
-          <h2>Description</h2>
-          <p>Enchanting three bedroom, three bath home with spacious one bedroom, one bath cabana, in-laws
-            quarters.
-            Charming living area features fireplace and fabulous art deco details. Formal dining room. Remodelled
-            kitchen
-            with granite countertops, white cabinetry and stainless appliances. Lovely master bedroom has updated
-            bath,
-            beautiful view of the pool. Guest bedrooms have walk-in, cedar closets. Delightful backyard; majestic
-            oaks
-            surround the free form pool and expansive patio, wet bar and grill.
-          </p>
-
-          <h2>Features</h2>
-          <p>Enchanting three bedroom, three bath home with spacious one bedroom, one bath cabana, in-laws
-            quarters.
-            Charming living area features fireplace and fabulous art deco details. Formal dining room. Remodelled
-            kitchen
-            with granite countertops, white cabinetry and stainless appliances. Lovely master bedroom has updated
-            bath,
-            beautiful view of the pool. Guest bedrooms have walk-in, cedar closets. Delightful backyard; majestic
-            oaks
-            surround the free form pool and expansive patio, wet bar and grill.
-          </p>
-
-          <h2>Property Video</h2>
-          <div style="margin-bottom: 14px;">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/PkjpPQxknPg" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-
-          <h2>Property on Map</h2>
-          <agm-map [latitude]=property.lat [longitude]=property.lng [scrollwheel]=false [fullscreenControl]=true
-            [mapTypeControl]=true [zoom]="14">
-            <agm-marker [latitude]=property.lat [longitude]=property.lng></agm-marker>
-          </agm-map>
+        <div class="image-container">
+            <img src="{{ property.imageLg_Path }}" alt="" />
         </div>
 
-      </div>
+        <div class="main-container">
+            <div class="main">
+                <div>
+                    <h3>
+                        Property ID: <span>{{ property.prop_id }}</span>
+                    </h3>
+
+                    <div class="prop-features">
+                        <div>
+                            <p>Bedrooms</p>
+                            <div class="icon-with-number">
+                                <i class="fas fa-bed"></i>
+                                {{ property.beds }}
+                            </div>
+                        </div>
+                        <div>
+                            <p>Bathrooms</p>
+                            <div class="icon-with-number">
+                                <i class="fas fa-shower"></i>
+                                {{ property.baths }}
+                            </div>
+                        </div>
+                        <div>
+                            <p>Area</p>
+                            <div class="icon-with-number">
+                                <i class="fas fa-vector-square"></i>
+                                {{ property.area }}
+                            </div>
+                        </div>
+                        <div>
+                            <p>Year Built</p>
+                            <div class="icon-with-number">
+                                <i class="far fa-calendar-alt"></i>
+                                {{ property.year_built }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Description</h2>
+                    <p>
+                        Enchanting three bedroom, three bath home with spacious
+                        one bedroom, one bath cabana, in-laws quarters. Charming
+                        living area features fireplace and fabulous art deco
+                        details. Formal dining room. Remodelled kitchen with
+                        granite countertops, white cabinetry and stainless
+                        appliances. Lovely master bedroom has updated bath,
+                        beautiful view of the pool. Guest bedrooms have walk-in,
+                        cedar closets. Delightful backyard; majestic oaks
+                        surround the free form pool and expansive patio, wet bar
+                        and grill.
+                    </p>
+
+                    <h2>Features</h2>
+                    <p>
+                        Enchanting three bedroom, three bath home with spacious
+                        one bedroom, one bath cabana, in-laws quarters. Charming
+                        living area features fireplace and fabulous art deco
+                        details. Formal dining room. Remodelled kitchen with
+                        granite countertops, white cabinetry and stainless
+                        appliances. Lovely master bedroom has updated bath,
+                        beautiful view of the pool. Guest bedrooms have walk-in,
+                        cedar closets. Delightful backyard; majestic oaks
+                        surround the free form pool and expansive patio, wet bar
+                        and grill.
+                    </p>
+
+                    <h2>Property Video</h2>
+                    <div style="margin-bottom: 14px">
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/PkjpPQxknPg"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+
+                    <h2>Property on Map</h2>
+                    <agm-map
+                        [latitude]="property.lat"
+                        [longitude]="property.lng"
+                        [scrollwheel]="false"
+                        [fullscreenControl]="true"
+                        [mapTypeControl]="true"
+                        [zoom]="14"
+                    >
+                        <agm-marker
+                            [latitude]="property.lat"
+                            [longitude]="property.lng"
+                        ></agm-marker>
+                    </agm-map>
+                </div>
+            </div>
+        </div>
     </div>
 
-  </div>
-
-  <div class="tour-this-home">
-    <h2>Tour This Home</h2>
-    <p>Register to tour this home with a local real estate agent.</p>
-    <form>
-      <label for="fname">First name:</label><br>
-      <input type="text" id="fname" name="fname" value="John"><br>
-      <label for="lname">Last name:</label><br>
-      <input type="text" id="lname" name="lname" value="Doe"><br><br>
-      <input type="submit" value="Submit">
-    </form>
-  </div>
-
+    <div class="tour-this-home">
+        <h2>Tour This Home</h2>
+        <p>Register to tour this home with a local real estate agent.</p>
+        <form>
+            <label for="fname">First name:</label><br />
+            <input type="text" id="fname" name="fname" value="John" /><br />
+            <label for="lname">Last name:</label><br />
+            <input
+                type="text"
+                id="lname"
+                name="lname"
+                value="Doe"
+            /><br /><br />
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
 </div>
-
 
 <app-footer></app-footer>
