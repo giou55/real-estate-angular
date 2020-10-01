@@ -1,24 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Agent } from "../../models/agent.model";
-import { AgentsService } from '../../services/agents.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-agents',
-  templateUrl: './agents.component.html',
-  styleUrls: ['./agents.component.scss'],
-  providers: [AgentsService]
+    selector: 'app-agents',
+    templateUrl: './agents.component.html',
+    styleUrls: ['./agents.component.scss'],
 })
 export class AgentsComponent implements OnInit {
+    agents: [] = [];
 
-  agents: Agent[] = [];
+    constructor(private http: HttpClient) {}
 
-  constructor(private agentsService: AgentsService) { }
-
-  ngOnInit(): void {
-    this.agents = this.agentsService.getAgents();
-  }
-
+    ngOnInit(): void {
+        this.http
+            .get<any>('http://localhost:1337/agents')
+            .subscribe((resData) => {
+                this.agents = resData;
+            });
+    }
 }
-
-

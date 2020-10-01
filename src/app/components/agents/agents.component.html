@@ -1,19 +1,18 @@
 <div class="container">
-
-  <div class="header">
-    <p class="p1">Meet Our</p>
-    <h1>Agents</h1>
-    <p class="p2">Get in touch with our real estate experts.</p>
-  </div>
-
-  <div class="agents-container">
-    <div class="agent-container" *ngFor="let agent of agents">
-      <div class="agent">
-        <img src="{{ agent.image_Path }}" alt="">
-        <h1>{{ agent.name }}</h1>
-        <p class="mobile">{{ agent.mobile }}</p>
-        <p>{{ agent.email }}</p>
-      </div>
+    <div class="header">
+        <p class="p1">Meet Our</p>
+        <h1>Agents</h1>
+        <p class="p2">Get in touch with our real estate experts.</p>
     </div>
 
-  </div>
+    <div class="agents-container">
+        <div class="agent-container" *ngFor="let agent of agents">
+            <div class="agent">
+                <img src="http://localhost:1337{{ agent.image.url }}" alt="" />
+                <h1>{{ agent.name }}</h1>
+                <p class="mobile">{{ agent.telephone }}</p>
+                <p>{{ agent.email }}</p>
+            </div>
+        </div>
+    </div>
+</div>

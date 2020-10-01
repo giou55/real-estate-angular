@@ -22,6 +22,6 @@ export interface Property {
     two_stories: boolean;
     deck_patio: boolean;
     favoriteBy: [];
-    imageSmall: string;
-    imageLarge: string;
+    imageSmall: any;
+    imageLarge: any;
 }
