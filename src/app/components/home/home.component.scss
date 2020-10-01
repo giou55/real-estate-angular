@@ -3,89 +3,104 @@
 $myWidth: 680px;
 
 #section1 {
-  width: 100%;
-  height: 650px;
-  background-image: url(../../../assets/images/house.jpg);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+    width: 100%;
+    height: 650px;
+    background-image: url(../../../assets/images/house-1920.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .form-component-container {
-  width: 80%;
-  margin: auto;
-  background-color: #fff;
-  border: 1px solid $darkerGreyBorder;
+    width: 80%;
+    margin: auto;
+    background-color: #fff;
+    border: 1px solid $darkerGreyBorder;
 }
 
 .diagonal-1 {
-  width: 100%;
-  height: 140px;
-  background: linear-gradient(to top left, #fff calc(50% - 1px), #fff, $lightGreyBackground calc(50% + 1px));
+    width: 100%;
+    height: 140px;
+    background: linear-gradient(
+        to top left,
+        #fff calc(50% - 1px),
+        #fff,
+        $lightGreyBackground calc(50% + 1px)
+    );
 }
 
 #section4 {
-  background-color: #fff;
-  padding-bottom: 40px;
+    background-color: #fff;
+    padding-bottom: 40px;
 }
 
 #section5 {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  line-height: 60px;
-  width: 100%;
-  height: 650px;
-  background-image: url(../../../assets/images/homepage-bg2.jpg);
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 60px;
+    width: 100%;
+    height: 650px;
+    background-image: url(../../../assets/images/homepage-bg2.jpg);
 }
 
 #section5 p {
-  color: #fff;
-  font-size: 1rem;
+    color: #fff;
+    font-size: 1rem;
 }
 
 #section5 h1 {
-  color: #fff;
-  font-size: 2.2rem;
+    color: #fff;
+    font-size: 2.2rem;
 }
 
 #section5 button {
-  margin: 20px 8px;
-  font-weight: 500;
-  font-size: 0.9rem;
-  padding: 14px;
-  background-color: $green;
+    margin: 20px 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 14px;
+    background-color: $green;
 }
 
 #section5 button:hover {
-  background-color: $greenDarker;
+    background-color: $greenDarker;
 }
 
 #section5 button.browseBtn {
-  background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 #section5 button.browseBtn:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .triangle-up {
-  width: 100%;
-  height: 140px;
-  background: linear-gradient(to top left, transparent calc(50% - 1px), #fff, #fff calc(50% + 1px));
-  position: absolute;
-  top: 0;
-  left: 0;
+    width: 100%;
+    height: 140px;
+    background: linear-gradient(
+        to top left,
+        transparent calc(50% - 1px),
+        #fff,
+        #fff calc(50% + 1px)
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .triangle-down {
-  width: 100%;
-  height: 140px;
-  background: linear-gradient(to top left, $lightGreyBackground calc(50% - 1px), #fff, transparent calc(50% + 1px));
-  position: absolute;
-  bottom: 0;
-  right: 0;
+    width: 100%;
+    height: 140px;
+    background: linear-gradient(
+        to top left,
+        $lightGreyBackground calc(50% - 1px),
+        #fff,
+        transparent calc(50% + 1px)
+    );
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
