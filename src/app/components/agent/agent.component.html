@@ -1,0 +1,29 @@
+<div style="height: 1px; background-color: #777"></div>
+
+<div class="form-component-container">
+    <app-search-form-new></app-search-form-new>
+</div>
+
+<div class="container">
+    <div class="agent-container" *ngIf="agent">
+        <img src="http://localhost:1337{{ agent.image.url }}" alt="" />
+        <h1>{{ agent.name }}</h1>
+        <p>{{ agent.telephone }}</p>
+        <p>{{ agent.email }}</p>
+    </div>
+
+    <div class="listing-container" *ngIf="agent">
+        <h1>My Listings</h1>
+        <div *ngFor="let property of agent.properties">
+            <img
+                src="http://localhost:1337{{ property.imageSmall.url }}"
+                alt=""
+            />
+            <h2>{{ property.title }}</h2>
+            <p>{{ property.location }}</p>
+            <p>{{ property.priceSale }}</p>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,56 +1,64 @@
 @import "../../../../src/styles.scss";
 
 .container {
-  background-color: $lightGreyBackground;
+    background-color: $lightGreyBackground;
 }
 
 .header {
-  background-color: $lightGreyBackground;
-  text-align: center;
-  padding: 20px;
+    background-color: $lightGreyBackground;
+    text-align: center;
+    padding: 20px;
 }
 
 .header h1 {
-  font-size: 2.2rem;
+    font-size: 2.2rem;
 }
 
 .header .p1 {
-  font-weight: 500;
-  font-size: 1rem;
-  color: $green;
+    font-weight: 500;
+    font-size: 1rem;
+    color: $green;
 }
 
 .header .p2 {
-  font-weight: 400;
-  font-size: 1rem;
-  color: #666;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #666;
 }
 
 .agents-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 60px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 60px 0;
 }
 
 .agent-container {
-  width: 16%;
-  background-color: #fff;
-  border: 1px solid $darkerGreyBorder;
-  text-align: center;
-  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.05);
+    width: 16%;
+    background-color: #fff;
+    border: 1px solid $darkerGreyBorder;
+    text-align: center;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.05);
+}
+
+.agent-container:hover {
+    cursor: pointer;
+}
+
+.agent-container:hover img {
+    border: 2px solid transparent;
 }
 
 .agent {
-  position: relative;
-  top: -35px;
+    position: relative;
+    top: -35px;
 }
 
 .agent .mobile {
-  color: $green;
+    color: $green;
 }
 
 img {
-  width: 60%;
-  height: auto;
+    width: 60%;
+    height: auto;
 }
