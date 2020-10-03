@@ -8,13 +8,13 @@ import { Property } from '../../models/property.model';
 import { User } from '../../models/user.model';
 
 @Component({
-    selector: 'app-recent-props',
-    templateUrl: './recent-props.component.html',
-    styleUrls: ['./recent-props.component.scss'],
+    selector: 'app-properties',
+    templateUrl: './properties.component.html',
+    styleUrls: ['./properties.component.scss'],
 })
-export class RecentPropsComponent implements OnInit, OnDestroy {
+export class PropertiesComponent implements OnInit, OnDestroy {
     error = null;
-    recentProperties: Property[] = [];
+    properties: Property[] = [];
     isAuthenticated = false;
     private userSub: Subscription;
     private favSub: Subscription;
@@ -36,7 +36,7 @@ export class RecentPropsComponent implements OnInit, OnDestroy {
         this.http
             .get<Property[]>('http://localhost:1337/properties')
             .subscribe((properties) => {
-                this.recentProperties = properties;
+                this.properties = properties;
             });
     }
 

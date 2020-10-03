@@ -16,7 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { WeCallYouComponent } from './components/we-call-you/we-call-you.component';
-import { RecentPropsComponent } from './components/recent-props/recent-props.component';
+import { PropertiesComponent } from './components/properties/properties.component';
 import { PropertyComponent } from './components/property/property.component';
 import { HomeComponent } from './components/home/home.component';
 import { SubmitComponent } from './components/submit/submit.component';
@@ -39,7 +39,7 @@ import { AgentComponent } from './components/agent/agent.component';
         AppComponent,
         TopbarComponent,
         WeCallYouComponent,
-        RecentPropsComponent,
+        PropertiesComponent,
         PropertyComponent,
         HomeComponent,
         SubmitComponent,

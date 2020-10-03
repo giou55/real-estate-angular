@@ -1,12 +1,6 @@
 <div class="container">
-    <div class="header">
-        <p class="p1">Recent</p>
-        <h1>Properties</h1>
-        <p class="p2">Check out some of our latest properties.</p>
-    </div>
-
     <div class="props-container">
-        <div class="prop" *ngFor="let prop of recentProperties">
+        <div class="prop" *ngFor="let prop of properties">
             <div class="img-container">
                 <img
                     src="http://localhost:1337{{ prop.imageSmall.url }}"

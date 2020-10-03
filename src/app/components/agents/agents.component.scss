@@ -4,28 +4,6 @@
     background-color: $lightGreyBackground;
 }
 
-.header {
-    background-color: $lightGreyBackground;
-    text-align: center;
-    padding: 20px;
-}
-
-.header h1 {
-    font-size: 2.2rem;
-}
-
-.header .p1 {
-    font-weight: 500;
-    font-size: 1rem;
-    color: $green;
-}
-
-.header .p2 {
-    font-weight: 400;
-    font-size: 1rem;
-    color: #666;
-}
-
 .agents-container {
     display: flex;
     flex-wrap: wrap;

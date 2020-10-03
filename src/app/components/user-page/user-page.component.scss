@@ -1,5 +1,14 @@
 .container {
-  text-align: center;
-  width: 50%;
-  margin: 50px auto;
+    text-align: center;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.property {
+    width: 33%;
+    display: inline-block;
+}
+
+.property:hover {
+    cursor: pointer;
 }

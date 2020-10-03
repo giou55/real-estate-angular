@@ -3,13 +3,26 @@
 </div> -->
 
 <div class="container">
-    <h2>{{ user.username }} - My Favorite Homes</h2>
+    <h2>My Favorite Homes</h2>
 
-    <div class="" style="text-align: center" *ngFor="let prop of properties">
-        <div routerLink="/properties/{{ prop.id }}">
-            <img src="http://localhost:1337{{ prop.imageSmall.url }}" alt="" />
-            <h1>{{ prop.title }}</h1>
-            <p>{{ prop.description }}</p>
+    <div *ngIf="properties.length < 1">
+        <p>There are no favorite homes.</p>
+    </div>
+
+    <div *ngIf="properties.length > 0">
+        <div
+            class="property"
+            style="text-align: center"
+            *ngFor="let prop of properties"
+        >
+            <div routerLink="/properties/{{ prop.id }}">
+                <img
+                    src="http://localhost:1337{{ prop.imageSmall.url }}"
+                    alt=""
+                />
+                <h1>{{ prop.title }}</h1>
+                <p>{{ prop.description }}</p>
+            </div>
         </div>
     </div>
 </div>
