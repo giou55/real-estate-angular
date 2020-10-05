@@ -10,15 +10,14 @@
 
 <div class="container" *ngIf="!isLoading">
     <div class="header">
-        <h2 *ngIf="results.length < 1">No Properties Found</h2>
+        <div class="noResults" *ngIf="results.length < 1">
+            <h2>No Properties Found</h2>
+        </div>
         <h2 *ngIf="results.length == 1">{{ results.length }} Property Found</h2>
         <h2 *ngIf="results.length > 1">
             {{ results.length }} Properties Found
         </h2>
     </div>
-</div>
-
-<div class="container" *ngIf="!isLoading">
     <div class="props-container">
         <div class="prop" *ngFor="let prop of results">
             <div class="img-container">
@@ -101,3 +100,5 @@
         </div>
     </div>
 </div>
+
+<app-footer></app-footer>

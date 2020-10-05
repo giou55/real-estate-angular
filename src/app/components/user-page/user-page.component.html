@@ -1,27 +1,79 @@
-<!-- <div class="container" *ngIf="isLoading" style="text-align:center">
-  <app-loading-spinner></app-loading-spinner>
-</div> -->
+<div class="container" *ngIf="isLoading" style="text-align: center">
+    <app-loading-spinner></app-loading-spinner>
+</div>
 
-<div class="container">
-    <h2>My Favorite Homes</h2>
+<div class="container" *ngIf="!isLoading">
+    <div class="header">
+        <h2>My Favorite Homes</h2>
 
-    <div *ngIf="properties.length < 1">
-        <p>There are no favorite homes.</p>
+        <div class="noFavorite" *ngIf="properties.length < 1">
+            <div>There are no favorite homes.</div>
+        </div>
     </div>
 
-    <div *ngIf="properties.length > 0">
-        <div
-            class="property"
-            style="text-align: center"
-            *ngFor="let prop of properties"
-        >
-            <div routerLink="/properties/{{ prop.id }}">
+    <div class="props-container" *ngIf="properties.length > 0">
+        <div class="prop" *ngFor="let prop of properties">
+            <div class="img-container">
                 <img
                     src="http://localhost:1337{{ prop.imageSmall.url }}"
                     alt=""
                 />
+                <div class="img-overlay">
+                    <div
+                        class="text-overlay"
+                        routerLink="/properties/{{ prop.id }}"
+                    >
+                        View Property
+                    </div>
+                </div>
+
+                <div class="trash-icon" (click)="removeFavorite(prop)">
+                    <app-small-loading-spinner
+                        style="display: none"
+                    ></app-small-loading-spinner>
+                    <i class="fas fa-trash-alt"></i>
+                </div>
+            </div>
+
+            <div class="prop-text">
                 <h1>{{ prop.title }}</h1>
                 <p>{{ prop.description }}</p>
+
+                <div class="prop-features">
+                    <div>
+                        <p>Bedrooms</p>
+                        <div class="icon-with-number">
+                            <i class="fas fa-bed"></i>
+                            {{ prop.beds }}
+                        </div>
+                    </div>
+                    <div>
+                        <p>Bathrooms</p>
+                        <div class="icon-with-number">
+                            <i class="fas fa-shower"></i>
+                            {{ prop.baths }}
+                        </div>
+                    </div>
+                    <div>
+                        <p>Area</p>
+                        <div class="icon-with-number">
+                            <i class="fas fa-vector-square"></i>
+                            {{ prop.area }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prop-price">
+                    <h2>
+                        <span>For Sale: </span
+                        >{{ prop.priceSale | currency: "EUR":"symbol":"1.0-0" }}
+                    </h2>
+                    <span
+                        >{{
+                            prop.priceRent | currency: "EUR":"symbol":"1.0-0"
+                        }}/Monthly</span
+                    >
+                </div>
             </div>
         </div>
     </div>
