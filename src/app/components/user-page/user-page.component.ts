@@ -19,6 +19,7 @@ export class UserPageComponent implements OnInit, OnDestroy {
     properties: Property[] = [];
     isLoading = false;
     private favSub: Subscription;
+    isConfirming = false;
 
     constructor(
         private authService: AuthService,
@@ -44,10 +45,23 @@ export class UserPageComponent implements OnInit, OnDestroy {
         });
     }
 
-    removeFavorite(propID) {
-        this.favoriteHomeService
-            .removeFromFavorites(propID, this.user)
-            .subscribe(() => console.log('favorite home deleted'));
+    confirm() {
+        this.isConfirming = true;
+    }
+
+    // removeFavorite(propID) {
+    //     this.favoriteHomeService
+    //         .removeFromFavorites(propID, this.user)
+    //         .subscribe();
+    // }
+
+    removeFavorite() {
+        this.isConfirming = false;
+    }
+
+    cancel(e: Event) {
+        this.isConfirming = false;
+        console.log(e);
     }
 
     ngOnDestroy() {

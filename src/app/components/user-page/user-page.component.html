@@ -3,6 +3,30 @@
 </div>
 
 <div class="container" *ngIf="!isLoading">
+    <div id="id01" class="modal" *ngIf="isConfirming">
+        <div class="modal-container">
+            <h1>Please confirm</h1>
+            <p>Are you sure you want to remove this home?</p>
+
+            <div class="clearfix">
+                <button
+                    type="button"
+                    class="cancelbtn"
+                    (click)="cancel($event)"
+                >
+                    Cancel
+                </button>
+                <button
+                    type="button"
+                    class="deletebtn"
+                    (click)="removeFavorite()"
+                >
+                    Remove
+                </button>
+            </div>
+        </div>
+    </div>
+
     <div class="header">
         <h2>My Favorite Homes</h2>
 
@@ -17,6 +41,8 @@
                 <img
                     src="http://localhost:1337{{ prop.imageSmall.url }}"
                     alt=""
+                    width="500"
+                    height="375"
                 />
                 <div class="img-overlay">
                     <div
@@ -27,7 +53,7 @@
                     </div>
                 </div>
 
-                <div class="trash-icon" (click)="removeFavorite(prop.id)">
+                <div class="trash-icon" (click)="confirm()">
                     <app-small-loading-spinner
                         style="display: none"
                     ></app-small-loading-spinner>
