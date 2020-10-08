@@ -12,7 +12,7 @@
                 <button
                     type="button"
                     class="cancelbtn"
-                    (click)="cancel($event)"
+                    (click)="cancelRemoving()"
                 >
                     Cancel
                 </button>
@@ -53,7 +53,10 @@
                     </div>
                 </div>
 
-                <div class="trash-icon" (click)="confirm()">
+                <div
+                    class="trash-icon"
+                    (click)="confirmToRemove(prop.id, $event)"
+                >
                     <app-small-loading-spinner
                         style="display: none"
                     ></app-small-loading-spinner>

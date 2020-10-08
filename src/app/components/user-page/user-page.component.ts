@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 
-import { Property } from '../../models/property.model';
 import { User } from '../../models/user.model';
 
 import { AuthService } from '../../services/auth.service';
@@ -16,10 +15,12 @@ import { FavoriteHomeService } from '../../services/favoriteHome.service';
 export class UserPageComponent implements OnInit, OnDestroy {
     private userSub: Subscription;
     user: User = null;
-    properties: Property[] = [];
+    properties: any;
     isLoading = false;
     private favSub: Subscription;
     isConfirming = false;
+    property_id: number;
+    propertyClickEvent;
 
     constructor(
         private authService: AuthService,
@@ -33,7 +34,7 @@ export class UserPageComponent implements OnInit, OnDestroy {
             if (user) {
                 this.user = user;
                 this.http
-                    .get<Property[]>(
+                    .get<any>(
                         'http://localhost:1337/properties?favoriteBy.id=' +
                             this.user.id
                     )
@@ -45,23 +46,24 @@ export class UserPageComponent implements OnInit, OnDestroy {
         });
     }
 
-    confirm() {
+    confirmToRemove(propID, event) {
         this.isConfirming = true;
+        this.property_id = propID;
+        this.propertyClickEvent = event;
     }
-
-    // removeFavorite(propID) {
-    //     this.favoriteHomeService
-    //         .removeFromFavorites(propID, this.user)
-    //         .subscribe();
-    // }
 
     removeFavorite() {
         this.isConfirming = false;
+        this.favoriteHomeService
+            .removeFromFavorites(this.property_id, this.user)
+            .subscribe(() => {
+                this.propertyClickEvent.srcElement.parentElement.parentElement.parentElement.style.display =
+                    'none';
+            });
     }
 
-    cancel(e: Event) {
+    cancelRemoving() {
         this.isConfirming = false;
-        console.log(e);
     }
 
     ngOnDestroy() {
