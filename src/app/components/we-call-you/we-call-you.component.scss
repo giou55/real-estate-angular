@@ -102,12 +102,14 @@ button:hover {
     background-color: $greenDarker;
 }
 
-.button[disabled] {
-    background-color: $green;
-    color: white;
+button:disabled {
     cursor: not-allowed;
+    background-color: $green;
 }
 
-button[disabled]:hover {
-    background-color: $greenDarker;
+.message {
+    margin-top: 8px;
+    font-weight: bold;
+    color: $orange;
+    font-size: 1rem;
 }

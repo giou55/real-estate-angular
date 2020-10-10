@@ -3,7 +3,7 @@
 </div>
 
 <div class="container" *ngIf="!isLoading">
-    <div id="id01" class="modal" *ngIf="isConfirming">
+    <div class="modal" *ngIf="isConfirming">
         <div class="modal-container">
             <h1>Please confirm</h1>
             <p>Are you sure you want to remove this home?</p>
@@ -30,12 +30,12 @@
     <div class="header">
         <h2>My Favorite Homes</h2>
 
-        <div class="noFavorite" *ngIf="properties.length < 1">
+        <div class="noFavorite" *ngIf="propertiesNumber < 1">
             <div>There are no favorite homes.</div>
         </div>
     </div>
 
-    <div class="props-container" *ngIf="properties.length > 0">
+    <div class="props-container" *ngIf="propertiesNumber > 0">
         <div class="prop" *ngFor="let prop of properties">
             <div class="img-container">
                 <img

@@ -21,6 +21,7 @@ export class UserPageComponent implements OnInit, OnDestroy {
     isConfirming = false;
     property_id: number;
     propertyClickEvent;
+    propertiesNumber: number = 0;
 
     constructor(
         private authService: AuthService,
@@ -41,6 +42,7 @@ export class UserPageComponent implements OnInit, OnDestroy {
                     .subscribe((properties) => {
                         this.isLoading = false;
                         this.properties = properties;
+                        this.propertiesNumber = properties.length;
                     });
             }
         });
@@ -59,6 +61,7 @@ export class UserPageComponent implements OnInit, OnDestroy {
             .subscribe(() => {
                 this.propertyClickEvent.srcElement.parentElement.parentElement.parentElement.style.display =
                     'none';
+                this.propertiesNumber = this.propertiesNumber - 1;
             });
     }
 
