@@ -1,7 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { switchMap, map, tap, filter } from 'rxjs/operators';
-import { Observable, of, from, fromEvent, Subscription } from 'rxjs';
+import { of, Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-we-call-you',

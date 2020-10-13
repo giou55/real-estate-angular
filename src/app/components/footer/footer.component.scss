@@ -1,87 +1,39 @@
 @import "../../../../src/styles.scss";
 
-.main-container,
-.main,
-.top {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.main-container {
-  background-color: #333;
-  margin-top: 100px;
-  justify-content: center;
-  align-items: center;
-}
-
-.main {
-  width: 85%;
-  padding: 30px 0;
-  font-size: 0.9rem;
-  color: #ddd;
-  justify-content: center;
-  align-items: center;
+.top,
+.bottom {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .top {
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
+    color: #fff;
+    background-color: $greenBackground;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1 0 400px;
+    padding: 30px 200px;
+    font-size: 0.8rem;
 }
 
 .top img {
-  width: 220px;
+    width: 220px;
 }
 
-.top i {
-  font-size: 1.2rem;
-  color: #aaa;
-  margin-left: 12px;
-}
-
-.center {
-  margin-top: 30px;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+.about {
+    width: 70%;
 }
 
 .bottom {
-  margin-top: 30px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    color: #555;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 200px;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
-
-.center div {
-  width: 33%;
-  color: #fff;
-  font-weight: 400;
-}
-
-.bottom p {
-  color: #aaa;
-}
-
-input {
-  display: block;
-  width: 90%;
-  font-size: 0.9rem;
-  padding: 14px;
-  border: none;
-  border-radius: 0;
-}
-
-button {
-  font-weight: 500;
-  font-size: 0.9rem;
-  padding: 14px;
-  margin-top: 20px;
-  background-color: $orange;
-}
-
-button:hover {
-  background-color: $orangeDarker;
+.bottom span {
+    margin: 0 14px;
+    text-decoration: underline;
 }

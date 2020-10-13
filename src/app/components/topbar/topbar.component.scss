@@ -3,137 +3,142 @@
 .flex-container,
 .main,
 .user-buttons {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  background-color: transparent;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: transparent;
 }
 
 .flex-container {
-  justify-content: center;
-  background-color: #044849;
+    justify-content: center;
+    background-color: $greenBackground;
 }
 
 .main {
-  width: 100%;
-  justify-content: flex-end;
+    width: 100%;
+    justify-content: flex-end;
 }
 
-.main>div {
-  flex: 0 1 auto;
+.main > div {
+    flex: 0 1 auto;
 }
 
 .diagonal {
-  width: 20px;
-  height: 46px;
-  background: linear-gradient(to top left, #fd7955 calc(50% - 1px), #fd7955, #044849 calc(50% + 1px));
+    width: 20px;
+    height: 46px;
+    background: linear-gradient(
+        to top left,
+        #fd7955 calc(50% - 1px),
+        #fd7955,
+        #044849 calc(50% + 1px)
+    );
 }
 
 .user-buttons {
-  height: 46px;
-  padding-right: 15px;
-  justify-content: flex-end;
-  background-color: #fd7955;
+    height: 46px;
+    padding-right: 15px;
+    justify-content: flex-end;
+    background-color: #fd7955;
 }
 
-.user-buttons>div {
-  margin-left: 20px;
-  padding: 5px;
-  color: #fff;
+.user-buttons > div {
+    margin-left: 20px;
+    padding: 5px;
+    color: #fff;
 }
 
 .dropbtn .fa {
-  font-size: 0.7rem;
+    font-size: 0.7rem;
 }
 
 .tel .fas {
-  font-size: 1.2rem;
-  margin-right: 6px;
+    font-size: 1.2rem;
+    margin-right: 6px;
 }
 
 .tel span {
-  font-size: 1rem;
-  font-weight: 500;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .user .fas {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 .submit a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  font-size: 0.9rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.9rem;
 }
 
 .dropdown {
-  overflow: hidden;
-  transition: .2s;
+    overflow: hidden;
+    transition: 0.2s;
 }
 
 .dropdown button {
-  color: #fff;
-  transition: .2s;
+    color: #fff;
+    transition: 0.2s;
 }
 
 .dropdown .dropbtn {
-  font-size: 0.9rem;
-  border: none;
-  outline: none;
-  color: #fff;
-  padding: $padding;
-  background-color: transparent;
+    font-size: 0.9rem;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: $padding;
+    background-color: transparent;
 }
 
 .dropdown .dropdown-content {
-  display: none;
-  position: absolute;
-  right: 10px;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  border-top: 3px solid #044849;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  transition: .2s ease;
+    display: none;
+    position: absolute;
+    right: 10px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    border-top: 3px solid #044849;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: 0.2s ease;
 }
 
 .dropdown-content a {
-  font-size: 0.9rem;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+    font-size: 0.9rem;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
 }
 
 .logout {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .btn {
-  outline: none;
-  cursor: pointer;
-  border-radius: 14px;
-  padding: 5px 12px;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: 0.2s ease;
+    outline: none;
+    cursor: pointer;
+    border-radius: 14px;
+    padding: 5px 12px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: 0.2s ease;
 }
 
 .btnLogin {
-  background-color: #fff;
-  color: #044849;
-  border: 1px solid #fff;
-  margin-right: 8px;
+    background-color: #fff;
+    color: #044849;
+    border: 1px solid #fff;
+    margin-right: 8px;
 }
 
 .btnSignup {
-  background-color: #fd7955;
-  color: #fff;
-  border: 1px solid #fff;
+    background-color: #fd7955;
+    color: #fff;
+    border: 1px solid #fff;
 }
