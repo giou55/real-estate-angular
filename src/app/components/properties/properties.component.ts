@@ -73,5 +73,8 @@ export class PropertiesComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         this.userSub.unsubscribe();
+        if (this.favSub) {
+            this.favSub.unsubscribe();
+        }
     }
 }

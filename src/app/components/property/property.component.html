@@ -105,7 +105,11 @@
         </div>
     </div>
 
-    <div class="tour-this-home">
+    <app-tour-this-home
+        [isAuthenticated]="isAuthenticated"
+    ></app-tour-this-home>
+
+    <!-- <div class="tour-this-home">
         <h2>Tour This Home</h2>
         <p>Register to tour this home with a local real estate agent.</p>
         <form>
@@ -120,7 +124,7 @@
             /><br /><br />
             <input type="submit" value="Submit" />
         </form>
-    </div>
+    </div> -->
 </div>
 
 <app-footer></app-footer>

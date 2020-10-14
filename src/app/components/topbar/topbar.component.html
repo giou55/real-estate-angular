@@ -8,10 +8,13 @@
             </div>
 
             <div *ngIf="isAuthenticated" class="dropdown user">
-                <i class="fas fa-user-circle user"></i>
+                <div class="user-icon">
+                    <i class="fas fa-user-circle user"></i
+                    ><span>My Account</span>
+                </div>
                 <div class="dropdown-content">
-                    <a style="font-weight: bold">{{ user.username }}</a>
-                    <a style="font-size: 12px">{{ user.email }}</a>
+                    <a style="font-size: 16px">{{ user.username }}</a>
+                    <a style="font-size: 13px">{{ user.email }}</a>
                     <hr />
                     <a routerLink="/user">My favorite homes</a>
                     <a class="logout" (click)="onLogout()">Log out</a>

@@ -17,8 +17,7 @@ export class WeCallYouComponent {
     @ViewChild('f') form: NgForm;
     @ViewChild('btn', { static: true }) button: ElementRef;
 
-    onSubmit(form: NgForm) {
-        this.isSubmitted = false;
+    onSubmit() {
         this.buttonSub = of('Sending...').subscribe((res) => {
             this.button.nativeElement.textContent = res;
             setTimeout(() => {

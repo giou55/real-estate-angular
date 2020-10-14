@@ -47,6 +47,14 @@
     color: #fff;
 }
 
+.user-icon {
+    display: flex;
+    align-items: center;
+}
+.user-icon span {
+    font-size: 1rem;
+}
+
 .dropbtn .fa {
     font-size: 0.7rem;
 }
@@ -63,6 +71,7 @@
 
 .user .fas {
     font-size: 2rem;
+    margin-right: 10px;
 }
 
 .submit a {

@@ -33,6 +33,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { SmallLoadingSpinnerComponent } from './shared/small-loading-spinner/small-loading-spinner.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
 import { AgentComponent } from './components/agent/agent.component';
+import { TourThisHomeComponent } from './components/tour-this-home/tour-this-home.component';
 
 @NgModule({
     declarations: [
@@ -56,6 +57,7 @@ import { AgentComponent } from './components/agent/agent.component';
         SmallLoadingSpinnerComponent,
         UserPageComponent,
         AgentComponent,
+        TourThisHomeComponent,
     ],
     imports: [
         BrowserModule,
