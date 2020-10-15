@@ -8,14 +8,13 @@ input.ng-invalid.ng-touched {
 .flex-container {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: flex-end;
+    justify-content: center;
+    background-color: #fff;
+    padding: 30px;
 }
 
 .main {
-    background-color: #fff;
-    padding: 2rem;
-    align-self: flex-end;
-    position: relative;
+    flex: 1;
 }
 
 .header {

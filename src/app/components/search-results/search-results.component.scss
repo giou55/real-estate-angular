@@ -7,7 +7,7 @@
 }
 
 .form-component-container {
-    padding: 0 350px;
+    padding: 0 30px;
     margin: auto;
     background-color: #fff;
     border-bottom: 1px solid $darkerGreyBorder;
@@ -32,7 +32,7 @@
 }
 
 .prop {
-    flex-basis: 400px;
+    width: 400px;
     background-color: #fff;
     border: 1px solid $darkerGreyBorder;
     margin: 20px 40px 40px 40px;
@@ -139,21 +139,6 @@
     visibility: visible;
 }
 
-// .spinner {
-//       display: none;
-// }
-
-// .message {
-//   position: absolute;
-//   border: 1px solid #f00;
-//   border-radius: 4px;
-//   padding: 5px;
-//   right: 15px;
-//   bottom: -20px;
-//   font-size: 15px;
-//   background-color: rgb(253, 227, 227);
-// }
-
 .prop-text {
     padding: 15px 20px 20px 20px;
 }
@@ -203,4 +188,22 @@
 .prop-price h2 span {
     font-size: 1rem;
     font-weight: normal;
+}
+
+@media screen and (min-width: 992px) {
+    .form-component-container {
+        padding: 0 80px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .form-component-container {
+        padding: 0 100px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .form-component-container {
+        padding: 0 200px;
+    }
 }

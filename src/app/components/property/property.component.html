@@ -20,6 +20,12 @@
                                 | currency: "EUR":"symbol":"1.0-0"
                         }}
                     </h2>
+                    <p>
+                        {{
+                            property.priceRent
+                                | currency: "EUR":"symbol":"1.0-0"
+                        }}/Monthly
+                    </p>
                 </div>
             </div>
         </div>
@@ -115,7 +121,7 @@
                         [scrollwheel]="false"
                         [fullscreenControl]="true"
                         [mapTypeControl]="true"
-                        [zoom]="14"
+                        [zoom]="6"
                     >
                         <agm-marker
                             [latitude]="property.lat"

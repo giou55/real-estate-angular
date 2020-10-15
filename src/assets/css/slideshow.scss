@@ -1,107 +1,118 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: Verdana, sans-serif;
-  margin: 0;
+    font-family: Verdana, sans-serif;
+    margin: 0;
 }
 
 .slideshow-container {
-  width: 60%;
-  position: relative;
-  margin: auto;
+    width: 80%;
+    position: relative;
+    margin: auto;
 }
 
-.slideshow-container>div {
-  display: none;
-  cursor: pointer;
+.slideshow-container > div {
+    display: none;
+    cursor: pointer;
 }
 
 .slideshow-container div:first-child {
-  display: block;
+    display: block;
 }
 
 .prev,
 .next {
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .dots-container span:first-child {
-  background-color: #fd7955;
+    background-color: #fd7955;
 }
 
 .dot {
-  cursor: pointer;
-  height: 13px;
-  width: 13px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.4s ease;
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.4s ease;
 }
 
 .active,
 .dot:hover {
-  background-color: #fd7955;
+    background-color: #fd7955;
 }
 
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
 @-webkit-keyframes fade {
-  from {
-    opacity: .4
-  }
+    from {
+        opacity: 0.4;
+    }
 
-  to {
-    opacity: 1
-  }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fade {
-  from {
-    opacity: .4
-  }
+    from {
+        opacity: 0.4;
+    }
 
-  to {
-    opacity: 1
-  }
+    to {
+        opacity: 1;
+    }
 }
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
+    .slprev,
+    .slnext,
+    .text {
+        font-size: 11px;
+    }
+}
 
-  .slprev,
-  .slnext,
-  .text {
-    font-size: 11px;
-  }
+@media screen and (min-width: 992px) {
+    .slideshow-container {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .slideshow-container {
+        width: 40%;
+    }
 }

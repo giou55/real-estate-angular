@@ -1,7 +1,7 @@
 @import "../../../../src/styles.scss";
 
 .form-component-container {
-    padding: 0 350px;
+    padding: 0 30px;
     margin: auto;
     background-color: #fff;
     border-bottom: 1px solid $darkerGreyBorder;
@@ -11,35 +11,40 @@
     display: flex;
     flex-wrap: wrap;
     background-color: $lightGreyBackground;
-    width: 80%;
+    width: 100%;
     align-items: flex-start;
     justify-content: space-between;
     margin: 0 auto;
 }
 
-.property-container,
-.header-container,
-.image-container,
-.main-container {
-    background-color: #fff;
-}
-
 .property-container {
+    background-color: #fff;
     flex: 1 1 800px;
     margin: 0 30px;
     margin-top: 40px;
+    padding: 30px;
     border: 1px solid $darkerGreyBorder;
 }
 
 .header-container,
-.header,
+.image-container {
+    margin-bottom: 30px;
+}
+
+.header-container,
 .image-container,
 .main-container,
 .main {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.header {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
 }
 
 .image-container {
@@ -96,13 +101,6 @@
     visibility: visible;
 }
 
-.header,
-.main {
-    width: 95%;
-    margin-top: 20px;
-    justify-content: space-between;
-}
-
 .price {
     padding-left: 16px;
     border-left: 2px solid $darkerGreyBorder;
@@ -114,9 +112,8 @@
 }
 
 .image-container img {
-    width: 95%;
+    width: 100%;
     margin: auto;
-    margin-top: 20px;
 }
 
 .prop-features {
@@ -164,8 +161,35 @@ agm-map {
 }
 
 app-tour-this-home {
-    flex: 1 1 300px;
+    flex: 1 1 200px;
     margin: 0 30px;
     margin-top: 40px;
     border: 1px solid $darkerGreyBorder;
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        width: 90%;
+    }
+    .form-component-container {
+        padding: 0 150px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 85%;
+    }
+    .form-component-container {
+        padding: 0 250px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .container {
+        width: 80%;
+    }
+    .form-component-container {
+        padding: 0 350px;
+    }
 }
