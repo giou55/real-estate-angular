@@ -14,6 +14,7 @@ export class WeCallYouComponent {
     disabled = false;
     buttonSub: Subscription;
     isSubmitted: boolean = false;
+
     @ViewChild('f') form: NgForm;
     @ViewChild('btn', { static: true }) button: ElementRef;
 

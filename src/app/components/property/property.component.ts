@@ -44,4 +44,42 @@ export class PropertyComponent implements OnInit {
                 this.property = property;
             });
     }
+
+    toggleFavorite(prop: any, event: any) {
+        event.srcElement.previousSibling.style.display = 'inline-block';
+        if (event.srcElement.parentElement.classList.contains('white-heart')) {
+            this.favSub = this.favoriteHomeService
+                .addToFavorites(prop.id, this.user)
+                .subscribe(() => {
+                    event.srcElement.previousSibling.style.display = 'none';
+                    event.srcElement.parentElement.classList.remove(
+                        'white-heart'
+                    );
+                    event.srcElement.parentElement.classList.add('red-heart');
+                });
+        } else {
+            this.favSub = this.favoriteHomeService
+                .removeFromFavorites(prop.id, this.user)
+                .subscribe(() => {
+                    event.srcElement.previousSibling.style.display = 'none';
+                    event.srcElement.parentElement.classList.remove(
+                        'red-heart'
+                    );
+                    event.srcElement.parentElement.classList.add('white-heart');
+                });
+        }
+    }
+
+    isFavorite(prop: any): boolean {
+        if (this.user) {
+            return prop.favoriteBy.some((p) => p.id == this.user.id);
+        }
+    }
+
+    ngOnDestroy() {
+        this.userSub.unsubscribe();
+        if (this.favSub) {
+            this.favSub.unsubscribe();
+        }
+    }
 }

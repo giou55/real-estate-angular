@@ -9,10 +9,13 @@
                 <img
                     src="http://localhost:1337{{ prop.imageSmall.url }}"
                     alt=""
-                    style="width: 70%"
+                    style="width: 50%"
                 />
                 <h1>{{ prop.title }}</h1>
-                <p>{{ prop.description }}</p>
+                <h3>
+                    Location: {{ prop.location }}<br />
+                    For Sale: {{ prop.priceSale }}
+                </h3>
             </div>
         </div>
 

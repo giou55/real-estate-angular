@@ -57,7 +57,7 @@
                         id="email"
                         name="email"
                         placeholder="Enter Email"
-                        ngModel
+                        [(ngModel)]="user.email"
                         required
                         email
                     />
@@ -80,7 +80,7 @@
                         name="message"
                         placeholder="Any questions or comments?"
                         ngModel
-                        style="height: 100px"
+                        style="height: 80px"
                     ></textarea>
                 </div>
                 <button #contactBtn [disabled]="!contactForm.valid">
@@ -88,7 +88,7 @@
                 </button>
             </form>
 
-            <p style="font-size: 0.5rem">
+            <p style="font-size: 0.6rem">
                 Yes, I would like more information from ERA. Please use and/or
                 share my information with a ERA agent to contact me about my
                 real estate needs. <br />By clicking Contact Agent, I agree a
@@ -99,7 +99,7 @@
                 Privacy Policy.
             </p>
             <div class="message" *ngIf="isSubmitted">
-                Thank you. Our agent will call you soon!
+                Thank you! Our agent will get in touch soon.
             </div>
         </div>
     </div>

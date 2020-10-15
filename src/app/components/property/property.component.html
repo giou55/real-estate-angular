@@ -29,6 +29,28 @@
                 src="http://localhost:1337{{ property.imageLarge.url }}"
                 alt=""
             />
+
+            <div
+                *ngIf="isAuthenticated"
+                (click)="toggleFavorite(property, $event)"
+                [ngClass]="
+                    isFavorite(property)
+                        ? 'heart heart-icon red-heart'
+                        : 'heart heart-icon white-heart'
+                "
+            >
+                <app-small-loading-spinner
+                    style="display: none"
+                ></app-small-loading-spinner>
+                <i class="fas fa-heart"></i>
+            </div>
+
+            <div *ngIf="!isAuthenticated">
+                <div class="heart-icon white-heart">
+                    <i class="fas fa-heart"></i>
+                    <span class="text">Register to save this home</span>
+                </div>
+            </div>
         </div>
 
         <div class="main-container">
@@ -108,23 +130,6 @@
     <app-tour-this-home
         [isAuthenticated]="isAuthenticated"
     ></app-tour-this-home>
-
-    <!-- <div class="tour-this-home">
-        <h2>Tour This Home</h2>
-        <p>Register to tour this home with a local real estate agent.</p>
-        <form>
-            <label for="fname">First name:</label><br />
-            <input type="text" id="fname" name="fname" value="John" /><br />
-            <label for="lname">Last name:</label><br />
-            <input
-                type="text"
-                id="lname"
-                name="lname"
-                value="Doe"
-            /><br /><br />
-            <input type="submit" value="Submit" />
-        </form>
-    </div> -->
 </div>
 
 <app-footer></app-footer>
