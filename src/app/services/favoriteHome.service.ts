@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { switchMap, map } from 'rxjs/operators';
 
 import { User } from '../models/user.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class FavoriteHomeService {
@@ -10,11 +11,11 @@ export class FavoriteHomeService {
 
     addToFavorites(propID: number, user: User) {
         return this.http
-            .get<any>('http://localhost:1337/properties/' + propID)
+            .get<any>(`${environment.baseUrl}/properties/${propID}`)
             .pipe(
                 switchMap((resData) =>
                     this.http.put<any>(
-                        'http://localhost:1337/properties/' + propID,
+                        `${environment.baseUrl}/properties/${propID}`,
                         {
                             favoriteBy: [
                                 ...resData.favoriteBy,
@@ -40,12 +41,12 @@ export class FavoriteHomeService {
 
     removeFromFavorites(propID: number, user: User) {
         return this.http
-            .get<any>('http://localhost:1337/properties/' + propID)
+            .get<any>(`${environment.baseUrl}/properties/${propID}`)
             .pipe(
                 map((data) => data.favoriteBy.filter((x) => x.id !== user.id)),
                 switchMap((newDataArray) =>
                     this.http.put<any>(
-                        'http://localhost:1337/properties/' + propID,
+                        `${environment.baseUrl}/properties/${propID}`,
                         {
                             favoriteBy: newDataArray,
                         }

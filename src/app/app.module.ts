@@ -19,12 +19,10 @@ import { WeCallYouComponent } from './components/we-call-you/we-call-you.compone
 import { PropertiesComponent } from './components/properties/properties.component';
 import { PropertyComponent } from './components/property/property.component';
 import { HomeComponent } from './components/home/home.component';
-import { SubmitComponent } from './components/submit/submit.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FeaturedPropsComponent } from './components/featured-props/featured-props.component';
 import { AgentsComponent } from './components/agents/agents.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { TestComponent } from './components/test/test.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { SearchFormNewComponent } from './components/search-form-new/search-form-new.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -43,12 +41,10 @@ import { TourThisHomeComponent } from './components/tour-this-home/tour-this-hom
         PropertiesComponent,
         PropertyComponent,
         HomeComponent,
-        SubmitComponent,
         FooterComponent,
         FeaturedPropsComponent,
         AgentsComponent,
         NavbarComponent,
-        TestComponent,
         SearchResultsComponent,
         SearchFormNewComponent,
         SignupComponent,

@@ -6,6 +6,7 @@ import { User } from '../../models/user.model';
 
 import { AuthService } from '../../services/auth.service';
 import { FavoriteHomeService } from '../../services/favoriteHome.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
     selector: 'app-user-page',
@@ -36,8 +37,7 @@ export class UserPageComponent implements OnInit, OnDestroy {
                 this.user = user;
                 this.http
                     .get<any>(
-                        'http://localhost:1337/properties?favoriteBy.id=' +
-                            this.user.id
+                        `${environment.baseUrl}/properties?favoriteBy.id=${this.user.id}`
                     )
                     .subscribe((properties) => {
                         this.isLoading = false;

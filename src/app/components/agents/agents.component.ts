@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Component({
     selector: 'app-agents',
@@ -13,7 +14,7 @@ export class AgentsComponent implements OnInit {
 
     ngOnInit(): void {
         this.http
-            .get<any>('http://localhost:1337/agents')
+            .get<any>(`${environment.baseUrl}/agents`)
             .subscribe((resData) => {
                 this.agents = resData;
             });

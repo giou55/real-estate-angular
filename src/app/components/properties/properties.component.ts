@@ -6,6 +6,7 @@ import { FavoriteHomeService } from '../../services/favoriteHome.service';
 
 import { Property } from '../../models/property.model';
 import { User } from '../../models/user.model';
+import { environment } from '../../../environments/environment';
 
 @Component({
     selector: 'app-properties',
@@ -34,7 +35,7 @@ export class PropertiesComponent implements OnInit, OnDestroy {
             }
         });
         this.http
-            .get<Property[]>('http://localhost:1337/properties')
+            .get<Property[]>(`${environment.baseUrl}/properties`)
             .subscribe((properties) => {
                 this.properties = properties;
             });

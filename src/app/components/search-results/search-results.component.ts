@@ -8,6 +8,7 @@ import { FavoriteHomeService } from '../../services/favoriteHome.service';
 
 import { Property } from '../../models/property.model';
 import { User } from '../../models/user.model';
+import { environment } from '../../../environments/environment';
 
 @Component({
     selector: 'app-search-results',
@@ -47,7 +48,7 @@ export class SearchResultsComponent implements OnInit {
             }
 
             this.http
-                .get<Property[]>('http://localhost:1337/properties?' + str)
+                .get<Property[]>(`${environment.baseUrl}/properties?${str}`)
                 .subscribe((results) => {
                     this.isLoading = false;
                     this.results = results;

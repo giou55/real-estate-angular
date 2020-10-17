@@ -4,13 +4,19 @@
     <app-search-form-new></app-search-form-new>
 </div>
 
+<div class="agent-container">
+    <div class="agent">
+        <img src="http://localhost:1337{{ agent.image.url }}" alt="" />
+    </div>
+</div>
+
 <div class="container">
-    <div class="agent-container" *ngIf="agent">
+    <!-- <div class="agent-container" *ngIf="agent">
         <img src="http://localhost:1337{{ agent.image.url }}" alt="" />
         <h1>{{ agent.name }}</h1>
         <p>{{ agent.telephone }}</p>
         <p>{{ agent.email }}</p>
-    </div>
+    </div> -->
 
     <div class="listing-container" *ngIf="agent">
         <h1>My Listings</h1>

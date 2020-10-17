@@ -8,6 +8,7 @@ import { FavoriteHomeService } from '../../services/favoriteHome.service';
 
 import { Property } from '../../models/property.model';
 import { User } from '../../models/user.model';
+import { environment } from '../../../environments/environment';
 
 @Component({
     selector: 'app-property',
@@ -39,7 +40,7 @@ export class PropertyComponent implements OnInit {
         });
         this.id = this.route.snapshot.params['id'];
         this.http
-            .get<Property>('http://localhost:1337/properties/' + this.id)
+            .get<Property>(`${environment.baseUrl}/properties/${this.id}`)
             .subscribe((property) => {
                 this.property = property;
             });

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Component({
     selector: 'app-agent',
@@ -16,7 +17,7 @@ export class AgentComponent implements OnInit {
     ngOnInit(): void {
         this.id = this.route.snapshot.params['id'];
         this.http
-            .get<any>('http://localhost:1337/agents/' + this.id)
+            .get<any>(`${environment.baseUrl}/agents/${this.id}`)
             .subscribe((resData) => {
                 this.agent = resData;
             });
