@@ -4,31 +4,49 @@
     <app-search-form-new></app-search-form-new>
 </div>
 
-<div class="agent-container">
+<div class="agent-container" *ngIf="agent">
     <div class="agent">
         <img src="http://localhost:1337{{ agent.image.url }}" alt="" />
+        <div>
+            <h1>{{ agent.name }}</h1>
+            <h3>
+                {{ agent.telephone }} <br />
+                {{ agent.email }}
+            </h3>
+        </div>
     </div>
 </div>
 
-<div class="container">
-    <!-- <div class="agent-container" *ngIf="agent">
-        <img src="http://localhost:1337{{ agent.image.url }}" alt="" />
-        <h1>{{ agent.name }}</h1>
-        <p>{{ agent.telephone }}</p>
-        <p>{{ agent.email }}</p>
-    </div> -->
-
-    <div class="listing-container" *ngIf="agent">
+<div class="container" *ngIf="agent">
+    <div class="listings-container" *ngIf="agent.properties.length > 0">
         <h1>My Listings</h1>
-        <div *ngFor="let property of agent.properties">
-            <img
-                src="http://localhost:1337{{ property.imageSmall.url }}"
-                alt=""
-            />
-            <h2>{{ property.title }}</h2>
-            <p>{{ property.location }}</p>
-            <p>{{ property.priceSale }}</p>
+        <div class="properties">
+            <div class="property" *ngFor="let property of agent.properties">
+                <img
+                    routerLink="/properties/{{ property.id }}"
+                    src="http://localhost:1337{{ property.imageSmall.url }}"
+                    alt=""
+                />
+                <h2>{{ property.title }}</h2>
+                <p>{{ property.location }}</p>
+                <p>{{ property.priceSale }}</p>
+            </div>
         </div>
+    </div>
+
+    <div class="listings-container" *ngIf="agent.properties.length < 1">
+        <h1>My Listings</h1>
+        <p>No Properties</p>
+    </div>
+
+    <div class="areas-container" *ngIf="agent">
+        <h1>Areas Served</h1>
+        <p>Paris Rome Berlin Milan Madrid</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
     </div>
 </div>
 
