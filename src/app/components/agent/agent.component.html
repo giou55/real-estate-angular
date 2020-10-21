@@ -27,9 +27,23 @@
                     src="http://localhost:1337{{ property.imageSmall.url }}"
                     alt=""
                 />
-                <h2>{{ property.title }}</h2>
-                <p>{{ property.location }}</p>
-                <p>{{ property.priceSale }}</p>
+                <div class="property-text">
+                    <div class="details">
+                        <div>{{ property.title }}</div>
+                        <div>{{ property.location }}</div>
+                    </div>
+                    <div class="price">
+                        {{
+                            property.priceSale
+                                | currency: "EUR":"symbol":"1.0-0"
+                        }}
+                    </div>
+                </div>
+                <div class="features">
+                    <span>{{ property.beds }} bed</span>
+                    <span>{{ property.baths }} bath</span>
+                    <span>{{ property.area }} m<sup>2</sup></span>
+                </div>
             </div>
         </div>
     </div>
@@ -41,12 +55,11 @@
 
     <div class="areas-container" *ngIf="agent">
         <h1>Areas Served</h1>
-        <p>Paris Rome Berlin Milan Madrid</p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <div class="areas">
+            <div class="area" *ngFor="let area of agent.areas_served.areas">
+                {{ area }}
+            </div>
+        </div>
     </div>
 </div>
 

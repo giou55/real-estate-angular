@@ -64,7 +64,30 @@
     width: 100%;
     cursor: pointer;
 }
-
+.property-text {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.details {
+    color: #666;
+    font-size: 1rem;
+}
+.details div:first-child {
+    font-size: 1.1rem;
+}
+.price {
+    font-size: 1.3rem;
+    font-weight: normal;
+    color: $green;
+}
+.features {
+    margin-top: 4px;
+}
+.features span {
+    margin-right: 12px;
+    font-size: 0.7rem;
+}
 .areas-container {
     flex: 1 200px;
     align-self: flex-start;
@@ -72,6 +95,19 @@
     padding: 30px;
     background-color: #fff;
     border: 1px solid $darkerGreyBorder;
+}
+.areas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.area {
+    width: 60px;
+    margin-right: 8px;
+    margin-top: 4px;
+    text-align: left;
+    color: #666;
+    font-size: 0.8rem;
 }
 
 @media screen and (min-width: 992px) {
