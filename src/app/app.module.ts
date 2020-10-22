@@ -32,6 +32,9 @@ import { SmallLoadingSpinnerComponent } from './shared/small-loading-spinner/sma
 import { UserPageComponent } from './components/user-page/user-page.component';
 import { AgentComponent } from './components/agent/agent.component';
 import { TourThisHomeComponent } from './components/tour-this-home/tour-this-home.component';
+import { BuyComponent } from './components/buy/buy.component';
+import { SellComponent } from './components/sell/sell.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
     declarations: [
@@ -54,6 +57,9 @@ import { TourThisHomeComponent } from './components/tour-this-home/tour-this-hom
         UserPageComponent,
         AgentComponent,
         TourThisHomeComponent,
+        BuyComponent,
+        SellComponent,
+        AboutComponent,
     ],
     imports: [
         BrowserModule,

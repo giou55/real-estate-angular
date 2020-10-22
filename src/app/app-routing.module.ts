@@ -2,8 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
+import { BuyComponent } from './components/buy/buy.component';
+import { SellComponent } from './components/sell/sell.component';
 import { PropertyComponent } from './components/property/property.component';
 import { AgentComponent } from './components/agent/agent.component';
+import { AboutComponent } from './components/about/about.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -12,6 +15,9 @@ import { RouteGuardService } from './services/routeGuard.service';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
+    { path: 'buy', component: BuyComponent },
+    { path: 'sell', component: SellComponent },
+    { path: 'about', component: AboutComponent },
     { path: 'properties/:id', component: PropertyComponent },
     { path: 'agents/:id', component: AgentComponent },
     { path: 'searchResults', component: SearchResultsComponent },

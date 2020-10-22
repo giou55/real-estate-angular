@@ -1,155 +1,217 @@
 <div class="form-container">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="main-filters">
+            <div class="fields-container">
+                <div class="field">
+                    <h3 class="location-header">Location</h3>
+                    <mat-form-field class="location" appearance="outline">
+                        <input
+                            [ngModel]="location"
+                            name="location"
+                            matInput
+                            placeholder="Search for City, Region, Country..."
+                        />
+                    </mat-form-field>
+                </div>
 
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div class="field">
+                    <h3>Min Price</h3>
+                    <mat-form-field class="price" appearance="outline">
+                        <mat-select [ngModel]="minPrice" name="min_price">
+                            <mat-option
+                                [value]="option.value"
+                                *ngFor="let option of priceValues"
+                                >{{ option.viewValue }}</mat-option
+                            >
+                        </mat-select>
+                    </mat-form-field>
+                </div>
 
-    <div class="main-filters">
+                <div class="field">
+                    <h3>Max Price</h3>
+                    <mat-form-field class="price" appearance="outline">
+                        <mat-select [ngModel]="maxPrice" name="max_price">
+                            <mat-option
+                                [value]="option.value"
+                                *ngFor="let option of priceValues"
+                                >{{ option.viewValue }}</mat-option
+                            >
+                        </mat-select>
+                    </mat-form-field>
+                </div>
 
-      <div class="fields-container">
+                <div class="field">
+                    <h3>Min Beds</h3>
+                    <mat-form-field appearance="outline">
+                        <mat-select [ngModel]="minBeds" name="min_beds">
+                            <mat-option
+                                [value]="option.value"
+                                *ngFor="let option of bedsValues"
+                                >{{ option.viewValue }}</mat-option
+                            >
+                        </mat-select>
+                    </mat-form-field>
+                </div>
 
-        <div class="field">
-          <h3 class="location-header">Location</h3>
-          <mat-form-field class="location" appearance="outline">
-            <input [ngModel]="location" name="location" matInput placeholder="Search for City, Region, Country...">
-          </mat-form-field>
+                <div class="field">
+                    <h3>Min Baths</h3>
+                    <mat-form-field appearance="outline">
+                        <mat-select [ngModel]="minBaths" name="min_baths">
+                            <mat-option
+                                [value]="option.value"
+                                *ngFor="let option of bathsValues"
+                                >{{ option.viewValue }}</mat-option
+                            >
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="accordion" (click)="toggleAccordian()">
+                    <!-- <i id="fa-symbol" class="fa fa-plus-square-o"></i> -->
+                    <i id="fa-symbol" class="fa fa-plus"></i>
+                    <span>More Filters</span>
+                </div>
+
+                <div class="field">
+                    <button type="submit" mat-flat-button color="primary">
+                        Search
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <div class="field">
-          <h3>Min Price</h3>
-          <mat-form-field class="price" appearance="outline">
-            <mat-select [ngModel]="minPrice" name="min_price">
-              <mat-option [value]="option.value" *ngFor="let option of priceValues">{{ option.viewValue }}</mat-option>
-            </mat-select>
-          </mat-form-field>
+        <div class="extra-filters">
+            <div id="panel" class="panel">
+                <div class="fields-container">
+                    <div class="field">
+                        <h3>Min Area (sq ft)</h3>
+                        <mat-form-field class="price" appearance="outline">
+                            <mat-select [ngModel]="minArea" name="min_area">
+                                <mat-option
+                                    [value]="option.value"
+                                    *ngFor="let option of areaValues"
+                                    >{{ option.viewValue }}</mat-option
+                                >
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="field">
+                        <h3>Max Area (sq ft)</h3>
+                        <mat-form-field class="price" appearance="outline">
+                            <mat-select [ngModel]="maxArea" name="max_area">
+                                <mat-option
+                                    [value]="option.value"
+                                    *ngFor="let option of areaValues"
+                                    >{{ option.viewValue }}</mat-option
+                                >
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="field">
+                        <h3>Min Year Built</h3>
+                        <mat-form-field class="price" appearance="outline">
+                            <mat-select [ngModel]="minYear" name="min_year">
+                                <mat-option
+                                    [value]="option.value"
+                                    *ngFor="let option of yearValues"
+                                    >{{ option.viewValue }}</mat-option
+                                >
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="field">
+                        <h3>Max Year Built</h3>
+                        <mat-form-field class="price" appearance="outline">
+                            <mat-select [ngModel]="maxYear" name="max_year">
+                                <mat-option
+                                    [value]="option.value"
+                                    *ngFor="let option of yearValues"
+                                    >{{ option.viewValue }}</mat-option
+                                >
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="field">
+                        <h3>Property ID</h3>
+                        <mat-form-field class="prop_id" appearance="outline">
+                            <input
+                                [ngModel]="propertyID"
+                                name="property_id"
+                                matInput
+                            />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="fields-container" id="checkboxes">
+                    <div class="field">
+                        <mat-checkbox
+                            [ngModel]="heating"
+                            name="heating"
+                            class=""
+                            >Central Heating</mat-checkbox
+                        >
+                    </div>
+
+                    <div class="field">
+                        <mat-checkbox
+                            [ngModel]="cooling"
+                            name="cooling"
+                            class=""
+                            >Central Cooling</mat-checkbox
+                        >
+                    </div>
+
+                    <div class="field">
+                        <mat-checkbox
+                            [ngModel]="rv_boat"
+                            name="rv_boat"
+                            class=""
+                            >RV/Boat Parking</mat-checkbox
+                        >
+                    </div>
+
+                    <div class="field">
+                        <mat-checkbox
+                            [ngModel]="two_stories"
+                            name="two_stories"
+                            class=""
+                            >2 Stories</mat-checkbox
+                        >
+                    </div>
+
+                    <div class="field">
+                        <mat-checkbox
+                            [ngModel]="deck_ratio"
+                            name="deck_ratio"
+                            class=""
+                            >Deck/Patio</mat-checkbox
+                        >
+                    </div>
+
+                    <div class="field">
+                        <mat-checkbox
+                            [ngModel]="fireplace"
+                            name="fireplace"
+                            class=""
+                            >Fireplace</mat-checkbox
+                        >
+                    </div>
+
+                    <div class="field">
+                        <mat-checkbox
+                            [ngModel]="swimming_pool"
+                            name="swimming_pool"
+                            class=""
+                            >Swimming Pool</mat-checkbox
+                        >
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="field">
-          <h3>Max Price</h3>
-          <mat-form-field class="price" appearance="outline">
-            <mat-select [ngModel]="maxPrice" name="max_price">
-              <mat-option [value]="option.value" *ngFor="let option of priceValues">{{ option.viewValue }}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-
-        <div class="field">
-          <h3>Min Beds</h3>
-          <mat-form-field appearance="outline">
-            <mat-select [ngModel]="minBeds" name="min_beds">
-              <mat-option [value]="option.value" *ngFor="let option of bedsValues">{{ option.viewValue }}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-
-        <div class="field">
-          <h3>Min Baths</h3>
-          <mat-form-field appearance="outline">
-            <mat-select [ngModel]="minBaths" name="min_baths">
-              <mat-option [value]="option.value" *ngFor="let option of bathsValues">{{ option.viewValue }}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-
-        <div class="accordion" (click)="toggleAccordian()">
-          <!-- <i id="fa-symbol" class="fa fa-plus-square-o"></i> -->
-          <i id="fa-symbol" class="fa fa-plus"></i>
-          <span>More Filters</span>
-        </div>
-
-        <div class="field">
-          <button type="submit" mat-flat-button color="primary">Search</button>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="extra-filters">
-
-      <div id="panel" class="panel">
-
-        <div class="fields-container">
-
-          <div class="field">
-            <h3>Min Area (sq ft)</h3>
-            <mat-form-field class="price" appearance="outline">
-              <mat-select [ngModel]="minArea" name="min_area">
-                <mat-option [value]="option.value" *ngFor="let option of areaValues">{{ option.viewValue }}</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-
-          <div class="field">
-            <h3>Max Area (sq ft)</h3>
-            <mat-form-field class="price" appearance="outline">
-              <mat-select [ngModel]="maxArea" name="max_area">
-                <mat-option [value]="option.value" *ngFor="let option of areaValues">{{ option.viewValue }}</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-
-          <div class="field">
-            <h3>Min Year Built</h3>
-            <mat-form-field class="price" appearance="outline">
-              <mat-select [ngModel]="minYear" name="min_year">
-                <mat-option [value]="option.value" *ngFor="let option of yearValues">{{ option.viewValue }}</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-
-          <div class="field">
-            <h3>Max Year Built</h3>
-            <mat-form-field class="price" appearance="outline">
-              <mat-select [ngModel]="maxYear" name="max_year">
-                <mat-option [value]="option.value" *ngFor="let option of yearValues">{{ option.viewValue }}</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-
-          <div class="field">
-            <h3>Property ID</h3>
-            <mat-form-field class="prop_id" appearance="outline">
-              <input [ngModel]="propertyID" name="property_id" matInput>
-            </mat-form-field>
-          </div>
-
-        </div>
-
-        <div class="fields-container" id="checkboxes">
-
-          <div class="field">
-            <mat-checkbox [ngModel]="heating" name="heating" class="">Central Heating</mat-checkbox>
-          </div>
-
-          <div class="field">
-            <mat-checkbox [ngModel]="cooling" name="cooling" class="">Central Cooling</mat-checkbox>
-          </div>
-
-          <div class="field">
-            <mat-checkbox [ngModel]="rv_boat" name="rv_boat" class="">RV/Boat Parking</mat-checkbox>
-          </div>
-
-          <div class="field">
-            <mat-checkbox [ngModel]="two_stories" name="two_stories" class="">2 Stories</mat-checkbox>
-          </div>
-
-          <div class="field">
-            <mat-checkbox [ngModel]="deck_ratio" name="deck_ratio" class="">Deck/Patio</mat-checkbox>
-          </div>
-
-          <div class="field">
-            <mat-checkbox [ngModel]="fireplace" name="fireplace" class="">Fireplace</mat-checkbox>
-          </div>
-
-          <div class="field">
-            <mat-checkbox [ngModel]="swimming_pool" name="swimming_pool" class="">Swimming Pool</mat-checkbox>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </form>
-
+    </form>
 </div>

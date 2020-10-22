@@ -13,54 +13,21 @@
                     >Home</a
                 >
             </div>
-            <div class="dropdown">
-                <button class="dropbtn">
-                    Buy
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Buyers Guide</a>
-                </div>
+
+            <div>
+                <a routerLinkActive="active" routerLink="/buy">Buy</a>
             </div>
-            <div class="dropdown">
-                <button class="dropbtn">
-                    Sell
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
+
+            <div>
+                <a routerLinkActive="active" routerLink="/sell">Sell</a>
             </div>
+
             <div>
                 <a routerLink="/" fragment="agents">Agents</a>
             </div>
+
             <div>
-                <a
-                    routerLinkActive="active"
-                    [routerLinkActiveOptions]="{ exact: true }"
-                    routerLink="/news"
-                    >News</a
-                >
-            </div>
-            <div>
-                <a
-                    routerLinkActive="active"
-                    [routerLinkActiveOptions]="{ exact: true }"
-                    routerLink="/about"
-                    >About</a
-                >
-            </div>
-            <div>
-                <a
-                    routerLinkActive="active"
-                    [routerLinkActiveOptions]="{ exact: true }"
-                    routerLink="/contact"
-                    >Contact</a
-                >
+                <a routerLinkActive="active" routerLink="/about">About</a>
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@
 
 .form-container {
     margin: auto;
-    padding: 15px;
+    padding: 15px 15px 0 15px;
 }
 
 .main-filters,
@@ -28,6 +28,7 @@
     transition: 0.4s;
     border-radius: 4px;
     margin-right: 30px;
+    margin-bottom: 15px;
 }
 
 .accordion:hover {
@@ -51,6 +52,7 @@
     align-items: baseline;
     font-size: 0.9rem;
     background-color: white;
+    //margin-top: 10px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -63,6 +65,7 @@
 .field {
     margin: 0;
     margin-right: 30px;
+    margin-bottom: 15px;
     font-size: 14px;
     color: #555;
 }

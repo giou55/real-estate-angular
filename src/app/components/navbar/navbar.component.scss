@@ -117,8 +117,22 @@
     display: block;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 600px) {
+}
+
+@media screen and (min-width: 992px) {
     .main {
         width: 95%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .main {
+        width: 90%;
+    }
+}
+@media screen and (min-width: 1400px) {
+    .main {
+        width: 80%;
     }
 }

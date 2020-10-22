@@ -2,12 +2,12 @@
 
 .container {
     text-align: center;
-    width: 25%;
+    max-width: 300px;
     margin: 50px auto;
 }
 
 .form-component-container {
-    padding: 0 350px;
+    padding: 0 30px;
     margin: auto;
     background-color: #fff;
     border: 1px solid $darkerGreyBorder;
@@ -56,4 +56,32 @@ a:hover,
 a:active {
     text-decoration: none;
     color: $green;
+}
+
+@media screen and (min-width: 600px) {
+    .form-component-container {
+        padding: 0 50px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .form-component-container {
+        padding: 0 80px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .form-component-container {
+        padding: 0 100px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .form-component-container {
+        padding: 0 200px;
+    }
+    .container {
+        max-width: 400px;
+        margin: 80px auto;
+    }
 }
