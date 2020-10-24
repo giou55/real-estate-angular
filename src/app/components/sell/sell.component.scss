@@ -83,6 +83,22 @@
     border-radius: 4px;
     padding: 6px 30px;
 }
+.images-container {
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.images-container div {
+    width: 450px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+.images-container p {
+    margin-top: 8px;
+    font-size: 1.2rem;
+}
 
 @media screen and (min-width: 600px) {
     .form-component-container {
