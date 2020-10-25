@@ -4,7 +4,7 @@
     padding: 0 30px;
     margin: auto;
     background-color: #fff;
-    border: 1px solid $darkerGreyBorder;
+    border-bottom: 1px solid $darkerGreyBorder;
 }
 
 .header {
@@ -72,7 +72,10 @@
     white-space: nowrap;
 }
 .process-arrow {
-    padding-top: 40px;
+    padding-top: 27px;
+    font-size: 3rem;
+    font-weight: normal;
+    color: #666;
 }
 .process-action {
     padding-top: 15px;
@@ -89,6 +92,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+.images-container img {
+    border: 1px solid $darkerGreyBorder;
 }
 .images-container div {
     width: 450px;
