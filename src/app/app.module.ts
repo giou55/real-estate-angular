@@ -31,10 +31,10 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { SmallLoadingSpinnerComponent } from './shared/small-loading-spinner/small-loading-spinner.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
 import { AgentComponent } from './components/agent/agent.component';
-import { TourThisHomeComponent } from './components/tour-this-home/tour-this-home.component';
 import { BuyComponent } from './components/buy/buy.component';
 import { SellComponent } from './components/sell/sell.component';
 import { AboutComponent } from './components/about/about.component';
+import { ContactAgentFormComponent } from './components/contact-agent-form/contact-agent-form.component';
 
 @NgModule({
     declarations: [
@@ -56,10 +56,10 @@ import { AboutComponent } from './components/about/about.component';
         SmallLoadingSpinnerComponent,
         UserPageComponent,
         AgentComponent,
-        TourThisHomeComponent,
         BuyComponent,
         SellComponent,
         AboutComponent,
+        ContactAgentFormComponent,
     ],
     imports: [
         BrowserModule,

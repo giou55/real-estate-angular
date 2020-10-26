@@ -1,8 +1,8 @@
 <div class="flex-container">
     <div class="main">
-        <p class="header">Tour This Home</p>
+        <p class="header">{{ header }}</p>
         <p *ngIf="!isAuthenticated">
-            Register to tour this home with a local real estate agent.
+            {{ paragraph }}
         </p>
 
         <div class="container" *ngIf="!isAuthenticated">

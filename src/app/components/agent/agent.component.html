@@ -17,7 +17,7 @@
     </div>
 </div>
 
-<div class="container" *ngIf="agent">
+<div class="main-container" *ngIf="agent">
     <div class="listings-container" *ngIf="agent.properties.length > 0">
         <h1>My Listings</h1>
         <div class="properties">
@@ -53,13 +53,21 @@
         <p>No Properties</p>
     </div>
 
-    <div class="areas-container" *ngIf="agent">
-        <h1>Areas Served</h1>
-        <div class="areas">
-            <div class="area" *ngFor="let area of agent.areas_served.areas">
-                {{ area }}
+    <div class="sidebar">
+        <div class="areas-container" *ngIf="agent">
+            <h1>Areas Served</h1>
+            <div class="areas">
+                <div class="area" *ngFor="let area of agent.areas_served.areas">
+                    {{ area }}
+                </div>
             </div>
         </div>
+
+        <app-contact-agent-form
+            [header]="'Contact ' + agent.name"
+            [paragraph]="'Register to start working with this agent.'"
+            [isAuthenticated]="isAuthenticated"
+        ></app-contact-agent-form>
     </div>
 </div>
 

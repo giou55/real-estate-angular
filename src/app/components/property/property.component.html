@@ -133,9 +133,13 @@
         </div>
     </div>
 
-    <app-tour-this-home
+    <app-contact-agent-form
+        [header]="'Tour This Home'"
+        [paragraph]="
+            'Register to tour this home with a local real estate agent.'
+        "
         [isAuthenticated]="isAuthenticated"
-    ></app-tour-this-home>
+    ></app-contact-agent-form>
 </div>
 
 <app-footer></app-footer>
