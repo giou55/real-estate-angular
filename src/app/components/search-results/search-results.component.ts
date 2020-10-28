@@ -22,6 +22,8 @@ export class SearchResultsComponent implements OnInit {
     private favSub: Subscription;
     results: Property[] = [];
     user: User = null;
+    private homesPerPage = 4;
+    private selectedPage = 1;
 
     constructor(
         private route: ActivatedRoute,
