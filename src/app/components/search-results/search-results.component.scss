@@ -15,12 +15,12 @@
 
 .header {
     margin: 40px 40px 0 40px;
-    text-align: center;
+    text-align: left;
 }
 
 .noResults {
     display: flex;
-    min-height: 60vh;
+    height: 500px;
     align-items: center;
     justify-content: center;
 }
@@ -188,6 +188,39 @@
 .prop-price h2 span {
     font-size: 1rem;
     font-weight: normal;
+}
+
+.pagination {
+    width: 95%;
+    margin: auto;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 14px;
+    margin-right: 10px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    border: 1px solid $darkerGreyBorder;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    transition: border-color 0.3s;
+}
+
+.pagination a.active {
+    background-color: $orange;
+    border-color: $orange;
+    cursor: default;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: $orange;
+    border-color: $orange;
+    cursor: pointer;
+    color: white;
 }
 
 @media screen and (min-width: 992px) {

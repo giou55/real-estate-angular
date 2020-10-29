@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
@@ -18,15 +18,17 @@ import { environment } from '../../../environments/environment';
 export class SearchResultsComponent implements OnInit {
     isLoading = false;
     isAuthenticated = false;
-    private userSub: Subscription;
-    private favSub: Subscription;
+    public userSub: Subscription;
+    public favSub: Subscription;
     results: Property[] = [];
     user: User = null;
-    private homesPerPage = 4;
-    private selectedPage = 1;
+    public homesPerPage = 1;
+    public selectedPage = 1;
+    public pageNumbers: number[] = null;
 
     constructor(
         private route: ActivatedRoute,
+        private router: Router,
         private http: HttpClient,
         private authService: AuthService,
         private favoriteHomeService: FavoriteHomeService
@@ -50,8 +52,16 @@ export class SearchResultsComponent implements OnInit {
             }
 
             this.http
+                //.get<Property[]>(
+                //     `${environment.baseUrl}/properties?_start=1&_limit=${this.homesPerPage}&${str}`
+                // )
                 .get<Property[]>(`${environment.baseUrl}/properties?${str}`)
                 .subscribe((results) => {
+                    this.pageNumbers = Array(
+                        Math.ceil(results.length / this.homesPerPage)
+                    )
+                        .fill(0)
+                        .map((x, i) => i + 1);
                     this.isLoading = false;
                     this.results = results;
                 });
@@ -87,6 +97,13 @@ export class SearchResultsComponent implements OnInit {
         if (this.user) {
             return prop.favoriteBy.some((p) => p.id == this.user.id);
         }
+    }
+
+    changePage(newPage: number) {
+        this.selectedPage = newPage;
+        // this.router.navigate(['searchResults'], {
+        //     queryParams: this.queryParams,
+        // });
     }
 
     ngOnDestroy() {
