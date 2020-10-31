@@ -19,7 +19,13 @@
         </h2>
     </div>
     <div class="props-container">
-        <div class="prop" *ngFor="let prop of results">
+        <div
+            class="prop"
+            *ngFor="
+                let prop of results
+                    | paginate: { itemsPerPage: 2, currentPage: p }
+            "
+        >
             <div class="img-container">
                 <img
                     src="http://localhost:1337{{ prop.imageSmall.url }}"
@@ -100,7 +106,12 @@
         </div>
     </div>
 
-    <div class="pagination">
+    <pagination-controls
+        class="my-pagination"
+        (pageChange)="p = $event"
+    ></pagination-controls>
+
+    <!-- <div class="pagination" *ngIf="pageNumbers.length > 1">
         <a>&laquo;</a>
         <a
             *ngFor="let page of pageNumbers"
@@ -110,7 +121,7 @@
             {{ page }}</a
         >
         <a href="#">&raquo;</a>
-    </div>
+    </div> -->
 </div>
 
 <app-footer></app-footer>
