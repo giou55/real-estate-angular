@@ -22,9 +22,7 @@ export class SearchResultsComponent implements OnInit {
     public favSub: Subscription;
     results: Property[] = [];
     user: User = null;
-    public homesPerPage = 2;
     public p: number = 1;
-    public pageNumbers: number[] = null;
 
     constructor(
         private route: ActivatedRoute,
@@ -51,16 +49,8 @@ export class SearchResultsComponent implements OnInit {
             }
 
             this.http
-                // .get<Property[]>(
-                //     `${environment.baseUrl}/properties?_start=1&_limit=${this.homesPerPage}&${str}`
-                // )
                 .get<Property[]>(`${environment.baseUrl}/properties?${str}`)
                 .subscribe((results) => {
-                    // this.pageNumbers = Array(
-                    //     Math.ceil(results.length / this.homesPerPage)
-                    // )
-                    //     .fill(0)
-                    //     .map((x, i) => i + 1);
                     this.isLoading = false;
                     this.results = results;
                 });
@@ -97,13 +87,6 @@ export class SearchResultsComponent implements OnInit {
             return prop.favoriteBy.some((p) => p.id == this.user.id);
         }
     }
-
-    // changePage(newPage: number) {
-    //     this.selectedPage = newPage;
-    //     // this.router.navigate(['searchResults'], {
-    //     //     queryParams: this.queryParams,
-    //     // });
-    // }
 
     ngOnDestroy() {
         this.userSub.unsubscribe();

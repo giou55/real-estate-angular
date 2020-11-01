@@ -23,7 +23,7 @@
             class="prop"
             *ngFor="
                 let prop of results
-                    | paginate: { itemsPerPage: 2, currentPage: p }
+                    | paginate: { itemsPerPage: 4, currentPage: p }
             "
         >
             <div class="img-container">
@@ -107,21 +107,9 @@
     </div>
 
     <pagination-controls
-        class="my-pagination"
+        class="pagination"
         (pageChange)="p = $event"
     ></pagination-controls>
-
-    <!-- <div class="pagination" *ngIf="pageNumbers.length > 1">
-        <a>&laquo;</a>
-        <a
-            *ngFor="let page of pageNumbers"
-            [class.active]="page == selectedPage"
-            (click)="changePage(page)"
-        >
-            {{ page }}</a
-        >
-        <a href="#">&raquo;</a>
-    </div> -->
 </div>
 
 <app-footer></app-footer>
