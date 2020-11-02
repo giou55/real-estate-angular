@@ -3,7 +3,7 @@
         <div
             class="mySlides fade"
             style="text-align: center"
-            *ngFor="let prop of featuredProperties"
+            *ngFor="let prop of properties"
         >
             <div routerLink="/properties/{{ prop.id }}">
                 <img
@@ -25,7 +25,7 @@
 
     <div style="text-align: center" class="dots-container">
         <span
-            *ngFor="let prop of featuredProperties; index as i"
+            *ngFor="let prop of properties; index as i"
             class="dot"
             (click)="currentSlide(i + 1)"
         ></span>

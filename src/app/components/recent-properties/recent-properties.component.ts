@@ -1,19 +1,18 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
+import { PropertiesService } from '../../services/properties.service';
 import { FavoriteHomeService } from '../../services/favoriteHome.service';
 
 import { Property } from '../../models/property.model';
 import { User } from '../../models/user.model';
-import { environment } from '../../../environments/environment';
 
 @Component({
-    selector: 'app-properties',
-    templateUrl: './properties.component.html',
-    styleUrls: ['./properties.component.scss'],
+    selector: 'app-recent-properties',
+    templateUrl: './recent-properties.component.html',
+    styleUrls: ['./recent-properties.component.scss'],
 })
-export class PropertiesComponent implements OnInit, OnDestroy {
+export class RecentPropertiesComponent implements OnInit, OnDestroy {
     error = null;
     properties: Property[] = [];
     isAuthenticated = false;
@@ -22,9 +21,9 @@ export class PropertiesComponent implements OnInit, OnDestroy {
     user: User = null;
 
     constructor(
-        private http: HttpClient,
         private authService: AuthService,
-        private favoriteHomeService: FavoriteHomeService
+        private favoriteHomeService: FavoriteHomeService,
+        private propertiesService: PropertiesService
     ) {}
 
     ngOnInit(): void {
@@ -34,11 +33,9 @@ export class PropertiesComponent implements OnInit, OnDestroy {
                 this.user = user;
             }
         });
-        this.http
-            .get<Property[]>(`${environment.baseUrl}/properties`)
-            .subscribe((properties) => {
-                this.properties = properties;
-            });
+        this.propertiesService.getRecentProperties().subscribe((properties) => {
+            this.properties = properties;
+        });
     }
 
     toggleFavorite(prop: any, event: any) {

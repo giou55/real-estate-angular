@@ -17,11 +17,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { WeCallYouComponent } from './components/we-call-you/we-call-you.component';
-import { PropertiesComponent } from './components/properties/properties.component';
+import { RecentPropertiesComponent } from './components/recent-properties/recent-properties.component';
 import { PropertyComponent } from './components/property/property.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FeaturedPropsComponent } from './components/featured-props/featured-props.component';
+import { FeaturedPropertiesComponent } from './components/featured-properties/featured-properties.component';
 import { AgentsComponent } from './components/agents/agents.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
@@ -42,11 +42,11 @@ import { ContactAgentFormComponent } from './components/contact-agent-form/conta
         AppComponent,
         TopbarComponent,
         WeCallYouComponent,
-        PropertiesComponent,
+        RecentPropertiesComponent,
         PropertyComponent,
         HomeComponent,
         FooterComponent,
-        FeaturedPropsComponent,
+        FeaturedPropertiesComponent,
         AgentsComponent,
         NavbarComponent,
         SearchResultsComponent,

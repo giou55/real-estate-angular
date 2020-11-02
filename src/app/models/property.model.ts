@@ -4,6 +4,7 @@ export interface Property {
     description: string;
     location: string;
     featured: boolean;
+    recent: boolean;
     area: number;
     year_built: number;
     beds: number;

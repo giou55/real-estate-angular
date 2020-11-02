@@ -1,23 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { PropertiesService } from '../../services/properties.service';
 
 import { Property } from '../../models/property.model';
-import { environment } from '../../../environments/environment';
 
 @Component({
-    selector: 'app-featured-props',
-    templateUrl: './featured-props.component.html',
-    styleUrls: ['./featured-props.component.scss'],
+    selector: 'app-featured-properties',
+    templateUrl: './featured-properties.component.html',
+    styleUrls: ['./featured-properties.component.scss'],
     providers: [],
 })
-export class FeaturedPropsComponent implements OnInit {
-    constructor(private http: HttpClient) {}
+export class FeaturedPropertiesComponent implements OnInit {
+    constructor(private propertiesService: PropertiesService) {}
 
     slideIndex: number = 1;
     slides: HTMLCollectionOf<any>;
     dots: HTMLCollectionOf<any>;
     error = null;
-    featuredProperties: Property[] = [];
+    properties: Property[] = [];
 
     plusSlides(n: number) {
         this.showSlides((this.slideIndex += n));
@@ -48,10 +47,10 @@ export class FeaturedPropsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.http
-            .get<Property[]>(`${environment.baseUrl}/properties?featured=true`)
+        this.propertiesService
+            .getFeaturedProperties()
             .subscribe((properties) => {
-                this.featuredProperties = properties;
+                this.properties = properties;
             });
     }
 }

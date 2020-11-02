@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 
 import { Subscription } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 import { FavoriteHomeService } from '../../services/favoriteHome.service';
+import { PropertiesService } from '../../services/properties.service';
 
 import { Property } from '../../models/property.model';
 import { User } from '../../models/user.model';
-import { environment } from '../../../environments/environment';
 
 @Component({
     selector: 'app-property',
@@ -26,9 +25,9 @@ export class PropertyComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
-        private http: HttpClient,
         private authService: AuthService,
-        private favoriteHomeService: FavoriteHomeService
+        private favoriteHomeService: FavoriteHomeService,
+        private propertiesService: PropertiesService
     ) {}
 
     ngOnInit(): void {
@@ -39,8 +38,8 @@ export class PropertyComponent implements OnInit {
             }
         });
         this.id = this.route.snapshot.params['id'];
-        this.http
-            .get<Property>(`${environment.baseUrl}/properties/${this.id}`)
+        this.propertiesService
+            .getPropertyById(+this.id)
             .subscribe((property) => {
                 this.property = property;
             });
