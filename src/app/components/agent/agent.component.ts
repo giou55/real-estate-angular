@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Subscription } from 'rxjs';
-import { environment } from '../../../environments/environment';
+
+import { AgentsService } from '../../services/agents.service';
 import { AuthService } from '../../services/auth.service';
+
 import { User } from '../../models/user.model';
+import { Agent } from '../../models/agent.model';
 
 @Component({
     selector: 'app-agent',
@@ -12,16 +15,17 @@ import { User } from '../../models/user.model';
     styleUrls: ['./agent.component.scss'],
 })
 export class AgentComponent implements OnInit {
-    agent: any;
     id: String;
     isAuthenticated = false;
     private userSub: Subscription;
     user: User = null;
+    agent: Agent = null;
 
     constructor(
         private route: ActivatedRoute,
         private http: HttpClient,
-        private authService: AuthService
+        private authService: AuthService,
+        private agentsService: AgentsService
     ) {}
 
     ngOnInit(): void {
@@ -32,10 +36,8 @@ export class AgentComponent implements OnInit {
             }
         });
         this.id = this.route.snapshot.params['id'];
-        this.http
-            .get<any>(`${environment.baseUrl}/agents/${this.id}`)
-            .subscribe((resData) => {
-                this.agent = resData;
-            });
+        this.agentsService.getAgentById(+this.id).subscribe((agent) => {
+            this.agent = agent;
+        });
     }
 }

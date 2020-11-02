@@ -8,8 +8,6 @@ import { Property } from '../models/property.model';
     providedIn: 'root',
 })
 export class PropertiesService {
-    properties: Property[] = [];
-
     constructor(private http: HttpClient) {}
 
     getProperties() {

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
+
+import { AgentsService } from '../../services/agents.service';
+
+import { Agent } from '../../models/agent.model';
 
 @Component({
     selector: 'app-agents',
@@ -8,15 +10,13 @@ import { environment } from '../../../environments/environment';
     styleUrls: ['./agents.component.scss'],
 })
 export class AgentsComponent implements OnInit {
-    agents: [] = [];
+    agents: Agent[] = [];
 
-    constructor(private http: HttpClient) {}
+    constructor(private agentsService: AgentsService) {}
 
     ngOnInit(): void {
-        this.http
-            .get<any>(`${environment.baseUrl}/agents`)
-            .subscribe((resData) => {
-                this.agents = resData;
-            });
+        this.agentsService.getAgents().subscribe((agents) => {
+            this.agents = agents;
+        });
     }
 }
