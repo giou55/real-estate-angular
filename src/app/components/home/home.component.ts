@@ -1,17 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { SearchFormService } from '../../services/searchForm.service';
 
 @Component({
-      selector: 'app-home',
-      templateUrl: './home.component.html',
-      styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+    constructor(
+        private searchFormService: SearchFormService,
+        private router: Router
+    ) {}
 
-      constructor(private searchFormService: SearchFormService) { }
+    ngOnInit(): void {
+        this.searchFormService.formInit();
+    }
 
-      ngOnInit(): void {
-            this.searchFormService.formInit();
-      }
+    contactAgent(): void {
+        this.router.navigate(['contact']);
+    }
+
+    browseProperties(): void {
+        this.router.navigate(['searchResults']);
+    }
 }
