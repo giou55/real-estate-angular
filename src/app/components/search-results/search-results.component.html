@@ -83,7 +83,7 @@
                 [ngClass]="
                     isFavorite(prop)
                         ? 'heart heart-icon red-heart'
-                        : 'heart heart-icon white-heart'
+                        : 'heart heart-icon black-heart'
                 "
             >
                 <app-small-loading-spinner
@@ -93,7 +93,7 @@
             </div>
 
             <div *ngIf="!isAuthenticated">
-                <div class="heart-icon white-heart">
+                <div class="heart-icon black-heart">
                     <i class="fas fa-heart"></i>
                     <span class="text">Register to save this home</span>
                 </div>

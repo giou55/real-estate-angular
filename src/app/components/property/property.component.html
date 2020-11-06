@@ -102,6 +102,22 @@
                         {{ property.description }}
                     </p>
 
+                    <h2>Listing Information</h2>
+                    <p>
+                        Fireplace: {{ property.fireplace ? "Yes" : "No" }}<br />
+                        Central Heating:
+                        {{ property.central_heating ? "Yes" : "No" }}<br />
+                        Central Cooling:
+                        {{ property.central_cooling ? "Yes" : "No" }}<br />
+                        Swimming Pool: {{ property.swimming_pool ? "Yes" : "No"
+                        }}<br />
+                        Two Stories: {{ property.two_stories ? "Yes" : "No"
+                        }}<br />
+                        RV Boat Parking:
+                        {{ property.rv_boat_parking ? "Yes" : "No" }}<br />
+                        Deck Patio: {{ property.deck_patio ? "Yes" : "No" }}
+                    </p>
+
                     <h2>Property Video</h2>
                     <div style="margin-bottom: 14px">
                         <iframe
@@ -115,7 +131,7 @@
                     </div>
 
                     <h2>Property on Map</h2>
-                    <agm-map
+                    <!-- <agm-map
                         [latitude]="property.lat"
                         [longitude]="property.lng"
                         [scrollwheel]="false"
@@ -127,7 +143,7 @@
                             [latitude]="property.lat"
                             [longitude]="property.lng"
                         ></agm-marker>
-                    </agm-map>
+                    </agm-map> -->
                 </div>
             </div>
         </div>
@@ -135,9 +151,10 @@
 
     <app-contact-agent-form
         *ngIf="property"
-        [header]="'Contact ' + property.agent.name"
+        header="Contact Agent"
+        [caption]="'Listing Agent: ' + property.agent.name"
         [image_url]="property.agent.image.url"
-        [paragraph]="'Register to contact with agent.'"
+        paragraph="Register to contact with agent."
         [isAuthenticated]="isAuthenticated"
     ></app-contact-agent-form>
 </div>

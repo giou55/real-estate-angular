@@ -64,9 +64,11 @@
         </div>
 
         <app-contact-agent-form
+            *ngIf="agent"
             [header]="'Contact ' + agent.name"
+            [caption]=""
             [image_url]=""
-            [paragraph]="'Register to start working with this agent.'"
+            paragraph="Register to start working with this agent."
             [isAuthenticated]="isAuthenticated"
         ></app-contact-agent-form>
     </div>

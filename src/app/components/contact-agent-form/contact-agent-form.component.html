@@ -1,11 +1,12 @@
 <div class="flex-container">
     <div class="main">
+        <p class="header">{{ header }}</p>
         <img
             *ngIf="image_url"
             src="http://localhost:1337{{ image_url }}"
             alt=""
         />
-        <p class="header">{{ header }}</p>
+        <p *ngIf="caption" class="header2">{{ caption }}</p>
         <p *ngIf="!isAuthenticated">
             {{ paragraph }}
         </p>
