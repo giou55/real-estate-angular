@@ -11,7 +11,7 @@ export class BuyComponent implements OnInit {
 
     ngOnInit(): void {}
 
-    goToContactPage(): void {
+    contactAgent(): void {
         this.router.navigate(['contact']);
     }
 }

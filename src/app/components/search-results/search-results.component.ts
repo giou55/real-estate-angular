@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
@@ -28,6 +28,7 @@ export class SearchResultsComponent implements OnInit {
         private route: ActivatedRoute,
         private http: HttpClient,
         private authService: AuthService,
+        private router: Router,
         private favoriteHomeService: FavoriteHomeService
     ) {}
 
@@ -55,6 +56,10 @@ export class SearchResultsComponent implements OnInit {
                     this.results = results;
                 });
         });
+    }
+
+    goToPropertyPage(prop_id: number): void {
+        this.router.navigate([`properties/${prop_id}`]);
     }
 
     toggleFavorite(prop: any, event: any) {

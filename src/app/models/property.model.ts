@@ -25,4 +25,8 @@ export interface Property {
     favoriteBy: [];
     imageSmall: any;
     imageLarge: any;
+    agent: {
+        name: string;
+        image: { url: string };
+    };
 }

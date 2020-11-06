@@ -1,16 +1,16 @@
 @import "../../../../src/styles.scss";
 
-.container {
-    background-color: $lightGreyBackground;
-    margin: 20px auto;
-    max-width: 1700px;
-}
-
 .form-component-container {
     padding: 0 30px;
     margin: auto;
     background-color: #fff;
     border-bottom: 1px solid $darkerGreyBorder;
+}
+
+.container {
+    background-color: $lightGreyBackground;
+    margin: 10px auto;
+    max-width: 1100px;
 }
 
 .header {
@@ -28,65 +28,90 @@
 .props-container {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: flex-start;
 }
 
 .prop {
-    width: 400px;
-    background-color: #fff;
-    border: 1px solid $darkerGreyBorder;
-    margin: 20px 40px 40px 40px;
-    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.05);
-}
-
-.img-container {
+    display: flex;
     position: relative;
-    width: 100%;
-}
-
-.img-container img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.img-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: 0.5s ease;
-    background-color: rgb(0, 150, 136, 0.7);
-}
-
-.img-container:hover .img-overlay {
-    opacity: 1;
-}
-
-.text-overlay {
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border: 2px solid #fff;
-    padding: 14px;
-    transition: 0.4s ease;
-}
-
-.text-overlay:hover {
-    color: $green;
+    height: 250px;
     background-color: #fff;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
     cursor: pointer;
+    margin: 20px 40px;
+}
+
+.prop:hover {
+    border-color: $orange;
+}
+
+.prop-image {
+    position: relative;
+    height: 100%;
+    width: auto;
+}
+
+.prop-image img {
+    display: block;
+    margin: 0;
+    height: 100%;
+    width: auto;
+}
+
+.prop-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+.prop-features {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.prop-features div {
+    color: #333;
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-right: 18px;
+}
+
+.prop-features i {
+    color: #aaa;
+    font-size: 1.4rem;
+    margin-right: 6px;
+}
+
+.icon-with-number {
+    display: flex;
+    align-items: center;
+}
+
+.prop-price {
+    line-height: 12px;
+}
+
+.prop-price > span {
+    color: #333;
+    font-weight: normal;
+    font-size: 0.8rem;
+}
+
+.prop-price h2 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin-bottom: 0;
+    color: $green;
+}
+
+.prop-price h2 span {
+    font-size: 1rem;
+    font-weight: normal;
 }
 
 .heart-icon {
@@ -97,7 +122,7 @@
 }
 
 .white-heart {
-    color: #fff;
+    color: #333;
 }
 
 .red-heart {
@@ -139,57 +164,6 @@
     visibility: visible;
 }
 
-.prop-text {
-    padding: 15px 20px 20px 20px;
-}
-
-.prop-features {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.prop-features div {
-    color: #333;
-    font-weight: 600;
-    font-size: 0.8rem;
-    margin-right: 18px;
-}
-
-.prop-features i {
-    color: #aaa;
-    font-size: 1.4rem;
-    margin-right: 6px;
-}
-
-.icon-with-number {
-    display: flex;
-    align-items: center;
-}
-
-.prop-price {
-    margin-top: 18px;
-    line-height: 12px;
-}
-
-.prop-price > span {
-    color: #333;
-    font-weight: normal;
-    font-size: 0.8rem;
-}
-
-.prop-price h2 {
-    font-size: 1.4rem;
-    font-weight: normal;
-    margin-top: 4px;
-    margin-bottom: 0;
-    color: $green;
-}
-
-.prop-price h2 span {
-    font-size: 1rem;
-    font-weight: normal;
-}
-
 .pagination ::ng-deep .ngx-pagination .current {
     background: $orange;
 }
@@ -197,6 +171,12 @@
 @media screen and (min-width: 992px) {
     .form-component-container {
         padding: 0 80px;
+    }
+    .container {
+        margin: 20px auto;
+    }
+    .prop-details {
+        padding: 20px;
     }
 }
 

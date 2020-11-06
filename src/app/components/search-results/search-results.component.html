@@ -18,6 +18,7 @@
             {{ results.length }} Properties Found
         </h2>
     </div>
+
     <div class="props-container">
         <div
             class="prop"
@@ -26,67 +27,39 @@
                     | paginate: { itemsPerPage: 4, currentPage: p }
             "
         >
-            <div class="img-container">
+            <div class="prop-image" (click)="goToPropertyPage(prop.id)">
                 <img
                     src="http://localhost:1337{{ prop.imageSmall.url }}"
                     alt=""
                 />
-                <div class="img-overlay">
-                    <div
-                        class="text-overlay"
-                        routerLink="/properties/{{ prop.id }}"
-                    >
-                        View Property
-                    </div>
-                </div>
-
-                <div
-                    *ngIf="isAuthenticated"
-                    (click)="toggleFavorite(prop, $event)"
-                    [ngClass]="
-                        isFavorite(prop)
-                            ? 'heart heart-icon red-heart'
-                            : 'heart heart-icon white-heart'
-                    "
-                >
-                    <app-small-loading-spinner
-                        style="display: none"
-                    ></app-small-loading-spinner>
-                    <i class="fas fa-heart"></i>
-                </div>
-
-                <div *ngIf="!isAuthenticated">
-                    <div class="heart-icon white-heart">
-                        <i class="fas fa-heart"></i>
-                        <span class="text">Register to save this home</span>
-                    </div>
-                </div>
             </div>
 
-            <div class="prop-text">
-                <h1>{{ prop.title }}</h1>
-                <p>Location: {{ prop.location }}</p>
+            <div class="prop-details" (click)="goToPropertyPage(prop.id)">
+                <div class="prop-text">
+                    <h1>{{ prop.title }}</h1>
+                    <p>Location: {{ prop.location }}</p>
 
-                <div class="prop-features">
-                    <div>
-                        <p>Bedrooms</p>
-                        <div class="icon-with-number">
-                            <i class="fas fa-bed"></i>
-                            {{ prop.beds }}
+                    <div class="prop-features">
+                        <div>
+                            <p>Bedrooms</p>
+                            <div class="icon-with-number">
+                                <i class="fas fa-bed"></i>
+                                {{ prop.beds }}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <p>Bathrooms</p>
-                        <div class="icon-with-number">
-                            <i class="fas fa-shower"></i>
-                            {{ prop.baths }}
+                        <div>
+                            <p>Bathrooms</p>
+                            <div class="icon-with-number">
+                                <i class="fas fa-shower"></i>
+                                {{ prop.baths }}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <p>Area</p>
-                        <div class="icon-with-number">
-                            <i class="fas fa-vector-square"></i>
-                            {{ prop.area }}
+                        <div>
+                            <p>Area</p>
+                            <div class="icon-with-number">
+                                <i class="fas fa-vector-square"></i>
+                                {{ prop.area }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -101,6 +74,28 @@
                             prop.priceRent | currency: "EUR":"symbol":"1.0-0"
                         }}/Monthly</span
                     >
+                </div>
+            </div>
+
+            <div
+                *ngIf="isAuthenticated"
+                (click)="toggleFavorite(prop, $event)"
+                [ngClass]="
+                    isFavorite(prop)
+                        ? 'heart heart-icon red-heart'
+                        : 'heart heart-icon white-heart'
+                "
+            >
+                <app-small-loading-spinner
+                    style="display: none"
+                ></app-small-loading-spinner>
+                <i class="fas fa-heart"></i>
+            </div>
+
+            <div *ngIf="!isAuthenticated">
+                <div class="heart-icon white-heart">
+                    <i class="fas fa-heart"></i>
+                    <span class="text">Register to save this home</span>
                 </div>
             </div>
         </div>

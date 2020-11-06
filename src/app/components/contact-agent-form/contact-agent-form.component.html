@@ -1,5 +1,10 @@
 <div class="flex-container">
     <div class="main">
+        <img
+            *ngIf="image_url"
+            src="http://localhost:1337{{ image_url }}"
+            alt=""
+        />
         <p class="header">{{ header }}</p>
         <p *ngIf="!isAuthenticated">
             {{ paragraph }}

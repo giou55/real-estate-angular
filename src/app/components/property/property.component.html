@@ -134,10 +134,10 @@
     </div>
 
     <app-contact-agent-form
-        [header]="'Tour This Home'"
-        [paragraph]="
-            'Register to tour this home with a local real estate agent.'
-        "
+        *ngIf="property"
+        [header]="'Contact ' + property.agent.name"
+        [image_url]="property.agent.image.url"
+        [paragraph]="'Register to contact with agent.'"
         [isAuthenticated]="isAuthenticated"
     ></app-contact-agent-form>
 </div>
