@@ -34,7 +34,6 @@ import { UserPageComponent } from './components/user-page/user-page.component';
 import { AgentComponent } from './components/agent/agent.component';
 import { BuyComponent } from './components/buy/buy.component';
 import { SellComponent } from './components/sell/sell.component';
-import { AboutComponent } from './components/about/about.component';
 import { ContactAgentFormComponent } from './components/contact-agent-form/contact-agent-form.component';
 import { ContactAgentPageComponent } from './components/contact-agent-page/contact-agent-page.component';
 
@@ -60,7 +59,6 @@ import { ContactAgentPageComponent } from './components/contact-agent-page/conta
         AgentComponent,
         BuyComponent,
         SellComponent,
-        AboutComponent,
         ContactAgentFormComponent,
         ContactAgentPageComponent,
     ],

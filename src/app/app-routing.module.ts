@@ -6,7 +6,6 @@ import { BuyComponent } from './components/buy/buy.component';
 import { SellComponent } from './components/sell/sell.component';
 import { PropertyComponent } from './components/property/property.component';
 import { AgentComponent } from './components/agent/agent.component';
-import { AboutComponent } from './components/about/about.component';
 import { ContactAgentPageComponent } from './components/contact-agent-page/contact-agent-page.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { LoginComponent } from './components/login/login.component';
@@ -18,7 +17,6 @@ const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'buy', component: BuyComponent },
     { path: 'sell', component: SellComponent },
-    { path: 'about', component: AboutComponent },
     { path: 'contact', component: ContactAgentPageComponent },
     { path: 'properties/:id', component: PropertyComponent },
     { path: 'agents/:id', component: AgentComponent },
