@@ -63,14 +63,14 @@
             </div>
         </div>
 
-        <app-contact-agent-form
+        <app-agent-contact-form
             *ngIf="agent"
             [header]="'Contact ' + agent.name"
             [caption]=""
             [image_url]=""
             paragraph="Register to start working with this agent."
             [isAuthenticated]="isAuthenticated"
-        ></app-contact-agent-form>
+        ></app-agent-contact-form>
     </div>
 </div>
 

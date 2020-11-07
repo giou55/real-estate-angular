@@ -34,8 +34,8 @@ import { UserPageComponent } from './components/user-page/user-page.component';
 import { AgentComponent } from './components/agent/agent.component';
 import { BuyComponent } from './components/buy/buy.component';
 import { SellComponent } from './components/sell/sell.component';
-import { ContactAgentFormComponent } from './components/contact-agent-form/contact-agent-form.component';
-import { ContactAgentPageComponent } from './components/contact-agent-page/contact-agent-page.component';
+import { AgentContactFormComponent } from './components/agent-contact-form/agent-contact-form.component';
+import { AgentSearchFormComponent } from './components/agent-search-form/agent-search-form.component';
 
 @NgModule({
     declarations: [
@@ -59,8 +59,8 @@ import { ContactAgentPageComponent } from './components/contact-agent-page/conta
         AgentComponent,
         BuyComponent,
         SellComponent,
-        ContactAgentFormComponent,
-        ContactAgentPageComponent,
+        AgentContactFormComponent,
+        AgentSearchFormComponent,
     ],
     imports: [
         BrowserModule,

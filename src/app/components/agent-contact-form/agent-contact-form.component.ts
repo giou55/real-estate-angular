@@ -14,11 +14,11 @@ import { Observable } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-    selector: 'app-contact-agent-form',
-    templateUrl: './contact-agent-form.component.html',
-    styleUrls: ['./contact-agent-form.component.scss'],
+    selector: 'app-agent-contact-form',
+    templateUrl: './agent-contact-form.component.html',
+    styleUrls: ['./agent-contact-form.component.scss'],
 })
-export class ContactAgentFormComponent implements OnInit, OnDestroy {
+export class AgentContactFormComponent implements OnInit, OnDestroy {
     checked = false;
     disabled = false;
     buttonSub: Subscription;
