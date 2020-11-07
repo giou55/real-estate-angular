@@ -28,10 +28,7 @@
             "
         >
             <div class="prop-image" (click)="goToPropertyPage(prop.id)">
-                <img
-                    src="http://localhost:1337{{ prop.imageSmall.url }}"
-                    alt=""
-                />
+                <img [src]="base_url + prop.imageSmall.url" alt="" />
             </div>
 
             <div class="prop-details" (click)="goToPropertyPage(prop.id)">

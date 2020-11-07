@@ -31,10 +31,7 @@
         </div>
 
         <div class="image-container">
-            <img
-                src="http://localhost:1337{{ property.imageLarge.url }}"
-                alt=""
-            />
+            <img [src]="base_url + property.imageLarge.url" alt="" />
 
             <div
                 *ngIf="isAuthenticated"

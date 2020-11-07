@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 
 import { AgentsService } from '../../services/agents.service';
 import { AuthService } from '../../services/auth.service';
+import { environment } from '../../../environments/environment';
 
 import { User } from '../../models/user.model';
 import { Agent } from '../../models/agent.model';
@@ -20,6 +21,7 @@ export class AgentComponent implements OnInit {
     private userSub: Subscription;
     user: User = null;
     agent: Agent = null;
+    base_url = environment.baseUrl;
 
     constructor(
         private route: ActivatedRoute,

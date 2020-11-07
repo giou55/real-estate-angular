@@ -16,6 +16,7 @@ import { environment } from '../../../environments/environment';
     styleUrls: ['./search-results.component.scss'],
 })
 export class SearchResultsComponent implements OnInit {
+    base_url = environment.baseUrl;
     isLoading = false;
     isAuthenticated = false;
     public userSub: Subscription;

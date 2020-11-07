@@ -2,10 +2,7 @@
     <div class="props-container">
         <div class="prop" *ngFor="let prop of properties">
             <div class="img-container">
-                <img
-                    src="http://localhost:1337{{ prop.imageSmall.url }}"
-                    alt=""
-                />
+                <img [src]="base_url + prop.imageSmall.url" alt="" />
                 <div class="img-overlay">
                     <div
                         class="text-overlay"

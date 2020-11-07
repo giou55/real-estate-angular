@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PropertiesService } from '../../services/properties.service';
+import { environment } from '../../../environments/environment';
 
 import { Property } from '../../models/property.model';
 
@@ -10,13 +11,14 @@ import { Property } from '../../models/property.model';
     providers: [],
 })
 export class FeaturedPropertiesComponent implements OnInit {
-    constructor(private propertiesService: PropertiesService) {}
-
+    base_url = environment.baseUrl;
     slideIndex: number = 1;
     slides: HTMLCollectionOf<any>;
     dots: HTMLCollectionOf<any>;
     error = null;
     properties: Property[] = [];
+
+    constructor(private propertiesService: PropertiesService) {}
 
     plusSlides(n: number) {
         this.showSlides((this.slideIndex += n));

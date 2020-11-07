@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 import { PropertiesService } from '../../services/properties.service';
 import { FavoriteHomeService } from '../../services/favoriteHome.service';
+import { environment } from '../../../environments/environment';
 
 import { Property } from '../../models/property.model';
 import { User } from '../../models/user.model';
@@ -19,6 +20,7 @@ export class RecentPropertiesComponent implements OnInit, OnDestroy {
     private userSub: Subscription;
     private favSub: Subscription;
     user: User = null;
+    base_url = environment.baseUrl;
 
     constructor(
         private authService: AuthService,
