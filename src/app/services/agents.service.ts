@@ -25,4 +25,9 @@ export class AgentsService {
     getAgentByArea(area: string) {
         return this.http.get<Agent>(`${environment.baseUrl}/agents/${area}`);
     }
+    getFeaturedAgents() {
+        return this.http.get<Agent[]>(
+            `${environment.baseUrl}/agents?featured=true`
+        );
+    }
 }

@@ -16,7 +16,7 @@ export class AgentsComponent implements OnInit {
     constructor(private agentsService: AgentsService) {}
 
     ngOnInit(): void {
-        this.agentsService.getAgents().subscribe((agents) => {
+        this.agentsService.getFeaturedAgents().subscribe((agents) => {
             this.agents = agents;
         });
     }
