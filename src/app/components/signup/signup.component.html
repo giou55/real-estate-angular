@@ -38,10 +38,12 @@
             />
         </div>
         <div>
-            <button type="submit" [disabled]="!authForm.valid">
+            <button class="mybutton" type="submit" [disabled]="!authForm.valid">
                 Create an Account
             </button>
-            <div>Already have an account? <a routerLink="/login">Login</a></div>
+            <div class="user-action">
+                Already have an account? <a routerLink="/login">Login</a>
+            </div>
         </div>
     </form>
 </div>

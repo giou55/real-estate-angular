@@ -47,7 +47,11 @@
                     />
                 </div>
                 <div>
-                    <button type="submit" [disabled]="!registerForm.valid">
+                    <button
+                        class="mybutton"
+                        type="submit"
+                        [disabled]="!registerForm.valid"
+                    >
                         Contact Agent
                     </button>
                 </div>
@@ -89,7 +93,11 @@
                         style="height: 80px"
                     ></textarea>
                 </div>
-                <button #contactBtn [disabled]="!contactForm.valid">
+                <button
+                    class="mybutton"
+                    #contactBtn
+                    [disabled]="!contactForm.valid"
+                >
                     Contact Agent
                 </button>
             </form>

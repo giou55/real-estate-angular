@@ -50,11 +50,15 @@ button:hover {
     background-color: $greenDarker;
 }
 
+.user-action {
+    margin-top: 8px;
+}
+
 a:link,
 a:visited,
 a:hover,
 a:active {
-    text-decoration: none;
+    text-decoration: underline;
     color: $green;
 }
 

@@ -34,8 +34,10 @@
             />
         </div>
         <div>
-            <button type="submit" [disabled]="!authForm.valid">Login</button>
-            <div>
+            <button class="mybutton" type="submit" [disabled]="!authForm.valid">
+                Login
+            </button>
+            <div class="user-action">
                 New to Real Homes? <a routerLink="/signup">Create an account</a>
             </div>
         </div>
