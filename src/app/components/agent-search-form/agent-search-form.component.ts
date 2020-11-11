@@ -16,8 +16,8 @@ export class AgentSearchFormComponent implements OnInit {
     constructor(private router: Router, private route: ActivatedRoute) {}
 
     ngOnInit(): void {
-        this.location = this.route.snapshot.queryParams['areas_contains']
-            ? this.route.snapshot.queryParams['areas_contains']
+        this.location = this.route.snapshot.queryParams['areas.name_contains']
+            ? this.route.snapshot.queryParams['areas.name_contains']
             : '';
         this.name = this.route.snapshot.queryParams['name_contains']
             ? this.route.snapshot.queryParams['name_contains']
@@ -26,7 +26,7 @@ export class AgentSearchFormComponent implements OnInit {
 
     createQueryParams(values: any) {
         this.valuesFromFields = {
-            areas_contains: values.location,
+            'areas.name_contains': values.location,
             name_contains: values.name,
         };
         for (let x in this.valuesFromFields) {
