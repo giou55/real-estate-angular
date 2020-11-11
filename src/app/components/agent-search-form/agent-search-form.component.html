@@ -11,30 +11,58 @@
         realtor for you.
     </p>
 
-    <div class="form-container">
-        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-            <div class="field">
-                <h3 class="location-header">Location or Agent Name</h3>
-                <mat-form-field class="location" appearance="outline">
-                    <input
-                        [ngModel]="location"
-                        name="location"
-                        matInput
-                        placeholder="Search for City, Region, Country..."
-                    />
-                </mat-form-field>
-            </div>
-            <div class="field">
-                <button class="mybutton" type="submit">Find an Agent</button>
-            </div>
-        </form>
-    </div>
+    <mat-tab-group animationDuration="0ms">
+        <mat-tab label="Search by Location">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div class="field">
+                    <h3 class="search-header">
+                        Type in a City, State, or Zip Code
+                    </h3>
+                    <mat-form-field class="location" appearance="outline">
+                        <input
+                            [ngModel]="location"
+                            name="location"
+                            matInput
+                            placeholder="Type in a City, State, or Zip Code..."
+                        />
+                    </mat-form-field>
+                </div>
+                <div class="field">
+                    <button class="mybutton" type="submit">
+                        Find an Agent
+                    </button>
+                </div>
+            </form>
+        </mat-tab>
+        <mat-tab label="Search by Agent Name">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div class="field">
+                    <h3 class="search-header">
+                        Type in First Name and Last Name
+                    </h3>
+                    <mat-form-field class="location" appearance="outline">
+                        <input
+                            [ngModel]="location"
+                            name="location"
+                            matInput
+                            placeholder="Type in First Name and Last Name..."
+                        />
+                    </mat-form-field>
+                </div>
+                <div class="field">
+                    <button class="mybutton" type="submit">
+                        Find an Agent
+                    </button>
+                </div>
+            </form>
+        </mat-tab>
+    </mat-tab-group>
 
     <p>
         Selecting a real estate agent is an important first step when buying or
-        selling a home. ERA agents are experienced local experts who are
+        selling a home. Real Homes agents are experienced local experts who are
         familiar with the market and are prepared to assist with all of your
-        real estate needs. Contact a ERA agent today to get started.
+        real estate needs. Contact a Real Homes agent today to get started.
     </p>
 </div>
 

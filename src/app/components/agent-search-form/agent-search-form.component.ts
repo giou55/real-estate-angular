@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-agent-search-form',
@@ -8,11 +9,14 @@ import { NgForm } from '@angular/forms';
 })
 export class AgentSearchFormComponent implements OnInit {
     location: string;
-    constructor() {}
+    constructor(private router: Router) {}
 
     ngOnInit(): void {
         this.location = '';
     }
 
-    onSubmit(form: NgForm) {}
+    onSubmit(form: NgForm) {
+        // this.queryParams = this.createQueryParams(form.value);
+        this.router.navigate(['agent/results']);
+    }
 }

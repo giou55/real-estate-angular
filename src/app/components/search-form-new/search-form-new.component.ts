@@ -155,7 +155,7 @@ export class SearchFormNewComponent implements OnInit {
 
     onSubmit(form: NgForm) {
         this.queryParams = this.createQueryParams(form.value);
-        this.router.navigate(['searchResults'], {
+        this.router.navigate(['search/results'], {
             queryParams: this.queryParams,
         });
     }
