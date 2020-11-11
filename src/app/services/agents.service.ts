@@ -19,7 +19,9 @@ export class AgentsService {
     }
 
     getAgentByName(name: string) {
-        return this.http.get<Agent>(`${environment.baseUrl}/agents/${name}`);
+        return this.http.get<Agent>(
+            `${environment.baseUrl}/agents?name_contains=${name}`
+        );
     }
 
     getAgentByArea(area: string) {

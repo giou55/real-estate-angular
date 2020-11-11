@@ -4,8 +4,17 @@
     <app-search-form-new></app-search-form-new>
 </div>
 
-<div class="container">
-    <p>Agent Results</p>
+<div class="container" *ngIf="isLoading" style="text-align: center">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+
+<div class="container" *ngIf="!isLoading">
+    <div class="agents-container">
+        <div class="agent" *ngFor="let agent of results">
+            {{ agent.name }}<br />
+            {{ agent.email }}
+        </div>
+    </div>
 </div>
 
 <app-footer></app-footer>

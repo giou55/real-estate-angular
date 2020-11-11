@@ -13,12 +13,12 @@
 
     <mat-tab-group animationDuration="0ms">
         <mat-tab label="Search by Location">
-            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <form (ngSubmit)="onSubmitLocation(f1)" #f1="ngForm">
                 <div class="field">
                     <h3 class="search-header">
                         Type in a City, State, or Zip Code
                     </h3>
-                    <mat-form-field class="location" appearance="outline">
+                    <mat-form-field class="myfield" appearance="outline">
                         <input
                             [ngModel]="location"
                             name="location"
@@ -35,15 +35,15 @@
             </form>
         </mat-tab>
         <mat-tab label="Search by Agent Name">
-            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <form (ngSubmit)="onSubmitName(f2)" #f2="ngForm">
                 <div class="field">
                     <h3 class="search-header">
                         Type in First Name and Last Name
                     </h3>
-                    <mat-form-field class="location" appearance="outline">
+                    <mat-form-field class="myfield" appearance="outline">
                         <input
-                            [ngModel]="location"
-                            name="location"
+                            [ngModel]="name"
+                            name="name"
                             matInput
                             placeholder="Type in First Name and Last Name..."
                         />
