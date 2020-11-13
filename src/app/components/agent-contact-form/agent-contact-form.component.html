@@ -3,6 +3,7 @@
         <p class="header">{{ header }}</p>
         <img
             *ngIf="image_url"
+            routerLink="/agents/{{ agent_id }}"
             src="http://localhost:1337{{ image_url }}"
             alt=""
         />

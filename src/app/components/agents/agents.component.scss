@@ -26,7 +26,7 @@
 }
 
 .agent-container:hover img {
-    border: 2px solid transparent;
+    border: 2px solid $orange;
 }
 
 .agent {
@@ -41,4 +41,5 @@
 img {
     width: 60%;
     height: auto;
+    border: 2px solid transparent;
 }

@@ -9,12 +9,50 @@
 </div>
 
 <div class="container" *ngIf="!isLoading">
-    <div class="agents-container">
-        <div class="agent" *ngFor="let agent of results">
-            {{ agent.name }}<br />
-            {{ agent.email }}
+    <div class="header">
+        <div class="noResults" *ngIf="results.length < 1">
+            <h2>No Agents Found</h2>
+        </div>
+        <div *ngIf="results.length > 0">
+            <h2>Real Estate Agents</h2>
+            <p>
+                These real estate agents can help you through your real estate
+                process and provide you with local insights.
+            </p>
         </div>
     </div>
+
+    <div class="agents-container">
+        <div
+            class="agent"
+            routerLink="/agents/{{ agent.id }}"
+            *ngFor="
+                let agent of results
+                    | paginate: { itemsPerPage: 6, currentPage: p }
+            "
+        >
+            <div class="agent-image">
+                <img [src]="base_url + agent.image.url" alt="" />
+            </div>
+
+            <div class="agent-details">
+                <h2>{{ agent.name }}</h2>
+                <p class="mobile">{{ agent.telephone }}</p>
+                <p>{{ agent.email }}</p>
+                <p>
+                    Areas Served:
+                    <span class="area" *ngFor="let area of agent.areas"
+                        >{{ area.name }}
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <pagination-controls
+        class="pagination"
+        (pageChange)="p = $event"
+    ></pagination-controls>
 </div>
 
 <app-footer></app-footer>

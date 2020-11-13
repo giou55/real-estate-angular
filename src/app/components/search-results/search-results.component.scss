@@ -14,8 +14,13 @@
 }
 
 .header {
-    margin: 40px 40px 0 40px;
+    margin: 30px 40px 0 40px;
     text-align: left;
+}
+
+.header h2 {
+    color: #444;
+    font-weight: normal;
 }
 
 .noResults {
@@ -166,10 +171,6 @@
 
 .heart-icon:hover .text {
     visibility: visible;
-}
-
-.pagination ::ng-deep .ngx-pagination .current {
-    background: $orange;
 }
 
 @media screen and (min-width: 992px) {

@@ -31,15 +31,10 @@ export class AgentContactFormComponent implements OnInit, OnDestroy {
 
     @ViewChild('contactForm') contactform: NgForm;
     @ViewChild('contactBtn', { static: false }) btn: ElementRef;
-    @Input() data: {
-        isAuthenticated: boolean;
-        header: string;
-        image_url: string;
-        paragraph: string;
-    };
     @Input() isAuthenticated: boolean;
     @Input() header: string;
     @Input() caption: string;
+    @Input() agent_id: string;
     @Input() image_url: string;
     @Input() paragraph: string;
 

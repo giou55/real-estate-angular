@@ -14,6 +14,7 @@ export class AgentResultsComponent implements OnInit {
     base_url = environment.baseUrl;
     isLoading = false;
     results: [] = [];
+    public p: number = 1;
 
     constructor(
         private route: ActivatedRoute,
@@ -23,6 +24,7 @@ export class AgentResultsComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
+        this.isLoading = true;
         this.route.queryParams.subscribe((params: Params) => {
             var str = '';
             for (var key in params) {
@@ -37,7 +39,6 @@ export class AgentResultsComponent implements OnInit {
                 .subscribe((results) => {
                     this.isLoading = false;
                     this.results = results;
-                    console.log(results);
                 });
         });
     }

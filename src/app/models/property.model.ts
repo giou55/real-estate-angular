@@ -28,5 +28,6 @@ export interface Property {
     agent: {
         name: string;
         image: { url: string };
+        id: string;
     };
 }
