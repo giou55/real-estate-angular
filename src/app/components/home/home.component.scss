@@ -39,18 +39,30 @@
 #section1 {
     width: 100%;
     height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-image: url(../../../assets/images/house-1920.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
+#section1 h1 {
+    margin-bottom: 45px;
+    font-size: 45px;
+    text-shadow: 1px 2px 3px black;
+    color: #fff;
+}
+
 .form-component-container {
     max-width: 1200px;
     padding: 0 10px;
     margin: auto;
-    background-color: #fff;
+    background: rgba(255, 255, 255, 0.9);
     border: 1px solid $darkerGreyBorder;
+    border-radius: 4px;
 }
 
 .diagonal-1 {

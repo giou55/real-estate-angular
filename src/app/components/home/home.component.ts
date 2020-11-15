@@ -19,10 +19,10 @@ export class HomeComponent implements OnInit {
     }
 
     contactAgent(): void {
-        this.router.navigate(['contact']);
+        this.router.navigate(['agent/search']);
     }
 
     browseProperties(): void {
-        this.router.navigate(['searchResults']);
+        this.router.navigate(['search/results']);
     }
 }
