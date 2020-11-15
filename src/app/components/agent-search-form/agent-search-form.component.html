@@ -7,23 +7,21 @@
 <div class="container">
     <h1>Find a Realtor Near You</h1>
     <p>
-        Search by city, zip code, or agent name below to find the right local
-        realtor for you.
+        Search by city or agent name below to find the right local realtor for
+        you.
     </p>
 
     <mat-tab-group animationDuration="0ms">
         <mat-tab label="Search by Location">
             <form (ngSubmit)="onSubmitLocation(f1)" #f1="ngForm">
                 <div class="field">
-                    <h3 class="search-header">
-                        Type in a City, State, or Zip Code
-                    </h3>
+                    <h3 class="search-header">Type in a City</h3>
                     <mat-form-field class="myfield" appearance="outline">
                         <input
                             [ngModel]="location"
                             name="location"
                             matInput
-                            placeholder="Type in a City, State, or Zip Code..."
+                            placeholder="Type in a City..."
                         />
                     </mat-form-field>
                 </div>
@@ -76,22 +74,32 @@
     >
         <span
             style="
-                background-color: #f1f1f1;
+                background-color: #fff;
                 color: #000;
                 font-weight: 700;
                 padding: 10px;
                 position: relative;
                 top: -8px;
             "
-            >OR</span
-        >
+            >OR
+        </span>
     </div>
 
-    <p>Choose an area from the list below to find local Real Homes agents.</p>
+    <div class="choose-an-area">
+        <p>
+            Choose an area from the list below to find local Real Homes agents.
+        </p>
 
-    <p>
-        <span>Athens</span>
-    </p>
+        <div class="areas-container">
+            <div
+                class="area"
+                (click)="findAgentsByLocation(area.name)"
+                *ngFor="let area of areas"
+            >
+                {{ area.name }}
+            </div>
+        </div>
+    </div>
 </div>
 
 <app-footer></app-footer>

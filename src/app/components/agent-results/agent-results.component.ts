@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { AgentsService } from '../../services/agents.service';
 
 import { environment } from '../../../environments/environment';
 
@@ -16,12 +15,7 @@ export class AgentResultsComponent implements OnInit {
     results: [] = [];
     public p: number = 1;
 
-    constructor(
-        private route: ActivatedRoute,
-        private http: HttpClient,
-        private agentsService: AgentsService,
-        private router: Router
-    ) {}
+    constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
     ngOnInit(): void {
         this.isLoading = true;

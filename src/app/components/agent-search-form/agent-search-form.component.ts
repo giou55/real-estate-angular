@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+
+import { environment } from '../../../environments/environment';
+
+import { AreasService } from '../../services/areas.service';
 
 @Component({
     selector: 'app-agent-search-form',
@@ -8,44 +12,44 @@ import { ActivatedRoute, Router } from '@angular/router';
     styleUrls: ['./agent-search-form.component.scss'],
 })
 export class AgentSearchFormComponent implements OnInit {
+    base_url = environment.baseUrl;
+    isLoading = false;
+    areas: [] = [];
     location: string;
     name: string;
-    valuesFromFields = {};
     queryParams = {};
 
-    constructor(private router: Router, private route: ActivatedRoute) {}
+    constructor(private router: Router, private areasService: AreasService) {}
 
     ngOnInit(): void {
-        this.location = this.route.snapshot.queryParams['areas.name_contains']
-            ? this.route.snapshot.queryParams['areas.name_contains']
-            : '';
-        this.name = this.route.snapshot.queryParams['name_contains']
-            ? this.route.snapshot.queryParams['name_contains']
-            : '';
-    }
-
-    createQueryParams(values: any) {
-        this.valuesFromFields = {
-            'areas.name_contains': values.location,
-            name_contains: values.name,
-        };
-        for (let x in this.valuesFromFields) {
-            if (!this.valuesFromFields[x]) {
-                delete this.valuesFromFields[x];
-            }
-        }
-        return this.valuesFromFields;
+        this.isLoading = true;
+        this.areasService.getAreas().subscribe((areas) => {
+            this.areas = areas;
+        });
     }
 
     onSubmitLocation(form: NgForm) {
-        this.queryParams = this.createQueryParams(form.value);
+        this.queryParams = {
+            'areas.name_contains': form.value.location,
+        };
         this.router.navigate(['agent/results'], {
             queryParams: this.queryParams,
         });
     }
 
     onSubmitName(form: NgForm) {
-        this.queryParams = this.createQueryParams(form.value);
+        this.queryParams = {
+            name_contains: form.value.name,
+        };
+        this.router.navigate(['agent/results'], {
+            queryParams: this.queryParams,
+        });
+    }
+
+    findAgentsByLocation(area) {
+        this.queryParams = {
+            'areas.name_contains': area,
+        };
         this.router.navigate(['agent/results'], {
             queryParams: this.queryParams,
         });
