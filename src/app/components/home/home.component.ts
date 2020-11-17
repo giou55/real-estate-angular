@@ -9,6 +9,10 @@ import { SearchFormService } from '../../services/searchForm.service';
     styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+    h3_style = {
+        color: 'white',
+    };
+
     constructor(
         private searchFormService: SearchFormService,
         private router: Router

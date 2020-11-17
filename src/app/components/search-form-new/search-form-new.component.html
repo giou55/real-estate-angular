@@ -3,7 +3,9 @@
         <div class="main-filters">
             <div class="fields-container">
                 <div class="field">
-                    <h3 class="location-header">Location</h3>
+                    <h3 class="location-header" [ngStyle]="h3_style">
+                        Location
+                    </h3>
                     <mat-form-field class="location" appearance="outline">
                         <input
                             [ngModel]="location"
@@ -15,7 +17,7 @@
                 </div>
 
                 <div class="field">
-                    <h3>Min Price</h3>
+                    <h3 [ngStyle]="h3_style">Min Price</h3>
                     <mat-form-field class="price" appearance="outline">
                         <mat-select [ngModel]="minPrice" name="min_price">
                             <mat-option
@@ -28,7 +30,7 @@
                 </div>
 
                 <div class="field">
-                    <h3>Max Price</h3>
+                    <h3 [ngStyle]="h3_style">Max Price</h3>
                     <mat-form-field class="price" appearance="outline">
                         <mat-select [ngModel]="maxPrice" name="max_price">
                             <mat-option
@@ -41,7 +43,7 @@
                 </div>
 
                 <div class="field">
-                    <h3>Min Beds</h3>
+                    <h3 [ngStyle]="h3_style">Min Beds</h3>
                     <mat-form-field appearance="outline">
                         <mat-select [ngModel]="minBeds" name="min_beds">
                             <mat-option
@@ -54,7 +56,7 @@
                 </div>
 
                 <div class="field">
-                    <h3>Min Baths</h3>
+                    <h3 [ngStyle]="h3_style">Min Baths</h3>
                     <mat-form-field appearance="outline">
                         <mat-select [ngModel]="minBaths" name="min_baths">
                             <mat-option
@@ -66,7 +68,11 @@
                     </mat-form-field>
                 </div>
 
-                <div class="mybutton accordion" (click)="toggleAccordian()">
+                <div
+                    *ngIf="show_filters"
+                    class="mybutton accordion"
+                    (click)="toggleAccordian()"
+                >
                     <i id="fa-symbol" class="fa fa-plus"></i>
                     <span>More Filters</span>
                 </div>

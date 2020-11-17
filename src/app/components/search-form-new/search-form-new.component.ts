@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -37,6 +37,10 @@ export class SearchFormNewComponent implements OnInit {
 
     valuesFromFields = {};
     queryParams = {};
+
+    @Input() show_filters: boolean = true;
+    @Input() field_bgcolor: string;
+    @Input() h3_style: {};
 
     constructor(
         private searchFormService: SearchFormService,
