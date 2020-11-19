@@ -8,18 +8,48 @@
 }
 
 .container {
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.left-background {
+    height: 300px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    align-self: flex-end;
+    background: #fff url(../../../assets/images/findanagent-left.jpg);
+    background-repeat: repeat-x;
+    background-position: left bottom;
+}
+
+.right-background {
+    height: 300px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    align-self: flex-end;
+    background: #fff url(../../../assets/images/findanagent-right.jpg);
+    background-repeat: repeat-x;
+    background-position: right bottom;
+}
+
+.main {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     padding: 40px;
     margin: 0 auto;
-    width: 100%;
+    max-width: 1000px;
     background-color: #fff;
     align-items: flex-start;
     justify-content: space-between;
-    background-image: url(../../../assets/images/findanagent.jpg);
-    background-position: right bottom;
-    background-repeat: no-repeat;
+    background-image: url(../../../assets/images/findanagent.jpg),
+        url(../../../assets/images/findanagent-left.jpg);
+    background-position: right bottom, left bottom;
+    background-repeat: no-repeat, repeat-x;
 }
 
 form {
@@ -59,11 +89,12 @@ mat-form-field.myfield {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
-    height: 240px;
+    height: 270px;
 }
 
 .area {
-    width: 140px;
+    width: 130px;
+    height: 24px;
     cursor: pointer;
 }
 
@@ -72,28 +103,48 @@ mat-form-field.myfield {
 }
 
 @media screen and (min-width: 992px) {
-    .container {
-        width: 90%;
-    }
     .form-component-container {
         padding: 0 150px;
     }
-}
-
-@media screen and (min-width: 1200px) {
-    .container {
-        width: 70%;
+    .right-background {
+        width: 10%;
     }
+    .left-background {
+        width: 10%;
+    }
+}
+@media screen and (min-width: 1200px) {
     .form-component-container {
         padding: 0 250px;
+    }
+    .right-background {
+        width: 20%;
+    }
+    .left-background {
+        width: 20%;
     }
 }
 
 @media screen and (min-width: 1400px) {
-    .container {
-        width: 50%;
-    }
     .form-component-container {
         padding: 0 350px;
+    }
+    .right-background {
+        width: 30%;
+    }
+    .left-background {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .form-component-container {
+        padding: 0 350px;
+    }
+    .right-background {
+        width: 40%;
+    }
+    .left-background {
+        width: 40%;
     }
 }
