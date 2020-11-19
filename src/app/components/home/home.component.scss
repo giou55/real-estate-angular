@@ -54,15 +54,16 @@
     font-size: 45px;
     text-shadow: 1px 2px 3px black;
     color: #fff;
+    line-height: 45px;
 }
 
 .form-component-container {
-    max-width: 1000px;
-    padding: 0 10px;
+    max-width: 400px;
+    padding: 0;
     margin: auto;
-    background: rgba(0, 0, 0, 0.6);
+    background: none;
     border: none;
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 .diagonal-1 {
@@ -140,4 +141,28 @@
     position: absolute;
     bottom: 0;
     right: 0;
+}
+
+app-search-form-minimal {
+    display: block;
+}
+app-search-form {
+    display: none;
+}
+
+@media screen and (min-width: 600px) {
+    app-search-form-minimal {
+        display: none;
+    }
+    app-search-form {
+        display: block;
+    }
+    .form-component-container {
+        max-width: 1000px;
+        padding: 0 10px;
+        margin: auto;
+        background: rgba(0, 0, 0, 0.6);
+        border: none;
+        border-radius: 4px;
+    }
 }

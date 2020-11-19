@@ -5,12 +5,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SearchFormService } from '../../services/searchForm.service';
 
 @Component({
-    selector: 'app-search-form-new',
-    templateUrl: './search-form-new.component.html',
-    styleUrls: ['./search-form-new.component.scss'],
+    selector: 'app-search-form',
+    templateUrl: './search-form.component.html',
+    styleUrls: ['./search-form.component.scss'],
     encapsulation: ViewEncapsulation.None,
 })
-export class SearchFormNewComponent implements OnInit {
+export class SearchFormComponent implements OnInit {
     priceValues: any;
     bedsValues: any;
     bathsValues: any;

@@ -1,0 +1,20 @@
+<div class="form-container">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="fields-container">
+            <div class="field">
+                <mat-form-field class="location" appearance="outline">
+                    <input
+                        [ngModel]="location"
+                        name="location"
+                        matInput
+                        placeholder="Search for City, Region, Country..."
+                    />
+                </mat-form-field>
+            </div>
+
+            <div class="field">
+                <button class="mybutton" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+</div>

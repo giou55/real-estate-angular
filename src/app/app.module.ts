@@ -25,7 +25,7 @@ import { FeaturedPropertiesComponent } from './components/featured-properties/fe
 import { AgentsComponent } from './components/agents/agents.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
-import { SearchFormNewComponent } from './components/search-form-new/search-form-new.component';
+import { SearchFormComponent } from './components/search-form/search-form.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
@@ -37,6 +37,7 @@ import { SellComponent } from './components/sell/sell.component';
 import { AgentContactFormComponent } from './components/agent-contact-form/agent-contact-form.component';
 import { AgentSearchFormComponent } from './components/agent-search-form/agent-search-form.component';
 import { AgentResultsComponent } from './components/agent-results/agent-results.component';
+import { SearchFormMinimalComponent } from './components/search-form-minimal/search-form-minimal.component';
 
 @NgModule({
     declarations: [
@@ -51,7 +52,7 @@ import { AgentResultsComponent } from './components/agent-results/agent-results.
         AgentsComponent,
         NavbarComponent,
         SearchResultsComponent,
-        SearchFormNewComponent,
+        SearchFormComponent,
         SignupComponent,
         LoginComponent,
         LoadingSpinnerComponent,
@@ -63,6 +64,7 @@ import { AgentResultsComponent } from './components/agent-results/agent-results.
         AgentContactFormComponent,
         AgentSearchFormComponent,
         AgentResultsComponent,
+        SearchFormMinimalComponent,
     ],
     imports: [
         BrowserModule,
