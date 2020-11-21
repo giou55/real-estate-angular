@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { GalleryModule } from 'ng-gallery';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +29,7 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { MediumLoadingSpinnerComponent } from './shared/medium-loading-spinner/medium-loading-spinner.component';
 import { SmallLoadingSpinnerComponent } from './shared/small-loading-spinner/small-loading-spinner.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
 import { AgentComponent } from './components/agent/agent.component';
@@ -54,6 +56,7 @@ import { SearchFormMinimalComponent } from './components/search-form-minimal/sea
         SignupComponent,
         LoginComponent,
         LoadingSpinnerComponent,
+        MediumLoadingSpinnerComponent,
         SmallLoadingSpinnerComponent,
         UserPageComponent,
         AgentComponent,
@@ -82,6 +85,7 @@ import { SearchFormMinimalComponent } from './components/search-form-minimal/sea
         ReactiveFormsModule,
         HttpClientModule,
         NgxPaginationModule,
+        GalleryModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

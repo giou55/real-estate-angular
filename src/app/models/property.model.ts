@@ -30,4 +30,5 @@ export interface Property {
         image: { url: string };
         id: string;
     };
+    gallery: [{ url: string }];
 }

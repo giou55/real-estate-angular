@@ -30,7 +30,32 @@
             </div>
         </div>
 
-        <div class="image-container">
+        <div class="gallery-container">
+            <gallery fluid [items]="items"> </gallery>
+            <div
+                *ngIf="isAuthenticated"
+                (click)="toggleFavorite(property, $event)"
+                [ngClass]="
+                    isFavorite(property)
+                        ? 'heart heart-icon red-heart'
+                        : 'heart heart-icon white-heart'
+                "
+            >
+                <app-medium-loading-spinner
+                    style="display: none"
+                ></app-medium-loading-spinner>
+                <i class="fas fa-heart"></i>
+            </div>
+
+            <div *ngIf="!isAuthenticated">
+                <div class="heart-icon white-heart">
+                    <i class="fas fa-heart"></i>
+                    <span class="text">Register to save this home</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="image-container">
             <img [src]="base_url + property.imageLarge.url" alt="" />
 
             <div
@@ -54,7 +79,7 @@
                     <span class="text">Register to save this home</span>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="main-container">
             <div class="main">

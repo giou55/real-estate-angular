@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {
+    Gallery,
+    GalleryItem,
+    ImageItem,
+    ThumbnailsPosition,
+    ImageSize,
+} from 'ng-gallery';
 
 import { Subscription } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
@@ -25,11 +32,14 @@ export class PropertyComponent implements OnInit {
     user: User = null;
     base_url = environment.baseUrl;
 
+    items: GalleryItem[];
+
     constructor(
         private route: ActivatedRoute,
         private authService: AuthService,
         private favoriteHomeService: FavoriteHomeService,
-        private propertiesService: PropertiesService
+        private propertiesService: PropertiesService,
+        public gallery: Gallery
     ) {}
 
     ngOnInit(): void {
@@ -39,11 +49,25 @@ export class PropertyComponent implements OnInit {
                 this.user = user;
             }
         });
+
         this.id = this.route.snapshot.params['id'];
         this.propertiesService
             .getPropertyById(+this.id)
             .subscribe((property) => {
                 this.property = property;
+                this.items = this.property.gallery.map(
+                    (item) =>
+                        new ImageItem({
+                            src: this.base_url + item.url,
+                            thumb: this.base_url + item.url,
+                        })
+                );
+                this.items.unshift(
+                    new ImageItem({
+                        src: this.base_url + this.property.imageLarge.url,
+                        thumb: this.base_url + this.property.imageLarge.url,
+                    })
+                );
             });
     }
 
