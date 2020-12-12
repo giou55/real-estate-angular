@@ -40,6 +40,7 @@
 .agent {
     display: flex;
     height: 160px;
+    max-width: 700px;
     background-color: #fff;
     border: 2px solid transparent;
     border-radius: 4px;
@@ -67,16 +68,42 @@
 
 .agent-details {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100%;
     padding: 20px;
 }
-.area {
+
+.agent-details .left {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 220px;
+    margin-bottom: 30px;
+}
+
+.agent-details .left .name {
+    font-size: 1.2rem;
+}
+.agent-details .right .area {
+    display: inline-block;
     padding: 4px;
     margin-right: 8px;
+    margin-bottom: 6px;
     border-radius: 3px;
     background-color: #eee;
+}
+
+@media screen and (min-width: 700px) {
+    .agent-details .left {
+        flex: 0 0 300px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .agent-details .left {
+        flex: 0 0 300px;
+    }
 }
 
 @media screen and (min-width: 992px) {

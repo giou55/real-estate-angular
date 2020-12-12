@@ -36,15 +36,19 @@
             </div>
 
             <div class="agent-details">
-                <h2>{{ agent.name }}</h2>
-                <p class="mobile">{{ agent.telephone }}</p>
-                <p>{{ agent.email }}</p>
-                <p>
-                    Areas Served:
-                    <span class="area" *ngFor="let area of agent.areas"
-                        >{{ area.name }}
-                    </span>
-                </p>
+                <div class="left">
+                    <p class="name">{{ agent.name }}</p>
+                    <p class="mobile">{{ agent.telephone }}</p>
+                    <p>{{ agent.email }}</p>
+                </div>
+                <div class="right">
+                    <p>Areas Served:</p>
+                    <p>
+                        <span class="area" *ngFor="let area of agent.areas"
+                            >{{ area.name }}
+                        </span>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
