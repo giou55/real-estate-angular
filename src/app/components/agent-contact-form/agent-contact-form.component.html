@@ -4,7 +4,7 @@
         <img
             *ngIf="image_url"
             routerLink="/agents/{{ agent_id }}"
-            src="http://localhost:1337{{ image_url }}"
+            src="{{ image_url }}"
             alt=""
         />
         <p *ngIf="caption" class="header2">{{ caption }}</p>

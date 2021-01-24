@@ -2,7 +2,7 @@
     <div class="agents-container">
         <div class="agent-container" *ngFor="let agent of agents">
             <div class="agent" routerLink="/agents/{{ agent.id }}">
-                <img [src]="base_url + agent.image.url" alt="" />
+                <img [src]="agent.imageurl" alt="" />
                 <h1>{{ agent.name }}</h1>
                 <p class="mobile">{{ agent.telephone }}</p>
                 <p>{{ agent.email }}</p>

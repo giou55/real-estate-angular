@@ -6,7 +6,7 @@
 
 <div class="agent-container" *ngIf="agent">
     <div class="agent">
-        <img [src]="base_url + agent.image.url" alt="" />
+        <img [src]="agent.imageurl" alt="" />
         <div>
             <h1>{{ agent.name }}</h1>
             <h3>

@@ -8,7 +8,7 @@ export class Agent {
         public email: string,
         public telephone: string,
         public address: string,
-        public image: { url: string },
+        public imageurl: string,
         public areas: [],
         public properties: []
     ) {}

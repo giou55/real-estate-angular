@@ -27,7 +27,7 @@ export interface Property {
     imageLarge: any;
     agent: {
         name: string;
-        image: { url: string };
+        imageurl: string;
         id: string;
     };
     gallery: [{ url: string }];

@@ -18,6 +18,7 @@ export class AgentsComponent implements OnInit {
     ngOnInit(): void {
         this.agentsService.getFeaturedAgents().subscribe((agents) => {
             this.agents = agents;
+            console.log(agents);
         });
     }
 }
