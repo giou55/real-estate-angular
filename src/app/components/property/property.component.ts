@@ -55,17 +55,17 @@ export class PropertyComponent implements OnInit {
             .getPropertyById(+this.id)
             .subscribe((property) => {
                 this.property = property;
-                this.items = this.property.gallery.map(
-                    (item) =>
+                this.items = this.property.gallery_images_url.images.map(
+                    (url) =>
                         new ImageItem({
-                            src: this.base_url + item.url,
-                            thumb: this.base_url + item.url,
+                            src: url,
+                            thumb: url,
                         })
                 );
                 this.items.unshift(
                     new ImageItem({
-                        src: this.base_url + this.property.imageLarge.url,
-                        thumb: this.base_url + this.property.imageLarge.url,
+                        src: this.property.image_large_url,
+                        thumb: this.property.image_large_url,
                     })
                 );
             });

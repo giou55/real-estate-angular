@@ -6,11 +6,7 @@
             *ngFor="let prop of properties"
         >
             <div routerLink="/properties/{{ prop.id }}">
-                <img
-                    [src]="base_url + prop.imageSmall.url"
-                    alt=""
-                    style="width: 80%"
-                />
+                <img [src]="prop.image_small_url" alt="" style="width: 80%" />
                 <h1>{{ prop.title }}</h1>
                 <h3>
                     Location: {{ prop.location }}<br />

@@ -9,8 +9,8 @@ export interface Property {
     year_built: number;
     beds: number;
     baths: number;
-    imageSm_Path: string;
-    imageLg_Path: string;
+    image_small_url: string;
+    image_large_url: string;
     lat: number;
     lng: number;
     priceSale: number;
@@ -23,12 +23,11 @@ export interface Property {
     two_stories: boolean;
     deck_patio: boolean;
     favoriteBy: [];
-    imageSmall: any;
-    imageLarge: any;
     agent: {
         name: string;
         imageurl: string;
         id: string;
     };
+    gallery_images_url: { images: [] };
     gallery: [{ url: string }];
 }

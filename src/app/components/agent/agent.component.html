@@ -24,7 +24,7 @@
             <div class="property" *ngFor="let property of agent.properties">
                 <img
                     routerLink="/properties/{{ property.id }}"
-                    [src]="base_url + property.imageSmall.url"
+                    [src]="property.image_small_url"
                     alt=""
                 />
                 <div class="property-text">

@@ -39,7 +39,7 @@
         <div class="prop" *ngFor="let prop of properties">
             <div class="img-container">
                 <img
-                    src="http://localhost:1337{{ prop.imageSmall.url }}"
+                    src="{{ prop.image_small_url }}"
                     alt=""
                     width="500"
                     height="375"
@@ -66,7 +66,6 @@
 
             <div class="prop-text">
                 <h1>{{ prop.title }}</h1>
-                <p>{{ prop.description }}</p>
 
                 <div class="prop-features">
                     <div>
