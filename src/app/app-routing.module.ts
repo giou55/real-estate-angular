@@ -30,6 +30,7 @@ const routes: Routes = [
         component: UserPageComponent,
         canActivate: [RouteGuardService],
     },
+    { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
