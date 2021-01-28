@@ -172,7 +172,7 @@
     </div>
 
     <app-agent-contact-form
-        *ngIf="property"
+        *ngIf="property.agent"
         header="Contact Agent"
         [caption]="'Listing Agent: ' + property.agent.name"
         [agent_id]="property.agent.id"
