@@ -39,7 +39,6 @@ export class AgentComponent implements OnInit {
         });
         this.id = this.route.snapshot.params['id'];
         this.agentsService.getAgentById(+this.id).subscribe((agent) => {
-            console.log(agent);
             this.agent = agent;
         });
     }

@@ -1,6 +1,9 @@
 <div class="flex-container">
     <div class="main">
         <p class="header">{{ header }}</p>
+        <p class="message" *ngIf="isSubmitted">
+            Thank you!<br />Our agent will get in touch soon.
+        </p>
         <img
             *ngIf="image_url"
             routerLink="/agents/{{ agent_id }}"
@@ -113,9 +116,6 @@
                 phone number. I acknowledge that I have read and agree to the
                 Terms of Use and Privacy Policy.
             </p>
-            <div class="message" *ngIf="isSubmitted">
-                Thank you! Our agent will get in touch soon.
-            </div>
         </div>
     </div>
 </div>
