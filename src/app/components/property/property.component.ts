@@ -55,6 +55,7 @@ export class PropertyComponent implements OnInit {
             .getPropertyById(+this.id)
             .subscribe((property) => {
                 this.property = property;
+                console.log(property);
                 this.items = this.property.gallery_images_url.images.map(
                     (url) =>
                         new ImageItem({

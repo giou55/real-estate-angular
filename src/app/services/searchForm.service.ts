@@ -62,7 +62,7 @@ export class SearchFormService {
       cooling: boolean;
       rv_boat: boolean;
       two_stories: boolean;
-      deck_ratio: boolean;
+      deck_patio: boolean;
       fireplace: boolean;
       swimming_pool: boolean;
 
@@ -81,7 +81,7 @@ export class SearchFormService {
             this.cooling = false;
             this.rv_boat = false;
             this.two_stories = false;
-            this.deck_ratio = false;
+            this.deck_patio = false;
             this.fireplace = false;
             this.swimming_pool = false;
       }

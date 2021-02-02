@@ -31,7 +31,7 @@ export class SearchFormComponent implements OnInit {
     cooling: boolean;
     rv_boat: boolean;
     two_stories: boolean;
-    deck_ratio: boolean;
+    deck_patio: boolean;
     fireplace: boolean;
     swimming_pool: boolean;
 
@@ -96,9 +96,9 @@ export class SearchFormComponent implements OnInit {
         this.two_stories = this.route.snapshot.queryParams['two_stories']
             ? this.route.snapshot.queryParams['two_stories']
             : this.searchFormService.two_stories;
-        this.deck_ratio = this.route.snapshot.queryParams['deck_patio']
+        this.deck_patio = this.route.snapshot.queryParams['deck_patio']
             ? this.route.snapshot.queryParams['deck_patio']
-            : this.searchFormService.deck_ratio;
+            : this.searchFormService.deck_patio;
         this.fireplace = this.route.snapshot.queryParams['fireplace']
             ? this.route.snapshot.queryParams['fireplace']
             : this.searchFormService.fireplace;
