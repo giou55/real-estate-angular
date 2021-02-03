@@ -42,7 +42,8 @@
 }
 
 .user-buttons > div {
-    margin-left: 20px;
+    // margin-left: 20px;
+    margin-left: 0;
     padding: 5px;
     color: #fff;
 }
@@ -69,7 +70,7 @@
 }
 
 .user .fas {
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-right: 10px;
 }
 
@@ -149,4 +150,13 @@
     background-color: #fd7955;
     color: #fff;
     border: 1px solid #fff;
+}
+
+@media screen and (min-width: 992px) {
+    .user-buttons > div {
+       margin-left: 20px;
+    }
+    .user .fas {
+        font-size: 1.8rem;
+    }
 }

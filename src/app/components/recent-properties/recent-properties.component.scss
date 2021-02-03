@@ -2,20 +2,23 @@
 
 .container {
     background-color: $lightGreyBackground;
-    //margin-top: 20px;
 }
 
 .props-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    //justify-content: space-evenly;
+    justify-content: center;
 }
 
 .prop {
-    width: 350px;
+    // max-width: 360px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 360px;
     background-color: #fff;
     border: 1px solid $darkerGreyBorder;
-    margin: 20px;
+    margin: 10px;
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.05);
 }
 
