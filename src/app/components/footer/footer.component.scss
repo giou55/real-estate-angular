@@ -9,8 +9,8 @@
 .top {
     color: #fff;
     background-color: $greenBackground;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     flex: 1 0 400px;
     padding: 30px 15%;
     font-size: 0.8rem;
@@ -18,16 +18,18 @@
 
 .top img {
     width: 220px;
+    margin-bottom: 20px;
 }
 
 .about {
-    width: 70%;
+    width: 90%;
+    text-align: center;
 }
 
 .bottom {
     color: #555;
     background-color: #fff;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 12px 15%;
     font-size: 0.8rem;
@@ -36,4 +38,25 @@
 .bottom span {
     margin: 0 14px;
     text-decoration: underline;
+}
+
+.right {
+    text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+    .about {
+        width: 70%;
+        text-align: left;
+    }
+    .bottom {
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .top {
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 }
