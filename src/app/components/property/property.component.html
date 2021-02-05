@@ -8,31 +8,64 @@
     <div class="property-container" *ngIf="property">
         <div class="header-container">
             <div class="header">
-                <div>
-                    <h1>{{ property.title }}</h1>
-                    <p>{{ property.location }}</p>
+                <div class="title_and_price">
+                    <div class="title">
+                        <h1>{{ property.title }}</h1>
+                        <p>{{ property.location }}</p>
+                    </div>
+
+                    <div class="price">
+                        <h2>
+                            {{
+                                property.priceSale
+                                    | currency: "EUR":"symbol":"1.0-0"
+                            }}
+                        </h2>
+                        <p>
+                            {{
+                                property.priceRent
+                                    | currency: "EUR":"symbol":"1.0-0"
+                            }}/Monthly
+                        </p>
+                    </div>
                 </div>
 
-                <div class="price">
-                    <h2>
-                        {{
-                            property.priceSale
-                                | currency: "EUR":"symbol":"1.0-0"
-                        }}
-                    </h2>
-                    <p>
-                        {{
-                            property.priceRent
-                                | currency: "EUR":"symbol":"1.0-0"
-                        }}/Monthly
-                    </p>
+                <div
+                    *ngIf="isAuthenticated"
+                    (click)="toggleFavorite(property, $event)"
+                    [ngClass]="
+                        isFavorite(property)
+                            ? 'heart
+                    heart-icon red-heart'
+                            : 'heart heart-icon white-heart'
+                    "
+                >
+                    <app-medium-loading-spinner
+                        style="display: none"
+                    ></app-medium-loading-spinner>
+                    <i class="fas fa-heart"></i>
+                </div>
+
+                <div *ngIf="!isAuthenticated">
+                    <div class="heart-icon white-heart">
+                        <i class="fas fa-heart"></i>
+                        <span class="text">Register to save this home</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="gallery-container">
-            <gallery fluid [items]="items"> </gallery>
-            <div
+            <gallery
+                class="gallery_small"
+                fluid
+                [items]="items"
+                [thumb]="false"
+            >
+            </gallery>
+            <gallery class="gallery_large" fluid [items]="items" [thumb]="true">
+            </gallery>
+            <!-- <div
                 *ngIf="isAuthenticated"
                 (click)="toggleFavorite(property, $event)"
                 [ngClass]="
@@ -52,7 +85,7 @@
                     <i class="fas fa-heart"></i>
                     <span class="text">Register to save this home</span>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <!-- <div class="image-container">
@@ -84,67 +117,69 @@
         <div class="main-container">
             <div class="main">
                 <div>
-                    <h3>
-                        Property ID: <span>{{ property.prop_id }}</span>
-                    </h3>
+                    <div style="padding: 0 20px;">
+                        <h3>
+                            Property ID: <span>{{ property.prop_id }}</span>
+                        </h3>
 
-                    <div class="prop-features">
-                        <div>
-                            <p>Bedrooms</p>
-                            <div class="icon-with-number">
-                                <i class="fas fa-bed"></i>
-                                {{ property.beds }}
+                        <div class="prop-features">
+                            <div>
+                                <p>Bedrooms</p>
+                                <div class="icon-with-number">
+                                    <i class="fas fa-bed"></i>
+                                    {{ property.beds }}
+                                </div>
+                            </div>
+                            <div>
+                                <p>Bathrooms</p>
+                                <div class="icon-with-number">
+                                    <i class="fas fa-shower"></i>
+                                    {{ property.baths }}
+                                </div>
+                            </div>
+                            <div>
+                                <p>Area</p>
+                                <div class="icon-with-number">
+                                    <i class="fas fa-vector-square"></i>
+                                    {{ property.area }}
+                                </div>
+                            </div>
+                            <div>
+                                <p>Year Built</p>
+                                <div class="icon-with-number">
+                                    <i class="far fa-calendar-alt"></i>
+                                    {{ property.year_built }}
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <p>Bathrooms</p>
-                            <div class="icon-with-number">
-                                <i class="fas fa-shower"></i>
-                                {{ property.baths }}
-                            </div>
-                        </div>
-                        <div>
-                            <p>Area</p>
-                            <div class="icon-with-number">
-                                <i class="fas fa-vector-square"></i>
-                                {{ property.area }}
-                            </div>
-                        </div>
-                        <div>
-                            <p>Year Built</p>
-                            <div class="icon-with-number">
-                                <i class="far fa-calendar-alt"></i>
-                                {{ property.year_built }}
-                            </div>
-                        </div>
+
+                        <h2>Description</h2>
+                        <p>
+                            {{ property.description }}
+                        </p>
+
+                        <h2>Listing Information</h2>
+                        <p>
+                            Fireplace: {{ property.fireplace ? "Yes" : "No"
+                            }}<br />
+                            Central Heating:
+                            {{ property.central_heating ? "Yes" : "No" }}<br />
+                            Central Cooling:
+                            {{ property.central_cooling ? "Yes" : "No" }}<br />
+                            Swimming Pool:
+                            {{ property.swimming_pool ? "Yes" : "No" }}<br />
+                            Two Stories: {{ property.two_stories ? "Yes" : "No"
+                            }}<br />
+                            RV Boat Parking:
+                            {{ property.rv_boat_parking ? "Yes" : "No" }}<br />
+                            Deck Patio: {{ property.deck_patio ? "Yes" : "No" }}
+                        </p>
                     </div>
-
-                    <h2>Description</h2>
-                    <p>
-                        {{ property.description }}
-                    </p>
-
-                    <h2>Listing Information</h2>
-                    <p>
-                        Fireplace: {{ property.fireplace ? "Yes" : "No" }}<br />
-                        Central Heating:
-                        {{ property.central_heating ? "Yes" : "No" }}<br />
-                        Central Cooling:
-                        {{ property.central_cooling ? "Yes" : "No" }}<br />
-                        Swimming Pool: {{ property.swimming_pool ? "Yes" : "No"
-                        }}<br />
-                        Two Stories: {{ property.two_stories ? "Yes" : "No"
-                        }}<br />
-                        RV Boat Parking:
-                        {{ property.rv_boat_parking ? "Yes" : "No" }}<br />
-                        Deck Patio: {{ property.deck_patio ? "Yes" : "No" }}
-                    </p>
 
                     <h2>Property Video</h2>
                     <div style="margin-bottom: 14px">
                         <iframe
-                            width="560"
-                            height="315"
+                            style="width: 100%; min-height: 500px"
                             src="https://www.youtube.com/embed/PkjpPQxknPg"
                             frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
