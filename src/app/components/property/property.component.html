@@ -65,59 +65,12 @@
             </gallery>
             <gallery class="gallery_large" fluid [items]="items" [thumb]="true">
             </gallery>
-            <!-- <div
-                *ngIf="isAuthenticated"
-                (click)="toggleFavorite(property, $event)"
-                [ngClass]="
-                    isFavorite(property)
-                        ? 'heart heart-icon red-heart'
-                        : 'heart heart-icon white-heart'
-                "
-            >
-                <app-medium-loading-spinner
-                    style="display: none"
-                ></app-medium-loading-spinner>
-                <i class="fas fa-heart"></i>
-            </div>
-
-            <div *ngIf="!isAuthenticated">
-                <div class="heart-icon white-heart">
-                    <i class="fas fa-heart"></i>
-                    <span class="text">Register to save this home</span>
-                </div>
-            </div> -->
         </div>
-
-        <!-- <div class="image-container">
-            <img [src]="base_url + property.imageLarge.url" alt="" />
-
-            <div
-                *ngIf="isAuthenticated"
-                (click)="toggleFavorite(property, $event)"
-                [ngClass]="
-                    isFavorite(property)
-                        ? 'heart heart-icon red-heart'
-                        : 'heart heart-icon white-heart'
-                "
-            >
-                <app-small-loading-spinner
-                    style="display: none"
-                ></app-small-loading-spinner>
-                <i class="fas fa-heart"></i>
-            </div>
-
-            <div *ngIf="!isAuthenticated">
-                <div class="heart-icon white-heart">
-                    <i class="fas fa-heart"></i>
-                    <span class="text">Register to save this home</span>
-                </div>
-            </div>
-        </div> -->
 
         <div class="main-container">
             <div class="main">
                 <div>
-                    <div style="padding: 0 20px;">
+                    <div class="text-container">
                         <h3>
                             Property ID: <span>{{ property.prop_id }}</span>
                         </h3>
@@ -174,9 +127,10 @@
                             {{ property.rv_boat_parking ? "Yes" : "No" }}<br />
                             Deck Patio: {{ property.deck_patio ? "Yes" : "No" }}
                         </p>
+
+                        <h2>Property Video</h2>
                     </div>
 
-                    <h2>Property Video</h2>
                     <div style="margin-bottom: 14px">
                         <iframe
                             style="width: 100%; min-height: 500px"
@@ -188,19 +142,21 @@
                     </div>
 
                     <h2>Property on Map</h2>
-                    <agm-map
-                        [latitude]="property.lat"
-                        [longitude]="property.lng"
-                        [scrollwheel]="false"
-                        [fullscreenControl]="true"
-                        [mapTypeControl]="true"
-                        [zoom]="6"
-                    >
-                        <agm-marker
+                    <div>
+                        <agm-map
                             [latitude]="property.lat"
                             [longitude]="property.lng"
-                        ></agm-marker>
-                    </agm-map>
+                            [scrollwheel]="false"
+                            [fullscreenControl]="true"
+                            [mapTypeControl]="true"
+                            [zoom]="6"
+                        >
+                            <agm-marker
+                                [latitude]="property.lat"
+                                [longitude]="property.lng"
+                            ></agm-marker>
+                        </agm-map>
+                    </div>
                 </div>
             </div>
         </div>

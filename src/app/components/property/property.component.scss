@@ -20,11 +20,9 @@
 
 .property-container {
     background-color: #fff;
-    flex: 0 1 auto;
-    width: 100%;
+    flex: 1 1 800px;
     margin-top: 40px;
     border: none;
-    //border: 1px solid $darkerGreyBorder;
 }
 
 .header-container,
@@ -50,7 +48,7 @@ h2 {
     display: flex;
     flex-grow: 1;
     justify-content: space-between;
-    padding: 20px;
+    padding: 60px 60px 0 60px;
 }
 
 .title_and_price {
@@ -63,11 +61,14 @@ h2 {
 
 .title {
     margin-right: 20px;
+    margin-bottom: 30px;
+    line-height: 0.2;
 }
 
 .price {
     padding-left: 16px;
     border-left: 2px solid $darkerGreyBorder;
+    line-height: 0.2;
 }
 
 .price h2 {
@@ -75,17 +76,9 @@ h2 {
     color: $green;
 }
 
-// .image-container {
-//     position: relative;
-// }
-
 .heart-icon {
-    // position: absolute;
-    // right: 20px;
-    // top: 20px;
     font-size: 32px;
     position: relative;
-    //z-index: 100;
 }
 
 .white-heart {
@@ -136,6 +129,10 @@ h2 {
     margin: auto;
 }
 
+.text-container {
+    padding: 0 40px;
+}
+
 .prop-features {
     display: flex;
     justify-content: flex-start;
@@ -183,51 +180,6 @@ h2 {
     display: none;
 }
 
-agm-map {
-    height: 500px;
-}
-app-agent-contact-form {
-    flex: 0 1 250px;
-    margin-top: 40px;
-    border: 1px solid $darkerGreyBorder;
-}
-
-@media screen and (min-width: 768px) {
-    .gallery_small {
-        display: none;
-    }
-    .gallery_large {
-        display: block;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .container {
-        width: 90%;
-    }
-    .form-component-container {
-        padding: 0 150px;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .container {
-        width: 85%;
-    }
-    .form-component-container {
-        padding: 0 250px;
-    }
-}
-
-@media screen and (min-width: 1400px) {
-    .container {
-        width: 80%;
-    }
-    .form-component-container {
-        padding: 0 350px;
-    }
-}
-
 .gallery-container {
     width: 100%;
     margin: 0 auto;
@@ -237,11 +189,96 @@ app-agent-contact-form {
 
 gallery {
     background-color: #fff;
-    height: 600px;
+    height: 800px;
+    left: 0;
+    transform: none;
+    width: 100%;
 }
 
 gallery[fluid] {
     left: 0;
     transform: none;
     width: 100%;
+}
+
+gallery-thumbs {
+    display: none;
+}
+
+agm-map {
+    height: 500px;
+}
+app-agent-contact-form {
+    flex: 0 0 260px;
+    margin-top: 40px;
+    margin-left: 40px;
+    border: 1px solid $darkerGreyBorder;
+}
+
+@media screen and (min-width: 768px) {
+    .property-container {
+        border-top: 1px solid $darkerGreyBorder;
+        border-bottom: 1px solid $darkerGreyBorder;
+    }
+    .title {
+        margin-bottom: 0;
+        line-height: normal;
+    }
+    .price {
+        line-height: normal;
+    }
+    .gallery_small {
+        display: none;
+    }
+    .gallery_large {
+        display: block;
+    }
+    .main {
+        padding: 0 60px 60px 60px;
+    }
+    h2 {
+        text-align: left;
+    }
+    .text-container {
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        width: 95%;
+    }
+    .form-component-container {
+        padding: 0 150px;
+    }
+    .property-container {
+        border: 1px solid $darkerGreyBorder;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+    .form-component-container {
+        padding: 0 250px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .container {
+        width: 85%;
+    }
+    .form-component-container {
+        padding: 0 350px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .container {
+        width: 80%;
+    }
+    .form-component-container {
+        padding: 0 350px;
+    }
 }

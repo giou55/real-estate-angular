@@ -39,8 +39,8 @@
 
 .prop {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
-    height: 250px;
     background-color: #fff;
     border: 2px solid transparent;
     border-radius: 4px;
@@ -55,8 +55,10 @@
 }
 
 .prop-image {
+    flex: 0 0 40%;
     position: relative;
-    height: 100%;
+    //height: 100%;
+    height: 250px;
     width: auto;
 }
 
@@ -68,9 +70,11 @@
 }
 
 .prop-details {
+    flex: 0 0 60%;
     display: flex;
     justify-content: space-between;
     width: 100%;
+    height: 250px;
     padding: 10px;
 }
 
