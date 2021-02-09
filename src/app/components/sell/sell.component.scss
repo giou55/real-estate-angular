@@ -1,7 +1,7 @@
 @import "../../../../src/styles.scss";
 
 .form-component-container {
-    padding: 0 30px;
+    padding: 0;
     margin: auto;
     background-color: #fff;
     border-bottom: 1px solid $darkerGreyBorder;
@@ -108,7 +108,7 @@
 
 @media screen and (min-width: 600px) {
     .form-component-container {
-        padding: 0 50px;
+        padding: 0 30px;
     }
 }
 

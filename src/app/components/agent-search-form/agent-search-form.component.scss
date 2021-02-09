@@ -1,7 +1,7 @@
 @import "../../../../src/styles.scss";
 
 .form-component-container {
-    padding: 0 30px;
+    padding: 0;
     margin: auto;
     background-color: #fff;
     border-bottom: 1px solid $darkerGreyBorder;
@@ -102,9 +102,15 @@ mat-form-field.myfield {
     text-decoration: underline;
 }
 
+@media screen and (min-width: 600px) {
+    .form-component-container {
+        padding: 0 30px;
+    }
+}
+
 @media screen and (min-width: 992px) {
     .form-component-container {
-        padding: 0 150px;
+        padding: 0 80px;
     }
     .right-background {
         width: 10%;
@@ -115,7 +121,7 @@ mat-form-field.myfield {
 }
 @media screen and (min-width: 1200px) {
     .form-component-container {
-        padding: 0 250px;
+        padding: 0 100px;
     }
     .right-background {
         width: 20%;
@@ -127,7 +133,7 @@ mat-form-field.myfield {
 
 @media screen and (min-width: 1400px) {
     .form-component-container {
-        padding: 0 350px;
+        padding: 0 200px;
     }
     .right-background {
         width: 30%;
@@ -138,9 +144,6 @@ mat-form-field.myfield {
 }
 
 @media screen and (min-width: 1600px) {
-    .form-component-container {
-        padding: 0 350px;
-    }
     .right-background {
         width: 40%;
     }
