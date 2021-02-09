@@ -2,7 +2,7 @@
 
 .form-component-container {
     margin: auto;
-    padding: 0 30px;
+    padding: 0;
     background-color: #fff;
     border-bottom: 1px solid $darkerGreyBorder;
 }
@@ -117,16 +117,21 @@
 app-agent-contact-form {
     border: 1px solid $darkerGreyBorder;
 }
+@media screen and (min-width: 600px) {
+    .form-component-container {
+        padding: 0 30px;
+    }
+}
 
 @media screen and (min-width: 992px) {
+    .form-component-container {
+        padding: 0 80px;
+    }
     .agent {
         width: 90%;
     }
     .container {
         width: 90%;
-    }
-    .form-component-container {
-        padding: 0 150px;
     }
     .listings-container {
         margin: 30px;
@@ -137,25 +142,25 @@ app-agent-contact-form {
 }
 
 @media screen and (min-width: 1200px) {
+    .form-component-container {
+        padding: 0 100px;
+    }
     .agent {
         width: 85%;
     }
     .container {
         width: 85%;
-    }
-    .form-component-container {
-        padding: 0 250px;
     }
 }
 
 @media screen and (min-width: 1400px) {
+    .form-component-container {
+        padding: 0 200px;
+    }
     .agent {
         width: 70%;
     }
     .container {
         width: 70%;
-    }
-    .form-component-container {
-        padding: 0 350px;
     }
 }
