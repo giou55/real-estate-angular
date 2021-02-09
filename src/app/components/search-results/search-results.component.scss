@@ -1,7 +1,7 @@
 @import "../../../../src/styles.scss";
 
 .form-component-container {
-    padding: 0 30px;
+    padding: 0;
     margin: auto;
     background-color: #fff;
     border-bottom: 1px solid $darkerGreyBorder;
@@ -41,12 +41,12 @@
     display: flex;
     flex-wrap: wrap;
     background-color: #fff;
-    border: 2px solid transparent;
+    border: none;
     border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: none;
     box-sizing: border-box;
     cursor: pointer;
-    margin: 20px 40px;
+    margin-bottom: 30px;
 }
 
 .prop:hover {
@@ -54,8 +54,9 @@
 }
 
 .prop-image {
-    flex: 1 1 250px;
+    flex: 1 1 auto;
     height: 250px;
+    width: 300px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -69,7 +70,7 @@
 }
 
 .prop-text {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .prop-features {
@@ -81,7 +82,7 @@
     color: #333;
     font-weight: 600;
     font-size: 0.8rem;
-    margin-right: 18px;
+    margin-right: 12px;
 }
 
 .prop-features i {
@@ -95,8 +96,15 @@
     align-items: center;
 }
 
+.price-and-heart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 .prop-price {
-    line-height: 12px;
+    line-height: 40px;
 }
 
 .prop-price > span {
@@ -109,6 +117,7 @@
     font-size: 1.4rem;
     font-weight: normal;
     margin-bottom: 0;
+    line-height: 22px;
     color: $green;
 }
 
@@ -118,9 +127,7 @@
 }
 
 .heart-icon {
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
+    position: relative;
     font-size: 25px;
 }
 
@@ -148,7 +155,7 @@
     z-index: 1;
     top: 150%;
     left: 50%;
-    margin-left: -60px;
+    margin-left: -100px;
     font-size: 0.8rem;
 }
 
@@ -157,7 +164,7 @@
     position: absolute;
     bottom: 100%;
     left: 50%;
-    margin-left: -5px;
+    margin-left: 35px;
     border-width: 5px;
     border-style: solid;
     border-color: transparent transparent black transparent;
@@ -165,6 +172,32 @@
 
 .heart-icon:hover .text {
     visibility: visible;
+}
+
+@media screen and (min-width: 600px) {
+    .form-component-container {
+        padding: 0 30px;
+    }
+    .prop {
+        border: 2px solid transparent;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        margin: 20px 40px;
+    }
+
+    .prop-text {
+        margin-right: 20px;
+    }
+    .prop-features div {
+        margin-right: 18px;
+    }
+
+    .heart-icon .text {
+        margin-left: -60px;
+    }
+    .heart-icon .text::after {
+        margin-left: -5px;
+    }
 }
 
 @media screen and (min-width: 992px) {

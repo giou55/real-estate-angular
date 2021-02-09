@@ -65,40 +65,45 @@
                     </div>
                 </div>
 
-                <div class="prop-price">
-                    <h2>
-                        <span>For Sale: </span
-                        >{{ prop.priceSale | currency: "EUR":"symbol":"1.0-0" }}
-                    </h2>
-                    <span
-                        >{{
-                            prop.priceRent | currency: "EUR":"symbol":"1.0-0"
-                        }}/Monthly</span
+                <div class="price-and-heart">
+                    <div class="prop-price">
+                        <h2>
+                            <span>For Sale: </span
+                            >{{
+                                prop.priceSale
+                                    | currency: "EUR":"symbol":"1.0-0"
+                            }}
+                        </h2>
+                        <span
+                            >{{
+                                prop.priceRent
+                                    | currency: "EUR":"symbol":"1.0-0"
+                            }}/Monthly</span
+                        >
+                    </div>
+                    <div
+                        *ngIf="isAuthenticated"
+                        (click)="toggleFavorite(prop, $event)"
+                        [ngClass]="
+                            isFavorite(prop)
+                                ? 'heart heart-icon red-heart'
+                                : 'heart heart-icon black-heart'
+                        "
                     >
+                        <app-small-loading-spinner
+                            style="display: none"
+                        ></app-small-loading-spinner>
+                        <i class="fas fa-heart"></i>
+                    </div>
+
+                    <div *ngIf="!isAuthenticated">
+                        <div class="heart-icon black-heart">
+                            <i class="fas fa-heart"></i>
+                            <span class="text">Register to save this home</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- <div
-                *ngIf="isAuthenticated"
-                (click)="toggleFavorite(prop, $event)"
-                [ngClass]="
-                    isFavorite(prop)
-                        ? 'heart heart-icon red-heart'
-                        : 'heart heart-icon black-heart'
-                "
-            >
-                <app-small-loading-spinner
-                    style="display: none"
-                ></app-small-loading-spinner>
-                <i class="fas fa-heart"></i>
-            </div>
-
-            <div *ngIf="!isAuthenticated">
-                <div class="heart-icon black-heart">
-                    <i class="fas fa-heart"></i>
-                    <span class="text">Register to save this home</span>
-                </div>
-            </div> -->
         </div>
     </div>
 
