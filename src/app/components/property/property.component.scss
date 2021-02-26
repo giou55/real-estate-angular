@@ -76,22 +76,50 @@ h2 {
     color: $green;
 }
 
-.heart-icon {
-    font-size: 32px;
+.favorite {
     position: relative;
+    width: 35px;
+    height: 35px;
 }
-
+.favorite:hover {
+    cursor: pointer;
+}
+.heart-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 32px;
+    text-align: center;
+}
 .white-heart {
     color: #666;
 }
-
 .red-heart {
     color: #f00;
 }
-
-.heart:hover {
-    cursor: pointer;
+.spinner {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
 }
+
+// .heart-icon {
+//     font-size: 32px;
+//     position: relative;
+// }
+
+// .white-heart {
+//     color: #666;
+// }
+
+// .red-heart {
+//     color: #f00;
+// }
+
+// .heart:hover {
+//     cursor: pointer;
+// }
 
 .heart-icon .text {
     visibility: hidden;
@@ -189,7 +217,7 @@ h2 {
 
 gallery {
     background-color: #fff;
-    height: 800px;
+    //height: 800px;
     left: 0;
     transform: none;
     width: 100%;

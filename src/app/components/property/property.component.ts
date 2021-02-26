@@ -72,26 +72,26 @@ export class PropertyComponent implements OnInit {
     }
 
     toggleFavorite(prop: any, event: any) {
-        event.srcElement.previousSibling.style.display = 'inline-block';
-        if (event.srcElement.parentElement.classList.contains('white-heart')) {
+        console.log(event.srcElement.parentElement.nextSibling);
+        event.srcElement.parentElement.nextSibling.style.display =
+            'inline-block';
+        if (event.srcElement.classList.contains('white-heart')) {
             this.favSub = this.favoriteHomeService
                 .addToFavorites(prop.id, this.user)
                 .subscribe(() => {
-                    event.srcElement.previousSibling.style.display = 'none';
-                    event.srcElement.parentElement.classList.remove(
-                        'white-heart'
-                    );
-                    event.srcElement.parentElement.classList.add('red-heart');
+                    event.srcElement.parentElement.nextSibling.style.display =
+                        'none';
+                    event.srcElement.classList.remove('white-heart');
+                    event.srcElement.classList.add('red-heart');
                 });
         } else {
             this.favSub = this.favoriteHomeService
                 .removeFromFavorites(prop.id, this.user)
                 .subscribe(() => {
-                    event.srcElement.previousSibling.style.display = 'none';
-                    event.srcElement.parentElement.classList.remove(
-                        'red-heart'
-                    );
-                    event.srcElement.parentElement.classList.add('white-heart');
+                    event.srcElement.parentElement.nextSibling.style.display =
+                        'none';
+                    event.srcElement.classList.remove('red-heart');
+                    event.srcElement.classList.add('white-heart');
                 });
         }
     }

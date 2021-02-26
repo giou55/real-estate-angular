@@ -29,9 +29,6 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
-import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
-import { MediumLoadingSpinnerComponent } from './shared/medium-loading-spinner/medium-loading-spinner.component';
-import { SmallLoadingSpinnerComponent } from './shared/small-loading-spinner/small-loading-spinner.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
 import { AgentComponent } from './components/agent/agent.component';
 import { BuyComponent } from './components/buy/buy.component';
@@ -56,9 +53,6 @@ import { SearchFormMinimalComponent } from './components/search-form-minimal/sea
         SearchFormComponent,
         SignupComponent,
         LoginComponent,
-        LoadingSpinnerComponent,
-        MediumLoadingSpinnerComponent,
-        SmallLoadingSpinnerComponent,
         UserPageComponent,
         AgentComponent,
         BuyComponent,

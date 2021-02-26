@@ -5,7 +5,20 @@
 </div>
 
 <div class="container" *ngIf="isLoading" style="text-align: center">
-    <app-loading-spinner></app-loading-spinner>
+    <div
+        style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+        "
+    >
+        <img
+            style="width: 80px"
+            src="assets/images/spinner.gif"
+            alt="Loading spinner"
+        />
+    </div>
 </div>
 
 <div class="container" *ngIf="!isLoading">

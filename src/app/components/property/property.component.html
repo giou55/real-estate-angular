@@ -35,6 +35,34 @@
                     (click)="toggleFavorite(property, $event)"
                     [ngClass]="
                         isFavorite(property)
+                            ? 'favorite red-heart'
+                            : 'favorite white-heart'
+                    "
+                >
+                    <div class="heart-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="spinner">
+                        <img
+                            style="width: 100%"
+                            src="assets/images/spinner.gif"
+                            alt="loading spinner"
+                        />
+                    </div>
+                </div>
+
+                <div *ngIf="!isAuthenticated">
+                    <div class="heart-icon white-heart">
+                        <i class="fas fa-heart"></i>
+                        <span class="text">Register to save this home</span>
+                    </div>
+                </div>
+
+                <!-- <div
+                    *ngIf="isAuthenticated"
+                    (click)="toggleFavorite(property, $event)"
+                    [ngClass]="
+                        isFavorite(property)
                             ? 'heart
                     heart-icon red-heart'
                             : 'heart heart-icon white-heart'
@@ -51,7 +79,7 @@
                         <i class="fas fa-heart"></i>
                         <span class="text">Register to save this home</span>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
