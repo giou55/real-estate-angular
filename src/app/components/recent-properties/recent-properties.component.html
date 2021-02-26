@@ -1,3 +1,20 @@
+<div class="container" *ngIf="isLoading" style="text-align: center">
+    <div
+        style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+        "
+    >
+        <img
+            style="width: 80px"
+            src="assets/images/spinner.gif"
+            alt="loading spinner"
+        />
+    </div>
+</div>
+
 <div class="container">
     <div class="props-container">
         <div class="prop" *ngFor="let prop of properties">
@@ -12,27 +29,33 @@
                     </div>
                 </div>
 
-                <!-- <div
+                <div
                     *ngIf="isAuthenticated"
                     (click)="toggleFavorite(prop, $event)"
                     [ngClass]="
                         isFavorite(prop)
-                            ? 'heart heart-icon red-heart'
-                            : 'heart heart-icon white-heart'
+                            ? 'favorite pointer red-heart'
+                            : 'favorite pointer white-heart'
                     "
                 >
-                    <app-small-loading-spinner
-                        style="display: none"
-                    ></app-small-loading-spinner>
-                    <i class="fas fa-heart"></i>
+                    <div class="heart-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="spinner">
+                        <img
+                            style="width: 100%"
+                            src="assets/images/spinner.gif"
+                            alt="loading spinner"
+                        />
+                    </div>
                 </div>
 
-                <div *ngIf="!isAuthenticated">
-                    <div class="heart-icon white-heart">
+                <div *ngIf="!isAuthenticated" class="favorite white-heart">
+                    <div class="heart-icon">
                         <i class="fas fa-heart"></i>
                         <span class="text">Register to save this home</span>
                     </div>
-                </div> -->
+                </div>
             </div>
 
             <div class="prop-text">

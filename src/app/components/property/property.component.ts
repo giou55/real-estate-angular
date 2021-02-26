@@ -72,7 +72,6 @@ export class PropertyComponent implements OnInit {
     }
 
     toggleFavorite(prop: any, event: any) {
-        console.log(event.srcElement.parentElement.nextSibling);
         event.srcElement.parentElement.nextSibling.style.display =
             'inline-block';
         if (event.srcElement.classList.contains('white-heart')) {

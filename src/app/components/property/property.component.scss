@@ -48,7 +48,7 @@ h2 {
     display: flex;
     flex-grow: 1;
     justify-content: space-between;
-    padding: 60px 60px 0 60px;
+    padding: 30px 30px 0 30px;
 }
 
 .title_and_price {
@@ -103,23 +103,6 @@ h2 {
     width: 100%;
     height: 100%;
 }
-
-// .heart-icon {
-//     font-size: 32px;
-//     position: relative;
-// }
-
-// .white-heart {
-//     color: #666;
-// }
-
-// .red-heart {
-//     color: #f00;
-// }
-
-// .heart:hover {
-//     cursor: pointer;
-// }
 
 .heart-icon .text {
     visibility: hidden;
@@ -201,13 +184,6 @@ h2 {
     margin-top: 4px;
 }
 
-.gallery_small {
-    display: block;
-}
-.gallery_large {
-    display: none;
-}
-
 .gallery-container {
     width: 100%;
     margin: 0 auto;
@@ -217,13 +193,7 @@ h2 {
 
 gallery {
     background-color: #fff;
-    //height: 800px;
-    left: 0;
-    transform: none;
-    width: 100%;
-}
-
-gallery[fluid] {
+    height: 360px;
     left: 0;
     transform: none;
     width: 100%;
@@ -237,10 +207,16 @@ agm-map {
     height: 500px;
 }
 app-agent-contact-form {
-    flex: 0 0 260px;
+    flex: 0 0 280px;
     margin-top: 40px;
     margin-left: 40px;
     border: 1px solid $darkerGreyBorder;
+}
+
+@media screen and (min-width: 500px) {
+    gallery {
+        height: 500px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -248,18 +224,15 @@ app-agent-contact-form {
         border-top: 1px solid $darkerGreyBorder;
         border-bottom: 1px solid $darkerGreyBorder;
     }
+    .header {
+        padding: 60px 60px 0 60px;
+    }
     .title {
         margin-bottom: 0;
         line-height: normal;
     }
     .price {
         line-height: normal;
-    }
-    .gallery_small {
-        display: none;
-    }
-    .gallery_large {
-        display: block;
     }
     .main {
         padding: 0 60px 60px 60px;
@@ -269,6 +242,9 @@ app-agent-contact-form {
     }
     .text-container {
         padding: 0;
+    }
+    gallery {
+        height: 700px;
     }
 }
 

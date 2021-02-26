@@ -57,42 +57,11 @@
                         <span class="text">Register to save this home</span>
                     </div>
                 </div>
-
-                <!-- <div
-                    *ngIf="isAuthenticated"
-                    (click)="toggleFavorite(property, $event)"
-                    [ngClass]="
-                        isFavorite(property)
-                            ? 'heart
-                    heart-icon red-heart'
-                            : 'heart heart-icon white-heart'
-                    "
-                >
-                    <app-medium-loading-spinner
-                        style="display: none"
-                    ></app-medium-loading-spinner>
-                    <i class="fas fa-heart"></i>
-                </div>
-
-                <div *ngIf="!isAuthenticated">
-                    <div class="heart-icon white-heart">
-                        <i class="fas fa-heart"></i>
-                        <span class="text">Register to save this home</span>
-                    </div>
-                </div> -->
             </div>
         </div>
 
         <div class="gallery-container">
-            <gallery
-                class="gallery_small"
-                fluid
-                [items]="items"
-                [thumb]="false"
-            >
-            </gallery>
-            <gallery class="gallery_large" fluid [items]="items" [thumb]="true">
-            </gallery>
+            <gallery [items]="items" [thumb]="true"> </gallery>
         </div>
 
         <div class="main-container">

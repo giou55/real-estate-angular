@@ -8,7 +8,8 @@ body {
 }
 
 .slideshow-container {
-    width: 80%;
+    // width: 80%;
+    max-width: 700px;
     position: relative;
     margin: auto;
 }
@@ -29,8 +30,8 @@ body {
     top: 0;
     top: 50%;
     width: auto;
-    padding: 16px;
-    margin-top: -22px;
+    padding: 10px;
+    margin-top: -60px;
     color: white;
     font-weight: bold;
     font-size: 18px;
@@ -57,7 +58,7 @@ body {
     cursor: pointer;
     height: 13px;
     width: 13px;
-    margin: 0 2px;
+    margin: 0 3px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
@@ -105,14 +106,10 @@ body {
     }
 }
 
-@media screen and (min-width: 992px) {
-    .slideshow-container {
-        width: 60%;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .slideshow-container {
-        width: 40%;
+@media only screen and (min-width: 800px) {
+    .prev,
+    .next {
+        padding: 16px;
+        margin-top: -22px;
     }
 }
