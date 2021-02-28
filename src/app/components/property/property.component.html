@@ -30,17 +30,16 @@
                     </div>
                 </div>
 
-                <div
-                    *ngIf="isAuthenticated"
-                    (click)="toggleFavorite(property, $event)"
-                    [ngClass]="
-                        isFavorite(property)
-                            ? 'favorite red-heart'
-                            : 'favorite white-heart'
-                    "
-                >
+                <div *ngIf="isAuthenticated" class="favorite pointer">
                     <div class="heart-icon">
-                        <i class="fas fa-heart"></i>
+                        <i
+                            (click)="toggleFavorite(property, $event)"
+                            [ngClass]="
+                                isFavorite(property)
+                                    ? 'fas fa-heart red-heart'
+                                    : 'fas fa-heart white-heart'
+                            "
+                        ></i>
                     </div>
                     <div class="spinner">
                         <img
