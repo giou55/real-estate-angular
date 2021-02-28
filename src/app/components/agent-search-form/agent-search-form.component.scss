@@ -40,7 +40,8 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    padding: 40px;
+    //padding: 40px;
+    padding: 20px;
     margin: 0 auto;
     max-width: 1000px;
     background-color: #fff;
@@ -50,6 +51,7 @@
         url(../../../assets/images/findanagent-left.jpg);
     background-position: right bottom, left bottom;
     background-repeat: no-repeat, repeat-x;
+    background-size: 100%;
 }
 
 form {
@@ -73,7 +75,8 @@ mat-form-field.myfield {
 
 .mat-tab-group {
     border: 1px solid $darkerGreyBorder;
-    padding: 15px 30px;
+    //padding: 15px 30px;
+    padding: 15px 20px;
     margin-top: 10px;
     margin-bottom: 30px;
     background-color: #fff;
@@ -81,7 +84,7 @@ mat-form-field.myfield {
 
 .choose-an-area {
     width: 60%;
-    height: 400px;
+    min-height: 420px;
 }
 
 .areas-container {
@@ -89,7 +92,7 @@ mat-form-field.myfield {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
-    height: 270px;
+    height: 520px;
 }
 
 .area {
@@ -108,9 +111,18 @@ mat-form-field.myfield {
     }
 }
 
+@media screen and (min-width: 800px) {
+    .areas-container {
+        height: 450px;
+    }
+}
+
 @media screen and (min-width: 992px) {
     .form-component-container {
         padding: 0 80px;
+    }
+    .areas-container {
+        height: 370px;
     }
     .right-background {
         width: 10%;
@@ -119,6 +131,7 @@ mat-form-field.myfield {
         width: 10%;
     }
 }
+
 @media screen and (min-width: 1200px) {
     .form-component-container {
         padding: 0 100px;
