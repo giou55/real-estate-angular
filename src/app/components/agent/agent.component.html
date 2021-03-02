@@ -18,39 +18,41 @@
 </div>
 
 <div class="main-container" *ngIf="agent">
-    <div class="listings-container" *ngIf="agent.properties.length > 0">
-        <h1>My Listings</h1>
-        <div class="properties">
-            <div class="property" *ngFor="let property of agent.properties">
-                <img
-                    routerLink="/properties/{{ property.id }}"
-                    [src]="property.image_small_url"
-                    alt=""
-                />
-                <div class="property-text">
-                    <div class="details">
-                        <div>{{ property.title }}</div>
-                        <div>{{ property.location }}</div>
+    <div class="listings-container">
+        <div class="listings" *ngIf="agent.properties.length > 0">
+            <h1>My Listings</h1>
+            <div class="properties">
+                <div class="property" *ngFor="let property of agent.properties">
+                    <img
+                        routerLink="/properties/{{ property.id }}"
+                        [src]="property.image_small_url"
+                        alt=""
+                    />
+                    <div class="property-text">
+                        <div class="details">
+                            <div>{{ property.title }}</div>
+                            <div>{{ property.location }}</div>
+                        </div>
+                        <div class="price">
+                            {{
+                                property.priceSale
+                                    | currency: "EUR":"symbol":"1.0-0"
+                            }}
+                        </div>
                     </div>
-                    <div class="price">
-                        {{
-                            property.priceSale
-                                | currency: "EUR":"symbol":"1.0-0"
-                        }}
+                    <div class="features">
+                        <span>{{ property.beds }} bed</span>
+                        <span>{{ property.baths }} bath</span>
+                        <span>{{ property.area }} m<sup>2</sup></span>
                     </div>
-                </div>
-                <div class="features">
-                    <span>{{ property.beds }} bed</span>
-                    <span>{{ property.baths }} bath</span>
-                    <span>{{ property.area }} m<sup>2</sup></span>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="listings-container" *ngIf="agent.properties.length < 1">
-        <h1>My Listings</h1>
-        <p>No Properties</p>
+        <div class="listings" *ngIf="agent.properties.length < 1">
+            <h1>My Listings</h1>
+            <p>No Properties</p>
+        </div>
     </div>
 
     <div class="sidebar">
