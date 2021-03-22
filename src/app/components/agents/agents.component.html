@@ -1,5 +1,21 @@
 <div class="container">
-    <div class="agents-container">
+    <div class="agents-container" *ngIf="isLoading" style="text-align: center">
+        <div
+            style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 30vh;
+            "
+        >
+            <img
+                style="width: 70px"
+                src="assets/images/spinner.gif"
+                alt="loading spinner"
+            />
+        </div>
+    </div>
+    <div class="agents-container" *ngIf="!isLoading">
         <div class="agent-container" *ngFor="let agent of agents">
             <div class="agent" routerLink="/agents/{{ agent.id }}">
                 <img [src]="agent.imageurl" alt="" />

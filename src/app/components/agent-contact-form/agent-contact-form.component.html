@@ -10,7 +10,7 @@
             src="{{ image_url }}"
             alt=""
         />
-        <p *ngIf="caption" class="header2">{{ caption }}</p>
+        <p *ngIf="name" class="header2">Listing Agent:<br>{{ name }}</p>
         <p *ngIf="!isAuthenticated">
             {{ paragraph }}
         </p>

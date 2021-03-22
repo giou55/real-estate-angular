@@ -185,7 +185,7 @@ h2 {
 }
 
 .gallery-container {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     margin-bottom: 30px;
     position: relative;
@@ -214,6 +214,9 @@ app-agent-contact-form {
 }
 
 @media screen and (min-width: 500px) {
+    .gallery-container {
+        width: 100%;
+    }
     gallery {
         height: 500px;
     }

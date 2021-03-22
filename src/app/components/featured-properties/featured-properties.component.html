@@ -1,4 +1,21 @@
-<div class="container">
+<div class="container" *ngIf="isLoading" style="text-align: center">
+    <div
+        style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30vh;
+        "
+    >
+        <img
+            style="width: 70px"
+            src="assets/images/spinner.gif"
+            alt="loading spinner"
+        />
+    </div>
+</div>
+
+<div class="container" *ngIf="!isLoading">
     <div class="slideshow-container">
         <div
             class="mySlides fade"
@@ -10,7 +27,9 @@
                 <h1>{{ prop.title }}</h1>
                 <h3>
                     Location: {{ prop.location }}<br />
-                   <span>{{ prop.priceSale | currency: "EUR":"symbol":"1.0-0" }}</span>
+                    <span>{{
+                        prop.priceSale | currency: "EUR":"symbol":"1.0-0"
+                    }}</span>
                 </h3>
             </div>
         </div>

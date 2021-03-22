@@ -33,7 +33,7 @@ export class AgentContactFormComponent implements OnInit, OnDestroy {
     @ViewChild('contactBtn', { static: false }) btn: ElementRef;
     @Input() isAuthenticated: boolean;
     @Input() header: string;
-    @Input() caption: string;
+    @Input() name: string;
     @Input() agent_id: string;
     @Input() image_url: string;
     @Input() paragraph: string;

@@ -16,6 +16,7 @@ export class FeaturedPropertiesComponent implements OnInit {
     slides: HTMLCollectionOf<any>;
     dots: HTMLCollectionOf<any>;
     error = null;
+    isLoading: boolean = false;
     properties: Property[] = [];
 
     constructor(private propertiesService: PropertiesService) {}
@@ -49,9 +50,11 @@ export class FeaturedPropertiesComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.isLoading = true;
         this.propertiesService
             .getFeaturedProperties()
             .subscribe((properties) => {
+                this.isLoading = false;
                 this.properties = properties;
             });
     }

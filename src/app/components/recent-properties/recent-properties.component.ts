@@ -17,7 +17,7 @@ export class RecentPropertiesComponent implements OnInit, OnDestroy {
     error = null;
     properties: Property[] = [];
     isAuthenticated = false;
-    isLoading = false;
+    isLoading: boolean = false;
     private userSub: Subscription;
     private favSub: Subscription;
     user: User = null;

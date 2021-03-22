@@ -12,11 +12,14 @@ import { Agent } from '../../models/agent.model';
 export class AgentsComponent implements OnInit {
     agents: Agent[] = [];
     base_url = environment.baseUrl;
+    isLoading: boolean = false;
 
     constructor(private agentsService: AgentsService) {}
 
     ngOnInit(): void {
+        this.isLoading = true;
         this.agentsService.getFeaturedAgents().subscribe((agents) => {
+            this.isLoading = false;
             this.agents = agents;
         });
     }

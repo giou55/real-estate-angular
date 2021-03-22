@@ -161,7 +161,7 @@
     <app-agent-contact-form
         *ngIf="property"
         header="Contact Agent"
-        [caption]="'Listing Agent: ' + property.agent.name"
+        [name]="property.agent.name"
         [agent_id]="property.agent.id"
         [image_url]="property.agent.imageurl"
         paragraph="Register to contact with agent."

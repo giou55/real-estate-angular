@@ -15,7 +15,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container" *ngIf="!isLoading">
     <div class="props-container">
         <div class="prop" *ngFor="let prop of properties">
             <div class="img-container">
