@@ -4,7 +4,6 @@ import { switchMap, map } from 'rxjs/operators';
 
 import { User } from '../models/user.model';
 import { environment } from '../../environments/environment';
-import { of } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class FavoriteHomeService {
@@ -55,5 +54,4 @@ export class FavoriteHomeService {
                 )
             );
     }
-
 }
